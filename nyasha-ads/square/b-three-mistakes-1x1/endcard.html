@@ -23,7 +23,7 @@
 import { shot } from './lib/shot.js';
 import { $, pulse, prog } from './lib/kit.js';
 const btn = $('#cta');
-shot(5, (t) => {
+shot(6.4, (t) => {
   // once it has popped in, the button breathes so the eye goes there
   if (t > 1) btn.style.transform = `scale(${pulse(t - 1, 1.0, 0.06)})`;
   btn.style.boxShadow = `0 18px ${50 + 40 * prog(t, 1, 0.5) * (pulse(t - 1, 1.0, 1) - 1)}px rgba(171, 207, 71, 0.45)`;

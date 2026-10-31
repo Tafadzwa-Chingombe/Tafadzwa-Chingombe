@@ -24,7 +24,7 @@
   <div class="bar"><i id="progress"></i></div>
   <div class="spin" id="spin"></div>
   <div class="timer"><span id="secs">0.0s</span><small>still loading…</small></div>
-  <div class="gone" id="left" data-rise="3.5">
+  <div class="gone" id="left" data-rise="4.8">
     <div class="cross"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg></div>
     Visitor left
   </div>
@@ -34,8 +34,8 @@
 import { shot } from './lib/shot.js';
 import { $ } from './lib/kit.js';
 const spin = $('#spin'), prog = $('#progress'), secs = $('#secs');
-shot(6, (t) => {
-  const tt = Math.min(t, 3.5);                    // the clock stops when the visitor gives up
+shot(6.3, (t) => {
+  const tt = Math.min(t, 4.8);                    // the clock stops when the visitor gives up
   spin.style.transform = `rotate(${t * 420}deg)`;
   prog.style.width = `${62 * (1 - Math.exp(-tt / 1.6))}%`;
   secs.textContent = `${(tt * 2.2).toFixed(1)}s`; // a sped-up clock: about eight seconds of waiting

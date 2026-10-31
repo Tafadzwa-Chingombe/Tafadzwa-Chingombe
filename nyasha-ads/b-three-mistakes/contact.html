@@ -57,7 +57,7 @@
 import { shot } from './lib/shot.js';
 import { $, prog, ease } from './lib/kit.js';
 const lens = $('#lens'), bar = $('#fixbar');
-shot(7, (t) => {
+shot(8.2, (t) => {
   // the lens wanders the page looking for a way to get in touch
   const u = Math.min(t, 2.4);
   lens.style.left = `${240 + 150 * Math.sin(u * 2.3)}px`;

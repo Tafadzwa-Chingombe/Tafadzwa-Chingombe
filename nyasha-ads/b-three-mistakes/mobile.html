@@ -40,7 +40,7 @@
   </div></div>
   <div class="ripple" id="tap" data-pop="1.6" data-out="2.3"></div>
   <div class="label" data-pop="1.6"><span class="pill">Too small to read</span></div>
-  <div class="gone" id="left" data-rise="4.6">
+  <div class="gone" id="left" data-rise="7.6">
     <svg viewBox="0 0 24 24" fill="none"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" stroke="#ABCF47" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Visitor left
   </div>
@@ -50,7 +50,7 @@
 import { shot } from './lib/shot.js';
 import { $, prog, ease } from './lib/kit.js';
 const tap = $('#tap');
-shot(7, (t) => {
+shot(8.9, (t) => {
   // the tap ripple grows as it fades
   const p = ease.out(prog(t, 1.6, 0.7));
   if (t >= 1.6) tap.style.transform = `scale(${0.4 + 0.9 * p})`;

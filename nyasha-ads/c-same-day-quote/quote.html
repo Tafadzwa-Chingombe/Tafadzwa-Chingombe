@@ -37,13 +37,13 @@
     <div class="field big"><label>What do you need?</label><div id="need"></div></div>
     <div class="submit" id="submit">Send</div>
   </div>
-  <div class="quote" id="quote" data-rise="3.0">
+  <div class="quote" id="quote" data-rise="2.5">
     <div class="k">Your quote</div>
     <h4>Salon website</h4>
     <ul><li>5 mobile-friendly pages</li><li>WhatsApp &amp; call buttons</li><li>Google-ready SEO setup</li></ul>
-    <div class="badge" data-pop="3.6"><b>Fixed price</b> · no surprises</div>
+    <div class="badge" data-pop="2.8"><b>Fixed price</b> · no surprises</div>
   </div>
-  <div class="sent" data-pop="5.2">
+  <div class="sent" data-pop="3.8">
     <div class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#0B1F3A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <span>Sent · same day</span>
   </div>
@@ -51,8 +51,8 @@
 <div class="headline" id="headline">
   <div class="chips">
     <div class="chip" data-rise="0.2" data-on="0.3">Tell us</div>
-    <div class="chip" data-rise="0.35" data-on="3.0">Get a fixed price</div>
-    <div class="chip" data-rise="0.5" data-on="5.2">Same day</div>
+    <div class="chip" data-rise="0.35" data-on="2.5">Get a fixed price</div>
+    <div class="chip" data-rise="0.5" data-on="3.8">Same day</div>
   </div>
 </div>
 <script type="module">
@@ -61,12 +61,12 @@ import { $, typed, prog, ease, clamp } from './lib/kit.js';
 const name = $('#name'), need = $('#need'), submit = $('#submit'), form = $('#form');
 shot(7, (t) => {
   typed(name, 'Rudo M.', t, 0.3, 14);
-  typed(need, 'A website for my hair salon, with bookings', t, 0.9, 30);
+  typed(need, 'A website for my hair salon, with bookings', t, 0.6, 40);
   // the button is pressed, then the form gives way to the quote
-  const press = prog(t, 2.6, 0.15) - prog(t, 2.75, 0.15);
+  const press = prog(t, 1.8, 0.15) - prog(t, 1.95, 0.15);
   submit.style.transform = `scale(${1 - 0.06 * press})`;
-  submit.style.background = t >= 2.6 ? '#1f4277' : '';
-  form.style.opacity = 1 - ease.out(prog(t, 2.9, 0.3));
+  submit.style.background = t >= 1.8 ? '#1f4277' : '';
+  form.style.opacity = 1 - ease.out(prog(t, 2.1, 0.3));
 });
 </script>
 </body>
