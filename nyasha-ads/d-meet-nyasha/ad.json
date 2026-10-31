@@ -1,0 +1,23 @@
+{
+  "title": "Meet Nyasha",
+  "shots": [
+    {"page": "hello", "min": 3, "line": "Mhoro! I'm Nyasha."},
+    {"page": "guide", "min": 6, "line": "I'm iContact Africa Solutions' digital guide — I'll show you how to get your business found, trusted and booked."},
+    {"page": "montage", "min": 3, "line": "Websites. SEO. Marketing. All in plain English."},
+    {"page": "endcard", "min": 3, "line": "Follow me for tips every week — and yes, I'm AI-generated!"}
+  ],
+  "sfx": [
+    [0, "pop", 0.15],
+    [1, "whoosh", -0.15],
+    [1, "pop", 5.1],
+    [1, "pop", 5.7],
+    [1, "pop", 6.4],
+    [2, "whoosh", -0.15],
+    [2, "pop", 0.35],
+    [2, "pop", 1.4],
+    [2, "pop", 3.3],
+    [3, "whoosh", -0.15],
+    [3, "pop", 0.4]
+  ],
+  "music_volume": 0.3
+}

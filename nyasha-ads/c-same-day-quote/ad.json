@@ -1,0 +1,19 @@
+{
+  "title": "Same-day quote",
+  "shots": [
+    {"page": "hook", "min": 3, "line": "Need a website but don't know what it'll cost?"},
+    {"page": "quote", "min": 7, "line": "Tell us what you need. We'll send you a fixed-price quote — same day."},
+    {"page": "smile", "min": 4, "line": "No surprises. No jargon. Just a clear plan."},
+    {"page": "endcard", "min": 4, "line": "Tap to book your free call. Tatenda!"}
+  ],
+  "sfx": [
+    [1, "whoosh", -0.15],
+    [1, "pop", 2.5],
+    [1, "pop", 2.8],
+    [1, "ding", 3.8],
+    [2, "whoosh", -0.15],
+    [3, "whoosh", -0.15],
+    [3, "pop", 0.4]
+  ],
+  "music_volume": 0.3
+}

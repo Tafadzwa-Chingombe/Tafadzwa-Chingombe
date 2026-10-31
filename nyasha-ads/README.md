@@ -32,24 +32,27 @@ Nyasha's voice was generated with the ElevenLabs connector: voice **"Sim – War
 (`Sy7d8PNbkbjIJxf1li2K`), model `eleven_v4`, one take per line chosen from two (the ElevenLabs flow
 "Nyasha ad voice-overs" holds every take). Each film's lines are in `assets/vo/line-N.mp3`, with word-timed captions in `line-N.vtt`.
 
-The cut follows the voice: `tools/retime_vo.py` makes each shot as long as its line needs (never shorter than the script's
-timing), starts each line 0.15 s into its shot, moves the sound effects with their shots, makes the music again at the new
-length and sets it to 0.3 under the voice. On-screen moments (the service chips, "Same-day reply", the quote steps,
-"Found · Trusted · Booked") are timed in each page to when she says them.
+The cut follows the voice: each ad's `ad.json` lists its shots, voice lines and sound effects, and the
+**`nyasha-video-ads` skill** (`.claude/skills/nyasha-video-ads/`) builds `film.html` from it: each shot as long as its line
+needs (never shorter than the script's timing), captions timed to her words, effects moved with their shots, music made
+again at the new length and set to 0.3 under the voice. On-screen moments (the service chips, "Same-day reply", the quote
+steps, "Found · Trusted · Booked") are timed in each page to when she says them.
 
-To replace a line (a re-take, a voice actor, a Shona correction): save the new audio as `<film><n>.mp3` (e.g. `a1.mp3`) in one folder
-with the others, then
+To replace a line (a re-take, a voice actor, a Shona correction), save the new takes as `1.mp3`, `2.mp3`… (shot order)
+in one folder, then:
 ```bash
-python3 nyasha-ads/tools/retime_vo.py a <folder>                      # retimes film A around the new takes
-python3 nyasha-ads/tools/mksquare.py a-show-up-online square/a-show-up-online-1x1
+T=.claude/skills/nyasha-video-ads/tools
+python3 $T/build.py nyasha-ads/a-show-up-online --vo <folder>
+python3 $T/mksquare.py nyasha-ads/a-show-up-online nyasha-ads/square/a-show-up-online-1x1
 ```
-and render both. `tools/voiceover.py` does the same generation straight from the ElevenLabs API, if this environment is
-later given `ELEVENLABS_API_KEY` and network access to `api.elevenlabs.io`.
+and render both (then `$T/loudness.sh` on the MP4s). **New ads:** ask Claude to use the `nyasha-video-ads` skill with the
+new script — see `.claude/skills/nyasha-video-ads/SKILL.md` for the full workflow.
 
 ## Editing and rendering
 ```bash
 cd nyasha-ads/a-show-up-online
 npx -y openfilm@latest open .                    # opens Studio: drag, retime, edit text, restyle captions
 npx -y openfilm@latest render --subtitles        # → a-show-up-online.mp4 with captions burned in
+../../.claude/skills/nyasha-video-ads/tools/loudness.sh a-show-up-online.mp4   # -14 LUFS for social
 ```
 To change caption size or colour (e.g. the brand-green word highlight), open the project in Studio and use its Subtitles panel.

@@ -1,0 +1,27 @@
+{
+  "title": "Do you show up online?",
+  "shots": [
+    {"page": "hook", "min": 3, "line": "Mhoro! Quick question — if a customer searched for your business right now… would they find you?"},
+    {"page": "search", "min": 5, "line": "Most businesses in Harare don't show up. So those customers? They call someone else."},
+    {"page": "intro", "min": 7, "line": "I'm Nyasha from iContact Africa Solutions. We build fast, mobile-friendly websites, plus SEO and marketing, that bring in real enquiries."},
+    {"page": "enquiry", "min": 6, "line": "Fixed-price quotes. Same-day reply."},
+    {"page": "endcard", "min": 4, "line": "Tap the link, book your free call — and let's get you found. Zvakanaka!"}
+  ],
+  "sfx": [
+    [1, "whoosh", -0.15],
+    [1, "pop", 1.6],
+    [1, "pop", 2.05],
+    [1, "pop", 2.5],
+    [2, "whoosh", -0.15],
+    [2, "pop", 5.1],
+    [2, "pop", 6.2],
+    [2, "pop", 6.7],
+    [3, "whoosh", -0.15],
+    [3, "pop", 0.5],
+    [3, "pop", 1.4],
+    [3, "ding", 2.8],
+    [4, "whoosh", -0.15],
+    [4, "pop", 0.4]
+  ],
+  "music_volume": 0.3
+}

@@ -1,0 +1,24 @@
+{
+  "title": "3 website mistakes that cost you customers",
+  "shots": [
+    {"page": "count", "min": 3, "line": "Mhoro! Three website mistakes that quietly cost you customers."},
+    {"page": "mobile", "min": 7, "line": "One: your site doesn't work on a phone. Most people in Zimbabwe browse on mobile — if it's hard to read, they leave."},
+    {"page": "contact", "min": 7, "line": "Two: no clear way to contact you. Put your phone number and a WhatsApp or enquiry button on every page."},
+    {"page": "slow", "min": 6, "line": "Three: it's slow. If it takes more than a few seconds, people won't wait."},
+    {"page": "endcard", "min": 5, "line": "We fix all three. Book a free call and we'll tell you what's holding your site back."}
+  ],
+  "sfx": [
+    [0, "pop", 0.3],
+    [1, "whoosh", -0.15],
+    [1, "pop", 1.6],
+    [1, "pop", 7.6],
+    [2, "whoosh", -0.15],
+    [2, "pop", 2.5],
+    [2, "ding", 4.0],
+    [3, "whoosh", -0.15],
+    [3, "pop", 4.8],
+    [4, "whoosh", -0.15],
+    [4, "pop", 0.5]
+  ],
+  "music_volume": 0.3
+}
