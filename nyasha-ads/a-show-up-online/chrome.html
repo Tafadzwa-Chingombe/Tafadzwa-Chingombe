@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  /* over the whole film: the wordmark, and the AI disclosure, which must be visible for every frame */
+  .scrim { position: absolute; left: 0; right: 0; top: 0; height: 430px; background: linear-gradient(rgba(11, 31, 58, 0.6), rgba(11, 31, 58, 0)); }
+  .wordmark { position: absolute; left: 60px; top: 262px; font-weight: 800; font-size: 46px; letter-spacing: 0.04em; line-height: 1; }
+  .wordmark .i { color: var(--green); }
+  .wordmark small { display: block; margin-top: 8px; font-weight: 600; font-size: 15px; letter-spacing: 0.32em; color: var(--muted); }
+  .ai { position: absolute; right: 60px; top: 262px; display: flex; align-items: center; gap: 12px; padding: 12px 22px 12px 16px;
+    border-radius: 999px; background: rgba(11, 31, 58, 0.72); border: 2px solid rgba(255, 255, 255, 0.35);
+    font-weight: 600; font-size: 24px; color: #fff; }
+  .ai svg { width: 30px; height: 30px; }
+</style>
+</head>
+<body>
+<div class="scrim"></div>
+<div class="wordmark" id="wordmark"><span class="i">i</span>CONTACT<small>AFRICA SOLUTIONS</small></div>
+<div class="ai" id="ai-badge">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z" fill="#ABCF47"/><circle cx="19" cy="19" r="2" fill="#ABCF47"/></svg>
+  <span>AI-generated character</span>
+</div>
+<script type="module">
+import { loaded } from './lib/kit.js';
+window.film = { ready: loaded(), frame() {} };
+</script>
+</body>
+</html>

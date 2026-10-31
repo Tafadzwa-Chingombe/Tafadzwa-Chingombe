@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .phone .screen { background: #f4f6fa; }
+  .form { padding: 20px 30px; }
+  .form h3 { margin: 6px 0 22px; font-size: 34px; color: var(--navy); }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-weight: 600; font-size: 20px; color: #5a6578; margin-bottom: 8px; }
+  .field div { height: 66px; border-radius: 16px; background: #fff; border: 2px solid #dde3ec; padding: 0 20px; display: flex; align-items: center; font-size: 25px; color: #1b2433; }
+  .field.big div { height: 110px; align-items: flex-start; padding-top: 16px; line-height: 1.3; }
+  .submit { margin-top: 8px; height: 76px; border-radius: 18px; background: var(--blue); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 28px; }
+  .quote { position: absolute; left: 20px; right: 20px; top: 150px; padding: 30px 30px 34px; border-radius: 30px; background: #fff;
+    box-shadow: 0 20px 60px rgba(11,31,58,.25); }
+  .quote .k { font-weight: 700; font-size: 20px; letter-spacing: .12em; text-transform: uppercase; color: #7a8598; }
+  .quote h4 { margin: 8px 0 18px; font-size: 32px; color: var(--navy); }
+  .quote li { list-style: none; margin: 0 0 12px; font-size: 24px; color: #3b475c; display: flex; gap: 12px; align-items: center; }
+  .quote li::before { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--green); flex: none; }
+  .quote ul { padding: 0; margin: 0 0 20px; }
+  .badge { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 700; font-size: 23px; white-space: nowrap; }
+  .badge b { color: var(--green); }
+  .sent { position: absolute; left: 20px; right: 20px; top: 640px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .sent span { font-weight: 700; font-size: 30px; color: var(--navy); }
+  .headline .chips { gap: 12px; }
+  .headline .chip { font-size: 34px; padding: 14px 24px; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="phone"><div class="notch"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+  <div class="form" id="form">
+    <h3>Get a quote</h3>
+    <div class="field"><label>Your name</label><div id="name"></div></div>
+    <div class="field big"><label>What do you need?</label><div id="need"></div></div>
+    <div class="submit" id="submit">Send</div>
+  </div>
+  <div class="quote" id="quote" data-rise="3.0">
+    <div class="k">Your quote</div>
+    <h4>Salon website</h4>
+    <ul><li>5 mobile-friendly pages</li><li>WhatsApp &amp; call buttons</li><li>Google-ready SEO setup</li></ul>
+    <div class="badge" data-pop="3.6"><b>Fixed price</b> · no surprises</div>
+  </div>
+  <div class="sent" data-pop="5.2">
+    <div class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#0B1F3A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span>Sent · same day</span>
+  </div>
+</div></div>
+<div class="headline" id="headline">
+  <div class="chips">
+    <div class="chip" data-rise="0.2" data-on="0.3">Tell us</div>
+    <div class="chip" data-rise="0.35" data-on="3.0">Get a fixed price</div>
+    <div class="chip" data-rise="0.5" data-on="5.2">Same day</div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $, typed, prog, ease, clamp } from './lib/kit.js';
+const name = $('#name'), need = $('#need'), submit = $('#submit'), form = $('#form');
+shot(7, (t) => {
+  typed(name, 'Rudo M.', t, 0.3, 14);
+  typed(need, 'A website for my hair salon, with bookings', t, 0.9, 30);
+  // the button is pressed, then the form gives way to the quote
+  const press = prog(t, 2.6, 0.15) - prog(t, 2.75, 0.15);
+  submit.style.transform = `scale(${1 - 0.06 * press})`;
+  submit.style.background = t >= 2.6 ? '#1f4277' : '';
+  form.style.opacity = 1 - ease.out(prog(t, 2.9, 0.3));
+});
+</script>
+</body>
+</html>

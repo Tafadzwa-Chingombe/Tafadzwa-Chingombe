@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .signoff { position: absolute; left: 70px; right: 70px; top: 1080px; height: 150px; text-align: center;
+    font-weight: 800; font-size: 72px; line-height: 1.05; display: flex; align-items: center; justify-content: center; }
+  .signoff > span.in { display: block; }
+  .cta { position: absolute; left: 0; right: 0; top: 1400px; display: flex; justify-content: center; }
+  .cta .btn svg { width: 50px; height: 50px; }
+  .url { position: absolute; left: 0; right: 0; top: 1532px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="photo"><img src="assets/nyasha/c2-portrait.jpg" alt="Nyasha" data-from="1.02" data-to="1.1" data-fx="0.5" data-fy="0.36"></div>
+<div class="signoff" id="signoff" data-rise="0.15" data-fit="72"><span class="in"><span class="hl">Tatenda!</span></span></div>
+<div class="cta"><div class="btn" id="cta" data-pop="0.4">Book a free call
+  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#0B1F3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+<div class="url" id="url" data-rise="0.7">icontactafricasolutions.org</div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $, pulse, prog } from './lib/kit.js';
+const btn = $('#cta');
+shot(4, (t) => {
+  // once it has popped in, the button breathes so the eye goes there
+  if (t > 1) btn.style.transform = `scale(${pulse(t - 1, 1.0, 0.06)})`;
+  btn.style.boxShadow = `0 18px ${50 + 40 * prog(t, 1, 0.5) * (pulse(t - 1, 1.0, 1) - 1)}px rgba(171, 207, 71, 0.45)`;
+});
+</script>
+</body>
+</html>

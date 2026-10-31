@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .role { position: absolute; left: 70px; top: 1100px; padding: 18px 30px 20px 26px; border-left: 10px solid var(--green);
+    background: rgba(11, 31, 58, 0.82); border-radius: 0 24px 24px 0; font-weight: 700; font-size: 40px; }
+  .role small { display: block; font-weight: 600; font-size: 26px; color: var(--muted); margin-top: 4px; }
+  .words { display: flex; gap: 14px; align-items: baseline; font-size: 78px; }
+  .words .dot { color: var(--green); }
+  .words span { display: inline-block; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<!-- C3: waving -->
+<div class="photo"><img src="assets/nyasha/c3-wave-wide.jpg" alt="Nyasha waving" data-from="1.0" data-to="1.06" data-fx="0.6" data-fy="0.38"></div>
+<div class="role" id="role" data-rise="0.3">Your digital guide<small>iContact Africa Solutions</small></div>
+<div class="headline" id="headline">
+  <div class="words">
+    <span data-pop="4.2">Found</span><span class="dot" data-pop="4.5">·</span>
+    <span data-pop="4.8">Trusted</span><span class="dot" data-pop="5.05">·</span>
+    <span class="hl" data-pop="5.3">Booked</span>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { fit, $ } from './lib/kit.js';
+shot(6, () => {}, () => fit($('.words'), { max: 78, min: 50 }));
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .headline .line { display: block; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<!-- C2: smiles, nods (a slow pull-out with a small tilt) -->
+<div class="photo"><img src="assets/nyasha/c2-portrait.jpg" alt="Nyasha smiling" data-from="1.14" data-to="1.04" data-fx="0.5" data-fy="0.34" data-tilt="-1"></div>
+<div class="headline" id="headline" data-fit="70">
+  <span class="line" data-rise="0.1">No surprises.</span>
+  <span class="line hl" data-rise="0.9">No jargon.</span>
+</div>
+<script type="module">
+import { shot } from './lib/shot.js';
+shot(4);
+</script>
+</body>
+</html>

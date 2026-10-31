@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .search { position: absolute; left: 110px; right: 110px; top: 1040px; height: 110px; border-radius: 999px; background: #fff; color: #44516a;
+    display: flex; align-items: center; gap: 22px; padding: 0 38px; font-weight: 500; font-size: 38px; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+  .search svg { width: 46px; height: 46px; flex: none; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<!-- C4: close-up, slow push-in with a small head tilt -->
+<div class="photo"><img src="assets/nyasha/c4-closeup.jpg" alt="Nyasha close-up" data-from="1.0" data-to="1.12" data-fx="0.5" data-fy="0.42" data-tilt="1.2"></div>
+<div class="search" id="search" data-rise="0.9">
+  <svg viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#2E5795" stroke-width="2.6"/><path d="M15.5 15.5L21 21" stroke="#2E5795" stroke-width="2.6" stroke-linecap="round"/></svg>
+  <span id="query"></span>
+</div>
+<div class="headline" id="headline" data-rise="0.2" data-fit="70">Would customers find you <span class="hl">online?</span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $, typed } from './lib/kit.js';
+const q = $('#query');
+shot(3, (t) => typed(q, 'your business near me', t, 1.2, 16));
+</script>
+</body>
+</html>
