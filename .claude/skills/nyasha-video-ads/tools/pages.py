@@ -101,9 +101,9 @@ def build_pages(film):
     sfx = []
     for idx, s in enumerate(spec['shots']):
         kind = s.get('kind')
+        if idx > 0: sfx.append([idx, 'whoosh', -0.15])   # every cut, hand-written shots included
         if not kind: continue
         words = words_at(os.path.join(film, 'assets', 'vo', f'line-{idx + 1}.vtt'))
-        if idx > 0: sfx.append([idx, 'whoosh', -0.15])
         pops = []
         prev = os.path.join(film, f"{s['page']}.html")
         dur = re.search(r'\bshot\((\d+(?:\.\d+)?)', open(prev).read()).group(1) if os.path.exists(prev) else str(s.get('min', 3))

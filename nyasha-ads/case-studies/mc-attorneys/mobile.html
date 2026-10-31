@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<link rel="stylesheet" href="lib/pages.css">
+<style>
+  /* the firm's real site on a phone, scrolling from the hero down to the team */
+  .phone .screen { background: #fff; }
+  .phone .screen img { position: absolute; left: 0; top: 0; width: 100%; display: block; will-change: transform; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="phone" id="phone" data-rise="0.1"><div class="notch"></div><div class="screen">
+  <img id="site" src="assets/site/mobile-full.jpg" alt="MC Attorneys website on a phone">
+</div></div>
+<div class="headline" id="headline" data-rise="0.4" data-fit="70"><span>Perfect on <span class="hl">mobile</span></span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $, prog, ease } from './lib/kit.js';
+const img = $('#site'), screen = img.parentElement;
+shot(7.7, (t) => {
+  const D = window.film.duration;
+  // the team section starts about 65% of the way down the page
+  const target = Math.min(img.clientHeight - screen.clientHeight, img.clientHeight * 0.655);
+  img.style.transform = `translateY(${-target * ease.inOut(prog(t, 0.9, Math.max(1, D - 1.8)))}px)`;
+});
+</script>
+</body>
+</html>

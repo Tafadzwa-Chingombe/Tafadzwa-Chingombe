@@ -1,0 +1,134 @@
+{
+ "title": "Case study: Makuwatsine Chirenje Attorneys website",
+ "client": "Makuwatsine Chirenje Attorneys (MC Attorneys), Harare - approved to be featured (name, site, team photos)",
+ "site": "https://tafadzwa-chingombe.github.io/Makuwatsine-Chirenje-Attorneys/",
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c4",
+   "min": 3,
+   "kicker": "Case study",
+   "say": "website",
+   "headline": "New website for <span class=\"hl\">MC Attorneys</span>",
+   "line": "Hi! Here's a website we just launched for Makuwatsine Chirenje Attorneys in Harare."
+  },
+  {
+   "page": "desktop",
+   "min": 6,
+   "line": "Law firms win clients on trust, so we designed a site that feels established from the very first second."
+  },
+  {
+   "page": "mobile",
+   "min": 6,
+   "line": "On a phone, every practice area, the whole team, and a Book a Consultation button are just a scroll away."
+  },
+  {
+   "page": "features",
+   "kind": "list",
+   "min": 6,
+   "title": "What we built",
+   "marker": "tick",
+   "say": "built",
+   "items": [
+    [
+     "Practice area pages",
+     "practice"
+    ],
+    [
+     "Team profiles",
+     "team"
+    ],
+    [
+     "One-tap consultation booking",
+     "consultation"
+    ],
+    [
+     "A blog they update themselves",
+     "blog"
+    ]
+   ],
+   "headline": "Everything a <span class=\"hl\">law firm</span> needs",
+   "line": "We built clear practice area pages, team profiles, one-tap consultation booking, and a blog they can update themselves."
+  },
+  {
+   "page": "speed",
+   "kind": "photo",
+   "img": "c3",
+   "min": 3,
+   "kicker": "Kick-off to launch",
+   "say": "two",
+   "headline": "Live in <span class=\"hl\">two weeks</span>",
+   "line": "From kick-off to live in just two weeks."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Want a website like this for your business? Book a free call. Thank you!"
+  }
+ ],
+ "sfx": [
+  [
+   0,
+   "pop",
+   0.6
+  ],
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.82
+  ],
+  [
+   3,
+   "pop",
+   2.54
+  ],
+  [
+   3,
+   "pop",
+   4.38
+  ],
+  [
+   3,
+   "ding",
+   6.13
+  ],
+  [
+   4,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "pop",
+   0.6
+  ],
+  [
+   5,
+   "whoosh",
+   -0.15
+  ],
+  [
+   5,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}
