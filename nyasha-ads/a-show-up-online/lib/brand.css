@@ -18,7 +18,7 @@
 }
 
 html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
-body { font-family: Poppins, Inter, 'DejaVu Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+body { position: relative; font-family: Poppins, Inter, 'DejaVu Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 
 /* the brand backdrop: navy with the green studio glow the renders were lit with */

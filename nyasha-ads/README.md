@@ -10,6 +10,8 @@ Each folder is an OpenFilm project: `film.html` is the edit, each `*.html` page 
 | `c-same-day-quote/` | C: "Same-day quote" (offer) | 18 s | C2 lean-in → form → fixed-price quote → sent → C2 smile → "Tatenda!" end card |
 | `d-meet-nyasha/` | D: "Meet Nyasha" (brand intro) | 15 s | C4 "Mhoro!" → C3 digital guide → services montage → "Follow" end card |
 
+**1:1 cuts for Facebook/LinkedIn** (1080×1080) are in `square/<name>-1x1/`. Each uses the same shot pages: the full vertical layout is scaled into a centre panel over a blurred copy of the shot, with the wordmark top-left and captions along the bottom. If you edit a vertical shot, copy the page into the square project too (or rebuild it), then render both.
+
 Render map: C4 = `c4-closeup.jpg`, C3 = `c3-wave-square.jpg` / `c3-wave-wide.jpg`, C2 = `c2-portrait.jpg`.
 
 ## What is in every ad
@@ -23,7 +25,6 @@ Render map: C4 = `c4-closeup.jpg`, C3 = `c3-wave-square.jpg` / `c3-wave-wide.jpg
 - [ ] **[verify] claims approved by iContact**: "Fixed-price quotes", "Same-day reply" (A, 15–21 s) and "fixed-price quote — same day" (C, 3–10 s; the "Sent · same day" tick). Each is one DOM element in `enquiry.html` / `quote.html`, so it is easy to soften in Studio if needed.
 - [ ] **Record the real voice-over** (ElevenLabs or a Zimbabwean voice actor) and have a native speaker check *Mhoro*, *Zvakanaka* and *Tatenda*.
 - [ ] **Required:** switch on each platform's **AI-content label** when uploading (Meta, TikTok, YouTube). With no on-screen badge, this is the only AI disclosure on A, B and C.
-- [ ] Optional: export a 1:1 (1080×1080) cut for Facebook/LinkedIn (Studio → Export → frame).
 - [ ] Script B wants a **pointing render** for the "3" hook; `count.html` uses C3 (hand raised) until one exists.
 
 ## Adding the voice-over

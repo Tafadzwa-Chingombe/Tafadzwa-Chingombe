@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .card { position: absolute; width: 520px; border-radius: 34px; background: #fff; color: #1b2433; padding: 26px; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+  .card .tag { position: absolute; top: -26px; left: 26px; padding: 10px 22px; border-radius: 999px; background: var(--green); color: var(--navy); font-weight: 800; font-size: 26px; }
+  #web { left: 70px; top: 400px; rotate: -4deg; }
+  #seo { left: 490px; top: 640px; rotate: 3deg; }
+  #mkt { left: 120px; top: 900px; rotate: -2deg; }
+  /* a website */
+  .site .bar { height: 46px; border-radius: 12px; background: var(--navy); margin-bottom: 14px; display: flex; align-items: center; padding: 0 16px; color: #fff; font-weight: 700; font-size: 20px; }
+  .site .hero { height: 130px; border-radius: 14px; background: linear-gradient(120deg, var(--blue), var(--green)); margin-bottom: 14px; }
+  .site .btn2 { display: inline-block; padding: 10px 20px; border-radius: 999px; background: var(--green); color: var(--navy); font-weight: 700; font-size: 20px; }
+  /* a search result at the top */
+  .serp .q { height: 50px; border-radius: 999px; border: 2px solid #dde3ec; padding: 0 18px; display: flex; align-items: center; font-size: 21px; color: #5a6578; margin-bottom: 16px; }
+  .serp .r b { display: block; color: #1a4fb4; font-size: 25px; }
+  .serp .r span { font-size: 19px; color: #5a6578; }
+  .serp .r .stars { color: #f2a900; }
+  .serp .r { padding: 14px 16px; border-radius: 14px; background: rgba(171,207,71,.2); border: 2px solid var(--green); }
+  /* a social post */
+  .post .who { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; margin-bottom: 12px; }
+  .post .who i { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(var(--blue), var(--green)); }
+  .post .img { height: 150px; border-radius: 14px; background: radial-gradient(circle at 30% 40%, var(--green), var(--blue) 70%); margin-bottom: 12px; }
+  .post .likes { font-size: 20px; color: #5a6578; }
+  .headline .line { display: block; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="card site" id="web" data-pop="0.5"><div class="tag">Websites</div>
+  <div class="bar">Moyo Interiors</div><div class="hero"></div><span class="btn2">WhatsApp us</span></div>
+<div class="card serp" id="seo" data-pop="1.1"><div class="tag">SEO</div>
+  <div class="q">furniture harare</div>
+  <div class="r"><b>Moyo Interiors · Harare</b><span><span class="stars">★★★★★</span> 4.9 · Top result</span></div></div>
+<div class="card post" id="mkt" data-pop="1.7"><div class="tag">Marketing</div>
+  <div class="who"><i></i>moyo.interiors</div><div class="img"></div><div class="likes">♥ 1,204 · 86 comments</div></div>
+<div class="headline" id="headline" data-rise="0.1" data-fit="64">
+  <span class="line">Websites · SEO · Marketing</span>
+  <span class="line hl">All in plain English.</span>
+</div>
+<script type="module">
+import { shot } from './lib/shot.js';
+shot(3);
+</script>
+</body>
+</html>

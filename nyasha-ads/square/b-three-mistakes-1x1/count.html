@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .three { position: absolute; left: 150px; top: 380px; width: 240px; height: 240px; border-radius: 50%; background: var(--green); color: var(--navy);
+    display: grid; place-items: center; font-weight: 800; font-size: 170px; line-height: 1; box-shadow: 0 24px 70px rgba(0,0,0,.4), 0 0 0 12px rgba(171,207,71,.25); }
+  .three span { margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<!-- C3 presenter (hand raised); swap for the pointing render when it is ready -->
+<div class="photo"><img src="assets/nyasha/c3-wave-square.jpg" alt="Nyasha" data-from="1.0" data-to="1.08" data-fx="0.5" data-fy="0.4"></div>
+<div class="three" id="three" data-pop="0.3"><span>3</span></div>
+<div class="headline" id="headline" data-rise="0.2" data-fit="70"><span><span class="hl">3 mistakes</span> costing you customers</span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+shot(3);
+</script>
+</body>
+</html>

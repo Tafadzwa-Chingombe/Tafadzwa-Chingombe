@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<style>
+  .phone .screen { background: #fff; }
+  .url { margin: 10px 24px 0; height: 60px; border-radius: 999px; background: #eef1f6; display: flex; align-items: center; padding: 0 24px; font-size: 22px; color: #5a6578; }
+  .bar { position: relative; height: 6px; margin: 12px 24px 0; background: #eef1f6; border-radius: 3px; overflow: hidden; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--blue); }
+  .spin { position: absolute; left: 50%; top: 330px; width: 130px; height: 130px; margin-left: -65px; border-radius: 50%;
+    border: 12px solid #e3e7ee; border-top-color: var(--blue); }
+  .timer { position: absolute; left: 0; right: 0; top: 500px; text-align: center; font-weight: 800; font-size: 90px; color: #1b2433; font-variant-numeric: tabular-nums; }
+  .timer small { display: block; font-weight: 500; font-size: 26px; color: #7a8598; }
+  .gone { position: absolute; inset: 0; background: rgba(11, 31, 58, 0.88); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    color: #fff; font-weight: 700; font-size: 34px; }
+</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="phone"><div class="notch"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+  <div class="url">moyointeriors.co.zw</div>
+  <div class="bar"><i id="progress"></i></div>
+  <div class="spin" id="spin"></div>
+  <div class="timer"><span id="secs">0.0s</span><small>still loading…</small></div>
+  <div class="gone" id="left" data-rise="3.5">
+    <div class="cross"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg></div>
+    Visitor left
+  </div>
+</div></div>
+<div class="headline" id="headline" data-rise="0.2" data-fit="70"><span><span class="hl">3</span> · Slow loading</span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $ } from './lib/kit.js';
+const spin = $('#spin'), prog = $('#progress'), secs = $('#secs');
+shot(6, (t) => {
+  const tt = Math.min(t, 3.5);                    // the clock stops when the visitor gives up
+  spin.style.transform = `rotate(${t * 420}deg)`;
+  prog.style.width = `${62 * (1 - Math.exp(-tt / 1.6))}%`;
+  secs.textContent = `${(tt * 2.2).toFixed(1)}s`; // a sped-up clock: about eight seconds of waiting
+});
+</script>
+</body>
+</html>

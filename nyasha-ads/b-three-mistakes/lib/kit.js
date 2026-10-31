@@ -67,7 +67,7 @@ export function push(img, geo, t, dur, { from = 1.0, to = 1.1, fx = 0.5, fy = 0.
 export function fit(el, { max = 76, min = 48 } = {}) {
   let size = max;
   el.style.fontSize = `${size}px`;
-  while (size > min && (el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1)) {
+  while (size > min && (el.scrollHeight > el.clientHeight + 4 || el.scrollWidth > el.clientWidth + 4)) {
     size -= 2;
     el.style.fontSize = `${size}px`;
   }
