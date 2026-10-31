@@ -1,0 +1,122 @@
+{
+ "title": "A Facebook page is not a website",
+ "week": 1,
+ "endcard": [
+  "c3-wide",
+  "Let's get you <span class=\"hl\">found.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c4",
+   "min": 3,
+   "kicker": "\"Ndine page yeFacebook…\"",
+   "say": "Sound",
+   "headline": "\"I have a Facebook page. <span class=\"hl\">I don't need a website.\"</span>",
+   "line": "Ndine page yeFacebook, handidi website. Sound familiar?"
+  },
+  {
+   "page": "versus",
+   "kind": "compare",
+   "min": 7,
+   "cols": [
+    "Facebook page",
+    "Your website"
+   ],
+   "say": "rented",
+   "rows": [
+    [
+     "You own it",
+     "yours",
+     "no",
+     "yes"
+    ],
+    [
+     "Ranks on Google for your services",
+     "Google",
+     "no",
+     "yes"
+    ],
+    [
+     "EcoCash & Visa checkout",
+     "EcoCash",
+     "no",
+     "yes"
+    ],
+    [
+     "No algorithm deciding who sees you",
+     "algorithm",
+     "no",
+     "yes"
+    ]
+   ],
+   "headline": "A page is <span class=\"hl\">rented space</span>",
+   "line": "A Facebook page is rented space. A website is yours: it shows up on Google, takes EcoCash and Visa payments, and no algorithm decides who sees it."
+  },
+  {
+   "page": "both",
+   "kind": "photo",
+   "img": "c3-wide",
+   "min": 4,
+   "say": "Keep",
+   "headline": "Keep the page. <span class=\"hl\">Add the website.</span>",
+   "line": "Keep your page for conversations, and send people to a website that closes the sale."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Book a free call. Zvakanaka!"
+  }
+ ],
+ "sfx": [
+  [
+   0,
+   "pop",
+   0.6
+  ],
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   3.9
+  ],
+  [
+   1,
+   "pop",
+   5.54
+  ],
+  [
+   1,
+   "pop",
+   6.41
+  ],
+  [
+   1,
+   "pop",
+   8.68
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

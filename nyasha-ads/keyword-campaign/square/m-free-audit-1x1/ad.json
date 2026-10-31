@@ -1,0 +1,106 @@
+{
+ "title": "Free website audit",
+ "week": 4,
+ "endcard": [
+  "c3-wide",
+  "<span class=\"hl\">Free</span> website audit.",
+  "Get my free audit"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c4",
+   "min": 3,
+   "say": "Is",
+   "headline": "Is your website <span class=\"hl\">losing you customers?</span>",
+   "line": "Mhoro! Is your website quietly losing you customers?"
+  },
+  {
+   "page": "check",
+   "kind": "list",
+   "min": 6,
+   "title": "We'll check",
+   "marker": "tick",
+   "say": "check",
+   "items": [
+    [
+     "Speed on mobile data",
+     "speed"
+    ],
+    [
+     "Your Google visibility",
+     "Google"
+    ],
+    [
+     "Contact & WhatsApp buttons",
+     "contact"
+    ],
+    [
+     "Security",
+     "security"
+    ]
+   ],
+   "headline": "A <span class=\"hl\">free</span> website audit",
+   "line": "We'll check your speed on mobile data, your Google visibility, your contact buttons, and your security."
+  },
+  {
+   "page": "offer",
+   "kind": "photo",
+   "img": "c2",
+   "min": 4,
+   "say": "free",
+   "headline": "No obligation. <span class=\"hl\">Plain English.</span>",
+   "line": "It's free, there's no obligation, and you get the results in plain English."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Tap to get your free audit. Zvakanaka!"
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   0.72
+  ],
+  [
+   1,
+   "pop",
+   2.44
+  ],
+  [
+   1,
+   "pop",
+   4.07
+  ],
+  [
+   1,
+   "ding",
+   5.39
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

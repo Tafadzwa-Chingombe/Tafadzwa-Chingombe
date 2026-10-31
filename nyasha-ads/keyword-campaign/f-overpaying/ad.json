@@ -1,0 +1,137 @@
+{
+ "title": "5 signs you are overpaying for your website",
+ "week": 1,
+ "endcard": [
+  "c3-wide",
+  "Get a free <span class=\"hl\">second opinion.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c3",
+   "min": 3,
+   "badge": "5",
+   "at": 0.2,
+   "headline": "<span class=\"hl\">5 signs</span> you're overpaying for your website",
+   "line": "Mhoro! Five signs you're paying too much for your website."
+  },
+  {
+   "page": "signs1",
+   "kind": "list",
+   "min": 6,
+   "title": "Signs 1 to 3",
+   "marker": "num",
+   "items": [
+    [
+     "The domain isn't in your name",
+     "domain"
+    ],
+    [
+     "Surprise renewal fees",
+     "surprise"
+    ],
+    [
+     "No written quote",
+     "written"
+    ]
+   ],
+   "headline": "Overpaying? <span class=\"hl\">Check these.</span>",
+   "line": "One: the domain isn't in your name. Two: surprise renewal fees. Three: no written quote."
+  },
+  {
+   "page": "signs2",
+   "kind": "list",
+   "min": 5,
+   "title": "Signs 4 and 5",
+   "marker": "num",
+   "start": 4,
+   "items": [
+    [
+     "You pay for every small update",
+     "pay"
+    ],
+    [
+     "It's slow on mobile data",
+     "slow"
+    ]
+   ],
+   "headline": "Overpaying? <span class=\"hl\">Check these.</span>",
+   "line": "Four: you pay for every small update. Five: it's slow on mobile data."
+  },
+  {
+   "page": "promise",
+   "kind": "photo",
+   "img": "c2",
+   "min": 4,
+   "say": "domain",
+   "headline": "Your domain. Your site. <span class=\"hl\">Your price, in writing.</span>",
+   "line": "With us, the domain is yours, the price is fixed, and it's all in writing."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Book a free call for a second opinion. Zvakanaka!"
+  }
+ ],
+ "sfx": [
+  [
+   0,
+   "pop",
+   0.3
+  ],
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   1.17
+  ],
+  [
+   1,
+   "pop",
+   4.09
+  ],
+  [
+   1,
+   "pop",
+   7.44
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   1.18
+  ],
+  [
+   2,
+   "pop",
+   5.03
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

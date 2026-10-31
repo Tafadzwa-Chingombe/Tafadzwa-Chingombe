@@ -1,0 +1,123 @@
+{
+ "title": "Agency vs freelancer vs DIY",
+ "week": 4,
+ "endcard": [
+  "c3-wide",
+  "Ask us <span class=\"hl\">anything.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c3",
+   "min": 3,
+   "say": "Agency",
+   "headline": "Agency, freelancer <span class=\"hl\">or DIY?</span>",
+   "line": "Mhoro! Agency, freelancer, or build it yourself?"
+  },
+  {
+   "page": "options",
+   "kind": "cards",
+   "min": 7,
+   "us": 2,
+   "say": "DIY",
+   "cards": [
+    [
+     "DIY",
+     "Cheapest, but it costs your time.",
+     "DIY"
+    ],
+    [
+     "Freelancer",
+     "Can be great. Get a contract.",
+     "freelancer"
+    ],
+    [
+     "Agency",
+     "A team, plus aftercare.",
+     "agency"
+    ]
+   ],
+   "headline": "Each has <span class=\"hl\">its place</span>",
+   "line": "DIY is cheapest, but it costs your time. A freelancer can be great, just get a contract. An agency gives you a team and aftercare."
+  },
+  {
+   "page": "ask",
+   "kind": "list",
+   "min": 6,
+   "title": "Whoever you choose, ask:",
+   "marker": "q",
+   "items": [
+    [
+     "Who owns the domain?",
+     "owns"
+    ],
+    [
+     "Is the price in writing?",
+     "writing"
+    ],
+    [
+     "Who fixes it after launch?",
+     "fixes"
+    ]
+   ],
+   "headline": "Three questions <span class=\"hl\">to ask</span>",
+   "line": "Whoever you choose, ask three things: who owns the domain, is the price in writing, and who fixes it after launch?"
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Ask us anything. Book a free call. Tatenda!"
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   4.31
+  ],
+  [
+   1,
+   "pop",
+   7.49
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   3.4
+  ],
+  [
+   2,
+   "pop",
+   5.5
+  ],
+  [
+   2,
+   "pop",
+   6.8
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

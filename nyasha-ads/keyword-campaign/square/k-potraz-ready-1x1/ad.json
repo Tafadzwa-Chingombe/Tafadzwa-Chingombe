@@ -1,0 +1,138 @@
+{
+ "title": "Is your website POTRAZ-ready?",
+ "week": 4,
+ "endcard": [
+  "c2",
+  "Get your website <span class=\"hl\">checked.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c2",
+   "min": 3,
+   "say": "Is",
+   "headline": "Is your website <span class=\"hl\">POTRAZ-ready?</span>",
+   "line": "Mhoro! Is your website ready for Zimbabwe's data protection rules?"
+  },
+  {
+   "page": "collect",
+   "kind": "list",
+   "min": 6,
+   "title": "Does your site collect…",
+   "marker": "dot",
+   "say": "licence",
+   "note": "General information, not legal advice.",
+   "items": [
+    [
+     "Names",
+     "names"
+    ],
+    [
+     "Phone numbers",
+     "phone"
+    ],
+    [
+     "Email addresses",
+     "emails"
+    ]
+   ],
+   "headline": "You may need a <span class=\"hl\">data controller licence</span>",
+   "line": "If your contact form or customer list collects names, phone numbers or emails, you may need a data controller licence from POTRAZ."
+  },
+  {
+   "page": "start",
+   "kind": "list",
+   "min": 7,
+   "title": "Start here",
+   "marker": "tick",
+   "say": "inspections",
+   "note": "POTRAZ compliance inspections began 1 September 2026.",
+   "items": [
+    [
+     "A privacy policy",
+     "privacy"
+    ],
+    [
+     "Consent on your forms",
+     "consent"
+    ],
+    [
+     "A secure, HTTPS site",
+     "secure"
+    ],
+    [
+     "Know where data is stored",
+     "stored"
+    ]
+   ],
+   "headline": "Inspections have <span class=\"hl\">started</span>",
+   "line": "POTRAZ began compliance inspections in September 2026. Start with a privacy policy, consent on your forms, a secure site, and knowing where your data is stored."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Book a free call, and check the legal details with a lawyer."
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   2.07
+  ],
+  [
+   1,
+   "pop",
+   2.48
+  ],
+  [
+   1,
+   "pop",
+   3.17
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   5.29
+  ],
+  [
+   2,
+   "pop",
+   6.67
+  ],
+  [
+   2,
+   "pop",
+   8.4
+  ],
+  [
+   2,
+   "ding",
+   10.99
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

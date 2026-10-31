@@ -1,0 +1,116 @@
+{
+ "title": "Website + WhatsApp, working together",
+ "week": 2,
+ "endcard": [
+  "c3-wide",
+  "Make them <span class=\"hl\">work together.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c3",
+   "min": 3,
+   "say": "Should",
+   "headline": "WhatsApp <span class=\"hl\">or</span> a website?",
+   "line": "Mhoro! Should you sell on WhatsApp, or on a website? The answer is both."
+  },
+  {
+   "page": "path",
+   "kind": "list",
+   "min": 6,
+   "title": "How they work together",
+   "marker": "step",
+   "items": [
+    [
+     "Customer finds you on Google",
+     "Google"
+    ],
+    [
+     "Sees your prices on your site",
+     "prices"
+    ],
+    [
+     "Taps \"Order on WhatsApp\"",
+     "WhatsApp"
+    ],
+    [
+     "Pays with EcoCash",
+     "EcoCash"
+    ]
+   ],
+   "headline": "One smooth path <span class=\"hl\">to paid</span>",
+   "line": "Customers find you on Google, see your prices on your website, tap to order on WhatsApp, and pay with EcoCash."
+  },
+  {
+   "page": "shop",
+   "kind": "phone",
+   "min": 4,
+   "say": "WhatsApp",
+   "css": ".shopimg{height:300px;margin:6px 22px 0;border-radius:22px;background:linear-gradient(135deg,#8a5a3b,#c99a6b)}.pname{margin:22px 26px 4px;font-weight:700;font-size:32px}.pmeta{margin:0 26px;font-size:22px;color:#5a6578}.wa{margin:26px 26px 0;height:86px;border-radius:22px;background:#2fbf5b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px}.bubble{margin:26px 26px 0 90px;padding:18px 22px;border-radius:22px 22px 4px 22px;background:#dcf8c6;font-size:23px;line-height:1.3}",
+   "screen": "<div class=\"status\"><span>9:41</span><span>●●● 5G</span></div><div class=\"shopimg\"></div><div class=\"pname\">Teak coffee table</div><div class=\"pmeta\">Moyo Interiors · In stock · Delivery in Harare</div><div class=\"wa\" data-say=\"WhatsApp\" data-anim=\"pop\">Order on WhatsApp</div><div class=\"bubble\" data-say=\"closes\" data-anim=\"rise\">Hi! I'd like the teak table. Can I pay with EcoCash?</div>",
+   "headline": "Your site sells. <span class=\"hl\">WhatsApp closes.</span>",
+   "line": "Your website answers the questions. WhatsApp closes the deal."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Let's set it up. Book a free call. Tatenda!"
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   1.39
+  ],
+  [
+   1,
+   "pop",
+   2.43
+  ],
+  [
+   1,
+   "pop",
+   5.04
+  ],
+  [
+   1,
+   "pop",
+   6.49
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   2.76
+  ],
+  [
+   2,
+   "pop",
+   3.25
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

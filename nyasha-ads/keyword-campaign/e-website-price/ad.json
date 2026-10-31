@@ -1,0 +1,156 @@
+{
+ "title": "Website inoita marii? (how much is a website)",
+ "week": 1,
+ "endcard": [
+  "c3-wide",
+  "Get your <span class=\"hl\">fixed quote.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c4",
+   "min": 3,
+   "kicker": "Website inoita marii?",
+   "say": "How",
+   "headline": "How much does a <span class=\"hl\">website</span> cost?",
+   "line": "Website inoita marii? How much does a website cost in Zimbabwe? Here's the honest answer."
+  },
+  {
+   "page": "drivers",
+   "kind": "list",
+   "min": 6,
+   "title": "What changes the price",
+   "marker": "num",
+   "say": "four",
+   "items": [
+    [
+     "Number of pages",
+     "pages"
+    ],
+    [
+     "EcoCash & Paynow payments",
+     "EcoCash"
+    ],
+    [
+     "An online shop",
+     "shop"
+    ],
+    [
+     "Who writes the content",
+     "content"
+    ]
+   ],
+   "headline": "It depends on <span class=\"hl\">four things</span>",
+   "line": "It depends on four things: how many pages you need, whether you take EcoCash or Paynow payments, if you want an online shop, and who writes the content."
+  },
+  {
+   "page": "yearly",
+   "kind": "list",
+   "min": 4,
+   "title": "Plan for yearly costs",
+   "marker": "dot",
+   "say": "yearly",
+   "items": [
+    [
+     ".co.zw domain",
+     "domain"
+    ],
+    [
+     "Hosting",
+     "hosting"
+    ],
+    [
+     "Business email",
+     "email"
+    ]
+   ],
+   "headline": "Ask about these <span class=\"hl\">up front</span>",
+   "line": "Then plan for yearly costs: your .co.zw domain, hosting, and a business email."
+  },
+  {
+   "page": "quote",
+   "kind": "photo",
+   "img": "c2",
+   "min": 4,
+   "say": "Tell",
+   "headline": "No \"inbox for price\". <span class=\"hl\">A fixed quote, in writing.</span>",
+   "line": "At iContact, there's no inbox for price. Tell us what you need, and we'll send you a fixed quote."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Book your free call. Tatenda!"
+  }
+ ],
+ "sfx": [
+  [
+   0,
+   "pop",
+   0.6
+  ],
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   2.68
+  ],
+  [
+   1,
+   "pop",
+   4.73
+  ],
+  [
+   1,
+   "pop",
+   8.02
+  ],
+  [
+   1,
+   "pop",
+   9.8
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   3.09
+  ],
+  [
+   2,
+   "pop",
+   3.86
+  ],
+  [
+   2,
+   "pop",
+   6.41
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

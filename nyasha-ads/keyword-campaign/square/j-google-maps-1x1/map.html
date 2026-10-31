@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<link rel="stylesheet" href="lib/pages.css">
+<style>.map{position:absolute;inset:0;background:#e9eef2;background-image:linear-gradient(90deg,transparent 46%,#fff 46%,#fff 54%,transparent 54%),linear-gradient(0deg,transparent 46%,#fff 46%,#fff 54%,transparent 54%),linear-gradient(35deg,transparent 48%,#f7d98a 48%,#f7d98a 52%,transparent 52%);background-size:180px 180px,220px 220px,100% 100%}.pin{position:absolute;left:50%;top:300px;width:84px;height:84px;margin-left:-42px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#e5483b;box-shadow:0 8px 20px rgba(0,0,0,.3)}.pinwrap{position:absolute;left:0;right:0;top:0;height:420px}.place{position:absolute;left:18px;right:18px;bottom:22px;padding:24px;border-radius:26px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18)}.place b{display:block;font-size:30px}.place span{display:block;margin-top:6px;font-size:22px;color:#5a6578}.btns{display:flex;gap:12px;margin-top:16px}.btns div{flex:1;height:66px;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:22px}.btns .d{background:#1a73e8;color:#fff}.btns .c{background:#e8f0fe;color:#1a73e8}</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="phone"><div class="notch"></div><div class="screen">
+<div class="map"></div><div class="status" style="position:relative"><span>9:41</span><span>●●● 5G</span></div><div class="pinwrap" data-pop="2.9"><div class="pin"></div></div><div class="place" data-rise="3.92"><b>Moyo Interiors</b><span>★★★★★ 4.9 · Furniture store · Open now</span><div class="btns"><div class="d">Directions</div><div class="c">Call</div></div></div>
+</div></div>
+<div class="headline" data-rise="1.44" data-fit="70"><span>Now they can <span class="hl">find you</span></span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+shot(6.1);
+</script>
+</body>
+</html>

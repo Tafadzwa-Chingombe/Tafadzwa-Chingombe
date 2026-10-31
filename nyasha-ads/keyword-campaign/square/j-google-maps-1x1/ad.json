@@ -1,0 +1,116 @@
+{
+ "title": "Get your business on Google Maps",
+ "week": 3,
+ "endcard": [
+  "c3-wide",
+  "Let's get you <span class=\"hl\">found.</span>",
+  "Book a free call"
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c4",
+   "min": 3,
+   "say": "Can",
+   "headline": "Is your business on <span class=\"hl\">Google Maps?</span>",
+   "line": "Mhoro! Can customers find your business on Google Maps? Here's how, in four steps."
+  },
+  {
+   "page": "steps",
+   "kind": "list",
+   "min": 6,
+   "title": "Four steps, free to set up",
+   "marker": "num",
+   "items": [
+    [
+     "Open Google Business Profile",
+     "Profile"
+    ],
+    [
+     "Add name, category & location",
+     "category"
+    ],
+    [
+     "Verify your business",
+     "verify"
+    ],
+    [
+     "Add photos, hours & phone",
+     "photos"
+    ]
+   ],
+   "headline": "It's <span class=\"hl\">free</span>",
+   "line": "Go to Google Business Profile, add your name, category and location, verify your business, then add photos, opening hours and your phone number."
+  },
+  {
+   "page": "map",
+   "kind": "phone",
+   "min": 4,
+   "say": "nearby",
+   "css": ".map{position:absolute;inset:0;background:#e9eef2;background-image:linear-gradient(90deg,transparent 46%,#fff 46%,#fff 54%,transparent 54%),linear-gradient(0deg,transparent 46%,#fff 46%,#fff 54%,transparent 54%),linear-gradient(35deg,transparent 48%,#f7d98a 48%,#f7d98a 52%,transparent 52%);background-size:180px 180px,220px 220px,100% 100%}.pin{position:absolute;left:50%;top:300px;width:84px;height:84px;margin-left:-42px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#e5483b;box-shadow:0 8px 20px rgba(0,0,0,.3)}.pinwrap{position:absolute;left:0;right:0;top:0;height:420px}.place{position:absolute;left:18px;right:18px;bottom:22px;padding:24px;border-radius:26px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18)}.place b{display:block;font-size:30px}.place span{display:block;margin-top:6px;font-size:22px;color:#5a6578}.btns{display:flex;gap:12px;margin-top:16px}.btns div{flex:1;height:66px;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:22px}.btns .d{background:#1a73e8;color:#fff}.btns .c{background:#e8f0fe;color:#1a73e8}",
+   "screen": "<div class=\"map\"></div><div class=\"status\" style=\"position:relative\"><span>9:41</span><span>●●● 5G</span></div><div class=\"pinwrap\" data-say=\"show\" data-anim=\"pop\"><div class=\"pin\"></div></div><div class=\"place\" data-say=\"directions\" data-anim=\"rise\"><b>Moyo Interiors</b><span>★★★★★ 4.9 · Furniture store · Open now</span><div class=\"btns\"><div class=\"d\">Directions</div><div class=\"c\">Call</div></div></div>",
+   "headline": "Now they can <span class=\"hl\">find you</span>",
+   "line": "Now, when someone nearby searches, you show up, with directions and a call button."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Want it done for you? Book a free call."
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   1,
+   "pop",
+   1.3
+  ],
+  [
+   1,
+   "pop",
+   3.05
+  ],
+  [
+   1,
+   "pop",
+   4.83
+  ],
+  [
+   1,
+   "pop",
+   6.89
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   2.9
+  ],
+  [
+   2,
+   "pop",
+   3.92
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   3,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, height=1080">
+<style>
+  .panel { -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); }
+  .backdrop { filter: blur(36px) brightness(0.5) saturate(1.15); }
+</style>
+</head>
+<body>
+<section>
+  <iframe id="chrome" src="chrome.html#t=0,29.2" size="1080x1920" style="left: 0px; top: -232px; width: 1080px; height: 1920px"></iframe>
+</section>
+<section>
+  <iframe id="hook" src="hook.html" size="1080x1920" class="panel" style="left: 189px; top: -127px; width: 702px; height: 1248px"></iframe>
+  <iframe id="options" src="options.html" at="5" size="1080x1920" class="panel" style="left: 189px; top: -127px; width: 702px; height: 1248px"></iframe>
+  <iframe id="ask" src="ask.html" at="15.5" size="1080x1920" class="panel" style="left: 189px; top: -127px; width: 702px; height: 1248px"></iframe>
+  <iframe id="endcard" src="endcard.html" at="24.3" size="1080x1920" class="panel" style="left: 189px; top: -127px; width: 702px; height: 1248px"></iframe>
+</section>
+<section>
+  <iframe id="hook-backdrop" src="hook.html" size="1080x1920" class="backdrop" style="left: -60px; top: -500px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="options-backdrop" src="options.html" at="5" size="1080x1920" class="backdrop" style="left: -60px; top: -500px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="ask-backdrop" src="ask.html" at="15.5" size="1080x1920" class="backdrop" style="left: -60px; top: -500px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="endcard-backdrop" src="endcard.html" at="24.3" size="1080x1920" class="backdrop" style="left: -60px; top: -500px; width: 1200px; height: 2133px"></iframe>
+</section>
+<section>
+  <audio id="vo-1" src="assets/vo/line-1.mp3" at="0.15"></audio>
+  <audio id="vo-2" src="assets/vo/line-2.mp3" at="5.15"></audio>
+  <audio id="vo-3" src="assets/vo/line-3.mp3" at="15.65"></audio>
+  <audio id="vo-4" src="assets/vo/line-4.mp3" at="24.45"></audio>
+</section>
+<section>
+  <audio id="sfx-whoosh-1" src="assets/sfx/whoosh.mp3" at="4.85" volume="0.5"></audio>
+  <audio id="sfx-pop-1" src="assets/sfx/pop.mp3" at="9.31" volume="0.45"></audio>
+  <audio id="sfx-pop-2" src="assets/sfx/pop.mp3" at="12.49" volume="0.45"></audio>
+  <audio id="sfx-whoosh-2" src="assets/sfx/whoosh.mp3" at="15.35" volume="0.5"></audio>
+  <audio id="sfx-pop-3" src="assets/sfx/pop.mp3" at="18.9" volume="0.45"></audio>
+  <audio id="sfx-pop-4" src="assets/sfx/pop.mp3" at="21" volume="0.45"></audio>
+  <audio id="sfx-pop-5" src="assets/sfx/pop.mp3" at="22.3" volume="0.45"></audio>
+  <audio id="sfx-whoosh-3" src="assets/sfx/whoosh.mp3" at="24.15" volume="0.5"></audio>
+  <audio id="sfx-pop-6" src="assets/sfx/pop.mp3" at="24.7" volume="0.45"></audio>
+</section>
+<section>
+  <audio id="music" src="assets/music/bed.mp3#t=0,29.2" volume="0.3"></audio>
+</section>
+</body>
+</html>
