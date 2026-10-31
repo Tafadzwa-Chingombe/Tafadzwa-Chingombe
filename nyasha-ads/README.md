@@ -27,11 +27,17 @@ Render map: C4 = `c4-closeup.jpg`, C3 = `c3-wave-square.jpg` / `c3-wave-wide.jpg
 - [ ] **Required:** switch on each platform's **AI-content label** when uploading (Meta, TikTok, YouTube). With no on-screen badge, this is the only AI disclosure on A, B and C.
 - [ ] Script B wants a **pointing render** for the "3" hook; `count.html` uses C3 (hand raised) until one exists.
 
-## Adding the voice-over
-`assets/vo/nyasha-vo.mp3` is a **silent stand-in** that carries the captions. To add the real voice:
-1. Record or generate one take per film, following the script timings (they match the shot cuts).
-2. Replace `assets/vo/nyasha-vo.mp3` with it, and either update `nyasha-vo.vtt` or let Studio transcribe it (Settings → Providers → connect ElevenLabs, OpenAI, Google…).
-3. Render again (below). Lower `music` volume to about 0.3 in `film.html` so the voice sits on top.
+## Adding the voice-over (ElevenLabs)
+`tools/voiceover.py` generates Nyasha's voice line by line (`eleven_multilingual_v2`, stability 0.45, similarity 0.75, style 0.25),
+writes word-timed captions from the real audio, places every line at its shot in **all eight** films (vertical and 1:1),
+replaces the silent stand-in and lowers the music to 0.3 under the voice. A line longer than its shot is sped up to at most 1.15×;
+anything still too long is listed so that shot can be lengthened.
+
+1. In the cloud environment settings: allow `api.elevenlabs.io` under Network access, and add `ELEVENLABS_API_KEY`
+   (and optionally `ELEVENLABS_VOICE_ID`) as environment variables. Start a new session so they apply.
+2. `python3 nyasha-ads/tools/voiceover.py` (or `… voiceover.py a c` for some films only)
+3. Render each project: `npx -y openfilm@latest render --subtitles`
+4. Have a native speaker check *Mhoro*, *Zvakanaka* and *Tatenda*; adjust the `SPOKEN` table in the script if a word needs respelling.
 
 ## Editing and rendering
 ```bash
