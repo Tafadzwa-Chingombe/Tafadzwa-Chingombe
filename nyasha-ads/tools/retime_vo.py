@@ -48,29 +48,62 @@ def speech(path):
     for kind, t in marks:
         t = float(t)
         if kind == 'start':
-            if t - start > 0.05: spans.append((start, t))
+            if t - start > 0.12: spans.append((start, t))
             start = None
         else:
             start = t
-    if start is not None and dur - start > 0.05: spans.append((start, dur))
+    if start is not None and dur - start > 0.12: spans.append((start, dur))
     return spans, dur
+
+
+def spoken_weight(word):
+    """roughly how long a word takes to say: its syllables, a spelled-out acronym 2.5 per letter, plus a beat after punctuation"""
+    core = re.sub(r'[^A-Za-z]', '', word)
+    if re.fullmatch(r'[A-Z]{2,}', core): n = 2.5 * len(core)
+    else: n = max(1, len(re.findall(r'[aeiouy]+', core.lower())) - (1 if core.lower().endswith('e') and len(core) > 3 else 0))
+    return n + 0.3 + (0.6 if re.search(r'[.,?!—…:;]$', word) else 0)
+
+
+def split_by_pauses(words, weights, spans):
+    """which words each stretch of speech holds: the pauses are put at word breaks, preferring breaks after
+    punctuation, so that each stretch's share of the text matches its share of the speaking time"""
+    n, k = len(words), len(spans)
+    if k <= 1 or n < k: return [(0, n)] + [(n, n)] * (k - 1)
+    talk = [b - a for a, b in spans]
+    T, W = sum(talk), sum(weights)
+    cum_w = [0]
+    for w in weights: cum_w.append(cum_w[-1] + w)
+    punct = [bool(re.search(r'[.,?!—…:;]$', w)) for w in words]
+    INF = float('inf')
+    # best[g][j]: cost of putting the first g stretches over words[0:j]
+    best = [[INF] * (n + 1) for _ in range(k + 1)]
+    back = [[0] * (n + 1) for _ in range(k + 1)]
+    best[0][0] = 0
+    for g in range(1, k + 1):
+        for j in range(g, n - (k - g) + 1):
+            for i in range(g - 1, j):
+                if best[g - 1][i] == INF: continue
+                share = (cum_w[j] - cum_w[i]) / W - talk[g - 1] / T
+                brk = 0 if j == n or punct[j - 1] else 0.02   # a pause that falls mid-phrase costs a little
+                c = best[g - 1][i] + share * share + brk
+                if c < best[g][j]: best[g][j], back[g][j] = c, i
+    out, j = [], n
+    for g in range(k, 0, -1):
+        i = back[g][j]; out.append((i, j)); j = i
+    return out[::-1]
 
 
 def caption(text, spans, maxlen=34):
     """WebVTT: words laid along the speaking time by length, cut into cues of ~maxlen characters"""
     words = text.split()
-    weights = [len(w) + 1 for w in words]
-    total_talk = sum(b - a for a, b in spans)
-    def at(frac):  # a fraction of the speaking time → seconds in the file
-        left = frac * total_talk
-        for a, b in spans:
-            if left <= b - a: return a + left
-            left -= b - a
-        return spans[-1][1]
-    acc, timed, W = 0, [], sum(weights)
-    for w, n in zip(words, weights):
-        timed.append((w, at(acc / W), at((acc + n) / W)))
-        acc += n
+    weights = [spoken_weight(w) for w in words]
+    groups = split_by_pauses(words, weights, spans)
+    timed = []
+    for (a, b), (i, j) in zip(spans, groups):   # each stretch of speech carries its own words, spread by length
+        W, acc = sum(weights[i:j]) or 1, 0
+        for k in range(i, j):
+            timed.append((words[k], a + (b - a) * acc / W, a + (b - a) * (acc + weights[k]) / W))
+            acc += weights[k]
     cues, cur = [], []
     for item in timed:
         if cur and len(' '.join(x[0] for x in cur + [item])) > maxlen:
