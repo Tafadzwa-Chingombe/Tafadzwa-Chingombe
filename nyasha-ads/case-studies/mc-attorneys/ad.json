@@ -26,7 +26,7 @@
   {
    "page": "features",
    "kind": "list",
-   "min": 6,
+   "min": 5,
    "title": "What we built",
    "marker": "tick",
    "say": "built",
@@ -42,14 +42,15 @@
     [
      "One-tap consultation booking",
      "consultation"
-    ],
-    [
-     "A blog they update themselves",
-     "blog"
     ]
    ],
    "headline": "Everything a <span class=\"hl\">law firm</span> needs",
-   "line": "We built clear practice area pages, team profiles, one-tap consultation booking, and a blog they can update themselves."
+   "line": "We built clear practice area pages, team profiles, and one-tap consultation booking."
+  },
+  {
+   "page": "cms",
+   "min": 7.5,
+   "line": "And updating the site is easy: the team can post a new article in minutes, with no developer needed."
   },
   {
    "page": "speed",
@@ -92,22 +93,17 @@
   [
    3,
    "pop",
-   0.82
+   0.85
   ],
   [
    3,
    "pop",
-   2.54
-  ],
-  [
-   3,
-   "pop",
-   4.38
+   2.58
   ],
   [
    3,
    "ding",
-   6.13
+   4.37
   ],
   [
    4,
@@ -115,17 +111,22 @@
    -0.15
   ],
   [
-   4,
+   5,
+   "whoosh",
+   -0.15
+  ],
+  [
+   5,
    "pop",
    0.6
   ],
   [
-   5,
+   6,
    "whoosh",
    -0.15
   ],
   [
-   5,
+   6,
    "pop",
    0.4
   ]
