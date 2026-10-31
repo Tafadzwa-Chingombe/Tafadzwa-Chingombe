@@ -18,6 +18,7 @@ writing new pages (`a-show-up-online/` is the fullest).
   tools/new_ad.sh    start an ad folder        tools/build.py     fit the cut to the voice, write film.html
   tools/mksquare.py  1:1 cut of a vertical ad  tools/loudness.sh  -14 LUFS for social, video untouched
   tools/sound.py     original music + sfx      tools/voice_api.py voice via the ElevenLabs API (if no connector)
+  tools/pages.py     shot pages from ad.json   kit/lib/pages.css  layouts for generated pages
 ```
 
 ## Before starting
@@ -50,6 +51,16 @@ export PLAYWRIGHT_BROWSERS_PATH=…   # the line new_ad.sh prints, in a cloud co
 It opens the OpenFilm project, copies the kit and renders, makes `endcard.html`, and a starter `ad.json`.
 
 ## 3. Write the shot pages
+
+**Fastest: generate them.** Give each shot in `ad.json` a `kind` and its content, and `tools/pages.py <ad>` writes the
+page, with every item appearing as Nyasha says its cue word (and the `sfx` list rewritten to match):
+`photo` (render + kicker/badge + headline), `list` (title + numbered/tick/cross/dot/q/step items), `compare` (feature rows ×
+columns with ticks/crosses), `cards` (stacked option cards), `phone` (raw screen HTML whose `data-say="word" data-anim="pop|rise"`
+elements get timed), `endcard` (optional small `note`). The full field list is in the docstring of `pages.py`;
+`nyasha-ads/keyword-campaign/ads.py` is a nine-ad worked example. Order: `pages.py` → `build.py` → (voice) `build.py --vo`
+→ `pages.py` → `build.py`. Write pages by hand (below) only for shots no kind covers.
+
+**By hand:**
 
 One page per shot, 1080×1920, built on `lib/shot.js` — mostly declarative:
 
@@ -104,8 +115,9 @@ No connector? `tools/voice_api.py <ad> <dir>` with `ELEVENLABS_API_KEY` set and 
 python3 .claude/skills/nyasha-video-ads/tools/build.py nyasha-ads/<ad> --vo <dir>
 ```
 Shots stretch to fit natural delivery (never rush the voice; if the ad gets too long, shorten the script). Then **re-sync
-on-screen moments**: read `assets/vo/line-N.vtt` for when keywords are said (`<00:00:05.005>websites`), set the page's
-`data-pop`/`data-on`/`data-rise` to that time + 0.15, move matching `sfx` entries in `ad.json`, and build again.
+on-screen moments**: with generated pages just run `pages.py` and `build.py` again. For hand-written pages, read
+`assets/vo/line-N.vtt` for when keywords are said (`<00:00:05.005>websites`), set the page's `data-pop`/`data-on`/`data-rise`
+to that time + 0.15, move matching `sfx` entries in `ad.json`, and build again.
 
 ## 6. Check, square, render, loudness
 
@@ -134,3 +146,6 @@ end card) and look at them before sending. Commit and push, then send the MP4s.
 - Every picture must depend only on `t`; `look` fails "same t drew two different pictures" otherwise.
 - `mksquare.py` replaces the square folder's files (keeps its `.film/`): re-run it after any vertical change, then render both.
 - Never commit a half-written MP4: commit renders after `loudness.sh` finishes.
+- Spoken forms in voice prompts: `.co.zw` → "dot co dot Z W", `USD` → "U.S. dollar", `ZiG` → "Zig", `DIY` → "D.I.Y.";
+  the captions keep the written form.
+- Never state iContact prices unless the client has confirmed them; mark offers (free audit, fixed quotes) [verify].
