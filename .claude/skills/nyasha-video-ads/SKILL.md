@@ -21,6 +21,14 @@ writing new pages (`a-show-up-online/` is the fullest).
   tools/pages.py     shot pages from ad.json   kit/lib/pages.css  layouts for generated pages
 ```
 
+## Language: English only
+
+**Every ad is English only — voice-over, captions and on-screen text** (the client's rule, from November 2026). No Shona or
+Ndebele words or phrases anywhere, including greetings and sign-offs: use "Hi!" not *Mhoro*, "Thank you!" not *Tatenda*,
+"See you soon!" or "Let's talk!" not *Zvakanaka*. If a script, brief or research doc supplies local-language hooks or
+lines, translate them into plain English and say so in the summary. Older ads in `nyasha-ads/` still contain Shona;
+re-do them only if asked.
+
 ## Before starting
 
 Ask (with the question tool) only what the script does not settle: which scripts to make, whether claims marked
@@ -88,7 +96,7 @@ Layout rules (1080×1920):
 ## 4. Fill ad.json and build without voice
 
 ```json
-{"title": "…", "shots": [{"page": "hook", "min": 3, "line": "Mhoro! …"}, …],
+{"title": "…", "shots": [{"page": "hook", "min": 3, "line": "Hi! Quick question …"}, …],
  "sfx": [[1, "whoosh", -0.15], [1, "pop", 1.6], …], "music_volume": 0.3}
 ```
 `sfx`: shot index, `pop|ding|whoosh`, seconds into that shot (a whoosh at −0.15 before each cut; a pop when something
@@ -135,7 +143,6 @@ end card) and look at them before sending. Commit and push, then send the MP4s.
 - Nyasha is a photoreal AI character: switch on each platform's **AI-content label** at upload (Meta, TikTok, YouTube).
   The on-screen badge was removed at the client's request; offer to add a smaller one if wanted.
 - **[verify]** claims (fixed-price quotes, same-day reply, …) need iContact's approval before publishing.
-- Have a Zimbabwean listener check *Mhoro*, *Zvakanaka*, *Tatenda* in the AI voice.
 
 ## Things that bite
 

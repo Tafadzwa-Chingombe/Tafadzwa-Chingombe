@@ -3,7 +3,7 @@
 ad.json, beside film.html:
   {
     "title": "Do you show up online?",
-    "shots": [ {"page": "hook", "min": 3, "line": "Mhoro! Quick question — …"}, … ],   one voice line per shot
+    "shots": [ {"page": "hook", "min": 3, "line": "Hi! Quick question — …"}, … ],   one voice line per shot
     "sfx":   [ [1, "whoosh", -0.15], [1, "pop", 1.6], … ],     shot index, kind (pop|ding|whoosh), seconds into that shot
     "music_volume": 0.3                                         optional
   }
