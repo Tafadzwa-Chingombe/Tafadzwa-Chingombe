@@ -13,7 +13,7 @@ Each folder is an OpenFilm project: `film.html` is the edit, each `*.html` page 
 Render map: C4 = `c4-closeup.jpg`, C3 = `c3-wave-square.jpg` / `c3-wave-wide.jpg`, C2 = `c2-portrait.jpg`.
 
 ## What is in every ad
-- **"AI-generated character" badge** on every frame (`chrome.html`, top-right), plus the iCONTACT wordmark top-left.
+- The iCONTACT wordmark top-left on every frame (`chrome.html`). The on-screen "AI-generated character" badge was removed at the client's request, so disclosure relies on the platform AI labels below (and Nyasha's own line in Script D).
 - **Safe zones**: no key text in the top 250 px or the bottom 340 px.
 - **Burned-in captions** of the full voice-over script, from `assets/vo/nyasha-vo.vtt` (word-timed).
 - Brand colours `#2E5795` / `#ABCF47` / `#0B1F3A`, Poppins type, a green **Book a free call** button and **icontactafricasolutions.org** on the end card.
@@ -22,7 +22,7 @@ Render map: C4 = `c4-closeup.jpg`, C3 = `c3-wave-square.jpg` / `c3-wave-wide.jpg
 ## Before publishing: checklist
 - [ ] **[verify] claims approved by iContact**: "Fixed-price quotes", "Same-day reply" (A, 15–21 s) and "fixed-price quote — same day" (C, 3–10 s; the "Sent · same day" tick). Each is one DOM element in `enquiry.html` / `quote.html`, so it is easy to soften in Studio if needed.
 - [ ] **Record the real voice-over** (ElevenLabs or a Zimbabwean voice actor) and have a native speaker check *Mhoro*, *Zvakanaka* and *Tatenda*.
-- [ ] Switch on each platform's **AI-content label** when uploading (Meta, TikTok, YouTube).
+- [ ] **Required:** switch on each platform's **AI-content label** when uploading (Meta, TikTok, YouTube). With no on-screen badge, this is the only AI disclosure on A, B and C.
 - [ ] Optional: export a 1:1 (1080×1080) cut for Facebook/LinkedIn (Studio → Export → frame).
 - [ ] Script B wants a **pointing render** for the "3" hook; `count.html` uses C3 (hand raised) until one exists.
 
