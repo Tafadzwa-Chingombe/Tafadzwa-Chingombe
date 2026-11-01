@@ -4,12 +4,18 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="lib/brand.css">
 <style>
-  .signoff { position: absolute; left: 70px; right: 70px; top: 1080px; height: 150px; text-align: center;
+  .signoff { position: absolute; left: 70px; right: 70px; top: 950px; height: 150px; text-align: center;
     font-weight: 800; font-size: 72px; line-height: 1.05; display: flex; align-items: center; justify-content: center; }
   .signoff > span.in { display: block; }
   .cta { position: absolute; left: 0; right: 0; top: 1400px; display: flex; justify-content: center; }
   .cta .btn svg { width: 50px; height: 50px; }
-  .url { position: absolute; left: 0; right: 0; top: 1532px; text-align: center; }
+  /* contact: the iContact phone numbers (no website address on end cards) */
+  /* stacked above the captions (which end at y 1382) and the button, so nothing is under the platform UI */
+  .contact { position: absolute; left: 40px; right: 40px; top: 1112px; text-align: center; }
+  .contact .lbl { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 26px; color: var(--muted); }
+  .contact .lbl svg { width: 28px; height: 28px; }
+  .contact .num { margin-top: 6px; font-weight: 700; font-size: 36px; color: #fff; text-shadow: 0 2px 12px rgba(11,31,58,.8); letter-spacing: 0.01em; white-space: nowrap; }
+  .contact .num i { font-style: normal; color: var(--green); margin: 0 12px; }
 </style>
 </head>
 <body>
@@ -18,7 +24,10 @@
 <div class="signoff" id="signoff" data-rise="0.15" data-fit="72"><span class="in">SIGNOFF</span></div>
 <div class="cta"><div class="btn" id="cta" data-pop="0.4">CTA
   <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#0B1F3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-<div class="url" id="url" data-rise="0.7">icontactafricasolutions.org</div>
+<div class="contact" id="contact" data-rise="0.7">
+  <div class="lbl"><svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z" fill="#ABCF47"/></svg>Call or WhatsApp</div>
+  <div class="num" id="phones">+263 71 857 4277<i>·</i>+263 77 419 2027</div>
+</div>
 <script type="module">
 import { shot } from './lib/shot.js';
 import { $, pulse, prog } from './lib/kit.js';

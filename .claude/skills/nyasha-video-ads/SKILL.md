@@ -29,6 +29,13 @@ Ndebele words or phrases anywhere, including greetings and sign-offs: use "Hi!" 
 lines, translate them into plain English and say so in the summary. Older ads in `nyasha-ads/` still contain Shona;
 re-do them only if asked.
 
+## Contact details on the end card
+
+From November 2026 every new ad shows **phone numbers, not the website address**: "Call or WhatsApp" with
+**+263 71 857 4277 · +263 77 419 2027** (in `kit/endcard.html`, which `new_ad.sh` copies). Never put
+icontactafricasolutions.org on screen or in the voice-over of a new ad. Ads made before then keep the address; only
+change them if asked.
+
 ## Before starting
 
 Ask (with the question tool) only what the script does not settle: which scripts to make, whether claims marked
