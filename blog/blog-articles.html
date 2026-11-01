@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog Articles: Ready to Paste</title>
+<style>
+  :root { --bg:#f4f6fa; --card:#fff; --ink:#14213a; --muted:#5a6578; --line:#dde3ec; --blue:#2E5795; --green:#ABCF47; --navy:#0B1F3A; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#121b2d; --ink:#e7ecf5; --muted:#9aa7bd; --line:#24324a; --blue:#8fb0e8; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  header { background:var(--navy); color:#fff; padding:28px 16px; }
+  header .in, main { max-width:900px; margin:0 auto; }
+  header h1 { margin:0 0 6px; font-size:26px; } header h1 b { color:var(--green); }
+  header p { margin:0; color:#c9d4e6; }
+  main { padding:20px 16px 60px; }
+  .how { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; }
+  .how ol { margin:8px 0 0; padding-left:20px; } .how li { margin:4px 0; }
+  .toc { list-style:none; padding:0; margin:16px 0 0; } .toc li { padding:6px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:12px; }
+  .toc a { color:var(--blue); text-decoration:none; font-weight:600; } .toc span { color:var(--muted); font-size:14px; white-space:nowrap; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin-top:24px; }
+  .num { font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+  .card h2 { margin:4px 0 14px; font-size:22px; line-height:1.3; }
+  .field { display:grid; grid-template-columns:170px 1fr auto; gap:10px; align-items:start; padding:8px 0; border-top:1px solid var(--line); }
+  .lbl { font-size:13px; font-weight:700; color:var(--muted); padding-top:2px; }
+  .val { font-size:15px; word-break:break-word; }
+  button { font:600 13px Inter, system-ui, sans-serif; padding:6px 12px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--ink); cursor:pointer; }
+  button.primary { background:var(--blue); color:#fff; border-color:var(--blue); }
+  button.done { background:#1f7a4a; color:#fff; border-color:#1f7a4a; }
+  .bodyhead { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:16px 0 8px; padding-top:14px; border-top:2px solid var(--line); font-weight:700; }
+  article { border:1px dashed var(--line); border-radius:12px; padding:4px 18px; max-height:520px; overflow:auto; }
+  article h2 { font-size:20px; } article h3 { font-size:17px; } article table { border-collapse:collapse; width:100%; font-size:14px; }
+  article th, article td { border:1px solid var(--line); padding:6px 8px; text-align:left; } article a { color:var(--blue); }
+  article blockquote { margin:12px 0; padding:8px 14px; border-left:4px solid var(--green); background:var(--bg); }
+  @media (max-width:640px) { .field { grid-template-columns:1fr auto; } .lbl { grid-column:1 / -1; } }
+</style></head>
+<body>
+<header><div class="in"><h1>Blog articles: <b>ready to paste</b></h1>
+<p>Nine SEO articles from the Zimbabwe keyword research · English only · phone-number CTAs</p></div></header>
+<main>
+  <div class="how"><b>How to post an article in your CMS</b>
+    <ol>
+      <li>In your admin, click <b>New article</b>.</li>
+      <li>Copy each field below (title, slug, excerpt, category) into the matching box.</li>
+      <li>Click <b>Copy article</b> and paste into the content editor. Headings, lists, tables and links keep their formatting.</li>
+      <li>Upload a cover image and paste the <b>alt text</b>. Embed the matching video if you've posted it.</li>
+      <li>Check the internal links (<code>/blog/…</code>) match your blog's URL pattern, then <b>Publish</b>.</li>
+    </ol>
+    <ul class="toc"><li><a href="#art1">How Much Does a Website Cost in Zimbabwe? (2026 Guide)</a> <span>1,320 words</span></li><li><a href="#art2">5 Signs You&#x27;re Overpaying for Your Website (and What to Do)</a> <span>1,393 words</span></li><li><a href="#art3">How to Accept EcoCash and Paynow Payments on Your Website</a> <span>1,270 words</span></li><li><a href="#art4">Website + WhatsApp: How They Work Together</a> <span>1,243 words</span></li><li><a href="#art5">How to Pay for Facebook and Instagram Ads from Zimbabwe</a> <span>1,229 words</span></li><li><a href="#art6">How to Get Your Business on Google Maps in Zimbabwe</a> <span>1,218 words</span></li><li><a href="#art7">Is a Facebook Page Enough? Facebook Page vs Website</a> <span>1,242 words</span></li><li><a href="#art8">Is Your Website POTRAZ-Ready? A Data Protection Checklist</a> <span>1,290 words</span></li><li><a href="#art9">Agency vs Freelancer vs DIY: Who Should Build Your Website?</a> <span>1,234 words</span></li></ul>
+  </div>
+  <section class="card" id="art1">
+  <div class="num">Article 1 of 9 · 1,320 words</div>
+  <h2>How Much Does a Website Cost in Zimbabwe? (2026 Guide)</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a1-title">How Much Does a Website Cost in Zimbabwe? (2026 Guide)</div><button onclick="copyText('a1-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a1-slug">how-much-does-a-website-cost-in-zimbabwe</div><button onclick="copyText('a1-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a1-category">Websites</div><button onclick="copyText('a1-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a1-excerpt">Website prices in Zimbabwe range widely. Here is what actually drives the cost, the yearly fees to budget for, and how to get a fair, fixed quote.</div><button onclick="copyText('a1-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a1-focus_keyword">how much does a website cost in Zimbabwe</div><button onclick="copyText('a1-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a1-cover_image">A laptop and phone on a desk showing a simple business website, with a notebook listing pages, payments and hosting.</div><button onclick="copyText('a1-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a1-cover_alt">Laptop and phone showing a small business website beside a notebook with a website budget checklist</div><button onclick="copyText('a1-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a1-related_video">E. &quot;How much does a website cost in Zimbabwe?&quot;</div><button onclick="copyText('a1-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a1-body', this)">Copy article</button></div>
+  <article id="a1-body"><h1>How Much Does a Website Cost in Zimbabwe? (2026 Guide)</h1>
+<p><strong>Short answer:</strong> the cost of a website in Zimbabwe depends on four things: how many pages you need, whether you take online payments (EcoCash, Paynow, Visa), whether you need an online shop, and who writes the content. On top of the build, plan for yearly running costs: your .co.zw domain, hosting and a business email. Always ask for a written, fixed quote that lists exactly what is included.</p>
+<p>"How much is a website?" is the question we hear more than any other. It is also the question most web designers in Zimbabwe answer with "inbox for price". That leaves business owners guessing, comparing quotes that look nothing alike, and worrying they are being overcharged.</p>
+<p>This guide explains what you are really paying for, so you can compare quotes with confidence.</p>
+<h2>Why website quotes in Zimbabwe vary so much</h2>
+<p>Ask five designers in Harare or Bulawayo for a price and you may get five very different numbers for what sounds like "the same website". Published local prices run from very cheap one-page packages to several thousand US dollars for larger builds. Both ends can be fair. They are simply different products.</p>
+<p>A low quote usually means a template with your logo and text dropped in, few pages and no extras. A higher quote usually includes custom design, more pages, payments, a content manager, search engine optimisation (SEO) setup and support after launch. The problem is not the range. The problem is quotes that don't tell you which one you are getting.</p>
+<h2>The 4 things that change the price of a website</h2>
+<h3>1. Number of pages</h3>
+<p>A one-page site (sometimes called a landing page) is the simplest and cheapest option. Most small businesses need more: a home page, about, services (often one page per service), a gallery or portfolio, and contact. A law firm, school or NGO might need twenty pages or more. More pages mean more design, more content and more testing.</p>
+<p><strong>Tip:</strong> list the pages you need before you ask for quotes. It is the fastest way to get prices you can compare.</p>
+<h3>2. Online payments: EcoCash, Paynow and cards</h3>
+<p>Do you want customers to pay on the website? Taking payments through a gateway such as Paynow lets customers pay with EcoCash, OneMoney, InnBucks, ZimSwitch and Visa or Mastercard. That means extra setup, testing and security work, so it adds to the cost. Payment gateways also charge their own transaction fees, separate from what you pay your designer.</p>
+<p>If you only need people to contact you, you may not need online payments at all. A clear call and WhatsApp button can be enough.</p>
+<h3>3. An online shop (e-commerce)</h3>
+<p>An online shop is more than a payment button. It needs product pages, stock, a cart, delivery options, order emails and a way for your team to manage orders. It is one of the biggest jumps in price, and it is worth it when you sell many products to many customers, including the diaspora.</p>
+<h3>4. Who writes the content</h3>
+<p>Someone has to write the words and supply the photos. If you provide polished text and good images, the job is faster. If the agency writes your copy, takes product photos or optimises each page for Google, that is real work and it should be in the quote. Good content is what turns a website from a brochure into a sales tool.</p>
+<h2>Yearly costs to budget for (after the website is built)</h2>
+<p>Many business owners are surprised by bills that arrive a year later. Ask about these up front:</p>
+<ul>
+<li><strong>Domain name.</strong> Your .co.zw (or .com) address is renewed every year. In Zimbabwe, .co.zw domains are managed by ZISPA through accredited registrars; prices and verification times vary by registrar, so ask yours for the exact renewal fee.</li>
+<li><strong>Hosting.</strong> The server your website lives on. Cheap hosting can make a site slow on mobile data, which costs you visitors.</li>
+<li><strong>Business email.</strong> An address like info@yourbusiness.co.zw builds trust far more than a free email address.</li>
+<li><strong>Maintenance and updates.</strong> Security updates, backups and small content changes. Check whether these are included, billed per change or covered by a monthly plan.</li>
+</ul>
+<p><strong>Important:</strong> make sure the domain is registered in <em>your</em> name or your company's name, not the designer's. If you ever change providers, you need to be able to take your domain with you.</p>
+<h2>A simple checklist for comparing website quotes</h2>
+<p>Before you accept any quote, check that it answers these questions:</p>
+<ol>
+<li>How many pages are included, and which ones?</li>
+<li>Is the design custom or based on a template?</li>
+<li>Are online payments or a shop included? Which payment methods?</li>
+<li>Who writes the content and supplies photos?</li>
+<li>Is basic SEO included (page titles, descriptions, Google Business Profile, speed)?</li>
+<li>Will the site work well on phones and load quickly on mobile data?</li>
+<li>Can you update the site yourself, through a content manager?</li>
+<li>What are the yearly costs: domain, hosting, email and support?</li>
+<li>Whose name is the domain registered in?</li>
+<li>What happens after launch: who fixes problems, and how fast?</li>
+</ol>
+<p>If a quote can't answer these in writing, ask before you pay a deposit.</p>
+<h2>Cheap vs professional: which do you need?</h2>
+<p>A cheap website is not always a bad choice. If you are just starting out and mainly need somewhere to send people from WhatsApp or Facebook, a simple, fast one-page site with your services and a WhatsApp button can be a smart first step.</p>
+<p>You need more when your website has to <em>win</em> customers on its own: when people find you on Google, compare you with competitors, and decide without speaking to you first. That is when design, content, speed and SEO start paying for themselves.</p>
+<p>The expensive mistake is paying for a website that looks fine but does not work on a phone, can't be found on Google, or can't be updated without paying the designer every time.</p>
+<h2>How we quote at iContact Africa Solutions</h2>
+<p>We don't believe in "inbox for price". Tell us what you need and we'll send a fixed, written quote that lists the pages, features and yearly costs, so there are no surprises later. The domain is registered in your name, and we explain every line in plain English.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call and get your quote.</p>
+<h2>Frequently asked questions</h2>
+<h3>How much does a basic website cost in Zimbabwe?</h3>
+<p>It depends on the number of pages and features. A simple one-page website costs far less than a multi-page site with payments or an online shop. Ask for a written quote that lists exactly what is included so you can compare like with like.</p>
+<h3>Are there yearly costs after my website is built?</h3>
+<p>Yes. Budget for your domain renewal (.co.zw or .com), hosting, business email and any maintenance or support plan. Ask for these figures before you start.</p>
+<h3>Can I pay for a website in instalments or in ZiG?</h3>
+<p>Many Zimbabwean agencies offer deposit-and-balance or instalment plans; payment currency and terms vary by provider. Ask before you commit and get the terms in writing.</p>
+<h3>Do I need a website if my customers are on WhatsApp?</h3>
+<p>A website and WhatsApp work best together: customers find you on Google, see your prices and details on your site, then tap to chat on WhatsApp. Read <a href="/blog/website-and-whatsapp-for-business-zimbabwe">Website + WhatsApp: how they work together</a>.</p>
+<h3>How do I know if I'm being overcharged?</h3>
+<p>Watch for warning signs such as a domain that isn't in your name, no written quote, or charges for every small change. See <a href="/blog/signs-you-are-overpaying-for-your-website">5 signs you're overpaying for your website</a>.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://datareportal.com/reports/digital-2026-zimbabwe">DataReportal, Digital 2026: Zimbabwe</a> · <a href="https://zispa.org.zw/">ZISPA, .co.zw registry</a> · <a href="https://develop.paynow.co.zw/home/businesshome">Paynow developer documentation</a></p></article>
+</section><section class="card" id="art2">
+  <div class="num">Article 2 of 9 · 1,393 words</div>
+  <h2>5 Signs You&#x27;re Overpaying for Your Website (and What to Do)</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a2-title">5 Signs You&#x27;re Overpaying for Your Website (and What to Do)</div><button onclick="copyText('a2-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a2-slug">signs-you-are-overpaying-for-your-website</div><button onclick="copyText('a2-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a2-category">Websites</div><button onclick="copyText('a2-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a2-excerpt">Not owning your domain, surprise renewals and paying for every small change are signs you&#x27;re overpaying for your website. Here&#x27;s how to fix each one.</div><button onclick="copyText('a2-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a2-focus_keyword">overpaying for website Zimbabwe</div><button onclick="copyText('a2-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a2-cover_image">A business owner frowning at an invoice next to a laptop showing a website.</div><button onclick="copyText('a2-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a2-cover_alt">Business owner checking a website invoice on a laptop, looking for hidden costs</div><button onclick="copyText('a2-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a2-related_video">F. &quot;5 signs you&#x27;re overpaying for your website&quot;</div><button onclick="copyText('a2-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a2-body', this)">Copy article</button></div>
+  <article id="a2-body"><h1>5 Signs You're Overpaying for Your Website (and What to Do)</h1>
+<p><strong>Short answer:</strong> you are probably overpaying for your website if (1) the domain isn't registered in your name, (2) renewal fees arrive that you never agreed to, (3) there was never a written quote, (4) every small update costs extra, or (5) the site is slow on mobile data. Each one is fixable, and most can be fixed without rebuilding the site.</p>
+<p>Price alone doesn't tell you whether a website is good value. A cheap site that loses customers is expensive, and an expensive site with hidden extras may still be a bad deal. Here are the five warning signs we see most often when reviewing websites for Zimbabwean businesses, with what to do about each.</p>
+<h2>1. The domain isn't in your name</h2>
+<p>Your domain name (for example yourbusiness.co.zw) is your address online. It is on your business cards, your vehicles and your WhatsApp profile. If your web designer registered it in <em>their</em> name, they effectively control it. If you fall out, stop paying or simply want to move providers, getting it back can be slow, stressful or costly.</p>
+<p><strong>How to check:</strong> look up your domain's registration details with your registrar, or ask your designer for the registrant name in writing. For .co.zw domains, the registrant's contact details are public, which makes this easy to verify.</p>
+<p><strong>What to do:</strong> ask for the domain to be transferred into your name or your company's name. A trustworthy provider will do this without argument. Going forward, make "the domain is registered to us" a condition of any website contract.</p>
+<h2>2. Surprise renewal fees</h2>
+<p>A year after launch, an invoice arrives for "annual renewal" that is far higher than you expected, or that you never knew about. Sometimes it bundles the domain, hosting, email and "maintenance" into one number with no breakdown.</p>
+<p>Yearly costs are normal: domains, hosting and email all renew every year. Surprise is not normal.</p>
+<p><strong>What to do:</strong> ask for a breakdown of every recurring cost, with what it covers and when it is due. Compare the hosting and email prices with what other providers charge for the same service. If you are paying for "maintenance", ask what was actually done this year: updates, backups and security checks should be reported, not assumed.</p>
+<h2>3. There was never a written quote</h2>
+<p>If your website was agreed on a phone call or a few WhatsApp messages, it is very hard to know what you paid for, and very easy for costs to grow. Many disputes between businesses and web designers in Zimbabwe start here.</p>
+<p>A written quote protects both sides. It should list:</p>
+<ul>
+<li>the pages and features included</li>
+<li>the design approach (template or custom)</li>
+<li>who supplies the content and photos</li>
+<li>the timeline and payment schedule</li>
+<li>the yearly costs after launch</li>
+<li>what support you get after launch, and for how long</li>
+</ul>
+<p><strong>What to do:</strong> for your current site, ask your provider to put your existing arrangement in writing. For your next project, never pay a deposit without one.</p>
+<h2>4. You pay for every small update</h2>
+<p>Changing a phone number, adding a new product or posting a news update shouldn't need a developer, and it shouldn't cost you every time. If each small change means an invoice and a wait of several days, your website gets out of date and stops working for you.</p>
+<p>Modern websites can include a content manager: a simple admin area where your team logs in to edit text, add photos and publish articles, much like posting on social media.</p>
+<p><strong>What to do:</strong> ask whether your site has (or can have) a content manager and training for your team. Agree on which changes you'll make yourself and which are covered by a support plan. For bigger changes, agree a price list up front.</p>
+<h2>5. It's slow on mobile data</h2>
+<p>Most people in Zimbabwe browse the internet on their phones, often on mobile data that is expensive and sometimes slow. A website full of huge images and heavy scripts eats your customers' data and takes so long to load that many leave before it appears. You paid for a website; they never saw it.</p>
+<p><strong>How to check:</strong> open your website on your phone using mobile data, not Wi-Fi. Does it load in a few seconds? Is the text readable without zooming? Can you find your phone number and a WhatsApp button straight away? Free tools such as Google PageSpeed Insights also give you a speed score and a list of fixes.</p>
+<p><strong>What to do:</strong> ask your provider to compress images, remove unused plugins and test on mobile. Speed is one of the cheapest improvements with the biggest payoff.</p>
+<h2>Bonus: you can't measure what the website does</h2>
+<p>If nobody can tell you how many people visit your site, where they come from or how many contact you, you can't know whether it is worth what you pay. Basic analytics and a contact form or WhatsApp click count should be part of every business website.</p>
+<h2>What a clear renewal invoice looks like</h2>
+<p>A fair yearly invoice is easy to read. Each recurring cost is on its own line, with what it covers and the period it pays for:</p>
+<ul>
+<li><strong>Domain renewal:</strong> yourbusiness.co.zw, 12 months, with the renewal date</li>
+<li><strong>Hosting:</strong> the plan name, storage and the period covered</li>
+<li><strong>Business email:</strong> the number of mailboxes</li>
+<li><strong>Support plan (if you have one):</strong> what's included, such as monthly updates, backups, security checks and a set number of content changes</li>
+</ul>
+<p>If your invoice says only "Annual website fee" with one number, ask for this breakdown. You're entitled to know what you're paying for, and it makes comparing providers simple.</p>
+<h2>A quick self-audit you can do in 15 minutes</h2>
+<ol>
+<li>Look up who the domain is registered to.</li>
+<li>Find your last two website invoices and list every recurring item.</li>
+<li>Open your site on your phone using mobile data and time how long it takes to load.</li>
+<li>Try to change one small thing yourself. Is there a login, and does it work?</li>
+<li>Ask your provider for a copy of your agreement.</li>
+</ol>
+<p>If two or more of these steps raise problems, it's worth getting a second opinion before your next renewal.</p>
+<h2>What a fair website deal looks like</h2>
+<p>You are getting good value when:</p>
+<ul>
+<li>the domain is in your name</li>
+<li>the price and yearly costs are written down</li>
+<li>you can make simple updates yourself</li>
+<li>the site is fast and easy to use on a phone</li>
+<li>you know who to call when something breaks, and how quickly they'll respond</li>
+</ul>
+<h2>Get a second opinion on your website</h2>
+<p>Not sure whether your website is good value? We'll look at your domain, hosting, speed on mobile and costs, and tell you honestly what is worth keeping and what to fix, in plain English. With us, the domain is yours, the price is fixed and it's all in writing.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>How do I check who owns my .co.zw domain?</h3>
+<p>Ask your registrar or web designer for the registrant details in writing. .co.zw registration details are public, so the owner's name can be checked. If it isn't your name or your company's, ask for a transfer.</p>
+<h3>Is it normal to pay every year for a website?</h3>
+<p>Yes. Domains, hosting and business email renew yearly, and many businesses add a support plan. What isn't normal is paying fees you didn't agree to or can't see broken down.</p>
+<h3>Can I move my website to a new provider?</h3>
+<p>Usually, yes, especially if the domain is in your name and you have access to the site's files or content manager. Ask your new provider to plan the move so your site and email don't go offline.</p>
+<h3>What is a content manager (CMS)?</h3>
+<p>A content manager is a simple admin area where you log in to edit pages, add photos and publish articles without coding. It saves you paying a developer for small changes.</p>
+<h3>How much should a website cost in Zimbabwe?</h3>
+<p>It depends on pages, payments, e-commerce and content. Read our guide: <a href="/blog/how-much-does-a-website-cost-in-zimbabwe">How much does a website cost in Zimbabwe?</a></p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://zispa.org.zw/">ZISPA, .co.zw registry</a> · <a href="https://pagespeed.web.dev/">Google PageSpeed Insights</a> · <a href="https://datareportal.com/reports/digital-2026-zimbabwe">DataReportal, Digital 2026: Zimbabwe</a></p></article>
+</section><section class="card" id="art3">
+  <div class="num">Article 3 of 9 · 1,270 words</div>
+  <h2>How to Accept EcoCash and Paynow Payments on Your Website</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a3-title">How to Accept EcoCash and Paynow Payments on Your Website</div><button onclick="copyText('a3-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a3-slug">accept-ecocash-paynow-payments-on-your-website</div><button onclick="copyText('a3-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a3-category">E-commerce</div><button onclick="copyText('a3-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a3-excerpt">How to take EcoCash, OneMoney, InnBucks, ZimSwitch and Visa payments on your website through Paynow, step by step, with costs and pitfalls.</div><button onclick="copyText('a3-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a3-focus_keyword">how to accept EcoCash online</div><button onclick="copyText('a3-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a3-cover_image">A phone showing a website checkout with EcoCash and Visa payment options, next to a shopping bag.</div><button onclick="copyText('a3-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a3-cover_alt">Phone showing a Zimbabwean online checkout with EcoCash, OneMoney and Visa payment options</div><button onclick="copyText('a3-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a3-related_video">H. &quot;Website + WhatsApp, working together&quot;</div><button onclick="copyText('a3-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a3-body', this)">Copy article</button></div>
+  <article id="a3-body"><h1>How to Accept EcoCash and Paynow Payments on Your Website</h1>
+<p><strong>Short answer:</strong> most Zimbabwean businesses accept online payments by connecting their website to a payment gateway such as Paynow. One integration lets customers pay with EcoCash, OneMoney, InnBucks, ZimSwitch and Visa or Mastercard. You open a merchant account, verify your business, connect the gateway to your website or online shop, and test it before going live. The gateway charges a fee per transaction and pays the money into your bank account.</p>
+<p>Taking payments on your website means you can sell while you sleep, take deposits for bookings, and sell to customers in the diaspora. Here's how it works in Zimbabwe, and what to watch out for.</p>
+<h2>Why take payments on your website?</h2>
+<ul>
+<li><strong>Fewer lost sales.</strong> Customers who are ready to buy can pay immediately, instead of waiting for you to reply with bank details.</li>
+<li><strong>Less admin.</strong> Payments are matched to orders automatically, so there's no need to chase screenshots of proof of payment.</li>
+<li><strong>Diaspora customers.</strong> Family abroad can pay by card for goods or services delivered in Zimbabwe.</li>
+<li><strong>Trust.</strong> A proper checkout looks professional and reassures first-time buyers.</li>
+</ul>
+<p>You don't need a full online shop to benefit. Many service businesses use a simple "pay a deposit" or "pay this invoice" page.</p>
+<h2>What is Paynow?</h2>
+<p>Paynow is a Zimbabwean payment gateway. Instead of integrating each payment method separately, your website connects to Paynow once, and Paynow handles the different methods. According to Paynow's developer documentation, these include Visa, Mastercard, EcoCash, OneMoney, InnBucks, ZimSwitch, Omari and others.</p>
+<p>Other gateways and bank merchant services exist in Zimbabwe, and some banks offer their own card acquiring. Paynow is a common starting point for small and medium businesses because of its range of local payment methods.</p>
+<h2>Step by step: adding EcoCash and Paynow to your website</h2>
+<h3>1. Decide what you're selling and how</h3>
+<p>Will customers buy products from a shop, pay a deposit for a booking, or settle an invoice? This decides whether you need a full e-commerce setup or a simpler payment page.</p>
+<h3>2. Open a merchant account</h3>
+<p>Register your business with the payment gateway and complete its verification. Expect to provide business registration documents, ID for the directors and bank account details. Card payments (Visa and Mastercard) usually need a verified account, so start early because verification can take time.</p>
+<h3>3. Connect the gateway to your website</h3>
+<p>Your developer connects the website to the gateway using its integration tools (Paynow provides official libraries for common programming languages). For WordPress and WooCommerce sites, plugins are often available. The website sends the order amount to the gateway, the customer chooses how to pay, and the gateway tells your website whether the payment succeeded.</p>
+<p>For card payments, customers are often redirected to the gateway's secure page to enter their card details, then sent back to your site. That's normal, and it means your website never handles card numbers directly.</p>
+<h3>4. Set up order confirmations</h3>
+<p>When a payment succeeds, your website should automatically:
+- mark the order as paid
+- show the customer a thank-you page
+- send a confirmation by email or SMS
+- notify your team (many businesses also send a WhatsApp alert to staff)</p>
+<h3>5. Test everything before going live</h3>
+<p>Make test payments with each method: EcoCash, OneMoney, card. Check what happens when a payment fails or is cancelled, and that the money arrives in your bank account as expected.</p>
+<h3>6. Go live and tell your customers</h3>
+<p>Add "Pay with EcoCash, OneMoney or Visa" badges to your website and social media. People buy more readily when they see their preferred way to pay.</p>
+<h2>How much does it cost to accept payments online?</h2>
+<p>There are two kinds of costs:</p>
+<ol>
+<li><strong>Setup:</strong> your developer's time to integrate and test the gateway, which is part of your website quote.</li>
+<li><strong>Transaction fees:</strong> the gateway charges a percentage and/or a fixed fee per payment, and rates often differ between mobile money and international cards. Check the gateway's current fee page before you set your prices, and decide whether you'll absorb the fee or include it in your prices.</li>
+</ol>
+<p>Also ask how and when funds are settled. Card and mobile money payments may settle into different accounts (USD or ZiG) on different schedules.</p>
+<h2>Pay online or pay on delivery?</h2>
+<p>Not every business needs to take every payment online. A common approach in Zimbabwe is to offer both:</p>
+<ul>
+<li><strong>Pay online</strong> for fixed-price products, deposits and bookings. It locks in the sale and reduces no-shows.</li>
+<li><strong>Pay on delivery or collection</strong> for customers who prefer to see the goods first, or for large custom orders confirmed on WhatsApp.</li>
+</ul>
+<p>Make the options clear at checkout. Offering a small benefit for paying online, such as priority delivery or a confirmed booking slot, nudges customers towards the faster, cleaner option without forcing them.</p>
+<h2>Selling to the diaspora</h2>
+<p>Zimbabweans abroad regularly pay for goods and services for family at home: groceries, building materials, school fees, gifts and services. A website that accepts Visa and Mastercard opens this market to you. To win diaspora buyers:</p>
+<ul>
+<li>show prices in US dollars</li>
+<li>explain delivery areas and timeframes clearly</li>
+<li>send photo or WhatsApp confirmation when the order is delivered</li>
+<li>include reviews from other diaspora customers</li>
+</ul>
+<p>These small trust signals matter more when the buyer can't visit your shop.</p>
+<h2>Common pitfalls to avoid</h2>
+<ul>
+<li><strong>Leaving verification too late.</strong> Start the merchant application while your website is being built.</li>
+<li><strong>Not handling failed payments.</strong> Customers whose payment failed need a clear message and a way to try again.</li>
+<li><strong>Hiding the total cost.</strong> Show delivery and any fees before the customer pays.</li>
+<li><strong>No receipts.</strong> Always send an automatic confirmation; it reduces "did my payment go through?" messages.</li>
+<li><strong>Ignoring data protection.</strong> Your checkout collects names, phone numbers and emails, which is personal data. See <a href="/blog/is-your-website-potraz-ready">Is your website POTRAZ-ready?</a>.</li>
+</ul>
+<h2>Can I sell on WhatsApp and still take online payments?</h2>
+<p>Yes, and it's often the best setup. Customers browse your products and prices on your website, then either pay online or tap "Order on WhatsApp" to ask questions before paying. Read <a href="/blog/website-and-whatsapp-for-business-zimbabwe">Website + WhatsApp: how they work together</a>.</p>
+<h2>We can set it up for you</h2>
+<p>We build websites and online shops that take EcoCash, OneMoney, InnBucks, ZimSwitch and card payments, with order confirmations and WhatsApp alerts for your team.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I accept EcoCash on my website?</h3>
+<p>Yes. Connect your website to a payment gateway such as Paynow, which supports EcoCash alongside other local mobile money and card payments.</p>
+<h3>What is Paynow and what does it charge?</h3>
+<p>Paynow is a Zimbabwean payment gateway that lets one website integration accept several payment methods. It charges per-transaction fees that vary by payment method. Check its official fee page for current rates.</p>
+<h3>Can people in the diaspora pay me by Visa or Mastercard?</h3>
+<p>Yes, if your gateway account is verified for card payments. Customers abroad can then pay by card on your website.</p>
+<h3>Do I need an online shop to take payments?</h3>
+<p>No. A simple payment or deposit page works well for service businesses, bookings and invoices.</p>
+<h3>Is it safe to take payments on my website?</h3>
+<p>Yes, when done properly. The gateway processes card details on its own secure page, your site should use HTTPS, and you should only collect the personal data you need.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://develop.paynow.co.zw/home/businesshome">Paynow developer documentation</a> · <a href="https://paynow.co.zw/blog/paynow-merchant-account/">Paynow: Merchant accounts</a> · <a href="https://paynow.co.zw/blog/how-paynow-is-revolutionizing-online-payments-for-zimbabwes-small-businesses/">Paynow: Online payments for small businesses</a></p></article>
+</section><section class="card" id="art4">
+  <div class="num">Article 4 of 9 · 1,243 words</div>
+  <h2>Website + WhatsApp: How They Work Together</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a4-title">Website + WhatsApp: How They Work Together</div><button onclick="copyText('a4-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a4-slug">website-and-whatsapp-for-business-zimbabwe</div><button onclick="copyText('a4-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a4-category">Digital Marketing</div><button onclick="copyText('a4-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a4-excerpt">WhatsApp or a website? The best Zimbabwean businesses use both. Here&#x27;s how to connect them so customers find you on Google and buy on WhatsApp.</div><button onclick="copyText('a4-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a4-focus_keyword">WhatsApp catalogue vs website</div><button onclick="copyText('a4-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a4-cover_image">A phone showing a product page with a green &quot;Order on WhatsApp&quot; button, beside a laptop showing the same website.</div><button onclick="copyText('a4-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a4-cover_alt">Phone showing a product page with an Order on WhatsApp button next to a laptop with the business website</div><button onclick="copyText('a4-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a4-related_video">H. &quot;Website + WhatsApp, working together&quot;</div><button onclick="copyText('a4-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a4-body', this)">Copy article</button></div>
+  <article id="a4-body"><h1>Website + WhatsApp: How They Work Together for Zimbabwean Businesses</h1>
+<p><strong>Short answer:</strong> you don't have to choose between WhatsApp and a website. The website helps new customers find you on Google and answers their questions: prices, products, location, reviews. WhatsApp is where you have the conversation and close the sale. Connect them with "Order on WhatsApp" buttons, a WhatsApp Business catalogue and online payments, and each one makes the other work better.</p>
+<p>In Zimbabwe, WhatsApp is where business happens. Customers message to ask prices, place orders and send proof of payment. So it's fair to ask: "My customers are all on WhatsApp — why do I need a website?"</p>
+<p>Here's the honest answer, and how to set up both so they work together.</p>
+<h2>What WhatsApp does well and where it falls short</h2>
+<p><strong>WhatsApp is great for:</strong>
+- personal, fast conversations
+- answering specific questions
+- confirming orders and deliveries
+- repeat customers who already have your number</p>
+<p><strong>But WhatsApp can't:</strong>
+- help new customers find you when they search on Google
+- show your full range, prices and policies in a way people can browse at 10 pm without messaging you
+- build trust with someone who has never heard of you
+- take card payments from the diaspora on its own</p>
+<p>If every new customer has to message you just to see your prices, you lose the ones who don't want to ask, and you spend hours answering the same questions.</p>
+<h2>What a website adds</h2>
+<p>A website is the part of your business that works while you're busy:</p>
+<ul>
+<li><strong>It gets you found.</strong> When someone searches "furniture shop Harare" or "plumber near me", Google shows websites and Google Business Profiles, not WhatsApp chats.</li>
+<li><strong>It answers questions in advance.</strong> Prices, product photos, delivery areas, opening hours and FAQs mean fewer repetitive messages.</li>
+<li><strong>It builds trust.</strong> A professional site with real photos, reviews and contact details reassures first-time buyers.</li>
+<li><strong>It can take payments.</strong> EcoCash, OneMoney, InnBucks, ZimSwitch and Visa through a payment gateway such as Paynow.</li>
+</ul>
+<h2>How they work together: a simple customer journey</h2>
+<ol>
+<li><strong>Found on Google.</strong> A customer searches for what you sell and finds your website or Google Business Profile.</li>
+<li><strong>Browse on your website.</strong> They see your products, prices and delivery details.</li>
+<li><strong>Tap "Order on WhatsApp".</strong> A button on every product page opens a WhatsApp chat with a pre-filled message ("Hi, I'd like the teak coffee table").</li>
+<li><strong>Close the sale on WhatsApp.</strong> You answer final questions, confirm stock and arrange delivery.</li>
+<li><strong>Pay.</strong> The customer pays online by EcoCash or card, or through your usual method.</li>
+</ol>
+<p>The website did the selling; WhatsApp closed the deal. And your team only spends time on customers who are already interested.</p>
+<h2>How to set it up</h2>
+<h3>Add "Order on WhatsApp" and "Chat with us" buttons</h3>
+<p>Every product and service page should have a clear WhatsApp button. Use a click-to-chat link (wa.me/ followed by your number in international format) with a pre-filled message that includes the product name, so you know exactly what they're asking about.</p>
+<h3>Use a WhatsApp Business account</h3>
+<p>WhatsApp Business gives you a business profile, quick replies for common questions, labels to organise chats and a product catalogue. Add your website address to your WhatsApp Business profile so people can browse more.</p>
+<h3>Keep your catalogue and website in sync</h3>
+<p>Your WhatsApp catalogue is a handy shop window inside the app. Your website is the full store that Google can find. Keep prices and stock consistent across both.</p>
+<h3>Add online payments where it makes sense</h3>
+<p>For products with fixed prices, let customers pay online. For custom work, take a deposit online after the WhatsApp conversation. See <a href="/blog/accept-ecocash-paynow-payments-on-your-website">How to accept EcoCash and Paynow on your website</a>.</p>
+<h3>Measure what works</h3>
+<p>Track how many people click your WhatsApp buttons from the website. It's the simplest way to see your website turning visitors into conversations.</p>
+<h2>Example: how a furniture shop in Harare could set this up</h2>
+<p>Imagine a furniture maker in Harare that currently sells only through WhatsApp and a Facebook page.</p>
+<ol>
+<li><strong>Website:</strong> a simple site with a page for each product range (tables, chairs, beds), real photos, prices or "from" prices, delivery areas and a clear "Order on WhatsApp" button on every product.</li>
+<li><strong>Google Business Profile:</strong> listed as a furniture store, with the showroom on Google Maps, opening hours, photos and reviews.</li>
+<li><strong>WhatsApp Business:</strong> quick replies for delivery costs, lead times and payment options, plus a catalogue matching the website.</li>
+<li><strong>Payments:</strong> deposits taken online by EcoCash or card for custom orders; the balance paid on delivery.</li>
+</ol>
+<p>Now a customer searching "dining table Harare" finds the shop on Google, sees the range and prices, and taps to order on WhatsApp. The owner spends time on buyers who already want to buy, not on answering "how much?" thirty times a day.</p>
+<h2>Quick replies worth setting up in WhatsApp Business</h2>
+<ul>
+<li><strong>Prices:</strong> a short message with a link to the price list or product page on your website</li>
+<li><strong>Delivery:</strong> areas covered, costs and timeframes</li>
+<li><strong>Payment:</strong> accepted methods (EcoCash, OneMoney, card, cash on delivery) and how to pay</li>
+<li><strong>Location and hours:</strong> your address, a Google Maps link and opening times</li>
+<li><strong>After-hours:</strong> an away message that says when you'll reply and links to your website</li>
+</ul>
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>No WhatsApp button on the website</strong>, or one hidden at the bottom of the contact page.</li>
+<li><strong>Different prices on WhatsApp and the website</strong>, which confuses customers and costs trust.</li>
+<li><strong>"DM for price" everywhere.</strong> Many buyers won't ask. Publishing prices, or at least ranges, brings in more serious enquiries.</li>
+<li><strong>Slow replies.</strong> A website sends you more messages, so set up quick replies and away messages.</li>
+</ul>
+<h2>Let's connect your website and WhatsApp</h2>
+<p>We build fast, mobile-friendly websites with WhatsApp ordering built in, plus Google Business Profile setup and online payments, so customers can find you, browse and buy in the way that suits them.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is a website worth it if my customers are all on WhatsApp?</h3>
+<p>Yes. A website brings you <em>new</em> customers from Google and answers their questions, then sends them to WhatsApp ready to buy. WhatsApp alone mostly serves people who already know you.</p>
+<h3>What is the difference between a WhatsApp catalogue and a website?</h3>
+<p>A WhatsApp catalogue shows products inside WhatsApp to people already chatting with you. A website can be found on Google, holds much more information and can take online payments.</p>
+<h3>How do I add a WhatsApp button to my website?</h3>
+<p>Use a click-to-chat link (wa.me plus your number in international format, without the plus sign or spaces) on a clear button on each page, ideally with a pre-filled message.</p>
+<h3>Can customers pay on my website and still chat on WhatsApp?</h3>
+<p>Yes. Many businesses let customers pay online by EcoCash or card, then confirm delivery details on WhatsApp.</p>
+<h3>Should I put my prices on my website or keep them for WhatsApp?</h3>
+<p>Publishing prices, or at least "from" prices, usually brings more serious enquiries and fewer time-wasters. Customers who can see a price before messaging are already closer to buying, and you spend less time answering "how much?". For custom work, show a starting price and explain what changes the final cost.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://business.whatsapp.com/">WhatsApp Business: features</a> · <a href="https://faq.whatsapp.com/5913398998672934">WhatsApp Help: click to chat</a> · <a href="https://datareportal.com/reports/digital-2026-zimbabwe">DataReportal, Digital 2026: Zimbabwe</a></p></article>
+</section><section class="card" id="art5">
+  <div class="num">Article 5 of 9 · 1,229 words</div>
+  <h2>How to Pay for Facebook and Instagram Ads from Zimbabwe</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a5-title">How to Pay for Facebook and Instagram Ads from Zimbabwe</div><button onclick="copyText('a5-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a5-slug">how-to-pay-for-facebook-ads-from-zimbabwe</div><button onclick="copyText('a5-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a5-category">Digital Marketing</div><button onclick="copyText('a5-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a5-excerpt">Card declined when you boost a post? Why Meta rejects many Zimbabwean payments, how to pay for Facebook and Instagram ads in USD, and how much to spend.</div><button onclick="copyText('a5-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a5-focus_keyword">how to pay for Facebook ads in Zimbabwe</div><button onclick="copyText('a5-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a5-cover_image">A phone showing a Facebook &quot;Boost post&quot; screen with a payment card beside it.</div><button onclick="copyText('a5-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a5-cover_alt">Phone showing a Facebook boost post payment screen next to a prepaid Visa card</div><button onclick="copyText('a5-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a5-related_video">I. &quot;How to pay for Facebook ads from Zimbabwe&quot;</div><button onclick="copyText('a5-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a5-body', this)">Copy article</button></div>
+  <article id="a5-body"><h1>How to Pay for Facebook and Instagram Ads from Zimbabwe</h1>
+<p><strong>Short answer:</strong> Meta (Facebook and Instagram) bills ads in a supported currency such as US dollars and does not accept ZiG, and many locally issued cards are declined for cross-border online payments. Zimbabwean businesses usually pay for ads with a USD card that is enabled for international online payments, such as a USD prepaid Visa card from their bank. Add the card under <strong>Billing &amp; payments</strong> in Meta, load it before you boost, and set a daily budget. Confirm with your bank that the card allows international online transactions.</p>
+<p>"How do I pay for a boost?" is one of the most common frustrations for small business owners in Zimbabwe. You've designed the perfect post, chosen your audience, pressed <strong>Boost</strong>… and the payment fails.</p>
+<p>This guide explains why it happens and what works.</p>
+<h2>Why your card keeps getting declined</h2>
+<p>There are three usual reasons:</p>
+<ol>
+<li><strong>Currency.</strong> Meta charges in a set list of currencies. ZiG isn't one of them, so a ZiG-denominated card or account can't pay for ads.</li>
+<li><strong>Cross-border restrictions.</strong> Paying Meta is an international online transaction. Many local cards aren't enabled for this by default, or have low international limits.</li>
+<li><strong>Card checks by Meta.</strong> Meta runs its own checks on payment methods, separate from your bank. Cards that are new, low-balance, shared across many ad accounts or frequently declined are more likely to fail.</li>
+</ol>
+<h2>What works: a USD card enabled for international payments</h2>
+<p>Most Zimbabwean advertisers solve this with a <strong>USD Visa or Mastercard that is enabled for international online payments</strong>. Several banks offer USD prepaid cards; for example, Stanbic Bank Zimbabwe launched a prepaid USD Visa card in 2026 aimed at people who need to pay online globally. Card terms, fees and limits differ between banks, so ask your bank specifically:</p>
+<ul>
+<li>Can this card be used for international online payments, including Facebook/Meta ads?</li>
+<li>What are the fees for loading the card and for foreign transactions?</li>
+<li>What are the daily and monthly limits?</li>
+</ul>
+<p><strong>Prepaid cards</strong> only spend what you load onto them, which helps control your ad budget. But Meta may reject a card with too little balance, so always load more than your planned spend.</p>
+<h2>Step by step: adding your card to Meta</h2>
+<ol>
+<li><strong>Use Meta Business Suite or Ads Manager</strong>, not just the Boost button in the Facebook app. It gives you more control and clearer error messages.</li>
+<li>Go to <strong>Billing &amp; payments</strong> (in Ads Manager or Business Settings).</li>
+<li>Choose <strong>Add payment method</strong> and enter your USD card details, with the billing name and address exactly as your bank has them.</li>
+<li>Set your <strong>ad account currency to USD</strong> if it isn't already. (The currency is set when the ad account is created; you may need a new ad account to change it.)</li>
+<li><strong>Load your card</strong> with more than your planned budget before you launch.</li>
+<li>Create your ad and <strong>set a daily budget</strong> you're comfortable with.</li>
+</ol>
+<h2>Boost post or Ads Manager: which should you use?</h2>
+<p><strong>Boost post</strong> is quick and fine for a simple goal like more engagement on a post. <strong>Ads Manager</strong> gives you much more: better targeting, ads aimed at messages, website visits or leads, ad placements across Facebook and Instagram, and detailed results. If you're spending regularly, Ads Manager is worth learning.</p>
+<h2>How much should you spend on a boost?</h2>
+<p>There is no single right number. Start small, for example a few dollars a day for a week, and watch the results: messages, website clicks, calls. Increase the budget on the ads that bring real enquiries, and stop the ones that don't. Spending more on a weak ad rarely fixes it; a clearer offer, better photo or tighter audience usually does.</p>
+<h2>Write ads that get messages, not just likes</h2>
+<p>Payment is only the first hurdle. To get a return on your ad spend:</p>
+<ul>
+<li><strong>Lead with the benefit, not your logo.</strong> "Same-week delivery of solar kits in Harare" beats "Welcome to XYZ Solar".</li>
+<li><strong>Show the product or result.</strong> Real photos and short videos outperform generic graphics.</li>
+<li><strong>Give a clear next step.</strong> Use the "Send WhatsApp message" or "Send message" button so interested people can reach you in one tap.</li>
+<li><strong>Mention price or a price range</strong> where you can. It filters out time-wasters.</li>
+<li><strong>Answer common doubts in the ad.</strong> Delivery areas, payment options and guarantees.</li>
+</ul>
+<h2>Targeting tips for Zimbabwe</h2>
+<ul>
+<li><strong>Location:</strong> target the cities or areas you actually serve, such as Harare and Chitungwiza, or Bulawayo, rather than the whole country.</li>
+<li><strong>Audiences:</strong> start broad within your area and let Meta find responsive people, then retarget those who watched your videos or messaged you.</li>
+<li><strong>Language:</strong> run ads in English with clear, simple wording, and keep the message the same across Facebook and Instagram.</li>
+<li><strong>Timing:</strong> watch which days and times bring messages, then focus your budget there.</li>
+</ul>
+<h2>Tips to stop payments failing</h2>
+<ul>
+<li>Don't add the same card to many different ad accounts.</li>
+<li>Keep a healthy balance on prepaid cards.</li>
+<li>Pay off any outstanding ad balance before launching new ads.</li>
+<li>Keep your Meta business details (name, address) consistent with your card.</li>
+<li>If a payment fails, check your bank app for a declined transaction first, then contact your bank before changing anything in Meta.</li>
+</ul>
+<h2>Or let us run your ads</h2>
+<p>Managing payments, targeting, creative and reporting takes time. We plan and run Facebook and Instagram campaigns for Zimbabwean businesses, aimed at messages, calls and website enquiries, with plain-English reports on what your money achieved.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Why is my card declined when I boost a Facebook post in Zimbabwe?</h3>
+<p>Usually because the card isn't enabled for international online payments, isn't in a currency Meta accepts (ZiG isn't supported), or has too little balance. A USD card enabled for international payments solves most cases.</p>
+<h3>Can I pay for Facebook ads with EcoCash?</h3>
+<p>Not directly. Meta doesn't accept EcoCash as an ad payment method. Some businesses fund a USD card or use an agency that pays on their behalf.</p>
+<h3>Can I pay for Facebook ads in ZiG?</h3>
+<p>No. ZiG isn't a supported currency for Meta ads. Use a USD payment method.</p>
+<h3>Which is better, Boost or Ads Manager?</h3>
+<p>Boost is simpler for quick engagement. Ads Manager offers better targeting, more ad goals and clearer reporting, so it's better for regular advertising.</p>
+<h3>How much does it cost to advertise on Facebook in Zimbabwe?</h3>
+<p>You set your own budget, even a few dollars a day. Start small, measure enquiries, and increase spend on the ads that work.</p>
+<h3>How do I know if my Facebook ads are working?</h3>
+<p>Judge ads by the actions that matter to your business (messages, calls, website enquiries and sales), not by likes or reach. In Ads Manager, choose a goal such as messages or leads, then compare the cost of each result across your ads. Keep the ads that bring real enquiries at a cost you're happy with, and pause the rest.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://www.newsday.co.zw/local-news/article/200055748/for-zimbabweans-locked-out-of-the-dollar-economy-a-prepaid-card-is-not-a-small-thing">NewsDay: Stanbic prepaid USD Visa card</a> · <a href="https://panafricanvisions.com/2026/06/stanbic-bank-introduces-prepaid-visa-card-for-global-payments/">Pan African Visions: Stanbic introduces prepaid Visa card</a> · <a href="https://www.facebook.com/business/help/">Meta Business Help Centre: payment methods</a></p></article>
+</section><section class="card" id="art6">
+  <div class="num">Article 6 of 9 · 1,218 words</div>
+  <h2>How to Get Your Business on Google Maps in Zimbabwe</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a6-title">How to Get Your Business on Google Maps in Zimbabwe</div><button onclick="copyText('a6-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a6-slug">get-your-business-on-google-maps-zimbabwe</div><button onclick="copyText('a6-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a6-category">SEO</div><button onclick="copyText('a6-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a6-excerpt">A free Google Business Profile puts your business on Google Maps and Search. Here&#x27;s how to create, verify and optimise it in Zimbabwe, step by step.</div><button onclick="copyText('a6-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a6-focus_keyword">Google Maps business listing Zimbabwe</div><button onclick="copyText('a6-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a6-cover_image">A phone showing Google Maps with a red pin and a business listing card with Directions and Call buttons.</div><button onclick="copyText('a6-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a6-cover_alt">Phone showing a Google Maps business listing with a map pin, star rating, Directions and Call buttons</div><button onclick="copyText('a6-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a6-related_video">J. &quot;Get your business on Google Maps&quot;</div><button onclick="copyText('a6-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a6-body', this)">Copy article</button></div>
+  <article id="a6-body"><h1>How to Get Your Business on Google Maps in Zimbabwe</h1>
+<p><strong>Short answer:</strong> create a free <strong>Google Business Profile</strong>. Add your business name, category and location, verify that you own the business (usually by a short video recording), then complete the profile with photos, opening hours, your phone number and your website. Once it's verified, your business can appear on Google Maps and in local search results, with buttons for directions and calls.</p>
+<p>When someone in Harare, Bulawayo or Mutare searches "pharmacy near me" or "car repairs Eastlea", Google shows a map with a short list of businesses at the top of the results. Being in that list is one of the most valuable, and cheapest, ways to get new customers. It costs nothing to set up.</p>
+<h2>Why Google Maps matters for local businesses</h2>
+<ul>
+<li><strong>People search with intent.</strong> Someone searching "plumber near me" needs a plumber now.</li>
+<li><strong>The map comes first.</strong> Local results often appear above ordinary website results.</li>
+<li><strong>One tap to call or visit.</strong> Customers can call you, get directions or open WhatsApp and your website straight from the listing.</li>
+<li><strong>Reviews build trust.</strong> Star ratings and reviews help people choose between you and a competitor.</li>
+<li><strong>It's free.</strong> Google Business Profile has no cost.</li>
+</ul>
+<h2>Step 1: Open Google Business Profile</h2>
+<p>Go to Google Business Profile (business.google.com) and sign in with a Google account. Use an account the business controls, such as your business Gmail, not a personal account belonging to one staff member or your web designer.</p>
+<h2>Step 2: Add your name, category and location</h2>
+<ul>
+<li><strong>Business name:</strong> your real business name as it appears on your signage. Don't add keywords ("Best Plumber Harare Cheap"), which breaks Google's rules and can get your profile suspended.</li>
+<li><strong>Category:</strong> choose the most specific primary category (for example "Law firm" rather than "Consultant"). You can add secondary categories later.</li>
+<li><strong>Location:</strong> if customers visit you, add your address and drop the pin accurately. If you serve customers at their homes (plumbers, electricians, cleaners), you can hide your address and set the areas you serve instead.</li>
+</ul>
+<h2>Step 3: Verify your business</h2>
+<p>Google needs to confirm you're a real business at that location. Verification options depend on your business, but many businesses are now asked to <strong>record a short video</strong> on their phone through the verification screen. Expect to show:</p>
+<ul>
+<li>your location (street signs or nearby landmarks)</li>
+<li>your business in operation (equipment, stock or your workspace)</li>
+<li>proof of management (unlocking your premises, or business documents)</li>
+</ul>
+<p>Record in one continuous, unedited take and upload from your phone. Reviews commonly take a few business days, sometimes longer. Don't create duplicate profiles while you wait.</p>
+<h2>Step 4: Complete your profile</h2>
+<p>A complete profile ranks better and converts more searchers into customers:</p>
+<ul>
+<li><strong>Phone number:</strong> the number customers should call. Make sure someone answers.</li>
+<li><strong>Website:</strong> link to your website so people can learn more and buy.</li>
+<li><strong>Opening hours:</strong> including public holidays.</li>
+<li><strong>Photos:</strong> your storefront, interior, team, products and work. Real photos beat stock images.</li>
+<li><strong>Services or products:</strong> list what you offer, with prices where possible.</li>
+<li><strong>Description:</strong> a plain-English summary of what you do and where.</li>
+</ul>
+<p><strong>Tip for Zimbabwean addresses:</strong> many streets and suburbs are well known locally but harder for Google to place. Double-check that your map pin sits exactly on your building, and mention a well-known landmark nearby in your description ("opposite the Eastlea shopping centre", for example) so first-time visitors can find you easily.</p>
+<h2>Step 5: Get reviews and keep it active</h2>
+<ul>
+<li><strong>Ask happy customers for reviews</strong> and send them the direct review link from your profile.</li>
+<li><strong>Reply to every review</strong>, good and bad, politely and quickly.</li>
+<li><strong>Post updates</strong> on offers, new products and news. Activity signals that the business is open and engaged.</li>
+<li><strong>Keep hours and details up to date</strong>, especially if you move or change phone numbers.</li>
+</ul>
+<h2>How to ask for reviews (without feeling awkward)</h2>
+<p>Most happy customers are willing to leave a review. They just need to be asked at the right moment, with an easy link. Try a message like this on WhatsApp after a successful job or delivery:</p>
+<blockquote>
+<p>"Thank you for choosing us! If you were happy with our service, would you mind leaving a quick Google review? It really helps other customers find us: [your review link]."</p>
+</blockquote>
+<p>Ask soon after the customer has had a good experience, keep it short, and never offer payment or discounts in exchange for reviews; that is against Google's rules.</p>
+<h2>Local SEO beyond Google Maps</h2>
+<p>Your Google Business Profile is the foundation of local SEO, but a few other steps help you rank and get chosen:</p>
+<ul>
+<li><strong>Consistent details everywhere:</strong> use the same business name, address and phone number on your website, Facebook page, directories and Google profile.</li>
+<li><strong>Location pages on your website:</strong> if you serve several areas, a page for each, with real information, helps you appear in those searches.</li>
+<li><strong>Business directories:</strong> list your business on reputable local directories and industry associations.</li>
+<li><strong>Fresh content:</strong> helpful blog articles that answer customers' questions show Google you're active and knowledgeable.</li>
+</ul>
+<h2>Common mistakes</h2>
+<ul>
+<li>Using a home address publicly when you don't serve customers there.</li>
+<li>Stuffing keywords into the business name.</li>
+<li>Creating several profiles for the same location.</li>
+<li>Letting a former employee or designer own the profile, so nobody can update it later.</li>
+<li>Ignoring reviews and questions.</li>
+</ul>
+<h2>Google Maps and your website work together</h2>
+<p>Your Google Business Profile gets you seen; your website gets you chosen. Visitors who click through want to see your services, prices and proof that you're good. A fast, mobile-friendly website with a WhatsApp button turns those clicks into enquiries. Read <a href="/blog/how-much-does-a-website-cost-in-zimbabwe">How much does a website cost in Zimbabwe?</a>.</p>
+<h2>Want it done for you?</h2>
+<p>We set up and optimise Google Business Profiles as part of our local SEO service: correct category, verification help, photos, services and a review plan, alongside a website that converts.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is Google Business Profile free?</h3>
+<p>Yes. Creating and managing a Google Business Profile costs nothing.</p>
+<h3>How long does Google Business Profile verification take?</h3>
+<p>It varies. Video verification reviews commonly take a few business days, but can take longer. Record one continuous video and avoid editing it.</p>
+<h3>Can I list my business on Google Maps without a shop?</h3>
+<p>Yes. Service-area businesses can hide their address and show the areas they serve instead.</p>
+<h3>Why can't I find my business on Google?</h3>
+<p>It may not be verified, may be in the wrong category, or may be outranked by more complete profiles with more reviews. Complete every section and ask customers for reviews.</p>
+<h3>Do I still need a website if I'm on Google Maps?</h3>
+<p>Yes. Your profile gets attention; your website gives people the detail and confidence to contact or buy from you.</p>
+<h3>Can someone else manage my Google Business Profile for me?</h3>
+<p>Yes. You can add managers to your profile, such as your marketing agency, without giving away ownership. Always keep the business itself as the primary owner, so you never lose control if you change providers.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://support.google.com/business/">Google Business Profile Help</a> · <a href="https://www.brightlocal.com/learn/google-business-profile/getting-started/verifying-google-business-profile/">BrightLocal: verifying a Google Business Profile</a> · <a href="https://datareportal.com/reports/digital-2026-zimbabwe">DataReportal, Digital 2026: Zimbabwe</a></p></article>
+</section><section class="card" id="art7">
+  <div class="num">Article 7 of 9 · 1,242 words</div>
+  <h2>Is a Facebook Page Enough? Facebook Page vs Website</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a7-title">Is a Facebook Page Enough? Facebook Page vs Website</div><button onclick="copyText('a7-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a7-slug">facebook-page-vs-website-for-business</div><button onclick="copyText('a7-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a7-category">Digital Marketing</div><button onclick="copyText('a7-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a7-excerpt">A Facebook page is rented space; a website is yours. When a Facebook page is enough, when it isn&#x27;t, and how to use both to win more customers in Zimbabwe.</div><button onclick="copyText('a7-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a7-focus_keyword">do I need a website if I have Facebook</div><button onclick="copyText('a7-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a7-cover_image">Split image of a Facebook business page on a phone and a business website on a laptop.</div><button onclick="copyText('a7-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a7-cover_alt">A Facebook business page on a phone beside a business website on a laptop, compared side by side</div><button onclick="copyText('a7-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a7-related_video">G. &quot;A Facebook page is not a website&quot;</div><button onclick="copyText('a7-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a7-body', this)">Copy article</button></div>
+  <article id="a7-body"><h1>Is a Facebook Page Enough for Your Business? Facebook Page vs Website</h1>
+<p><strong>Short answer:</strong> a Facebook page is a great place to talk to customers, but it isn't enough on its own. It's rented space: Meta decides who sees your posts, it rarely ranks on Google for the services you sell, and it can't run a proper checkout with EcoCash or card payments. A website is an asset you own. Keep your Facebook page for conversation and community, and use a website to be found, build trust and close sales.</p>
+<p>"I have a Facebook page, I don't need a website." We hear this from small business owners across Zimbabwe, and it's understandable. Facebook is free, your customers are there, and posting is easy. Millions of Zimbabweans use social media, so why spend money on a website?</p>
+<p>Here's a fair look at both.</p>
+<h2>What a Facebook page does well</h2>
+<ul>
+<li><strong>Reach and engagement.</strong> People already scroll Facebook every day.</li>
+<li><strong>Conversation.</strong> Comments and Messenger make it easy for customers to ask questions.</li>
+<li><strong>Social proof.</strong> Likes, shares and reviews show you're active and trusted.</li>
+<li><strong>Low cost to start.</strong> A page is free, and ads can start on a small budget.</li>
+</ul>
+<p>For a brand-new business testing an idea, a Facebook page (plus WhatsApp) is a sensible first step.</p>
+<h2>Where a Facebook page falls short</h2>
+<h3>You don't own it</h3>
+<p>Your page lives on Meta's platform, under Meta's rules. Pages can be restricted, hacked or lost, and policy changes can cut your reach overnight. Everything you've built sits on land you're renting.</p>
+<h3>The algorithm decides who sees you</h3>
+<p>Even people who follow your page often don't see your posts. Organic reach is limited, and getting in front of more people usually means paying for ads.</p>
+<h3>It isn't built to rank on Google</h3>
+<p>When someone searches "accountant in Harare" or "school uniforms Bulawayo", Google mostly shows websites and Google Business Profiles. Your Facebook page may appear when people search your exact business name, but rarely for the services you sell.</p>
+<h3>It can't run a proper checkout</h3>
+<p>Customers can't pay you with EcoCash, OneMoney or Visa through a normal Facebook page checkout in Zimbabwe. Payment ends up in DMs and screenshots.</p>
+<h3>It looks less established to some buyers</h3>
+<p>Corporate clients, NGOs, diaspora customers and anyone spending serious money often look for a website before they trust a business. "We only have a Facebook page" can lose you the bigger deals.</p>
+<h2>Facebook page vs website at a glance</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Facebook page</th>
+<th>Your website</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who owns it</td>
+<td>Meta</td>
+<td>You</td>
+</tr>
+<tr>
+<td>Found on Google for your services</td>
+<td>Rarely</td>
+<td>Yes, with good SEO</td>
+</tr>
+<tr>
+<td>Who sees your content</td>
+<td>The algorithm decides</td>
+<td>Anyone who visits</td>
+</tr>
+<tr>
+<td>Online payments (EcoCash, Visa)</td>
+<td>No</td>
+<td>Yes, with a gateway such as Paynow</td>
+</tr>
+<tr>
+<td>Full product and service details</td>
+<td>Limited</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Professional credibility</td>
+<td>Good for small sales</td>
+<td>Stronger for larger buyers</td>
+</tr>
+</tbody>
+</table>
+<h3>Your followers aren't your customers yet</h3>
+<p>A large following feels like success, but followers only become customers when they can easily find your prices, trust you and take the next step. A website is where that happens: the place your posts, ads and WhatsApp chats can point to, with everything a buyer needs to decide in one place.</p>
+<h2>The best answer: use both</h2>
+<p>The strongest small businesses use social media and a website together:</p>
+<ol>
+<li><strong>Facebook and Instagram</strong> attract attention and start conversations.</li>
+<li><strong>Your website</strong> gives the full details: services, prices, reviews and location.</li>
+<li><strong>WhatsApp</strong> closes the sale with personal service.</li>
+<li><strong>Online payments</strong> on the website take money without the back-and-forth.</li>
+</ol>
+<p>Link your website in your Facebook page's "About" section and in posts, and add your social links to your website. Read more in <a href="/blog/website-and-whatsapp-for-business-zimbabwe">Website + WhatsApp: how they work together</a>.</p>
+<h2>Moving from Facebook-only to a website: a 5-step plan</h2>
+<ol>
+<li><strong>List your top questions.</strong> Write down the questions customers ask most on Facebook and WhatsApp. These become your website's pages and FAQs.</li>
+<li><strong>Start small.</strong> A fast, mobile-friendly site with your services, prices or ranges, photos, reviews and a WhatsApp button is enough to begin.</li>
+<li><strong>Claim your Google Business Profile.</strong> Link it to your new website so you start appearing in local searches. See <a href="/blog/get-your-business-on-google-maps-zimbabwe">How to get your business on Google Maps</a>.</li>
+<li><strong>Point your followers to the website.</strong> Pin a post, add the link to your page's About section and include it in replies.</li>
+<li><strong>Measure.</strong> Track website visits and WhatsApp clicks, and add pages for whatever people ask about most.</li>
+</ol>
+<h2>A real-world scenario</h2>
+<p>A beauty salon has 8,000 Facebook followers but gets most new bookings through referrals. When people search "nail salon Borrowdale" on Google, three competitors with websites and Google profiles appear; the salon doesn't. After adding a simple website with prices, a gallery and a booking button, plus a Google Business Profile with reviews, the salon starts showing up for local searches. Facebook keeps followers engaged, and the website catches the customers who were searching but never saw its posts.</p>
+<h2>When is a Facebook page enough?</h2>
+<p>A Facebook page alone can be enough if:</p>
+<ul>
+<li>you're testing a new idea with a very small budget</li>
+<li>you sell mostly to people who already know you</li>
+<li>you don't need to be found on Google by strangers</li>
+</ul>
+<p>You need a website when you want new customers from search, bigger clients, online payments or a brand that isn't at the mercy of one platform.</p>
+<h2>What should a small business website include?</h2>
+<p>At minimum: what you do, who you serve, where you are, prices or price ranges, real photos, reviews, and a clear call and WhatsApp button on every page. It should load fast on mobile data. See <a href="/blog/signs-you-are-overpaying-for-your-website">5 signs you're overpaying for your website</a> to make sure you get good value.</p>
+<h2>Keep the page. Add the website.</h2>
+<p>We build fast, mobile-friendly websites that work hand in hand with your Facebook page and WhatsApp, so the followers you've built become paying customers.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Do I need a website if I have a Facebook page?</h3>
+<p>If you want to be found on Google, take online payments, win larger clients or own your online presence, yes. A Facebook page alone works mainly for people who already know you.</p>
+<h3>Does a Facebook page show up on Google?</h3>
+<p>Sometimes, for searches of your exact business name. It rarely ranks for the services or products you sell, which is how most new customers search.</p>
+<h3>Is a website expensive to maintain?</h3>
+<p>Running costs are mainly the yearly domain, hosting and email, plus optional support. See <a href="/blog/how-much-does-a-website-cost-in-zimbabwe">How much does a website cost in Zimbabwe?</a>.</p>
+<h3>Can I take EcoCash payments through Facebook?</h3>
+<p>Not through a standard Facebook page checkout. A website connected to a payment gateway such as Paynow can take EcoCash and card payments.</p>
+<h3>Will a website replace my Facebook marketing?</h3>
+<p>No. They do different jobs. Keep posting on Facebook and Instagram to stay visible and start conversations, and use your website as the place where interested people get the full picture, see your prices and contact or pay you. Each one makes the other more effective.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://datareportal.com/reports/digital-2026-zimbabwe">DataReportal, Digital 2026: Zimbabwe</a> · <a href="https://napoleoncat.com/stats/facebook-users-in-zimbabwe/">NapoleonCat: Facebook users in Zimbabwe</a> · <a href="https://develop.paynow.co.zw/home/businesshome">Paynow developer documentation</a></p></article>
+</section><section class="card" id="art8">
+  <div class="num">Article 8 of 9 · 1,290 words</div>
+  <h2>Is Your Website POTRAZ-Ready? A Data Protection Checklist</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a8-title">Is Your Website POTRAZ-Ready? A Data Protection Checklist</div><button onclick="copyText('a8-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a8-slug">is-your-website-potraz-ready</div><button onclick="copyText('a8-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a8-category">Compliance</div><button onclick="copyText('a8-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a8-excerpt">If your website collects names, phones or emails, Zimbabwe&#x27;s data protection rules apply. A plain-English checklist for SMEs, schools and NGOs.</div><button onclick="copyText('a8-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a8-focus_keyword">POTRAZ data protection website</div><button onclick="copyText('a8-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a8-cover_image">A laptop showing a website contact form with a padlock icon and a privacy policy link.</div><button onclick="copyText('a8-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a8-cover_alt">Laptop showing a website contact form with a padlock icon and a privacy policy link</div><button onclick="copyText('a8-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a8-related_video">K. &quot;Is your website POTRAZ-ready?&quot;</div><button onclick="copyText('a8-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a8-body', this)">Copy article</button></div>
+  <article id="a8-body"><h1>Is Your Website POTRAZ-Ready? A Data Protection Checklist</h1>
+<blockquote>
+<p><strong>General information, not legal advice.</strong> This article explains how Zimbabwe's data protection rules affect business websites in practical terms. For decisions about licensing and legal obligations, speak to a qualified lawyer or contact POTRAZ.</p>
+</blockquote>
+<p><strong>Short answer:</strong> if your website, contact form, newsletter or customer list collects personal data (names, phone numbers, email addresses), Zimbabwe's Cyber and Data Protection Act applies to you. Under Statutory Instrument 155 of 2024, organisations processing personal data of <strong>50 or more people</strong> generally need a <strong>data controller licence</strong> from POTRAZ, and POTRAZ announced mandatory compliance inspections from <strong>1 September 2026</strong>. For your website, start with a privacy policy, consent on your forms, a secure HTTPS site and a clear record of where data is stored.</p>
+<p>Data protection used to feel like something only banks and telecoms worried about. Not any more. A simple "Contact us" form or a WhatsApp list of customers is personal data, and it brings small businesses, schools, churches and NGOs into scope.</p>
+<h2>What the rules say (in plain English)</h2>
+<ul>
+<li><strong>The law:</strong> the Cyber and Data Protection Act (Chapter 12:07) sets out how personal information must be collected, used, stored and protected in Zimbabwe.</li>
+<li><strong>The regulations:</strong> Statutory Instrument 155 of 2024 (the Cyber and Data Protection (Licensing of Data Controllers and Appointment of Data Protection Officers) Regulations) sets out licensing and the appointment of data protection officers.</li>
+<li><strong>Who needs a licence:</strong> organisations that process personal data of 50 or more individuals generally need a data controller licence from POTRAZ, which acts as the Data Protection Authority. Licence tiers and fees depend on how many people's data you process.</li>
+<li><strong>Data Protection Officer:</strong> licensed controllers are expected to appoint a data protection officer.</li>
+<li><strong>Inspections:</strong> POTRAZ issued a regulatory notice announcing mandatory, risk-based compliance inspections of data controllers from 1 September 2026.</li>
+<li><strong>Breaches:</strong> reported guidance says breaches must be reported to POTRAZ quickly, within 24 hours, and affected people notified within 72 hours.</li>
+</ul>
+<p>Fees, tiers and deadlines can change. Check the current regulations and POTRAZ notices, and take legal advice for your specific situation.</p>
+<h2>Does my website collect personal data?</h2>
+<p>Probably. Personal data is any information that identifies a person. On a typical business website that includes:</p>
+<ul>
+<li><strong>Contact and enquiry forms:</strong> names, phone numbers, email addresses, messages</li>
+<li><strong>Newsletter sign-ups:</strong> email addresses</li>
+<li><strong>Online shops and bookings:</strong> names, addresses, phone numbers, order history</li>
+<li><strong>Job application forms:</strong> CVs and personal details</li>
+<li><strong>Analytics and cookies:</strong> IP addresses and device information</li>
+<li><strong>Linked WhatsApp lists and customer databases</strong> your website feeds into</li>
+</ul>
+<p>If your organisation holds this kind of information about 50 or more people, the licensing rules are likely to apply.</p>
+<h2>Your website data protection checklist</h2>
+<h3>1. Publish a privacy policy</h3>
+<p>A clear, plain-English page explaining what data you collect, why, how long you keep it, who you share it with, and how people can ask to see or delete their data. Link it in your website footer and next to every form.</p>
+<h3>2. Get consent on your forms</h3>
+<p>Add a short line and an unticked checkbox to forms: "I agree that [your business] may use my details to respond to my enquiry, as described in the privacy policy." For newsletters, ask for separate, explicit consent.</p>
+<h3>3. Collect only what you need</h3>
+<p>If a phone number is enough, don't ask for an ID number or home address. Less data means less risk.</p>
+<h3>4. Secure the website with HTTPS</h3>
+<p>Your site should load with https:// and a padlock. It encrypts form submissions between the visitor and your server.</p>
+<h3>5. Know where the data is stored</h3>
+<p>Do form submissions go to an email inbox, a database, a spreadsheet or a third-party service? Where is the server? Who has access? Write it down. Inspectors and your DPO will ask.</p>
+<h3>6. Limit access and keep software updated</h3>
+<p>Give staff access only to the data they need. Keep your website, plugins and content manager updated, and use strong passwords with two-step verification.</p>
+<h3>7. Have a breach plan</h3>
+<p>Decide who does what if data is leaked or a site is hacked, including who notifies POTRAZ and affected people, and how quickly.</p>
+<h3>8. Check your suppliers</h3>
+<p>Your web host, email provider, payment gateway and marketing tools all handle your customers' data. Make sure they're reputable and that your contracts cover data protection.</p>
+<h2>Example: consent wording for your contact form</h2>
+<p>Place this directly above your form's submit button, with an unticked checkbox:</p>
+<blockquote>
+<p>☐ I agree that [Business name] may use the details I've provided to respond to my enquiry, as explained in our [Privacy Policy]. I can ask for my details to be deleted at any time.</p>
+</blockquote>
+<p>For a newsletter, use a separate checkbox:</p>
+<blockquote>
+<p>☐ Yes, I'd like to receive occasional emails with news and offers. I can unsubscribe at any time.</p>
+</blockquote>
+<h2>What to include in a website privacy policy</h2>
+<p>Keep it in plain English. A typical privacy policy covers:</p>
+<ol>
+<li><strong>Who you are</strong> and how to contact you (and your Data Protection Officer, if appointed)</li>
+<li><strong>What data you collect</strong>, such as names, phone numbers, emails, order details and website analytics</li>
+<li><strong>Why you collect it</strong>: to respond to enquiries, deliver orders or send newsletters with consent</li>
+<li><strong>Who you share it with</strong>, such as your web host, payment gateway or delivery partners</li>
+<li><strong>How long you keep it</strong>, and how it is stored securely</li>
+<li><strong>People's rights</strong>: to access, correct or delete their data, and how to ask</li>
+<li><strong>Cookies and analytics</strong> used on the website</li>
+<li><strong>Updates to the policy</strong>, with the date it was last changed</li>
+</ol>
+<p>Have a lawyer review the final wording, especially if you handle sensitive data such as health, financial or children's information.</p>
+<h2>Who is affected?</h2>
+<p>Most organisations that deal with the public: SMEs, retailers, schools, churches, clinics, NGOs, professional firms and membership organisations. Larger organisations, and those handling sensitive data such as health or financial records, are likely to face closer scrutiny.</p>
+<h2>Let us check the website side</h2>
+<p>We can review your website for the practical basics: a privacy policy page, consent on forms, HTTPS, where form data goes, and secure access to your content manager. Then we can fix what's missing. For licensing and legal questions, we'll point you to a lawyer.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Do I need a POTRAZ data controller licence for my website?</h3>
+<p>If your organisation processes personal data of 50 or more people, through your website or otherwise, you are likely to need one. Confirm with POTRAZ or a lawyer.</p>
+<h3>Does a contact form count as collecting personal data?</h3>
+<p>Yes. Names, phone numbers and email addresses submitted through a form are personal data.</p>
+<h3>What does a Data Protection Officer do?</h3>
+<p>A DPO oversees how your organisation handles personal data, keeps records, advises staff, and is the contact point for POTRAZ and the public on data protection matters.</p>
+<h3>Does my website need a privacy policy?</h3>
+<p>Yes, if it collects personal data. A privacy policy explains what you collect and why, and how people can exercise their rights.</p>
+<h3>When did POTRAZ start inspections?</h3>
+<p>POTRAZ announced mandatory compliance inspections of data controllers from 1 September 2026.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://cite.org.zw/potraz-data-licence-fees-slammed-as-costly-burden-on-businesses-and-consumers/">CITE: POTRAZ data licence fees criticised</a> · <a href="https://zimbabwe.misa.org/2025/03/14/navigating-the-data-protection-act-requirements-ensuring-compliance-for-zimbabwean-data-controllers">MISA Zimbabwe: data protection compliance for data controllers</a> · <a href="https://www.dlapiperafrica.com/en/zimbabwe/insights/2024/A-Quick-Start-Guide-to-Zimbabwes-Data-Protection-Regulations">DLA Piper: quick start guide to Zimbabwe's data protection regulations</a> · <a href="https://www.techzim.co.zw/tag/potraz/">Techzim: POTRAZ news</a> · <a href="https://techzim.co.zw/wp-content/uploads/2024/11/S.I.-155-of-2024.-Cyber-and-Data-Protection-13sept2024.pdf">S.I. 155 of 2024 (PDF)</a></p></article>
+</section><section class="card" id="art9">
+  <div class="num">Article 9 of 9 · 1,234 words</div>
+  <h2>Agency vs Freelancer vs DIY: Who Should Build Your Website?</h2>
+  <div class="fields"><div class="field"><div class="lbl">Title</div><div class="val" id="a9-title">Agency vs Freelancer vs DIY: Who Should Build Your Website?</div><button onclick="copyText('a9-title', this)">Copy</button></div><div class="field"><div class="lbl">URL slug</div><div class="val" id="a9-slug">agency-vs-freelancer-vs-diy-website</div><button onclick="copyText('a9-slug', this)">Copy</button></div><div class="field"><div class="lbl">Category</div><div class="val" id="a9-category">Websites</div><button onclick="copyText('a9-category', this)">Copy</button></div><div class="field"><div class="lbl">Excerpt / meta description</div><div class="val" id="a9-excerpt">DIY builders, freelancers and agencies each suit different businesses. Compare cost, risk and aftercare, and the 3 questions to ask before you pay anyone.</div><button onclick="copyText('a9-excerpt', this)">Copy</button></div><div class="field"><div class="lbl">Focus keyword</div><div class="val" id="a9-focus_keyword">agency vs freelancer website Zimbabwe</div><button onclick="copyText('a9-focus_keyword', this)">Copy</button></div><div class="field"><div class="lbl">Cover image idea</div><div class="val" id="a9-cover_image">Three cards labelled DIY, Freelancer and Agency on a desk beside a laptop.</div><button onclick="copyText('a9-cover_image', this)">Copy</button></div><div class="field"><div class="lbl">Cover image alt text</div><div class="val" id="a9-cover_alt">Three option cards labelled DIY, Freelancer and Agency next to a laptop showing a website builder</div><button onclick="copyText('a9-cover_alt', this)">Copy</button></div><div class="field"><div class="lbl">Matching video to embed</div><div class="val" id="a9-related_video">L. &quot;Agency vs freelancer vs DIY&quot;</div><button onclick="copyText('a9-related_video', this)">Copy</button></div></div>
+  <div class="bodyhead"><span>Article body (paste into the content editor)</span><button class="primary" onclick="copyBody('a9-body', this)">Copy article</button></div>
+  <article id="a9-body"><h1>Agency vs Freelancer vs DIY: Who Should Build Your Website?</h1>
+<p><strong>Short answer:</strong> <strong>DIY</strong> website builders (Wix, WordPress.com, AI site builders) are the cheapest in cash but cost you time and skills. A <strong>freelancer</strong> can deliver excellent work at a lower price, as long as there's a written contract and a plan for aftercare. An <strong>agency</strong> costs more but gives you a team, process and ongoing support. Whoever you choose, ask three things before paying: <strong>who owns the domain, is the price in writing, and who fixes the site after launch?</strong></p>
+<p>There's no single right answer. It depends on your budget, your time, how important the website is to your sales, and how much support you need afterwards. Here's an honest comparison.</p>
+<h2>Option 1: Do it yourself</h2>
+<p><strong>How it works:</strong> you sign up for a website builder, choose a template, and add your own text and photos. Many now use AI to generate a first draft.</p>
+<p><strong>Pros</strong>
+- Lowest cash cost to get started
+- Full control; change things whenever you like
+- Fast to launch a simple site</p>
+<p><strong>Cons</strong>
+- It takes your time, often far more than expected
+- Design, writing, photos and SEO all depend on your skills
+- Local needs such as a .co.zw domain, EcoCash/Paynow payments and data protection basics can be harder to set up
+- Monthly platform fees add up, and moving off the platform later can be difficult</p>
+<p><strong>Best for:</strong> very small budgets, simple one-page sites, or testing an idea before investing more.</p>
+<h2>Option 2: Hire a freelancer</h2>
+<p><strong>How it works:</strong> an independent designer or developer builds your site, often found through referrals, social media or freelance platforms.</p>
+<p><strong>Pros</strong>
+- Usually lower prices than an agency
+- Direct contact with the person doing the work
+- Many freelancers are highly skilled</p>
+<p><strong>Cons</strong>
+- One person means limited capacity: illness, travel or a full workload can delay your project
+- Quality and reliability vary widely, so references matter
+- Aftercare can be uncertain; some freelancers move on to other work or jobs
+- The classic risk: the designer "disappears" with the deposit, or controls the domain</p>
+<p><strong>Best for:</strong> clearly defined projects with a modest budget, where you've seen the freelancer's past work and agreed everything in writing.</p>
+<h2>Option 3: Work with an agency</h2>
+<p><strong>How it works:</strong> a company with a team (designers, developers, writers, marketers) plans and builds your site and usually offers support afterwards.</p>
+<p><strong>Pros</strong>
+- A team with a range of skills: design, development, content, SEO, ads
+- Defined process, timelines and project management
+- Continuity: if one person leaves, the company is still there
+- Aftercare and support plans, plus help with marketing once you're live</p>
+<p><strong>Cons</strong>
+- Higher price than most freelancers or DIY
+- You may deal with an account manager rather than the person writing the code</p>
+<p><strong>Best for:</strong> businesses whose website is central to winning customers, organisations with procurement and compliance needs (corporates, NGOs, law firms, schools), and anyone who wants ongoing help with SEO and marketing.</p>
+<h2>Side-by-side comparison</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>DIY</th>
+<th>Freelancer</th>
+<th>Agency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Upfront cash cost</td>
+<td>Lowest</td>
+<td>Low to medium</td>
+<td>Medium to high</td>
+</tr>
+<tr>
+<td>Your time needed</td>
+<td>High</td>
+<td>Medium</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Design and content quality</td>
+<td>Depends on you</td>
+<td>Varies widely</td>
+<td>Usually consistent</td>
+</tr>
+<tr>
+<td>Local payments (EcoCash, Paynow)</td>
+<td>Harder</td>
+<td>Depends on skills</td>
+<td>Usually included as an option</td>
+</tr>
+<tr>
+<td>Aftercare and support</td>
+<td>You</td>
+<td>Uncertain</td>
+<td>Support plans</td>
+</tr>
+<tr>
+<td>Risk of delays</td>
+<td>You set the pace</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+</tbody>
+</table>
+<h2>The 3 questions to ask before you pay anyone</h2>
+<h3>1. Who owns the domain?</h3>
+<p>The domain (yourbusiness.co.zw) must be registered in your name or your company's name. If it's in the builder's name, you don't fully control your online address.</p>
+<h3>2. Is the price in writing?</h3>
+<p>Get a written quote listing pages, features, timeline, payment schedule and yearly costs. It protects you from surprise invoices. See <a href="/blog/signs-you-are-overpaying-for-your-website">5 signs you're overpaying for your website</a>.</p>
+<h3>3. Who fixes it after launch?</h3>
+<p>Websites need updates, backups and occasional fixes. Agree who handles them, how quickly, and at what cost, before the project starts. Ask whether you'll get a content manager so you can make simple changes yourself.</p>
+<h2>What about AI website builders?</h2>
+<p>AI site builders can produce a decent-looking first draft in minutes, which is genuinely useful for testing an idea. But the words are generic, the structure may not match how Zimbabwean customers search, and local essentials still need a human: a .co.zw domain, EcoCash or Paynow payments, a Google Business Profile and data protection basics. Treat AI as a fast starting point, not a finished website.</p>
+<h2>More smart questions</h2>
+<ul>
+<li>Can I see three websites you've built, and speak to those clients?</li>
+<li>Will the site be fast on mobile data?</li>
+<li>Is basic SEO and a Google Business Profile included?</li>
+<li>Will I get logins for everything: domain, hosting, website admin?</li>
+<li>What happens to my site if we stop working together?</li>
+</ul>
+<h2>Red flags in any website quote</h2>
+<p>Whether it comes from a freelancer or an agency, be careful if you see:</p>
+<ul>
+<li><strong>No written quote</strong>, only a price on WhatsApp</li>
+<li><strong>100% payment upfront</strong> for a large project, with no milestones</li>
+<li><strong>The domain registered in the builder's name</strong></li>
+<li><strong>No examples</strong> of past work, or no clients you can speak to</li>
+<li><strong>Vague scope</strong>, such as "a professional website" with no list of pages or features</li>
+<li><strong>No mention of aftercare</strong>: who fixes problems, and at what cost</li>
+<li><strong>Promises of "guaranteed first place on Google"</strong>. Nobody can guarantee rankings.</li>
+</ul>
+<p>A good provider will be happy to put everything in writing, show you their work and explain what happens after launch.</p>
+<h2>Still deciding? Ask us anything</h2>
+<p>We're an agency, so we're biased, but we'll give you a straight answer. If a DIY site or a freelancer suits your situation better, we'll tell you. If you work with us, the domain is yours, the price is fixed and in writing, and you get aftercare.</p>
+<p>📞 <strong>Call or WhatsApp +263 71 857 4277 or +263 77 419 2027</strong> to book a free call.</p>
+<h2>Frequently asked questions</h2>
+<h3>Should I hire an agency or a freelancer for my website?</h3>
+<p>Either can work. Choose a freelancer for smaller, clearly defined projects where you trust their track record; choose an agency when the website is central to your sales or you need a team, process and support.</p>
+<h3>How do I know a web designer won't disappear with my deposit?</h3>
+<p>Check references and past work, sign a written agreement, pay in stages tied to milestones, and make sure the domain and hosting are in your name.</p>
+<h3>Who owns my website and domain after it's built?</h3>
+<p>You should. Put ownership of the domain, content and design files in your contract, and make sure you receive all logins.</p>
+<h3>Is Wix or WordPress good enough for a small business in Zimbabwe?</h3>
+<p>They can be, especially for simple sites. Check that local needs such as a .co.zw domain, EcoCash/Paynow payments and mobile speed are covered.</p>
+<h3>How long does it take to build a website?</h3>
+<p>Simple sites can launch in days; larger sites with payments or many pages take weeks. A written timeline is part of a good quote.</p>
+<h3>Can I start with DIY and move to an agency later?</h3>
+<p>Yes, many businesses do. Keep the domain in your own name from day one, keep copies of your text and photos, and choose a platform that lets you export your content. That makes it much easier to rebuild or move your site when you're ready to invest more.</p>
+<hr />
+<p><strong>Sources:</strong> <a href="https://zispa.org.zw/">ZISPA, .co.zw registry</a> · <a href="https://develop.paynow.co.zw/home/businesshome">Paynow developer documentation</a></p></article>
+</section>
+</main>
+<script>
+function flash(btn, txt) { const o = btn.textContent; btn.textContent = txt; btn.classList.add('done'); setTimeout(() => { btn.textContent = o; btn.classList.remove('done'); }, 1600); }
+async function copyText(id, btn) {
+  const t = document.getElementById(id).textContent;
+  try { await navigator.clipboard.writeText(t); flash(btn, 'Copied'); } catch (e) { selectEl(id); flash(btn, 'Press Ctrl+C'); }
+}
+async function copyBody(id, btn) {
+  const el = document.getElementById(id);
+  try {
+    await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([el.innerHTML], { type: 'text/html' }),
+                                                           'text/plain': new Blob([el.innerText], { type: 'text/plain' }) })]);
+    flash(btn, 'Copied');
+  } catch (e) { selectEl(id); flash(btn, 'Press Ctrl+C'); }
+}
+function selectEl(id) { const r = document.createRange(); r.selectNodeContents(document.getElementById(id)); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+</script>
+</body></html>
