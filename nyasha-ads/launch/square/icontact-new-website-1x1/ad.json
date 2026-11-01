@@ -1,0 +1,215 @@
+{
+ "title": "Our new website is live (iContact Africa Solutions)",
+ "site": "https://tafadzwa-chingombe.github.io/iContact-Africa-Solutions/",
+ "note": "Prices, 200+ businesses, 4.8 rating and 'live in under 30 days' are published on iContact's own new site.",
+ "shots": [
+  {
+   "page": "hook",
+   "kind": "photo",
+   "img": "c4",
+   "min": 3,
+   "kicker": "Brand-new website",
+   "say": "brand",
+   "headline": "Our new website is <span class=\"hl\">live!</span>",
+   "line": "Hi! iContact Africa Solutions has a brand-new website, and it's built around you."
+  },
+  {
+   "page": "home",
+   "kind": "browser",
+   "min": 6,
+   "img": "assets/site/home.jpg",
+   "url": "iContact Africa Solutions",
+   "scroll": 1750,
+   "alt": "iContact Africa Solutions home page",
+   "say": "Websites",
+   "headline": "Everything in <span class=\"hl\">one place</span>",
+   "line": "Websites, SEO, branding and paid ads, all in one place, with a fixed-price quote in just a few clicks."
+  },
+  {
+   "page": "pricing",
+   "kind": "list",
+   "min": 6,
+   "title": "Prices up front",
+   "marker": "dot",
+   "say": "inbox",
+   "items": [
+    [
+     "Websites from $300",
+     "Websites"
+    ],
+    [
+     "SEO from $300 a month",
+     "three"
+    ],
+    [
+     "Google Business Profile from $40",
+     "fixed"
+    ],
+    [
+     "Logos from $80",
+     "written"
+    ]
+   ],
+   "headline": "No more <span class=\"hl\">inbox for price</span>",
+   "line": "No more inbox for price. Websites start from three hundred dollars, and every price is fixed and written down."
+  },
+  {
+   "page": "domains",
+   "kind": "browser",
+   "min": 6,
+   "img": "assets/site/domains.jpg",
+   "url": "Domains · iContact Africa Solutions",
+   "scroll": 640,
+   "start": 0.8,
+   "alt": "iContact domain search results",
+   "say": "Search",
+   "headline": "Domains, hosting <span class=\"hl\">&amp; email</span>",
+   "line": "Search for your .co.zw domain, then add fast hosting and professional email, all from the same site."
+  },
+  {
+   "page": "portal",
+   "kind": "list",
+   "min": 6,
+   "title": "Your client portal",
+   "marker": "tick",
+   "say": "portal",
+   "items": [
+    [
+     "Live project tracker",
+     "track"
+    ],
+    [
+     "One-click approvals",
+     "approve"
+    ],
+    [
+     "Invoices & payments",
+     "invoices"
+    ],
+    [
+     "Support inbox",
+     "support"
+    ]
+   ],
+   "headline": "Your project, <span class=\"hl\">in one place</span>",
+   "line": "Every client gets a portal: track your project live, approve designs in one click, pay invoices, and get support."
+  },
+  {
+   "page": "work",
+   "kind": "browser",
+   "min": 6,
+   "img": "assets/site/work.jpg",
+   "url": "Work · iContact Africa Solutions",
+   "scroll": 1900,
+   "alt": "iContact portfolio of client websites",
+   "say": "real",
+   "headline": "Real work, <span class=\"hl\">real results</span>",
+   "line": "See our real work, from law firms to paint brands, and over two hundred businesses we've helped."
+  },
+  {
+   "page": "mobile",
+   "kind": "phone_scroll",
+   "min": 6,
+   "img": "assets/site/mobile.jpg",
+   "scroll": 0.3,
+   "alt": "iContact website on a phone",
+   "say": "WhatsApp",
+   "headline": "WhatsApp us from <span class=\"hl\">any page</span>",
+   "line": "And on your phone, WhatsApp us from any page, or book a free call with Tafadzwa directly."
+  },
+  {
+   "page": "endcard",
+   "kind": "endcard",
+   "min": 4,
+   "line": "Search iContact Africa Solutions today. Thank you!"
+  }
+ ],
+ "sfx": [
+  [
+   0,
+   "pop",
+   0.6
+  ],
+  [
+   1,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "whoosh",
+   -0.15
+  ],
+  [
+   2,
+   "pop",
+   2.27
+  ],
+  [
+   2,
+   "pop",
+   3.33
+  ],
+  [
+   2,
+   "pop",
+   5.78
+  ],
+  [
+   2,
+   "pop",
+   6.42
+  ],
+  [
+   3,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "whoosh",
+   -0.15
+  ],
+  [
+   4,
+   "pop",
+   2.11
+  ],
+  [
+   4,
+   "pop",
+   3.62
+  ],
+  [
+   4,
+   "pop",
+   5.92
+  ],
+  [
+   4,
+   "ding",
+   7.21
+  ],
+  [
+   5,
+   "whoosh",
+   -0.15
+  ],
+  [
+   6,
+   "whoosh",
+   -0.15
+  ],
+  [
+   7,
+   "whoosh",
+   -0.15
+  ],
+  [
+   7,
+   "pop",
+   0.4
+  ]
+ ],
+ "music_volume": 0.3
+}

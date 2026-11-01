@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<link rel="stylesheet" href="lib/pages.css">
+<style>.phone .screen{background:#fff}.phone .screen img{position:absolute;left:0;top:0;width:100%;display:block}</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="phone" data-rise="0.1"><div class="notch"></div><div class="screen"><img id="site" src="assets/site/mobile.jpg" alt="iContact website on a phone"></div></div>
+<div class="headline" data-rise="1.22" data-fit="70"><span>WhatsApp us from <span class="hl">any page</span></span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $, prog, ease } from './lib/kit.js';
+const img = $('#site'), screen = img.parentElement;
+shot(6.3, (t) => {
+  const D = window.film.duration;
+  const target = Math.min(img.clientHeight - screen.clientHeight, img.clientHeight * 0.3);
+  img.style.transform = `translateY(${-target * ease.inOut(prog(t, 0.9, Math.max(1, D - 0.9 - 0.9)))}px)`;
+});
+</script>
+</body>
+</html>

@@ -11,6 +11,10 @@ A shot in ad.json may carry "kind" and its content; build.py ignores these keys,
   {"page": "who", "kind": "cards", "cards": [["DIY", "Cheapest, but it costs your time.", "DIY"], …], "us": 2, …}
   {"page": "pay", "kind": "phone", "screen": "<div …data-say=\"declines\" data-anim=\"pop\">…</div>", "css": "…", …}
   {"page": "endcard", "kind": "endcard", "note": "General information, not legal advice."}   (new_ad.sh made the page)
+  {"page": "home", "kind": "browser", "img": "assets/site/home.jpg", "url": "iContact Africa Solutions", "scroll": 1700}
+      a real site screenshot (1440 px wide) scrolling in a browser window; scroll = how far down to go (screenshot px)
+  {"page": "mob", "kind": "phone_scroll", "img": "assets/site/mobile.jpg", "scroll": 0.4}
+      a full-page phone screenshot scrolling in the phone mock; scroll = fraction of the page height
 
 Each item's last field is its cue word: it appears 0.1 s before Nyasha says that word (read from assets/vo/line-N.vtt;
 before a voice exists, from the stand-in captions). Also rewrites ad.json "sfx": a whoosh before each cut, a pop per item
@@ -182,6 +186,31 @@ def build_pages(film):
             hk = cue_times(words, [s.get('say')], default_from=0.3)[0] if s.get('say') else 0.3
             body = f'<div class="phone"><div class="notch"></div><div class="screen">\n{screen}\n</div></div>\n<div class="headline" data-rise="{hk}" data-fit="70"><span>{head}</span></div>'
             open(prev, 'w').write(page(body, css=s.get('css', ''), script=script))
+        elif kind == 'browser':
+            hk = cue_times(words, [s.get('say')], default_from=0.4)[0] if s.get('say') else 0.4
+            css = (".browser{position:absolute;left:50px;right:50px;top:380px;height:720px;border-radius:26px;overflow:hidden;background:#0a0f18;"
+                   "box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 3px #2b3a52 inset}.bar{height:66px;display:flex;align-items:center;gap:12px;padding:0 24px;background:#1b2433}"
+                   ".bar i{width:16px;height:16px;border-radius:50%;background:#ff6159}.bar i:nth-child(2){background:#ffbd2e}.bar i:nth-child(3){background:#28c941}"
+                   ".bar .url{flex:1;margin-left:18px;height:40px;border-radius:999px;background:#0f1724;color:#b9c6da;display:flex;align-items:center;padding:0 20px;font-weight:500;font-size:20px}"
+                   ".view{position:absolute;left:0;right:0;top:66px;bottom:0;overflow:hidden;background:#fff}.view img{position:absolute;left:0;top:0;width:100%;display:block}")
+            body = (f'<div class="browser" data-rise="0.1"><div class="bar"><i></i><i></i><i></i><div class="url">{html.escape(s.get("url", ""))}</div></div>'
+                    f'<div class="view"><img id="site" src="{s["img"]}" alt="{html.escape(s.get("alt", "website"))}"></div></div>\n'
+                    f'<div class="headline" data-rise="{hk}" data-fit="70"><span>{head}</span></div>')
+            scr = ("import { $, prog, ease } from './lib/kit.js';\nconst img = $('#site'), view = img.parentElement;\n"
+                   f"shot({dur}, (t) => {{\n  const D = window.film.duration, k = img.clientWidth / 1440;\n"
+                   f"  const max = Math.min(img.clientHeight - view.clientHeight, {s.get('scroll', 1500)} * k);\n"
+                   f"  img.style.transform = `translateY(${{-max * ease.inOut(prog(t, {s.get('start', 1.0)}, Math.max(1, D - {s.get('start', 1.0)} - 1.0)))}}px)`;\n}});")
+            open(prev, 'w').write(page(body, css=css, script=scr))
+        elif kind == 'phone_scroll':
+            hk = cue_times(words, [s.get('say')], default_from=0.4)[0] if s.get('say') else 0.4
+            css = ".phone .screen{background:#fff}.phone .screen img{position:absolute;left:0;top:0;width:100%;display:block}"
+            body = (f'<div class="phone" data-rise="0.1"><div class="notch"></div><div class="screen"><img id="site" src="{s["img"]}" alt="{html.escape(s.get("alt", "website on a phone"))}"></div></div>\n'
+                    f'<div class="headline" data-rise="{hk}" data-fit="70"><span>{head}</span></div>')
+            scr = ("import { $, prog, ease } from './lib/kit.js';\nconst img = $('#site'), screen = img.parentElement;\n"
+                   f"shot({dur}, (t) => {{\n  const D = window.film.duration;\n"
+                   f"  const target = Math.min(img.clientHeight - screen.clientHeight, img.clientHeight * {s.get('scroll', 0.3)});\n"
+                   f"  img.style.transform = `translateY(${{-target * ease.inOut(prog(t, {s.get('start', 0.9)}, Math.max(1, D - {s.get('start', 0.9)} - 0.9)))}}px)`;\n}});")
+            open(prev, 'w').write(page(body, css=css, script=scr))
         else:
             raise SystemExit(f'{s["page"]}: unknown kind {kind}')
         # pops: never closer than 0.25 s to each other, never under the whoosh that opens the shot

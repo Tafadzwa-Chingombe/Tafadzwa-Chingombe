@@ -1,0 +1,65 @@
+/* iContact Africa Solutions — shared look for every Nyasha shot (1080×1920, 9:16).
+   Safe zones: keep key text between y 250 and y 1580 (platform UI covers the top 250 / bottom 340 px).
+   Subtitles (from assets/vo/*.vtt) sit just above y ≈ 1380, so headlines live in the band y 1410–1580. */
+@font-face { font-family: Poppins; font-weight: 500; font-display: block; src: url(fonts/poppins-500.woff2) format('woff2'); }
+@font-face { font-family: Poppins; font-weight: 600; font-display: block; src: url(fonts/poppins-600.woff2) format('woff2'); }
+@font-face { font-family: Poppins; font-weight: 600; font-style: italic; font-display: block; src: url(fonts/poppins-600i.woff2) format('woff2'); }
+@font-face { font-family: Poppins; font-weight: 700; font-display: block; src: url(fonts/poppins-700.woff2) format('woff2'); }
+@font-face { font-family: Poppins; font-weight: 800; font-display: block; src: url(fonts/poppins-800.woff2) format('woff2'); }
+
+:root {
+  --blue: #2E5795;
+  --green: #ABCF47;
+  --navy: #0B1F3A;
+  --navy-2: #12305a;
+  --ink: #ffffff;
+  --muted: #b9c6da;
+  --red: #ff6b5e;
+}
+
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+body { position: relative; font-family: Poppins, Inter, 'DejaVu Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+
+/* the brand backdrop: navy with the green studio glow the renders were lit with */
+.stage { position: absolute; inset: 0; overflow: hidden;
+  background:
+    radial-gradient(60% 34% at 62% 30%, rgba(171, 207, 71, 0.42), rgba(171, 207, 71, 0) 70%),
+    radial-gradient(90% 60% at 20% 90%, rgba(46, 87, 149, 0.55), rgba(46, 87, 149, 0) 70%),
+    var(--navy); }
+
+/* a render of Nyasha, full width, fading into navy where the words go */
+.photo { position: absolute; left: 0; top: 0; width: 1080px; height: 1330px; overflow: hidden; }
+.photo img { position: absolute; display: block; will-change: transform; }
+.photo { -webkit-mask-image: linear-gradient(#000 58%, rgba(0,0,0,0.55) 80%, transparent); mask-image: linear-gradient(#000 58%, rgba(0,0,0,0.55) 80%, transparent); }
+.below { position: absolute; left: 0; right: 0; top: 1330px; bottom: 0; background: var(--navy); }
+
+/* the on-screen line of each shot */
+.headline { position: absolute; left: 70px; right: 70px; top: 1428px; height: 152px;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  font-weight: 800; font-size: 70px; line-height: 1.08; letter-spacing: -0.01em; }
+.headline .hl, .hl { color: var(--green); }
+.headline.soft { font-style: italic; font-weight: 600; color: var(--muted); }
+.kicker { font-weight: 700; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 18px; }
+.chip { padding: 16px 30px; border-radius: 999px; font-weight: 700; font-size: 40px;
+  background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(171, 207, 71, 0.65); color: #fff; }
+.chip.on { background: var(--green); color: var(--navy); border-color: var(--green); }
+
+.btn { display: inline-flex; align-items: center; gap: 18px; padding: 30px 58px; border-radius: 999px;
+  background: var(--green); color: var(--navy); font-weight: 800; font-size: 56px;
+  box-shadow: 0 18px 50px rgba(171, 207, 71, 0.35); }
+.url { font-weight: 600; font-size: 38px; color: #fff; letter-spacing: 0.01em; }
+
+/* a phone, drawn in CSS, for the screen shots */
+.phone { position: absolute; left: 280px; top: 360px; width: 520px; height: 920px; border-radius: 76px;
+  background: #0a0f18; padding: 22px; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55), 0 0 0 3px #2b3a52 inset; }
+.phone .screen { position: relative; width: 100%; height: 100%; border-radius: 56px; overflow: hidden; background: #f4f6fa; color: #1b2433; }
+.phone .notch { position: absolute; left: 50%; top: 18px; width: 150px; height: 40px; margin-left: -75px; border-radius: 20px; background: #0a0f18; z-index: 5; }
+.phone .status { height: 70px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 40px 6px; font-weight: 600; font-size: 22px; color: #1b2433; }
+
+.tick { width: 120px; height: 120px; border-radius: 50%; background: var(--green); display: grid; place-items: center; }
+.tick svg { width: 70px; height: 70px; }
+.cross { width: 96px; height: 96px; border-radius: 50%; background: var(--red); display: grid; place-items: center; }
+.cross svg { width: 54px; height: 54px; }

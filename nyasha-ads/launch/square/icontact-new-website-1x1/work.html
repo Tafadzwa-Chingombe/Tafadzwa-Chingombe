@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/brand.css">
+<link rel="stylesheet" href="lib/pages.css">
+<style>.browser{position:absolute;left:50px;right:50px;top:380px;height:720px;border-radius:26px;overflow:hidden;background:#0a0f18;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 3px #2b3a52 inset}.bar{height:66px;display:flex;align-items:center;gap:12px;padding:0 24px;background:#1b2433}.bar i{width:16px;height:16px;border-radius:50%;background:#ff6159}.bar i:nth-child(2){background:#ffbd2e}.bar i:nth-child(3){background:#28c941}.bar .url{flex:1;margin-left:18px;height:40px;border-radius:999px;background:#0f1724;color:#b9c6da;display:flex;align-items:center;padding:0 20px;font-weight:500;font-size:20px}.view{position:absolute;left:0;right:0;top:66px;bottom:0;overflow:hidden;background:#fff}.view img{position:absolute;left:0;top:0;width:100%;display:block}</style>
+</head>
+<body>
+<div class="stage"></div>
+<div class="browser" data-rise="0.1"><div class="bar"><i></i><i></i><i></i><div class="url">Work · iContact Africa Solutions</div></div><div class="view"><img id="site" src="assets/site/work.jpg" alt="iContact portfolio of client websites"></div></div>
+<div class="headline" data-rise="0.62" data-fit="70"><span>Real work, <span class="hl">real results</span></span></div>
+<script type="module">
+import { shot } from './lib/shot.js';
+import { $, prog, ease } from './lib/kit.js';
+const img = $('#site'), view = img.parentElement;
+shot(6.9, (t) => {
+  const D = window.film.duration, k = img.clientWidth / 1440;
+  const max = Math.min(img.clientHeight - view.clientHeight, 1900 * k);
+  img.style.transform = `translateY(${-max * ease.inOut(prog(t, 1.0, Math.max(1, D - 1.0 - 1.0)))}px)`;
+});
+</script>
+</body>
+</html>
