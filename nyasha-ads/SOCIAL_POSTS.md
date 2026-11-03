@@ -706,52 +706,6 @@ Files: `keyword-campaign/m-free-audit/…mp4` · `keyword-campaign/square/m-free
 
 ## N. Case study: Makuwatsine Chirenje Attorneys website (44 s)
 Files: `case-studies/mc-attorneys/mc-attorneys.mp4` · `case-studies/square/mc-attorneys-1x1/mc-attorneys-1x1.mp4`
-⚠️ Send the final cut to MC Attorneys for approval before posting; tag their pages if they agree.
 
-**Alt text:** Nyasha introduces a new website for Makuwatsine Chirenje Attorneys in Harare. The navy and gold law-firm site scrolls on a desktop browser and on a phone, showing practice areas and the legal team. A content manager screen shows a new article being typed and published.
-
-**Facebook**
-> New law firm website in Harare: Makuwatsine Chirenje Attorneys ⚖️ Live in two weeks.
->
-> Law firms win clients on trust, so we designed a site that feels established from the first second:
-> ✅ Clear practice area pages
-> ✅ Team profiles
-> ✅ One-tap "Book a Consultation"
-> ✅ A content manager the team uses to post articles in minutes, with no developer needed
->
-> **What should a law firm website in Zimbabwe include?** Clear practice areas, lawyer profiles, an easy way to book a consultation, and a blog the firm can update itself.
->
-> Want a website like this for your business?
-> 📞 Call or WhatsApp +263 71 857 4277 or +263 77 419 2027
-> 💬 WhatsApp us: wa.me/263718574277
->
-> Presented by Nyasha, iContact's AI-generated guide.
-> #LawFirmWebsite #WebDesignHarare #CaseStudy #Zimbabwe #LegalMarketing
-
-**Instagram**
-> New law firm website in Harare ⚖️ Live in 2 weeks
->
-> For Makuwatsine Chirenje Attorneys: practice areas, team profiles, one-tap consultation booking, and a CMS they update themselves.
->
-> Your website could be next 👇
-> 📞 Call or WhatsApp +263 71 857 4277 / +263 77 419 2027
->
-> Nyasha is our AI-generated presenter.
-> #LawFirmWebsite #WebDesignHarare #CaseStudy #Zimbabwe #LegalMarketing
-
-**LinkedIn**
-> Case study: a new website for Makuwatsine Chirenje Attorneys, Harare, from kick-off to live in two weeks.
->
-> The brief: a professional firm needs to earn trust online before a client ever calls. We built a navy-and-gold site with clear pages for each practice area, partner and associate profiles, a "Book a Consultation" path on mobile and desktop, and a content manager the team uses to publish legal insights without a developer.
->
-> **What makes a law firm website effective?** Clarity on what the firm does, credible lawyer profiles, a frictionless way to book a consultation, and regular, easy-to-publish content.
->
-> Thank you to the MC Attorneys team. Want a website like this?
-> 📞 Call or WhatsApp +263 71 857 4277 or +263 77 419 2027 · 💬 wa.me/263718574277
->
-> (Presented by Nyasha, our AI-generated guide.)
-> #LawFirmWebsite #LegalMarketing #WebsiteDesign #Zimbabwe #CaseStudy
-
-**TikTok**
-> New law firm website in Harare ⚖️ Built for Makuwatsine Chirenje Attorneys, live in 2 weeks: practice areas, team, one-tap consultations & an easy CMS. Want one? 📞 Call or WhatsApp +263 71 857 4277 / +263 77 419 2027 (AI-generated presenter)
-> #lawfirm #webdesign #harare #zimbabwe #casestudy #websitedesign
+The full, updated copy for this video (Facebook, Instagram, LinkedIn, TikTok, pinned comment, alt text and hashtag notes) is in
+[`case-studies/mc-attorneys/SOCIAL_POSTS.md`](case-studies/mc-attorneys/SOCIAL_POSTS.md).
