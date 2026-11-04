@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  .bg { position: absolute; inset: 0; background: #2f2a2a; }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .block { position: absolute; left: 0; right: 0; top: 22%; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .block .logo { font-size: 170px; }
+  .block .tagline { font-size: 44px; margin-top: 28px; }
+  .made { margin-top: 40px; padding: 18px 34px; border-radius: 999px; background: #fff; color: var(--navy); font: 800 34px/1 Montserrat, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+  .made b { color: var(--orange); }
+  .tin { position: absolute; left: 50%; bottom: 14%; transform: translateX(-50%); }
+  .tin img { height: 640px; filter: drop-shadow(0 40px 40px rgba(0,0,0,0.55)); }
+  @media (min-aspect-ratio: 3/4) { .block { top: 8%; } .block .logo { font-size: 120px; } .block .tagline { font-size: 34px; margin-top: 18px; } .made { margin-top: 24px; font-size: 26px; } .tin { bottom: 4%; } .tin img { height: 380px; } }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg"></div>
+  <canvas id="cv"></canvas>
+  <div class="cam" data-from="1.0" data-to="1.05" data-whip="none">
+    <div class="block">
+      <span class="logo" data-pop="0.45">PARKER<sup>™</sup></span>
+      <div class="tagline" data-rise="0.7">Parker the <i>perfect</i> finish</div>
+      <div class="made" data-pop="1.95">Made in <b>Zimbabwe</b></div>
+    </div>
+    <div class="tin"><div data-rise="3.0"><img src="img/products/wallshield.png"></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, W, H, prog, ease } from './lib/kit.js';
+import { splat } from './lib/fx.js';
+const cv = document.getElementById('cv'); let ctx;
+shot(5.6, (t) => {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  const M = Math.hypot(W(), H());
+  // three paint splats burst open, one after another: orange, then Parker blue over it, then navy depth
+  splat(ctx, W() * 0.5, H() * 0.42, M * 0.9 * (0.08 + 0.92 * ease.out5(prog(t, 0.0, 0.5))), '#fe9832', 2, prog(t, 0, 0.5));
+  splat(ctx, W() * 0.55, H() * 0.4, M * 0.85 * ease.out5(prog(t, 0.12, 0.55)), '#1c55e0', 5, prog(t, 0.12, 0.55));
+  const g = ctx.createRadialGradient(W() / 2, H() * 0.4, 0, W() / 2, H() * 0.4, M * 0.6);
+  g.addColorStop(0, 'rgba(255,255,255,0.12)'); g.addColorStop(1, 'rgba(10,20,60,0.55)');
+  ctx.fillStyle = g; ctx.globalAlpha = prog(t, 0.4, 0.5); ctx.fillRect(0, 0, cv.width, cv.height); ctx.globalAlpha = 1;
+}, () => { cv.width = W(); cv.height = H(); ctx = cv.getContext('2d'); });
+</script>
+</body>
+</html>

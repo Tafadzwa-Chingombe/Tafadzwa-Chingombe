@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  #sweep { position: absolute; inset: 0; mix-blend-mode: soft-light; }
+  .chips { flex-direction: column; align-items: flex-start; }
+  .chip { background: rgba(25, 56, 98, 0.6); }
+  .chip svg { color: var(--orange); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="cam" data-from="1.08" data-to="1.0" data-whip="up"><canvas class="full" id="cv"></canvas></div>
+  <div id="sweep"></div>
+  <div class="words">
+    <div class="kicker" data-rise="0.4">Built for Zimbabwe</div>
+    <div class="chips">
+      <div class="chip" data-pop="0.3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="M4 20l16-16"/></svg>Weatherproof</div>
+      <div class="chip" data-pop="0.9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>UV resistant</div>
+      <div class="chip" data-pop="3.0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5S14 15 15 15h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></svg>Long-lasting colour</div>
+    </div>
+  </div>
+</div>
+<script type="module">
+import { shot, W, H, hash, prog, ease, clamp } from './lib/kit.js';
+import { freshPaint, bead, rain, sunlight } from './lib/fx.js';
+const cv = document.getElementById('cv'); let ctx, wall;
+shot(6.2, (t) => {
+  const w = cv.width, h = cv.height;
+  ctx.drawImage(wall, 0, 0);
+  // rain hits the fresh paint and beads straight off: quick, clean runs that leave no stain
+  for (let i = 0; i < 80; i++) {
+    const t0 = hash(i, 3) * 4.2; if (t < t0) continue;
+    const tt = t - t0, x = hash(i, 4) * w, y0 = hash(i, 5) * h * 0.85, r = 9 + hash(i, 6) * 14;
+    const y = y0 + (tt < 0.25 ? 0 : (tt - 0.25) * (tt - 0.25) * 1400);
+    if (y > h + 40) continue;
+    if (y > y0 + 4) { ctx.strokeStyle = 'rgba(255,255,255,0.18)'; ctx.lineWidth = r * 0.6; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x, Math.max(y0, y - 160)); ctx.lineTo(x, y); ctx.stroke(); }
+    bead(ctx, x, y, r * (tt < 0.08 ? tt / 0.08 : 1));
+  }
+  rain(ctx, t, { n: 160, alpha: 0.35, near: false, seed: 8 });
+  // the sun comes out: a warm band of light slides across
+  const p = ease.inOut(prog(t, 1.2, 3.2));
+  document.getElementById('sweep').style.background = `linear-gradient(115deg, transparent ${p * 120 - 40}%, rgba(255,210,140,0.75) ${p * 120 - 20}%, transparent ${p * 120}%)`;
+  sunlight(ctx, t, { strength: 0.4 * p, leaves: 0 });
+}, () => {
+  cv.width = W(); cv.height = H(); ctx = cv.getContext('2d');
+  wall = freshPaint(W(), H(), '#8fa37a', 31);
+});
+</script>
+</body>
+</html>

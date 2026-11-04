@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 60%, #fbfaf6 0%, #efe9dd 60%, #d9d1c1 100%); }
+  .fan { position: absolute; left: 50%; top: 74%; width: 0; height: 0; }
+  .card { position: absolute; left: -95px; bottom: 0; width: 190px; height: 760px; border-radius: 22px; transform-origin: 50% 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); overflow: hidden; background: #fff; }
+  .card .sw { position: absolute; left: 0; right: 0; top: 0; height: 74%; }
+  .card .nm { position: absolute; left: 14px; right: 10px; bottom: 26px; font: 700 21px/1.15 Inter, sans-serif; color: #2f2a2a; }
+  .card .pin { position: absolute; left: 50%; bottom: 26px; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: #c9ccd0; display: none; }
+  @media (min-aspect-ratio: 3/4) { .fan { top: 96%; } .card { height: 560px; width: 150px; left: -75px; } .card .nm { font-size: 17px; } }
+  .words { color: var(--navy); }
+  .words .kicker { color: var(--orange); }
+  .words .big { color: var(--navy); text-shadow: none; font-size: 100px; }
+  @media (min-aspect-ratio: 3/4) { .words .big { font-size: 76px; } }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg"></div>
+  <div class="cam" data-from="1.0" data-to="1.07" data-whip="up"><div class="fan" id="fan"></div></div>
+  <div class="words">
+    <div class="kicker" data-rise="2.1">Free colour samples</div>
+    <div class="big serif" data-rise="0.6">Try it on<br><i>your</i> wall.</div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease, lerp, vertical } from './lib/kit.js';
+// real colours from the Parker catalogue
+const colours = [['Ceiling White', '#f2f0ea'], ['Light Oak', '#c49a6c'], ['Teak', '#8a5a2b'], ['Mahogany', '#5a2418'], ['Roof Guard Red', '#9e2a22'], ['Road Marking Yellow', '#f0bd2a'],
+  ['Galvanized Green', '#5b8a55'], ['Roof Guard Green', '#2f5d3a'], ['Slate Grey', '#5c6670'], ['Charcoal Grey', '#3b3d40'], ['Silvershine', '#c3c7cc'], ['Pinkwood Pink', '#e1a093']];
+const fan = document.getElementById('fan');
+for (const [nm, c] of colours) fan.insertAdjacentHTML('beforeend', `<div class="card"><div class="sw" style="background:linear-gradient(160deg, rgba(255,255,255,0.18), transparent 40%, rgba(0,0,0,0.12)), ${c}"></div><div class="nm">${nm}</div></div>`);
+shot(5.8, (t) => {
+  // the swatch fan opens like a hand of cards
+  const p = ease.out5(prog(t, 0.25, 1.4)), n = colours.length, spread = vertical() ? 92 : 120;
+  [...fan.children].forEach((el, i) => {
+    const a = lerp(0, -spread / 2 + (spread * i) / (n - 1), p);
+    el.style.transform = `rotate(${a}deg) translateY(${(1 - p) * 120}px)`;
+    el.style.zIndex = i;
+  });
+});
+</script>
+</body>
+</html>

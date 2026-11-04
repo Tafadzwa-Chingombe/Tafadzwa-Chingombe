@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<link rel="stylesheet" href="lib/badge.css">
+<style>
+  .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 50%, #234a86 0%, #193862 40%, #0b1730 100%); }
+  #rays { position: absolute; left: 50%; top: 50%; width: 2600px; height: 2600px; margin: -1300px 0 0 -1300px;
+    background: repeating-conic-gradient(rgba(255,255,255,0.06) 0 6deg, transparent 6deg 15deg); -webkit-mask-image: radial-gradient(circle, #000 10%, transparent 60%); }
+  .center { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); }
+  @media (min-aspect-ratio: 3/4) { .seal { font-size: 380px; } .center { top: 52%; } }
+  .tins { position: absolute; left: 0; right: 0; bottom: 18%; display: flex; justify-content: center; gap: 30px; align-items: flex-end; }
+  .tins img { height: 300px; filter: drop-shadow(0 20px 20px rgba(0,0,0,0.5)); }
+  @media (min-aspect-ratio: 3/4) { .tins { display: none; } }
+  .words { text-align: center; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg"></div><div id="rays"></div>
+  <div class="cam" data-from="1.0" data-to="1.06" data-whip="none">
+    <div class="tins" id="tins"><img src="img/products/silkshield.png" data-rise="0.9"><img src="img/products/wallshield.png" data-rise="1.0"><img src="img/products/premium-acrylic-pva.png" data-rise="1.1"></div>
+    <div class="center"><div class="seal" id="seal"><div class="ring"></div><div class="ten">10</div><div class="yr">YEAR</div><div class="rib">GUARANTEE</div><div class="glint" id="glint"></div></div></div>
+  </div>
+  <div class="words"><div class="kicker" data-rise="0.3">Premium range</div></div>
+</div>
+<script type="module">
+import { shot, prog, ease, lerp, shake } from './lib/kit.js';
+const seal = document.getElementById('seal');
+shot(4.1, (t) => {
+  // the seal stamps down: big and soft, then hits the frame with a shake
+  const p = prog(t, 0.15, 0.38), e = ease.in(p);
+  const [sx, sy] = shake(t, 0.53, 18);
+  seal.style.transform = `translate(${sx}px, ${sy}px) scale(${lerp(2.6, 1, e)}) rotate(${lerp(-18, -6, e)}deg)`;
+  seal.style.opacity = Math.min(1, p * 3);
+  seal.style.filter = p < 1 ? `blur(${(1 - e) * 14}px)` : 'none';
+  document.getElementById('glint').style.transform = `translateX(${lerp(-120, 120, ease.inOut(prog(t, 2.6, 0.9)))}%)`;
+  document.getElementById('rays').style.transform = `rotate(${t * 6}deg)`;
+});
+</script>
+</body>
+</html>

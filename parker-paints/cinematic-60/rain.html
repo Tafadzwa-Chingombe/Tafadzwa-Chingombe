@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  #cv { filter: brightness(0.6) saturate(0.55) contrast(1.15) hue-rotate(-8deg); }
+  .cool { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40, 70, 110, 0.45), rgba(10, 18, 30, 0.55)); mix-blend-mode: multiply; }
+  #flash { position: absolute; inset: 0; background: #dfe8ff; mix-blend-mode: screen; opacity: 0; }
+  #fg { position: absolute; inset: 0; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="cam" data-from="1.12" data-to="1.04" data-dy="-40" data-whip="down"><canvas class="full" id="cv"></canvas></div>
+  <div class="cool"></div>
+  <canvas id="fg"></canvas>
+  <div id="flash"></div>
+  <div class="words"><div class="kicker" data-rise="0.6" style="color:#cfe0ff">Rainy season</div></div>
+</div>
+<script type="module">
+import { shot, W, H } from './lib/kit.js';
+import { plaster, wetTrails, rain, flash } from './lib/fx.js';
+const cv = document.getElementById('cv'), fg = document.getElementById('fg'); let ctx, fctx, tex;
+shot(8, (t) => {
+  ctx.drawImage(tex, 0, 0);
+  wetTrails(ctx, t, { n: 30, seed: 11, start: 0.2, grow: 240 });
+  fctx.clearRect(0, 0, fg.width, fg.height);
+  rain(fctx, t, { n: 420, alpha: 0.55 });
+  const f = flash(t, 1.0) + flash(t, 3.6) * 0.6;
+  document.getElementById('flash').style.opacity = (f * 0.7).toFixed(3);
+}, () => {
+  cv.width = W(); cv.height = H(); ctx = cv.getContext('2d');
+  fg.width = W(); fg.height = H(); fctx = fg.getContext('2d');
+  tex = plaster(W(), H(), { color: '#d8c49c', aged: true, seed: 4 });
+});
+</script>
+</body>
+</html>

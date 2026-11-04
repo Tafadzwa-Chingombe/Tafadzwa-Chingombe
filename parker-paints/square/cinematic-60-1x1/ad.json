@@ -1,0 +1,210 @@
+{
+ "title": "Parker Paints: Every wall tells a story (60 s)",
+ "score": "cinematic",
+ "music_volume": 0.34,
+ "marks": {
+  "lift": 2,
+  "drop": 3,
+  "end": 9
+ },
+ "bug": [
+  2,
+  9
+ ],
+ "shots": [
+  {
+   "page": "sun",
+   "min": 4.5,
+   "line": "In Zimbabwe, the sun doesn't just light up your walls. It bakes them."
+  },
+  {
+   "page": "rain",
+   "min": 5,
+   "line": "Then the rains come. Season after season, colour fades, paint cracks, and walls begin to peel."
+  },
+  {
+   "page": "pour",
+   "min": 4,
+   "line": "So we made paint for exactly these conditions."
+  },
+  {
+   "page": "roller",
+   "min": 5.5,
+   "line": "Parker Paints glide on smooth and level out, with no brush marks and no roller tracks."
+  },
+  {
+   "page": "shield",
+   "min": 5,
+   "line": "Weatherproof and UV resistant, so your colour keeps that just-painted depth for years."
+  },
+  {
+   "page": "room",
+   "min": 3.5,
+   "line": "From the living room to the roof, from wood to metal,"
+  },
+  {
+   "page": "range",
+   "min": 5.5,
+   "line": "there's a Parker product for every surface. 29 of them, made right here in Zimbabwe.",
+   "say": "there's a Parker product for every surface. Twenty-nine of them, made right here in Zimbabwe."
+  },
+  {
+   "page": "guarantee",
+   "min": 3.5,
+   "line": "And our premium range is backed by a 10-year guarantee.",
+   "say": "And our premium range is backed by a ten-year guarantee."
+  },
+  {
+   "page": "samples",
+   "min": 4.5,
+   "line": "Not sure which colour? Order free colour samples and hold the real thing against your wall."
+  },
+  {
+   "page": "endcard",
+   "min": 6,
+   "line": "Parker Paints. Every wall tells a story. Let's make yours unforgettable."
+  }
+ ],
+ "sfx": [
+  [
+   0,
+   "cicadas",
+   0,
+   0.5,
+   "shot"
+  ],
+  [
+   1,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   1,
+   "rain",
+   -0.1,
+   0.65,
+   "shot"
+  ],
+  [
+   1,
+   "thunder",
+   0.9,
+   0.7
+  ],
+  [
+   2,
+   "whoosh",
+   -0.25,
+   0.55
+  ],
+  [
+   2,
+   "pour",
+   0.2,
+   0.7,
+   3.6
+  ],
+  [
+   3,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   3,
+   "roller",
+   0.35,
+   0.55,
+   1.2
+  ],
+  [
+   3,
+   "roller",
+   1.6,
+   0.55,
+   1.2
+  ],
+  [
+   3,
+   "roller",
+   2.85,
+   0.55,
+   1.2
+  ],
+  [
+   4,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   4,
+   "rain",
+   0,
+   0.35,
+   "shot"
+  ],
+  [
+   5,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   6,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   7,
+   "whoosh",
+   -0.25,
+   0.45
+  ],
+  [
+   7,
+   "stamp",
+   0.5,
+   0.8
+  ],
+  [
+   8,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   9,
+   "whoosh",
+   -0.25,
+   0.5
+  ],
+  [
+   9,
+   "impact",
+   0.0,
+   0.6
+  ],
+  [
+   7,
+   "shimmer",
+   2.65,
+   0.5
+  ],
+  [
+   3,
+   "roller",
+   4.1,
+   0.5,
+   1.0
+  ],
+  [
+   6,
+   "tick",
+   2.95,
+   0.4
+  ]
+ ]
+}

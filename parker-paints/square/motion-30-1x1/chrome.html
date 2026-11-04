@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  body { background: transparent; }
+  /* over the whole film: film grain, vignette, light leaks on the cuts, the logo bug */
+  #grain { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: overlay; opacity: 0.22; }
+  .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 46%, transparent 55%, rgba(0, 0, 0, 0.5) 100%); }
+  #leak { position: absolute; inset: -20%; mix-blend-mode: screen; opacity: 0; }
+  .bug { position: absolute; right: 64px; top: 250px; font-size: 40px; opacity: 0; }
+  @media (min-aspect-ratio: 3/4) { .bug { top: 56px; right: 56px; font-size: 34px; } }
+</style>
+</head>
+<body>
+<canvas id="grain"></canvas>
+<div class="vignette"></div>
+<div id="leak"></div>
+<div class="bug" id="bug"><span class="logo">PARKER<sup>™</sup></span></div>
+<script type="module">
+import { loaded, prog, ease, clamp } from './lib/kit.js';
+import { grainTiles } from './lib/fx.js';
+import { cuts, bug } from './lib/cuts.js';
+const cv = document.getElementById('grain'), ctx = cv.getContext('2d');
+let tiles;
+window.film = {
+  ready: loaded(() => { cv.width = innerWidth; cv.height = innerHeight; tiles = grainTiles(4, 512); }),
+  frame(t) {
+    // grain: a new tile and offset every frame (24 a second, like film)
+    const f = Math.floor(t * 24), tile = tiles[f % 4];
+    ctx.save(); ctx.translate(-((f * 137) % 512), -((f * 251) % 512));
+    for (let y = 0; y < cv.height + 512; y += 512) for (let x = 0; x < cv.width + 512; x += 512) ctx.drawImage(tile, x, y);
+    ctx.restore();
+    // light leak: a warm flare that blooms across each cut
+    let a = 0, pos = 0;
+    for (const c of cuts) { const p = (t - c + 0.22) / 0.6; if (p > 0 && p < 1) { a = Math.sin(Math.PI * p); pos = p; } }
+    const leak = document.getElementById('leak');
+    leak.style.opacity = (a * 0.85).toFixed(3);
+    leak.style.background = `radial-gradient(ellipse 45% 60% at ${15 + pos * 70}% ${30 + pos * 25}%, rgba(254,152,50,0.85), rgba(201,162,39,0.35) 45%, transparent 70%)`;
+    const b = document.getElementById('bug');
+    b.style.opacity = (ease.out(prog(t, bug[0] + 0.3, 0.6)) * (1 - prog(t, bug[1] - 0.3, 0.3)) * 0.92).toFixed(3);
+  },
+};
+</script>
+</body>
+</html>

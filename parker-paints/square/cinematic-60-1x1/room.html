@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  .photo { position: absolute; top: 0; height: 100%; }
+  .photo img { height: 100%; width: auto; display: block; filter: contrast(1.05) saturate(1.1); }
+  #light { position: absolute; inset: 0; mix-blend-mode: soft-light; }
+  .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35), transparent 30%, transparent 70%, rgba(0,0,0,0.35)); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="cam" data-from="1.04" data-to="1.12" data-whip="right"><div class="photo" id="ph"><img src="img/room.jpg"></div></div>
+  <div id="light"></div>
+  <div class="shade"></div>
+  <div class="words"><div class="kicker" data-rise="0.5">Every room</div></div>
+</div>
+<script type="module">
+import { shot, W, H, prog, ease, lerp } from './lib/kit.js';
+const ph = document.getElementById('ph'); let span = 0;
+shot(4.2, (t) => {
+  // a slow dolly across the room, from the dining wall to the sofa
+  const p = ease.sine(prog(t, 0, 3.5));
+  ph.style.left = `${-lerp(span * 0.85, span * 0.25, p)}px`;
+  const q = ease.inOut(prog(t, 0.2, 3.0));
+  document.getElementById('light').style.background = `radial-gradient(ellipse 60% 80% at ${80 - q * 50}% 20%, rgba(255,220,160,0.7), transparent 70%)`;
+}, () => {
+  const img = ph.querySelector('img');
+  span = Math.max(0, (img.naturalWidth * H() / img.naturalHeight) - W());
+});
+</script>
+</body>
+</html>

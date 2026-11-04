@@ -1,0 +1,81 @@
+{
+ "title": "Parker Paints: The perfect finish (30 s motion graphics)",
+ "score": "punchy",
+ "music_volume": 0.3,
+ "marks": {
+  "drop": 1,
+  "end": 5
+ },
+ "bug": [
+  2,
+  5
+ ],
+ "shots": [
+  {
+   "page": "hook",
+   "min": 4.5,
+   "line": "Sun. Rain. Cracks. Your walls take a beating."
+  },
+  {
+   "page": "meet",
+   "min": 4.5,
+   "line": "Meet Parker Paints. Made in Zimbabwe, for Zimbabwe's toughest weather."
+  },
+  {
+   "page": "features",
+   "min": 5,
+   "line": "UV resistant. Weatherproof. Long-lasting colour. And a smooth, easy finish."
+  },
+  {
+   "page": "range",
+   "min": 4,
+   "line": "29 products, for walls, roofs, wood and metal.",
+   "say": "Twenty-nine products, for walls, roofs, wood and metal."
+  },
+  {
+   "page": "guarantee",
+   "min": 3.5,
+   "line": "Premium paint, backed by a 10-year guarantee.",
+   "say": "Premium paint, backed by a ten-year guarantee."
+  },
+  {
+   "page": "endcard",
+   "min": 5,
+   "line": "Parker Paints. The perfect finish. Call us today."
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.3,
+   0.6
+  ],
+  [
+   2,
+   "whoosh",
+   -0.3,
+   0.55
+  ],
+  [
+   3,
+   "whoosh",
+   -0.3,
+   0.55
+  ],
+  [
+   4,
+   "whoosh",
+   -0.3,
+   0.55
+  ],
+  [
+   5,
+   "whoosh",
+   -0.3,
+   0.55
+  ]
+ ],
+ "tail": 0.3,
+ "end_tail": 1.5
+}

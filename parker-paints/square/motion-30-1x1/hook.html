@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  .panel { position: absolute; inset: 0; opacity: 0; }
+  #p1 { background: radial-gradient(circle at 70% 25%, #ffd27a, #fe9832 35%, #c2410c 100%); }
+  #p2 { background: linear-gradient(180deg, #1c55e0, #0b1f5c); }
+  #p3 { background: #2f2a2a; }
+  .word { position: absolute; left: 0; right: 0; top: 40%; text-align: center; font: 900 200px/1 Montserrat, sans-serif; text-transform: uppercase; letter-spacing: -0.02em; opacity: 0; }
+  @media (min-aspect-ratio: 3/4) { .word { font-size: 170px; top: 34%; } }
+  #rays { position: absolute; left: 70%; top: 25%; width: 3000px; height: 3000px; margin: -1500px 0 0 -1500px; background: repeating-conic-gradient(rgba(255,255,255,0.18) 0 5deg, transparent 5deg 14deg); }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tag { position: absolute; left: var(--side); right: var(--side); top: 62%; text-align: center; font: 800 76px/1.05 Montserrat, sans-serif; text-transform: uppercase; opacity: 0; }
+  @media (min-aspect-ratio: 3/4) { .tag { top: 58%; font-size: 60px; } }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="cam" data-from="1.0" data-to="1.06" data-whip="none">
+    <div class="panel" id="p1"><div id="rays"></div></div>
+    <div class="panel" id="p2"><canvas id="rain"></canvas></div>
+    <div class="panel" id="p3"><canvas id="crk"></canvas></div>
+    <div class="word" id="w1">Sun.</div><div class="word" id="w2">Rain.</div><div class="word" id="w3">Cracks.</div>
+    <div class="tag" id="tag">Your walls take<br><span class="hl">a beating.</span></div>
+  </div>
+</div>
+<script type="module">
+import { shot, W, H, prog, ease, lerp, shake, rng } from './lib/kit.js';
+import { rain, offscreen } from './lib/fx.js';
+const BEATS = [0.0, 1.35, 2.43], TAG = 3.45;   // when each word is said (synced to the voice)
+const rc = document.getElementById('rain'), cc = document.getElementById('crk'); let rctx, cctx, cracks;
+shot(5.3, (t) => {
+  const which = t < BEATS[1] ? 0 : t < BEATS[2] ? 1 : 2;
+  ['p1', 'p2', 'p3'].forEach((id, i) => { document.getElementById(id).style.opacity = i === which ? 1 : 0; });
+  ['w1', 'w2', 'w3'].forEach((id, i) => {
+    const el = document.getElementById(id), p = i === 0 ? 1 : prog(t, BEATS[i], 0.22), on = i === which;
+    const [sx, sy] = shake(t, BEATS[i] + 0.2, 16, 0.25);
+    el.style.opacity = on ? Math.min(1, p * 3) * (t > TAG ? 1 - prog(t, TAG, 0.2) * 0.8 : 1) : 0;
+    el.style.transform = `translate(${sx}px, ${sy - (t > TAG ? ease.out(prog(t, TAG, 0.4)) * 160 : 0)}px) scale(${lerp(1.9, 1, ease.out5(p))})`;
+    el.style.filter = p < 1 ? `blur(${(1 - p) * 18}px)` : 'none';
+  });
+  document.getElementById('rays').style.transform = `rotate(${t * 25}deg)`;
+  if (which === 1) { rctx.clearRect(0, 0, rc.width, rc.height); rain(rctx, t, { n: 300, alpha: 0.6, angle: 0.18, near: true }); }
+  if (which === 2) {
+    cctx.clearRect(0, 0, cc.width, cc.height);
+    const p = ease.out(prog(t, BEATS[2], 0.5));
+    cctx.strokeStyle = '#fe9832'; cctx.lineCap = 'round';
+    for (const c of cracks) { const n = Math.floor(c.pts.length * p); cctx.lineWidth = c.w; cctx.beginPath(); c.pts.slice(0, n).forEach(([x, y], j) => (j ? cctx.lineTo(x, y) : cctx.moveTo(x, y))); cctx.stroke(); }
+  }
+  const tg = document.getElementById('tag'), q = ease.out5(prog(t, TAG, 0.4));
+  tg.style.opacity = q; tg.style.transform = `translateY(${(1 - q) * 80}px)`;
+}, () => {
+  rc.width = cc.width = W(); rc.height = cc.height = H(); rctx = rc.getContext('2d'); cctx = cc.getContext('2d');
+  const r = rng(3); cracks = [];
+  const branch = (x, y, a, len, w) => { const pts = [[x, y]]; for (let s = 0; s < len; s += 14) { a += (r() - 0.5) * 0.9; x += Math.cos(a) * 14; y += Math.sin(a) * 14; pts.push([x, y]); } cracks.push({ pts, w }); if (w > 3) for (let b = 0; b < 2; b++) { const [bx, by] = pts[Math.floor(r() * pts.length)]; branch(bx, by, a + (r() - 0.5) * 2, len * 0.5, w * 0.5); } };
+  for (let i = 0; i < 4; i++) branch(W() / 2, H() * 0.47, i * Math.PI / 2 + r(), Math.max(W(), H()) * 0.6, 9);
+});
+</script>
+</body>
+</html>

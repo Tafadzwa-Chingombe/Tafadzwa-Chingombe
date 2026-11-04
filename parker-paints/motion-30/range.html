@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 70%, #2a6ef0 0%, #1c46b8 45%, #0f2a72 100%); }
+  .head { position: absolute; left: 0; right: 0; top: 280px; text-align: center; }
+  .head .n { font: 900 300px/0.85 Montserrat, sans-serif; color: var(--orange); text-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+  .head .u { font: 900 64px/1 Montserrat, sans-serif; text-transform: uppercase; }
+  .use { margin-top: 26px; height: 60px; position: relative; font: 800 52px/60px Montserrat, sans-serif; text-transform: uppercase; color: #fff; }
+  .use span { position: absolute; left: 0; right: 0; opacity: 0; }
+  .fan { position: absolute; left: 50%; bottom: 20%; width: 0; height: 0; }
+  .fan img { position: absolute; bottom: 0; height: 420px; transform-origin: 50% 100%; filter: drop-shadow(0 26px 26px rgba(0,0,0,0.45)); }
+  @media (min-aspect-ratio: 3/4) { .head { top: 50px; } .head .n { font-size: 190px; } .head .u { font-size: 44px; } .use { font-size: 38px; height: 44px; line-height: 44px; margin-top: 12px; } .fan { bottom: 4%; } .fan img { height: 290px; } }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg"></div>
+  <div class="cam" data-from="1.0" data-to="1.05" data-whip="left">
+    <div class="head"><div class="n" id="n">0</div><div class="u">products</div>
+      <div class="use" id="use"><span>for walls</span><span>for roofs</span><span>for wood</span><span>for metal</span></div></div>
+    <div class="fan" id="fan"></div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease, lerp, vertical } from './lib/kit.js';
+const files = ['roof-paint', 'super-gloss-enamel', 'silkshield', 'wallshield', 'premium-acrylic-pva', 'aqua-glow', 'shieldtex'];
+const fan = document.getElementById('fan');
+for (const f of files) fan.insertAdjacentHTML('beforeend', `<img src="img/products/${f}.png">`);
+const SAY = [1.95, 2.4, 2.88, 3.45];   // walls, roofs, wood, metal (synced to the voice)
+shot(4.6, (t) => {
+  document.getElementById('n').textContent = Math.round(29 * ease.out(prog(t, 0.15, 0.8)));
+  [...document.getElementById('use').children].forEach((s, i) => {
+    const on = t >= SAY[i] && (i === 3 || t < SAY[i + 1]), p = ease.out5(prog(t, SAY[i], 0.25));
+    s.style.opacity = on ? p : 0; s.style.transform = `translateY(${(1 - p) * 30}px)`;
+  });
+  const n = files.length, spread = vertical() ? 380 : 520;
+  [...fan.children].forEach((el, i) => {
+    const p = ease.out5(prog(t, 0.2 + Math.abs(i - (n - 1) / 2) * 0.08, 0.6));
+    const x = lerp(0, -spread + (2 * spread * i) / (n - 1), p), a = lerp(0, -18 + (36 * i) / (n - 1), p);
+    const depth = 1 - Math.abs(i - (n - 1) / 2) / n;
+    el.style.left = `${x}px`; el.style.zIndex = Math.round(depth * 10);
+    el.style.transform = `translateX(-50%) rotate(${a}deg) scale(${0.75 + 0.3 * depth}) translateY(${(1 - p) * 400}px)`;
+  });
+});
+</script>
+</body>
+</html>

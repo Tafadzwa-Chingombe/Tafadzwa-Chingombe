@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/parker.css">
+<style>
+  #cv { filter: contrast(1.12) saturate(1.08) sepia(0.12); }
+  .heat { position: absolute; inset: 0; background: linear-gradient(200deg, rgba(255, 196, 120, 0.22), transparent 45%, rgba(60, 25, 5, 0.3)); mix-blend-mode: soft-light; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="cam" data-from="1.02" data-to="1.16" data-dx="-30" data-whip="none"><canvas class="full" id="cv"></canvas></div>
+  <div class="heat"></div>
+  <div class="words"><div class="kicker" data-rise="0.3" style="color:#fff">Zimbabwe · midday</div><div class="big serif" data-letters="0.1" style="font-size:104px">Every wall<br>tells a story.</div></div>
+</div>
+<script type="module">
+import { shot, hash, prog, ease, W, H } from './lib/kit.js';
+import { plaster, sunlight, dust } from './lib/fx.js';
+const cv = document.getElementById('cv'); let ctx, tex;
+shot(5.2, (t) => {
+  ctx.drawImage(tex, 0, 0);
+  sunlight(ctx, t, { strength: 1.15, leaves: 1 });
+  dust(ctx, t, 80, 9, 0.7);
+  // a dry flake lets go and falls, turning
+  for (let k = 0; k < 3; k++) {
+    const t0 = 0.8 + k * 1.1; if (t < t0) continue;
+    const tt = t - t0, x = W() * (0.3 + 0.25 * k) + Math.sin(tt * 3 + k) * 26, y = H() * (0.3 + 0.12 * k) + 140 * tt * tt + 30 * tt;
+    ctx.save(); ctx.translate(x, y); ctx.rotate(tt * (2 + k)); ctx.scale(1, Math.cos(tt * 4 + k));
+    ctx.fillStyle = '#e8dcc0'; ctx.shadowColor = 'rgba(0,0,0,0.4)'; ctx.shadowBlur = 8; ctx.shadowOffsetY = 6;
+    ctx.beginPath(); ctx.moveTo(-16, -8); ctx.lineTo(14, -12); ctx.lineTo(18, 6); ctx.lineTo(-4, 14); ctx.closePath(); ctx.fill(); ctx.restore();
+  }
+}, () => {
+  cv.width = W(); cv.height = H(); ctx = cv.getContext('2d');
+  tex = plaster(W(), H(), { color: '#d8c49c', aged: true, seed: 4 });
+});
+</script>
+</body>
+</html>
