@@ -1,0 +1,430 @@
+<title>iContact Citation Tracker</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working ledger. Sticky progress header, the "one true NAP" card, then the directory list as rows,
+   copy kit and free tool table below. iContact brand: navy ground in dark, blue ink, lime green for done. */
+:root {
+  --bg: #f4f6fa; --surface: #ffffff; --ink: #0b1f3a; --muted: #55657d; --line: #dde3ec;
+  --blue: #2e5795; --blue-soft: #e6edf7; --green: #5d8a12; --green-soft: #eef6dc; --lime: #abcf47;
+  --amber: #a5660a; --amber-soft: #fbf0dc; --grey-soft: #eef1f5;
+  --f-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #08162b; --surface: #0e2340; --ink: #e8eef7; --muted: #9db0c9; --line: #1f3a5f;
+  --blue: #8fb3ec; --blue-soft: #16325a; --green: #b9dc5c; --green-soft: #1f3a1c; --lime: #abcf47;
+  --amber: #f0b45a; --amber-soft: #3a2a10; --grey-soft: #142d4f; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #08162b; --surface: #0e2340; --ink: #e8eef7; --muted: #9db0c9; --line: #1f3a5f;
+  --blue: #8fb3ec; --blue-soft: #16325a; --green: #b9dc5c; --green-soft: #1f3a1c; --lime: #abcf47;
+  --amber: #f0b45a; --amber-soft: #3a2a10; --grey-soft: #142d4f; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--f-body); margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 1060px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h2 { font-size: 22px; font-weight: 700; }
+h3 { font-size: 15px; font-weight: 600; }
+a { color: var(--blue); }
+.eyebrow { font: 600 11px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+section { padding-block: 28px; display: grid; gap: 16px; }
+.lede { color: var(--muted); max-width: 68ch; margin: 0; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* header */
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+header .wrap { padding-block: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand h1 { font-size: 19px; font-weight: 800; letter-spacing: -.01em; }
+.brand h1 b { color: var(--lime); -webkit-text-stroke: .4px var(--green); }
+.progress { flex: 1 1 320px; display: grid; gap: 6px; min-width: 0; }
+.bar { height: 10px; border-radius: 6px; background: var(--grey-soft); overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; transition: width .4s ease; }
+.bar .l { background: var(--lime); } .bar .s { background: var(--amber); opacity: .7; }
+.counts { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.counts strong { color: var(--ink); font-weight: 600; }
+.sync { font-size: 12px; color: var(--muted); }
+
+/* NAP card */
+.nap { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 4px; }
+.nap-row { display: grid; grid-template-columns: 130px 1fr auto; gap: 12px; align-items: center; padding-block: 9px; border-top: 1px dashed var(--line); }
+.nap-row:first-of-type { border-top: 0; }
+.nap-row .k { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.nap-row .v { font: 500 14px/1.4 var(--f-mono); min-width: 0; overflow-wrap: anywhere; }
+.copy { font: 600 12px/1 var(--f-body); border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 8px; padding: 7px 10px; cursor: pointer; white-space: nowrap; }
+.copy:hover { border-color: var(--blue); color: var(--blue); }
+.copy.done { border-color: var(--green); color: var(--green); }
+@media (max-width: 560px) { .nap-row { grid-template-columns: 1fr auto; } .nap-row .k { grid-column: 1 / -1; } }
+
+/* filters */
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chipbtn { font: 500 13px/1 var(--f-body); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.chipbtn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* directory rows */
+.group { display: grid; gap: 10px; }
+.group h3 { display: flex; align-items: baseline; gap: 10px; }
+.group h3 span { font: 500 12px var(--f-body); color: var(--muted); }
+.row { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: 10px 18px; }
+.row[data-status="submitted"] { border-left-color: var(--amber); }
+.row[data-status="live"] { border-left-color: var(--lime); }
+.row[data-status="skip"] { opacity: .6; }
+.row .name { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+.row .name a { font: 600 15px var(--f-display); text-decoration: none; color: var(--ink); }
+.row .name a:hover { color: var(--blue); text-decoration: underline; }
+.pri { font: 600 10.5px/1 var(--f-body); letter-spacing: .08em; text-transform: uppercase; padding: 4px 7px; border-radius: 5px; }
+.pri.high { background: var(--blue-soft); color: var(--blue); }
+.pri.med { background: var(--grey-soft); color: var(--muted); }
+.pri.low { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.why { grid-column: 1; color: var(--muted); font-size: 13.5px; margin: 0; min-width: 0; }
+.seg { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-self: start; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.seg button { font: 500 12.5px/1 var(--f-body); padding: 8px 10px; border: 0; background: var(--surface); color: var(--muted); cursor: pointer; border-left: 1px solid var(--line); }
+.seg button:first-child { border-left: 0; }
+.seg button[aria-pressed="true"][data-v="none"] { background: var(--grey-soft); color: var(--ink); }
+.seg button[aria-pressed="true"][data-v="submitted"] { background: var(--amber-soft); color: var(--amber); }
+.seg button[aria-pressed="true"][data-v="live"] { background: var(--green-soft); color: var(--green); }
+.seg button[aria-pressed="true"][data-v="skip"] { background: var(--grey-soft); color: var(--muted); text-decoration: line-through; }
+.seg button:disabled { cursor: not-allowed; }
+.fields { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fields input { font: 400 13px var(--f-body); width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; }
+.fields input::placeholder { color: var(--muted); }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; } .seg { grid-column: 1; grid-row: auto; } .fields { grid-template-columns: 1fr; } }
+.empty { color: var(--muted); font-size: 14px; padding: 12px 0; }
+
+/* copy kit */
+.kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.block { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.block header { position: static; background: none; border: 0; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.block p, .block ul { margin: 0; }
+.block .txt { white-space: pre-wrap; font-size: 14px; }
+.block .meta { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; }
+.tags li { font-size: 13px; padding: 4px 9px; border-radius: 6px; background: var(--blue-soft); color: var(--blue); }
+pre.code { margin: 0; overflow-x: auto; font: 12px/1.5 var(--f-mono); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px; color: var(--ink); }
+
+/* tools table */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-top: 1px solid var(--line); }
+thead th { border-top: 0; font: 600 11px var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+td.tool a { font-weight: 600; }
+td .does { color: var(--muted); }
+.swap { font-size: 12.5px; white-space: nowrap; padding: 3px 7px; border-radius: 5px; background: var(--grey-soft); }
+
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 0; counter-reset: r; }
+.rules li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 14px; counter-increment: r; }
+.rules li strong { display: block; font-family: var(--f-display); margin-bottom: 4px; }
+footer { padding-block: 24px 40px; color: var(--muted); font-size: 12.5px; }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><h1><b>i</b>Contact citation tracker</h1></div>
+    <div class="progress" aria-live="polite">
+      <div class="bar" aria-hidden="true"><i class="l" id="barLive" style="width:0%"></i><i class="s" id="barSub" style="width:0%"></i></div>
+      <div class="counts"><span><strong id="nLive">0</strong> live</span><span><strong id="nSub">0</strong> submitted</span><span><strong id="nTodo">0</strong> to do</span><span class="sync" id="sync">Loading saved progress…</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="napH">
+    <div class="eyebrow">Rule one</div>
+    <h2 id="napH">Use these exact details on every listing</h2>
+    <p class="lede">Google trusts a business more when its name, address and phone match character for character everywhere. Copy from here, never retype.</p>
+    <div class="nap" id="nap"></div>
+  </section>
+
+  <section aria-labelledby="dirH">
+    <div class="eyebrow">33 places to be listed</div>
+    <h2 id="dirH">Directories, in the order to do them</h2>
+    <p class="lede">Start with the High rows: they carry most of the SEO weight. Mark each one Submitted when you send it and Live once you can see the listing, then paste its link. Progress saves for you automatically.</p>
+    <div class="toolbar" role="group" aria-label="Filter directories">
+      <button class="chipbtn" data-f="all" aria-pressed="true">All</button>
+      <button class="chipbtn" data-f="todo" aria-pressed="false">To do</button>
+      <button class="chipbtn" data-f="submitted" aria-pressed="false">Submitted</button>
+      <button class="chipbtn" data-f="live" aria-pressed="false">Live</button>
+      <button class="chipbtn" data-f="high" aria-pressed="false">High priority</button>
+    </div>
+    <div id="dirs" class="group"></div>
+  </section>
+
+  <section aria-labelledby="kitH">
+    <div class="eyebrow">Copy kit</div>
+    <h2 id="kitH">Descriptions, categories and services</h2>
+    <p class="lede">Directories ask for different lengths. Use the one that fits the field, and pick the same primary category everywhere.</p>
+    <div class="kit" id="kit"></div>
+  </section>
+
+  <section aria-labelledby="toolsH">
+    <div class="eyebrow">Free instead of Semrush</div>
+    <h2 id="toolsH">Free SEO and keyword-research tools</h2>
+    <p class="lede">No single free tool does everything Semrush does, but together these cover it. Start with the first four. Free limits change often, so check each site's own page.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tool</th><th>What it gives you free</th><th>Replaces in Semrush</th></tr></thead>
+        <tbody id="tools"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="rulesH">
+    <div class="eyebrow">Keep the listings working</div>
+    <h2 id="rulesH">Five rules</h2>
+    <ol class="rules">
+      <li><strong>Same details, everywhere</strong>"iContact Africa Solutions", "1605 Crowborough North, Harare" and +263 71 857 4277, exactly. No "Pvt Ltd" on some and not others.</li>
+      <li><strong>One website link</strong>Every listing points to the GitHub Pages address below. If you move to your own domain later, update every Live listing; the Link fields here make that a 30-minute job.</li>
+      <li><strong>Verify, don't just submit</strong>Many directories (Google, Bing, Apple, Clutch) only show a listing after a phone, email or postcard check. Keep the 071 phone and your Gmail nearby.</li>
+      <li><strong>Ask for reviews</strong>Google, Clutch, GoodFirms and Trustpilot rank you by reviews. Ask MC Attorneys, Parker Paints and other happy clients for one each.</li>
+      <li><strong>Never pay for "1,000 directory submissions"</strong>Spammy bulk listings can hurt rankings. The list above is enough.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="wrap">Directory list checked November 2026: dead sites removed. Free-tool details come from each tool's public pages and can change.</footer>
+
+<script>
+const NAP = [
+  ['Business name', 'iContact Africa Solutions'],
+  ['Address', '1605 Crowborough North, Harare, Zimbabwe'],
+  ['Phone', '+263 71 857 4277'],
+  ['Second phone', '+263 77 419 2027'],
+  ['WhatsApp', '+263 71 857 4277'],
+  ['Email', 'chingombet@gmail.com'],
+  ['Website', 'https://tafadzwa-chingombe.github.io/iContact-Africa-Solutions/'],
+  ['Primary category', 'Website designer'],
+  ['Facebook', 'https://www.facebook.com/p/IContact-Africa-Solutions-61554255320737/'],
+  ['Instagram', 'https://www.instagram.com/icontact_africa_solutions/'],
+  ['LinkedIn', 'https://zw.linkedin.com/company/icontact-africa-solutions'],
+];
+
+const GROUPS = [
+  ['core', 'Search engines and maps', 'the foundation'],
+  ['agency', 'Agency and B2B directories', 'where clients compare agencies'],
+  ['zw', 'Zimbabwe directories', 'local trust signals'],
+  ['global', 'Africa and global directories', 'extra citations'],
+  ['social', 'Social and portfolio profiles', 'brand searches and backlinks'],
+];
+
+const DIRS = [
+  ['gbp', 'core', 'Google Business Profile', 'https://business.google.com', 'high', 'Puts you on Google Maps and in the local "web design near me" results. The single most important listing. Verify by video or phone.'],
+  ['bing', 'core', 'Bing Places for Business', 'https://www.bingplaces.com', 'high', 'Bing, Copilot and the search engines that use Bing data. You can import your Google profile in one click.'],
+  ['apple', 'core', 'Apple Business Connect', 'https://businessconnect.apple.com', 'high', 'Apple Maps and Siri on every iPhone. Free, needs an Apple ID.'],
+  ['fsq', 'core', 'Foursquare for Business', 'https://business.foursquare.com', 'med', 'Its location data feeds many apps and car navigation systems.'],
+  ['clutch', 'agency', 'Clutch', 'https://clutch.co/get-listed', 'high', 'The best-known agency review site. A strong backlink, and verified client reviews win serious B2B leads.'],
+  ['goodfirms', 'agency', 'GoodFirms', 'https://www.goodfirms.co/get-listed', 'high', 'Has dedicated Zimbabwe and Harare web development pages with only around a dozen firms, so it is easy to stand out.'],
+  ['designrush', 'agency', 'DesignRush', 'https://www.designrush.com/agency/get-listed', 'med', 'Agency directory with a free profile; a few Harare agencies are already listed.'],
+  ['sortlist', 'agency', 'Sortlist', 'https://www.sortlist.com', 'med', 'Matches businesses with agencies; free agency profile.'],
+  ['techbehemoths', 'agency', 'TechBehemoths', 'https://techbehemoths.com', 'med', 'Free agency profiles listed by country and service.'],
+  ['whtop', 'agency', 'WHTop (web hosting directory)', 'https://www.whtop.com', 'med', 'You sell hosting, and WHTop has a Zimbabwe hosting category. A relevant niche backlink.'],
+  ['crunchbase', 'agency', 'Crunchbase', 'https://www.crunchbase.com', 'low', 'Company profile that ranks for brand searches.'],
+  ['zimbabweyp', 'zw', 'ZimbabweYP', 'https://www.zimbabweyp.com/create-business-listing', 'high', 'Active Zimbabwe business directory with a free business listing.'],
+  ['zimyellow', 'zw', 'Zimbabwe Yellow Pages (ZimYellow)', 'https://www.zimyellow.com', 'high', 'Zimbabwe Yellow Pages\' online directory. Long-established, well-known name.'],
+  ['zimplaza', 'zw', 'ZimPlaza', 'https://www.zimplaza.co.zw', 'high', 'Zimbabwe business directory with free listings by category.'],
+  ['classifieds', 'zw', 'Classifieds.co.zw directory', 'https://www.classifieds.co.zw/directory', 'med', 'Large local classifieds site with a business directory section.'],
+  ['findzim', 'zw', 'FindZim', 'https://findzim.com', 'med', 'Zimbabwe directory where customers post requests for services.'],
+  ['smeaz', 'zw', 'SMEAZ business directory', 'https://www.smeaz.org.zw', 'med', 'Small and Medium Enterprises Association of Zimbabwe. Membership-based, so a strong local trust signal.'],
+  ['bizpages', 'zw', 'BizPages (Zimbabwe)', 'https://bizpages.org/countries--ZW--Zimbabwe', 'low', 'Free international directory with a Zimbabwe section.'],
+  ['expat', 'zw', 'Expat.com business directory', 'https://www.expat.com/en/business/africa/zimbabwe/', 'low', 'Reaches diaspora and expat clients looking for Zimbabwean services.'],
+  ['cybo', 'zw', 'Cybo', 'https://www.cybo.com', 'low', 'Global directory with Harare listings and an Add a Business form.'],
+  ['abp', 'global', 'Africa Business Pages', 'https://www.africa-business.com', 'med', 'Pan-African B2B directory covering 54 countries.'],
+  ['trustpilot', 'global', 'Trustpilot', 'https://business.trustpilot.com', 'med', 'Free business profile for collecting reviews that show in Google results.'],
+  ['brownbook', 'global', 'Brownbook', 'https://www.brownbook.net', 'low', 'Free global business listing database.'],
+  ['infobel', 'global', 'Infobel', 'https://www.infobel.com', 'low', 'Global directory with wide African coverage.'],
+  ['alignable', 'global', 'Alignable', 'https://www.alignable.com', 'low', 'Small-business network with a free profile.'],
+  ['fb', 'social', 'Facebook page', 'https://www.facebook.com/p/IContact-Africa-Solutions-61554255320737/', 'high', 'Already live. Check the address, phone and website match the details above exactly.'],
+  ['ig', 'social', 'Instagram', 'https://www.instagram.com/icontact_africa_solutions/', 'high', 'Already live. Put the website and the 071 number in the bio.'],
+  ['li', 'social', 'LinkedIn company page', 'https://zw.linkedin.com/company/icontact-africa-solutions', 'high', 'Already live. Fill in the address, website and specialities.'],
+  ['tiktok', 'social', 'TikTok', 'https://www.tiktok.com', 'med', 'Live as kevin_chingombe. Add "iContact Africa Solutions" and the website link to the bio so the brand name is searchable.'],
+  ['youtube', 'social', 'YouTube channel', 'https://www.youtube.com', 'med', 'Upload your video ads with the website in each description. YouTube is the second-largest search engine.'],
+  ['behance', 'social', 'Behance', 'https://www.behance.net', 'med', 'Portfolio of your website projects. Designers and buyers browse it, and every project links back.'],
+  ['dribbble', 'social', 'Dribbble', 'https://dribbble.com', 'low', 'Design portfolio with a profile link.'],
+  ['pinterest', 'social', 'Pinterest business', 'https://business.pinterest.com', 'low', 'Pin website screenshots and blog covers; each pin links to your site.'],
+];
+
+const KIT = [
+  ['Short description', '~160 characters', 'Harare web design and digital marketing agency. Fixed-price websites from $300, SEO, Google Business Profile setup and paid ads for Zimbabwean businesses.'],
+  ['Medium description', '~400 characters', 'iContact Africa Solutions is a web design and digital marketing agency in Harare, Zimbabwe. We build fast, mobile-friendly websites with fixed, written prices from $300, and help businesses get found with SEO, Google Business Profile setup, social media and paid advertising. Every client gets a client portal to track their project, approve designs and pay invoices.'],
+  ['Long description', '~900 characters', 'iContact Africa Solutions is a Harare-based web design and digital marketing agency helping Zimbabwean businesses get found online and win more customers.\n\nWe design and build fast, mobile-friendly websites, e-commerce stores and corporate sites, with fixed, itemised prices (websites from $300) and most projects live within 2 to 4 weeks. We also offer search engine optimisation (SEO), Google Business Profile setup, social media management, Facebook, Instagram and Google ads, branding and logo design, plus domains, hosting and professional email.\n\nEvery client gets the iContact Client Portal to follow their project live, approve designs, share files, pay invoices and get support. We work with businesses across Zimbabwe and the region, from law firms and paint manufacturers to schools and contractors.\n\nBook a free 30-minute call: +263 71 857 4277.'],
+];
+const CATS = ['Website designer (primary)', 'Internet marketing service', 'Search engine optimisation service', 'Marketing agency', 'Advertising agency', 'Graphic designer', 'Web hosting company'];
+const SERVICES = ['Website design', 'Website redesign', 'E-commerce websites', 'SEO', 'Google Business Profile setup', 'Social media management', 'Facebook and Instagram ads', 'Google Ads', 'Branding and logo design', 'Domains, hosting and email', 'Blog and content updates'];
+const KEYWORDS = ['web design Harare', 'website design Zimbabwe', 'web designer Harare', 'SEO Zimbabwe', 'digital marketing agency Harare', 'Google Business Profile setup Zimbabwe', 'e-commerce website Zimbabwe', 'website cost Zimbabwe'];
+const SCHEMA = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'iContact Africa Solutions',
+  url: 'https://tafadzwa-chingombe.github.io/iContact-Africa-Solutions/', telephone: '+263718574277', email: 'chingombet@gmail.com',
+  address: { '@type': 'PostalAddress', streetAddress: '1605 Crowborough North', addressLocality: 'Harare', addressCountry: 'ZW' },
+  areaServed: 'Zimbabwe', priceRange: '$$',
+  sameAs: ['https://www.facebook.com/p/IContact-Africa-Solutions-61554255320737/', 'https://www.instagram.com/icontact_africa_solutions/', 'https://zw.linkedin.com/company/icontact-africa-solutions'],
+}, null, 2);
+
+const TOOLS = [
+  ['Google Search Console', 'https://search.google.com/search-console', 'The exact searches people use to find your site, your average position for each, clicks, and indexing problems.', 'Position tracking, site health'],
+  ['Google Keyword Planner', 'https://ads.google.com/home/tools/keyword-planner/', 'Keyword ideas and monthly search-volume ranges, filterable to Zimbabwe. Needs a free Google Ads account; you don\'t have to run ads.', 'Keyword research'],
+  ['Bing Webmaster Tools', 'https://www.bing.com/webmasters', 'Site scan, backlinks, and a keyword research tool with search volumes, all free. Can import your Search Console sites.', 'Keyword research, backlinks, site audit'],
+  ['Ahrefs Webmaster Tools', 'https://ahrefs.com/webmaster-tools', 'A full site audit plus backlink and organic keyword data for sites you verify you own.', 'Site audit, backlink analytics'],
+  ['Google Trends', 'https://trends.google.com', 'Compares interest in topics over time, by country and city, for example "website" vs "Facebook page" in Zimbabwe.', 'Trend and seasonality data'],
+  ['Ubersuggest', 'https://neilpatel.com/ubersuggest/', 'Keyword ideas, difficulty and competitor pages, with a few free searches a day.', 'Keyword Magic Tool (light)'],
+  ['Moz free tools', 'https://moz.com/free-seo-tools', 'Link Explorer, Keyword Explorer and Domain Authority checks on a limited number of free monthly queries.', 'Backlink gap, authority score'],
+  ['AnswerThePublic', 'https://answerthepublic.com', 'The questions people ask around a keyword, ideal for blog topics and FAQ sections. A few free searches a day.', 'Topic research'],
+  ['Keyword Surfer', 'https://chromewebstore.google.com/search/keyword%20surfer', 'Chrome extension that shows search volumes and related terms right inside Google results.', 'Quick volume checks'],
+  ['Screaming Frog SEO Spider', 'https://www.screamingfrog.co.uk/seo-spider/', 'Desktop crawler: broken links, missing titles, duplicate pages. Free up to 500 URLs, enough for agency and client sites.', 'Site audit'],
+  ['PageSpeed Insights', 'https://pagespeed.web.dev', 'Mobile speed and Core Web Vitals scores with fixes, which matters on Zimbabwean mobile data.', 'Site performance checks'],
+  ['Google Analytics 4 + Microsoft Clarity', 'https://clarity.microsoft.com', 'Traffic sources and conversions (GA4), plus free heatmaps and session recordings (Clarity).', 'Traffic analytics'],
+  ['Schema Markup Validator', 'https://validator.schema.org', 'Checks the business schema code in the copy kit once it is on your site.', 'Structured data checks'],
+];
+
+// ---------- render ----------
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+let state = {};          // id -> {status, url, note}
+let filter = 'all';
+let canWrite = true;
+let db = null;
+
+function copyBtn(text, label = 'Copy') {
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = label;
+  b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(text); b.textContent = 'Copied'; b.classList.add('done'); }
+    catch { const r = document.createRange(); const n = b.previousElementSibling || b.parentElement; r.selectNodeContents(n); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C'; }
+    setTimeout(() => { b.textContent = label; b.classList.remove('done'); }, 1800);
+  });
+  return b;
+}
+
+function renderNap() {
+  const box = $('#nap');
+  for (const [k, v] of NAP) {
+    const row = document.createElement('div'); row.className = 'nap-row';
+    row.innerHTML = `<div class="k">${esc(k)}</div><div class="v">${esc(v)}</div>`;
+    row.append(copyBtn(v)); box.append(row);
+  }
+}
+
+function renderKit() {
+  const kit = $('#kit');
+  for (const [title, len, text] of KIT) {
+    const b = document.createElement('div'); b.className = 'block';
+    b.innerHTML = `<header><h3>${esc(title)}</h3></header><p class="txt">${esc(text)}</p><div class="meta">${esc(len)} · ${text.length} characters</div>`;
+    $('header', b).append(copyBtn(text)); kit.append(b);
+  }
+  const list = (title, items, note) => {
+    const b = document.createElement('div'); b.className = 'block';
+    b.innerHTML = `<header><h3>${esc(title)}</h3></header><ul class="tags">${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>${note ? `<div class="meta">${esc(note)}</div>` : ''}`;
+    $('header', b).append(copyBtn(items.map((i) => i.replace(' (primary)', '')).join(', '))); kit.append(b);
+  };
+  list('Categories', CATS, 'Use "Website designer" as the primary category everywhere; add the rest where a directory allows more than one.');
+  list('Services', SERVICES, 'Paste into services, specialities or tags fields.');
+  list('Keywords to use in descriptions', KEYWORDS, 'Work one or two in naturally; never stuff them into your business name.');
+  const s = document.createElement('div'); s.className = 'block';
+  s.innerHTML = `<header><h3>Business schema for your website</h3></header><p class="meta">Paste into the &lt;head&gt; of your home page inside a &lt;script type="application/ld+json"&gt; tag. It tells Google your name, address and phone in machine-readable form, matching the listings.</p><pre class="code">${esc(SCHEMA)}</pre>`;
+  $('header', s).append(copyBtn(`<script type="application/ld+json">\n${SCHEMA}\n</` + 'script>')); kit.append(s);
+}
+
+function renderTools() {
+  $('#tools').innerHTML = TOOLS.map(([n, u, d, r]) => `<tr><td class="tool"><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a></td><td class="does">${esc(d)}</td><td><span class="swap">${esc(r)}</span></td></tr>`).join('');
+}
+
+const STATUSES = [['none', 'To do'], ['submitted', 'Submitted'], ['live', 'Live'], ['skip', 'Skip']];
+function st(id) { return state[id] || { status: 'none', url: '', note: '' }; }
+
+function renderDirs() {
+  const box = $('#dirs'); box.innerHTML = '';
+  let shown = 0;
+  for (const [g, gName, gNote] of GROUPS) {
+    const rows = DIRS.filter((d) => d[1] === g).filter(([id, , , , pri]) => {
+      const s = st(id).status;
+      if (filter === 'todo') return s === 'none';
+      if (filter === 'submitted') return s === 'submitted';
+      if (filter === 'live') return s === 'live';
+      if (filter === 'high') return pri === 'high';
+      return true;
+    });
+    if (!rows.length) continue;
+    const grp = document.createElement('div'); grp.className = 'group';
+    grp.innerHTML = `<h3>${esc(gName)} <span>${esc(gNote)}</span></h3>`;
+    for (const [id, , name, url, pri, why] of rows) {
+      const s = st(id); shown++;
+      const row = document.createElement('div'); row.className = 'row'; row.dataset.status = s.status;
+      row.innerHTML = `
+        <div class="name"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(name)}</a><span class="pri ${pri}">${pri === 'med' ? 'Medium' : pri[0].toUpperCase() + pri.slice(1)}</span></div>
+        <p class="why">${esc(why)}</p>
+        <div class="seg" role="group" aria-label="Status for ${esc(name)}">${STATUSES.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${s.status === v}" ${canWrite ? '' : 'disabled'}>${l}</button>`).join('')}</div>
+        <div class="fields">
+          <input id="url-${id}" type="url" placeholder="Paste your listing's link once it's live" value="${esc(s.url)}" aria-label="Listing link for ${esc(name)}" ${canWrite ? '' : 'disabled'}>
+          <input id="note-${id}" type="text" placeholder="Notes (login email, waiting on verification…)" value="${esc(s.note)}" aria-label="Notes for ${esc(name)}" ${canWrite ? '' : 'disabled'}>
+        </div>`;
+      row.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => save(id, { status: b.dataset.v })));
+      $(`#url-${id}`, row).addEventListener('change', (e) => save(id, { url: e.target.value.trim() }));
+      $(`#note-${id}`, row).addEventListener('change', (e) => save(id, { note: e.target.value.trim() }));
+      grp.append(row);
+    }
+    box.append(grp);
+  }
+  if (!shown) box.innerHTML = '<p class="empty">Nothing here yet. Switch the filter back to All.</p>';
+  updateCounts();
+}
+
+function updateCounts() {
+  const total = DIRS.length;
+  let live = 0, sub = 0, skip = 0;
+  for (const [id] of DIRS) { const s = st(id).status; if (s === 'live') live++; else if (s === 'submitted') sub++; else if (s === 'skip') skip++; }
+  const denom = Math.max(1, total - skip);
+  $('#nLive').textContent = live; $('#nSub').textContent = sub; $('#nTodo').textContent = total - live - sub - skip;
+  $('#barLive').style.width = (live / denom * 100) + '%'; $('#barSub').style.width = (sub / denom * 100) + '%';
+}
+
+// ---------- persistence: the artifact's shared store, with a browser fallback ----------
+const LOCAL = 'icontact-citations-v1';
+const writing = {};
+async function save(id, patch) {
+  const next = { ...st(id), ...patch };
+  const prev = state[id];
+  state = { ...state, [id]: next };
+  renderDirs();
+  if (db) {
+    if (writing[id]) await writing[id].catch(() => {});
+    writing[id] = db.doc('listings/' + id).set({ status: next.status, url: next.url, note: next.note, updated: new Date().toISOString() });
+    try { await writing[id]; $('#sync').textContent = 'Saved'; }
+    catch (e) {
+      state = { ...state, [id]: prev || { status: 'none', url: '', note: '' } }; renderDirs();
+      if (e && e.code === 'invalid_argument') { canWrite = false; renderDirs(); $('#sync').textContent = 'View only: you can see progress but not change it.'; }
+      else $('#sync').textContent = 'Could not save just now. Try that change again.';
+    }
+  } else {
+    try { localStorage.setItem(LOCAL, JSON.stringify(state)); $('#sync').textContent = 'Saved in this browser only'; } catch { $('#sync').textContent = 'Changes are not being saved in this view.'; }
+  }
+}
+
+function loadLocal() { try { const s = JSON.parse(localStorage.getItem(LOCAL) || '{}'); if (s && typeof s === 'object') state = s; } catch {} }
+
+async function connect() {
+  try { db = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('db') : null; } catch { db = null; }
+  if (!db) { loadLocal(); renderDirs(); $('#sync').textContent = 'Progress saves in this browser only'; return; }
+  const timer = setTimeout(() => { $('#sync').textContent = 'Saved progress can\'t be reached yet; it may be out of date.'; }, 10000);
+  db.collection('listings').onSnapshot((snap) => {
+    const next = {};
+    for (const d of snap.docs) { const v = d.data() || {}; next[d.id] = { status: String(v.status || 'none'), url: String(v.url || ''), note: String(v.note || '') }; }
+    state = next;
+    if (!snap.metadata.fromCache) { clearTimeout(timer); $('#sync').textContent = 'Progress saved and shared'; }
+    // keep focus while someone is typing in a field
+    const a = document.activeElement; const keep = a && a.id ? [a.id, a.selectionStart] : null;
+    renderDirs();
+    if (keep) { const el = document.getElementById(keep[0]); if (el) { el.focus(); try { el.setSelectionRange(keep[1], keep[1]); } catch {} } }
+  }, () => { clearTimeout(timer); $('#sync').textContent = 'Saved progress is unavailable right now.'; });
+}
+
+document.querySelectorAll('.chipbtn').forEach((b) => b.addEventListener('click', () => {
+  filter = b.dataset.f;
+  document.querySelectorAll('.chipbtn').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  renderDirs();
+}));
+
+renderNap(); renderKit(); renderTools(); renderDirs(); connect();
+</script>
