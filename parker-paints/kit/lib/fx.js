@@ -184,65 +184,88 @@ export function bead(ctx, x, y, r) {
 export const flash = (t, at) => { const d = t - at; if (d < 0 || d > 0.6) return 0; return (d < 0.06 ? 1 : d < 0.12 ? 0.25 : d < 0.18 ? 0.8 : 0) + Math.max(0, 0.35 - d) * 0.6; };
 
 /**
- * Thick paint poured from above into a pool (macro, slow motion).
- * cx: stream x; top: where the stream enters; poolY: the pool's surface; color: the paint.
+ * Thick paint poured from above into a spreading pool (macro, slow motion).
+ * cx: stream x; top: where the stream enters; poolY: the floor line; color: the paint.
+ * maxPool caps the pool's radius; flat squashes the pool (perspective).
  */
-export function pour(ctx, t, { cx, top = 0, poolY, color = '#1c55e0', width = 64, start = 0, maxPool = 1e9 } = {}) {
-  const w = ctx.canvas.width, h = ctx.canvas.height;
+export function pour(ctx, t, { cx, top = 0, poolY, color = '#1c55e0', width = 64, start = 0, maxPool = 1e9, flat = 0.16 } = {}) {
   const [R, G, B] = hex(color);
   const shade = (k, a = 1) => `rgba(${Math.round(R * k)},${Math.round(G * k)},${Math.round(B * k)},${a})`;
   const lt = (k, a = 1) => `rgba(${Math.round(R + (255 - R) * k)},${Math.round(G + (255 - G) * k)},${Math.round(B + (255 - B) * k)},${a})`;
-  const head = top + (poolY - top) * ease.in(clamp((t - start) / 0.9)) ; // the stream's leading end falls in first
-  const landed = t - start - 0.9;
-  // pool
-  const poolR = landed > 0 ? Math.min(maxPool, 40 + Math.sqrt(landed) * 330) : 0;
+  const fall = 0.75, head = top + (poolY - top) * ease.in(clamp((t - start) / fall));
+  const landed = t - start - fall;
+  // the pool: spreads fast then slows (viscous), dark at the edge, a lit meniscus rim, soft reflections
+  const poolR = landed > 0 ? Math.min(maxPool, 30 + Math.pow(landed, 0.55) * 360) : 0;
   if (poolR > 0) {
-    const pg = ctx.createRadialGradient(cx - poolR * 0.2, poolY - poolR * 0.08, poolR * 0.05, cx, poolY, poolR);
-    pg.addColorStop(0, lt(0.35)); pg.addColorStop(0.5, shade(1)); pg.addColorStop(1, shade(0.6));
-    ctx.fillStyle = pg; ctx.beginPath(); ctx.ellipse(cx, poolY, poolR, poolR * 0.2, 0, 0, 7); ctx.fill();
-    // ripples rolling out from the impact
-    for (let k = 0; k < 5; k++) {
-      const rr = ((landed * 160 + k * 70) % (poolR + 1));
-      ctx.strokeStyle = lt(0.6, 0.35 * (1 - rr / poolR)); ctx.lineWidth = 3;
-      ctx.beginPath(); ctx.ellipse(cx, poolY, rr, rr * 0.2, 0, Math.PI * 1.05, Math.PI * 1.95); ctx.stroke();
+    const ry = poolR * flat;
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 30; ctx.shadowOffsetY = 10;
+    const pg = ctx.createRadialGradient(cx - poolR * 0.25, poolY - ry * 0.5, poolR * 0.05, cx, poolY, poolR);
+    pg.addColorStop(0, lt(0.45)); pg.addColorStop(0.3, shade(1.05)); pg.addColorStop(0.75, shade(0.78)); pg.addColorStop(1, shade(0.4));
+    ctx.fillStyle = pg; ctx.beginPath();
+    for (let i = 0; i <= 64; i++) { const a = (i / 64) * Math.PI * 2, k = 1 + 0.05 * Math.sin(a * 4 + 1) + 0.03 * Math.sin(a * 9); const x = cx + Math.cos(a) * poolR * k, y = poolY + Math.sin(a) * ry * k; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+    ctx.fill(); ctx.restore();
+    ctx.strokeStyle = lt(0.55, 0.55); ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.ellipse(cx, poolY - 2, poolR * 0.985, ry * 0.97, 0, Math.PI * 1.08, Math.PI * 1.92); ctx.stroke();
+    // a soft studio-light reflection across the wet surface
+    const rg = ctx.createRadialGradient(cx + poolR * 0.3, poolY - ry * 0.35, 2, cx + poolR * 0.3, poolY - ry * 0.35, poolR * 0.45);
+    rg.addColorStop(0, 'rgba(255,255,255,0.45)'); rg.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = rg; ctx.beginPath(); ctx.ellipse(cx + poolR * 0.3, poolY - ry * 0.35, poolR * 0.45, ry * 0.35, 0, 0, 7); ctx.fill();
+    for (let k = 0; k < 3; k++) {   // long studio-light streaks on the wet surface
+      const sx = cx + poolR * (-0.55 + k * 0.5), sy = poolY + ry * (0.2 + 0.25 * (k % 2));
+      const sg2 = ctx.createRadialGradient(sx, sy, 1, sx, sy, poolR * 0.28);
+      sg2.addColorStop(0, 'rgba(255,255,255,0.38)'); sg2.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = sg2; ctx.beginPath(); ctx.ellipse(sx, sy, poolR * 0.28, ry * 0.12, 0, 0, 7); ctx.fill();
     }
-    // the mound where the stream lands
-    const mg = ctx.createRadialGradient(cx - 18, poolY - 26, 4, cx, poolY - 6, width * 1.3);
-    mg.addColorStop(0, lt(0.55)); mg.addColorStop(1, shade(0.9, 0));
-    ctx.fillStyle = mg; ctx.beginPath(); ctx.ellipse(cx, poolY - 8, width * 1.4, width * 0.5, 0, 0, 7); ctx.fill();
+    // ripples rolling out from the impact
+    for (let k = 0; k < 4; k++) {
+      const rr = ((landed * 140 + k * 60) % (poolR * 0.9 + 1));
+      ctx.strokeStyle = lt(0.6, 0.3 * (1 - rr / poolR)); ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.ellipse(cx, poolY, rr, rr * flat, 0, Math.PI * 1.02, Math.PI * 1.98); ctx.stroke();
+    }
+    // the coil where the stream folds onto itself
+    for (let k = 0; k < 3; k++) {
+      const mg = ctx.createRadialGradient(cx - width * 0.3, poolY - width * (0.55 + k * 0.25), 2, cx, poolY - width * 0.3 * k, width * (1.1 - k * 0.2));
+      mg.addColorStop(0, lt(0.55)); mg.addColorStop(0.5, shade(0.95)); mg.addColorStop(1, shade(0.6, 0));
+      ctx.fillStyle = mg; ctx.beginPath(); ctx.ellipse(cx + Math.sin(t * 3 + k) * 6, poolY - width * 0.28 * k - 4, width * (1.25 - k * 0.25), width * (0.42 - k * 0.06), 0, 0, 7); ctx.fill();
+    }
   }
-  // the stream: a ribbon that wobbles and narrows as it falls
+  // the stream: narrows as it accelerates, with slow bulges travelling down it
   const pts = [];
-  for (let y = top; y <= head; y += 10) {
+  for (let y = top; y <= head; y += 6) {
     const f = (y - top) / Math.max(1, poolY - top);
-    const half = width * (1 - f * 0.45) * (0.92 + 0.08 * Math.sin(y / 37 - t * 9));
-    const x = cx + Math.sin(y / 120 - t * 3) * 10 * f;
+    const half = width * (1 - f * 0.4) * (0.95 + 0.05 * Math.sin(y / 60 - t * 6));
+    const x = cx + Math.sin(y / 220 - t * 1.2) * 3 * f;
     pts.push([x, y, half]);
   }
   if (pts.length > 1) {
     const sg = ctx.createLinearGradient(cx - width, 0, cx + width, 0);
-    sg.addColorStop(0, shade(0.55)); sg.addColorStop(0.28, lt(0.25)); sg.addColorStop(0.38, lt(0.75)); sg.addColorStop(0.5, shade(1)); sg.addColorStop(1, shade(0.5));
+    sg.addColorStop(0, shade(0.35)); sg.addColorStop(0.18, shade(0.75)); sg.addColorStop(0.3, lt(0.35)); sg.addColorStop(0.36, lt(0.85)); sg.addColorStop(0.42, lt(0.2));
+    sg.addColorStop(0.62, shade(0.95)); sg.addColorStop(0.86, shade(0.6)); sg.addColorStop(0.95, lt(0.25)); sg.addColorStop(1, shade(0.4));
     ctx.fillStyle = sg; ctx.beginPath();
     pts.forEach(([x, y, hw], j) => (j ? ctx.lineTo(x - hw, y) : ctx.moveTo(x - hw, y)));
     for (let j = pts.length - 1; j >= 0; j--) ctx.lineTo(pts[j][0] + pts[j][2], pts[j][1]);
     ctx.closePath(); ctx.fill();
-    // a rounded leading end while falling
     const [hx, hy, hw] = pts[pts.length - 1];
-    if (landed <= 0) { ctx.beginPath(); ctx.ellipse(hx, hy, hw, hw * 1.2, 0, 0, Math.PI); ctx.fill(); }
-    // specular streak sliding down the stream
-    ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.setLineDash([60, 110]); ctx.lineDashOffset = -t * 420;
-    ctx.beginPath(); pts.forEach(([x, y, hw], j) => (j ? ctx.lineTo(x - hw * 0.35, y) : ctx.moveTo(x - hw * 0.35, y))); ctx.stroke(); ctx.setLineDash([]);
+    if (landed <= 0) { ctx.beginPath(); ctx.ellipse(hx, hy, hw, hw * 1.3, 0, 0, Math.PI); ctx.fill(); }
+    // specular highlights: a long soft one and short sharp glints sliding down
+    ctx.save(); ctx.lineCap = 'round';
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = width * 0.12; ctx.filter = 'blur(3px)';
+    ctx.beginPath(); pts.forEach(([x, y, w2], j) => (j ? ctx.lineTo(x - w2 * 0.32, y) : ctx.moveTo(x - w2 * 0.32, y))); ctx.stroke();
+    ctx.filter = 'none'; ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = Math.max(2, width * 0.05); ctx.setLineDash([40, 140]); ctx.lineDashOffset = -t * 520;
+    ctx.beginPath(); pts.forEach(([x, y, w2], j) => (j ? ctx.lineTo(x - w2 * 0.3, y) : ctx.moveTo(x - w2 * 0.3, y))); ctx.stroke();
+    ctx.setLineDash([]); ctx.restore();
   }
-  // a few droplets thrown out on impact
-  if (landed > 0 && landed < 1.6) {
-    for (let i = 0; i < 9; i++) {
-      const a = Math.PI * (1.1 + hash(i, 4) * 0.8), v = 260 + hash(i, 5) * 260, tt = landed;
-      const x = cx + Math.cos(a) * v * tt, y = poolY - 10 + Math.sin(a) * v * tt + 900 * tt * tt;
-      if (y > poolY + 6) continue;
-      const rr = 5 + hash(i, 6) * 9;
-      const dg = ctx.createRadialGradient(x - rr * 0.3, y - rr * 0.3, 1, x, y, rr);
-      dg.addColorStop(0, lt(0.7)); dg.addColorStop(1, shade(0.8));
-      ctx.fillStyle = dg; ctx.beginPath(); ctx.arc(x, y, rr, 0, 7); ctx.fill();
+  // slow-motion droplets thrown out on impact (shaded, with a hot spot)
+  if (landed > 0 && landed < 2.2) {
+    for (let i = 0; i < 12; i++) {
+      const a = Math.PI * (1.12 + hash(i, 4) * 0.76), v = 160 + hash(i, 5) * 220, tt = landed * 0.55;
+      const x = cx + Math.cos(a) * v * tt, y = poolY - 12 + Math.sin(a) * v * tt + 520 * tt * tt;
+      if (y > poolY + 4) continue;
+      const rr = 4 + hash(i, 6) * 10;
+      const dg = ctx.createRadialGradient(x - rr * 0.35, y - rr * 0.35, 0.5, x, y, rr);
+      dg.addColorStop(0, '#fff'); dg.addColorStop(0.25, lt(0.4)); dg.addColorStop(1, shade(0.6));
+      ctx.fillStyle = dg; ctx.beginPath(); ctx.ellipse(x, y, rr * 0.9, rr * 1.1, 0, 0, 7); ctx.fill();
     }
   }
 }

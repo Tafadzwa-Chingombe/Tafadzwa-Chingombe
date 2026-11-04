@@ -4,69 +4,48 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="lib/parker.css">
 <style>
-  .studio { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #2a3550 0%, #12141d 60%, #07080c 100%); }
-  .tin { position: absolute; left: 50%; transform: translateX(-50%); }
-  .label { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
-  .label .logo { font-size: 64px; }
-  .label small { display: block; margin-top: 14px; font: 700 26px/1 Inter, sans-serif; letter-spacing: 0.28em; color: #193862; }
+  .studio { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 50% at 50% 55%, #2c3954 0%, #141824 58%, #07080c 100%); }
+  .floor { position: absolute; left: 0; right: 0; top: 70%; bottom: 0; background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4)); }
+  .key { position: absolute; left: 50%; top: -15%; width: 140%; height: 100%; transform: translateX(-50%); background: radial-gradient(ellipse 30% 55% at 50% 0%, rgba(255,240,215,0.2), transparent 70%); }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tin { position: absolute; left: 50%; transform: translateX(-50%); overflow: hidden; -webkit-mask-image: url(img/products/wallshield.png); -webkit-mask-size: 100% 100%; overflow: visible; }
+  .tin img { display: block; height: 100%; width: auto; filter: contrast(1.04); }
+  #tinlight { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(255,255,255,0.0) 20%, rgba(255,255,255,0.22) 32%, transparent 45%); mix-blend-mode: soft-light; pointer-events: none; }
 </style>
 </head>
 <body>
 <div class="stage">
-  <div class="studio"></div>
-  <div class="cam" data-from="1.0" data-to="1.12" data-dy="30">
-    <canvas class="full" id="cv"></canvas>
-    <div class="label" id="label"><span class="logo">PARKER<sup>™</sup></span><small>WALLSHIELD</small></div>
+  <div class="studio"></div><div class="floor"></div><div class="key"></div>
+  <div class="cam" data-from="1.0" data-to="1.1" data-dy="40" data-whip="none">
+    <canvas id="back"></canvas>
+    <div class="tin" id="tin"><img src="img/products/wallshield.png"><div id="tinlight"></div></div>
+    <canvas id="front"></canvas>
   </div>
 </div>
 <script type="module">
-import { shot, W, H, clamp } from './lib/kit.js';
-import { pour, offscreen } from './lib/fx.js';
-const cv = document.getElementById('cv'); let ctx, geo;
-function tin(ctx, g, front) {
-  const { cx, rimY, rx, ry, bodyH } = g;
-  if (!front) {   // inside wall of the tin, behind the paint
-    ctx.fillStyle = '#9aa1ab'; ctx.beginPath(); ctx.ellipse(cx, rimY, rx, ry, 0, Math.PI, 0); ctx.fill();
-    return;
-  }
-  // body: white plastic pail, lit from the left
-  const bg = ctx.createLinearGradient(cx - rx, 0, cx + rx, 0);
-  bg.addColorStop(0, '#9da3ad'); bg.addColorStop(0.18, '#f4f6f8'); bg.addColorStop(0.45, '#ffffff'); bg.addColorStop(0.8, '#c9ced6'); bg.addColorStop(1, '#7d838d');
-  ctx.fillStyle = bg; ctx.beginPath();
-  ctx.moveTo(cx - rx, rimY); ctx.lineTo(cx - rx * 0.9, rimY + bodyH); ctx.ellipse(cx, rimY + bodyH, rx * 0.9, ry * 0.9, 0, Math.PI, 0, true); ctx.lineTo(cx + rx, rimY);
-  ctx.ellipse(cx, rimY, rx, ry, 0, 0, Math.PI); ctx.fill();
-  // rim
-  ctx.strokeStyle = '#e9edf2'; ctx.lineWidth = 16; ctx.beginPath(); ctx.ellipse(cx, rimY, rx, ry, 0, 0, Math.PI * 2); ctx.stroke();
-  ctx.strokeStyle = 'rgba(0,0,0,0.25)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(cx, rimY + 9, rx, ry, 0, 0, Math.PI); ctx.stroke();
-  // blue label band
-  ctx.fillStyle = 'rgba(28,70,184,0.92)'; const y0 = rimY + bodyH * 0.18, y1 = rimY + bodyH * 0.62;
-  ctx.beginPath(); ctx.moveTo(cx - rx * 0.97, y0); ctx.lineTo(cx - rx * 0.93, y1); ctx.ellipse(cx, y1, rx * 0.93, ry * 0.93, 0, Math.PI, 0, true); ctx.lineTo(cx + rx * 0.97, y0); ctx.ellipse(cx, y0, rx * 0.97, ry * 0.97, 0, 0, Math.PI); ctx.fill();
-  const sh = ctx.createLinearGradient(cx - rx, 0, cx + rx, 0); sh.addColorStop(0, 'rgba(0,0,0,0.35)'); sh.addColorStop(0.35, 'rgba(255,255,255,0.18)'); sh.addColorStop(1, 'rgba(0,0,0,0.4)');
-  ctx.fillStyle = sh; ctx.fill();
-}
+import { shot, W, H, prog, ease, lerp } from './lib/kit.js';
+import { pour } from './lib/fx.js';
+// The real Parker Wallshield tin on a studio floor; thick paint pours down beside it and spreads into a glossy pool
+// that runs underneath the tin. The pool's far half is drawn behind the tin, its near half in front.
+const back = document.getElementById('back'), front = document.getElementById('front'); let bc, fc, g;
 shot(4, (t) => {
-  ctx.clearRect(0, 0, cv.width, cv.height);
-  const g = geo;
-  // floor shadow
-  const fs = ctx.createRadialGradient(g.cx, g.rimY + g.bodyH + 20, 10, g.cx, g.rimY + g.bodyH + 20, g.rx * 1.6);
-  fs.addColorStop(0, 'rgba(0,0,0,0.6)'); fs.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = fs; ctx.fillRect(0, g.rimY, cv.width, cv.height);
-  tin(ctx, g, false);
-  // the paint inside: clip to the opening, pour lands in it
-  ctx.save(); ctx.beginPath(); ctx.rect(0, 0, cv.width, g.rimY); ctx.ellipse(g.cx, g.rimY, g.rx - 8, g.ry - 4, 0, 0, Math.PI * 2); ctx.clip();
-  ctx.restore(); ctx.save(); ctx.beginPath(); ctx.ellipse(g.cx, g.rimY, g.rx - 8, g.ry - 4, 0, 0, Math.PI * 2); ctx.clip();
-  pour(ctx, t, { cx: g.cx + 10, top: -40, poolY: g.rimY + 6, color: '#1c55e0', width: g.rx * 0.2, start: 0.1, maxPool: g.rx });
-  ctx.restore(); ctx.save(); ctx.beginPath(); ctx.rect(0, 0, cv.width, g.rimY - g.ry * 0.2); ctx.clip();
-  pour(ctx, t, { cx: g.cx + 10, top: -40, poolY: g.rimY + 6, color: '#1c55e0', width: g.rx * 0.2, start: 0.1, maxPool: 0 });
-  ctx.restore();
-  tin(ctx, g, true);
+  const opts = { cx: g.sx, top: -60, poolY: g.floor, color: '#1c55e0', width: g.w, start: 0.05, maxPool: g.maxPool, flat: 0.2 };
+  bc.clearRect(0, 0, back.width, back.height); fc.clearRect(0, 0, front.width, front.height);
+  bc.save(); bc.beginPath(); bc.rect(0, 0, back.width, g.floor); bc.clip(); pour(bc, t, opts); bc.restore();
+  const cs = bc.createRadialGradient(g.tc, g.floor, 4, g.tc, g.floor, g.tw * 0.62);
+  cs.addColorStop(0, 'rgba(0,0,0,0.55)'); cs.addColorStop(1, 'rgba(0,0,0,0)');
+  bc.fillStyle = cs; bc.beginPath(); bc.ellipse(g.tc, g.floor, g.tw * 0.62, g.tw * 0.1, 0, 0, 7); bc.fill();
+  fc.save(); fc.beginPath(); fc.rect(0, g.floor, front.width, front.height); fc.clip(); pour(fc, t, opts); fc.restore();
+  // a slow light sweep across the tin
+  document.getElementById('tinlight').style.transform = `translateX(${lerp(-60, 60, ease.inOut(prog(t, 0.6, 3)))}%)`;
 }, () => {
-  cv.width = W(); cv.height = H(); ctx = cv.getContext('2d');
-  const v = H() > W() * 1.3;
-  const rx = W() * (v ? 0.36 : 0.24), rimY = H() * (v ? 0.58 : 0.5), bodyH = rx * 1.15;
-  geo = { cx: W() / 2, rimY, rx, ry: rx * 0.26, bodyH };
-  const l = document.getElementById('label'); l.style.top = `${rimY + bodyH * 0.27}px`; l.style.fontSize = '1px';
-  l.querySelector('.logo').style.fontSize = `${rx * 0.3}px`;
-  l.querySelector('small').style.fontSize = `${rx * 0.075}px`; l.querySelector('small').style.color = '#fff';
+  for (const c of [back, front]) { c.width = W(); c.height = H(); }
+  bc = back.getContext('2d'); fc = front.getContext('2d');
+  const v = H() > W() * 1.3, th = v ? H() * 0.38 : H() * 0.5, floor = v ? H() * 0.72 : H() * 0.86;
+  const tin = document.getElementById('tin'); tin.style.height = `${th}px`; tin.style.top = `${floor - th * 0.97}px`;
+  const tw = th * 606 / 753;
+  const tc = W() * (v ? 0.4 : 0.42); tin.style.left = `${tc}px`;
+  g = { floor: floor - th * 0.02, tc, tw, sx: tc + tw * 0.5 + (v ? 95 : 110), w: v ? 60 : 50, maxPool: v ? W() * 0.36 : W() * 0.26 };
 });
 </script>
 </body>
