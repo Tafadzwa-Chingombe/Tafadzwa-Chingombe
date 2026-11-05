@@ -5,7 +5,7 @@
 :root {
   --navy: #142a47; --ink: #0e141b; --navy-2: #1c3a61; --line: rgba(255,255,255,0.14);
   --text: #f2f5f9; --muted: #a7b4c6;
-  --accent: #abcf47;            /* placeholder until the logo file's accent is supplied: use sparingly */
+  --accent: #abcf47;            /* the green of the supplied logo's "i": use sparingly */
   --paper: #ffffff; --paper-ink: #13202f; --paper-muted: #5d6b7c; --paper-line: #e3e8ef;
   --bad: #d4584a;
   --f: "Poppins", "Segoe UI", system-ui, sans-serif;

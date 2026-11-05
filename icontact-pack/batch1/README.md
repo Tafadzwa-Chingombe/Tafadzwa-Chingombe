@@ -19,7 +19,7 @@ The S1 Shona slot is ready but is waiting for your Shona recording (see `s1-shon
 - Text and logos kept inside the safe zones: nothing in the top 14% or bottom 20% of the 9:16 frame.
 - The 4:5 version is a centred crop of the same frame.
 - British spelling throughout ("enquiries").
-- Every video ends on the standard end card: the tagline, "WhatsApp [KEYWORD] to +263 71 857 4277" and "iContact Africa Solutions | Harare, Zimbabwe".
+- Every video ends on the standard end card, with **your supplied logo file** (unaltered, on an off-white panel so the blue reads on navy) and the logo's green `#abcf47` as the accent: the tagline, "WhatsApp [KEYWORD] to +263 71 857 4277" and "iContact Africa Solutions | Harare, Zimbabwe".
 
 ## Rules check
 
@@ -43,11 +43,10 @@ The S1 Shona slot is ready but is waiting for your Shona recording (see `s1-shon
 
 ## Still needed from you
 
-1. **Logo file and accent colour.** The pack says to use your file, not a recreation. Until it arrives, the end card shows the name set in plain Poppins, and the accent is a placeholder lime (`#abcf47`). Send the file and the logo's accent colour and I'll re-render in a few minutes.
-2. **Your voiceover recordings** (one take per script). The cut re-times itself to your takes, and the captions are rebuilt from your actual words.
-3. **S1 Shona voiceover and approved Shona captions.** See `s1-shona/README.md`.
-4. **Approval of the mock sites and portal screens.** The pack asks for placeholders to be sent for approval when your own screen recordings aren't ready. These are those placeholders. If you'd rather use your real portal demo recording, send it and I'll put it in the phone frame.
-5. **Optional: real Harare street footage for C1.** The code-drawn street can be replaced shot by shot.
+1. **Your voiceover recordings** (one take per script). The cut re-times itself to your takes, and the captions are rebuilt from your actual words.
+2. **S1 Shona voiceover and approved Shona captions.** See `s1-shona/README.md`.
+3. **Approval of the mock sites and portal screens.** The pack asks for placeholders to be sent for approval when your own screen recordings aren't ready. These are those placeholders. If you'd rather use your real portal demo recording, send it and I'll put it in the phone frame.
+4. **Optional: real Harare street footage for C1.** The code-drawn street can be replaced shot by shot.
 
 ## Posting (from the pack)
 
