@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<style>
+  .phone { top: 470px; }
+  .gl { position: absolute; inset: 56px 0 0; background: #fff; font-family: var(--f-ui); zoom: 1.12; }
+  .gl .hd { padding: 14px 18px; font: 700 18px var(--f); border-bottom: 1px solid #e3e8ef; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; }
+  .ph { aspect-ratio: 1; border-radius: 10px; position: relative; overflow: hidden; }
+  .ph::after { content: ""; position: absolute; left: 20%; bottom: 0; width: 60%; height: 55%; border-radius: 80px 80px 0 0; background: rgba(255,255,255,0.28); }
+  .rv { margin: 6px 10px; padding: 10px 12px; border-radius: 10px; background: #f5f7fb; font-size: 14px; color: #13202f; }
+  .rv b { color: #e0a100; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1.0" data-to="1.05">
+    <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>19:05</span><span>●●● 5G</span></div>
+      <div class="gl"><div class="hd">Our work</div>
+        <div class="grid" id="grid">
+          <div class="ph" style="background:linear-gradient(135deg,#c99a6a,#f0d2ac)"></div><div class="ph" style="background:linear-gradient(135deg,#6f8fb5,#bcd0e6)"></div>
+          <div class="ph" style="background:linear-gradient(135deg,#7aa36b,#cfe2bf)"></div><div class="ph" style="background:linear-gradient(135deg,#b07a8f,#e8c7d3)"></div>
+          <div class="ph" style="background:linear-gradient(135deg,#8a7bb5,#d4cdeb)"></div><div class="ph" style="background:linear-gradient(135deg,#c2a24c,#ecdca6)"></div>
+        </div>
+        <div class="rv" id="rv"><b>★★★★★</b> Example review: brilliant work, on time.</div>
+      </div></div>
+      <div class="label-example" style="left:28px;top:-20px">Example</div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, pop, rise } from './lib/kit.js';
+shot(5, (t) => {
+  [...document.querySelectorAll('.ph')].forEach((el, i) => pop(el, t, 0.15 + i * 0.12, 0.45, 0.8));
+  rise(document.getElementById('rv'), t, 1.2);
+});
+</script>
+</body>
+</html>

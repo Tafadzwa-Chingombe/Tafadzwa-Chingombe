@@ -1,18 +1,78 @@
 {
- "title": "C1: Invisible (25 s)",
+ "title": "C1: Invisible (25 s, screen-and-voiceover version)",
  "keyword": "VISIBLE",
- "score": "cinematic",
- "music_volume": 0.24,
- "marks": {"lift": 3, "drop": 4, "end": 4},
- "bug": [0, 4],
- "look": {"grain": true, "vignette": true},
- "tail": 0.6, "end_tail": 1.4,
- "shots": [
-  {"page": "street", "min": 5, "line": "The best business on this street."},
-  {"page": "search", "min": 5, "line": "Nobody can find it."},
-  {"page": "fade", "min": 5, "line": "Not because the work is bad."},
-  {"page": "glow", "min": 5, "line": "Because online, it looks closed."},
-  {"page": "endcard", "min": 5, "line": "Websites that bring in enquiries. Not just compliments. WhatsApp the word VISIBLE."}
+ "score": "calm",
+ "music_volume": 0.2,
+ "marks": {
+  "end": 4
+ },
+ "bug": [
+  0,
+  4
  ],
- "sfx": [[0, "cicadas", 0, 0.25, "shot"], [2, "whoosh", -0.3, 0.2], [4, "whoosh", -0.3, 0.25]]
+ "look": {
+  "grain": false,
+  "vignette": false
+ },
+ "tail": 0.6,
+ "end_tail": 1.4,
+ "shots": [
+  {
+   "page": "map",
+   "min": 5,
+   "line": "The best business on this street."
+  },
+  {
+   "page": "search",
+   "min": 5,
+   "line": "Nobody can find it."
+  },
+  {
+   "page": "work",
+   "min": 5,
+   "line": "Not because the work is bad."
+  },
+  {
+   "page": "closed",
+   "min": 5,
+   "line": "Because online, it looks closed."
+  },
+  {
+   "page": "endcard",
+   "min": 5,
+   "line": "Websites that bring in enquiries. Not just compliments. WhatsApp the word VISIBLE."
+  }
+ ],
+ "sfx": [
+  [
+   1,
+   "whoosh",
+   -0.25,
+   0.3
+  ],
+  [
+   2,
+   "whoosh",
+   -0.25,
+   0.3
+  ],
+  [
+   3,
+   "whoosh",
+   -0.25,
+   0.3
+  ],
+  [
+   3,
+   "ding",
+   2.6,
+   0.35
+  ],
+  [
+   4,
+   "whoosh",
+   -0.25,
+   0.3
+  ]
+ ]
 }

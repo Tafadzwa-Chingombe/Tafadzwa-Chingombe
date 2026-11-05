@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<style>
+  .phone { top: 470px; }
+  .urlbar { margin: 4px 16px 0; padding: 10px 14px; border-radius: 12px; background: #eef2f7; font: 500 15px var(--f-ui); color: #5d6b7c; }
+  .lst { position: absolute; inset: 56px 0 0; background: #fff; font-family: var(--f-ui); zoom: 1.12; }
+  .lst .ttl { padding: 18px 18px 6px; font: 700 22px var(--f); color: #13202f; }
+  .lst .row { padding: 8px 18px; font-size: 15px; color: #5d6b7c; display: flex; gap: 10px; }
+  .closed { color: #c0392b; font-weight: 700; }
+  .greyimg { margin: 12px 18px; height: 180px; border-radius: 12px; background: #e9ecf0; display: grid; place-items: center; color: #9aa6b4; font-size: 14px; }
+  #site { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  .note { position: absolute; left: 50%; width: 560px; margin-left: -280px; top: 380px; z-index: 8; display: flex; gap: 16px; align-items: center; padding: 18px 22px; border-radius: 22px;
+    background: rgba(242,245,249,0.97); color: #13202f; box-shadow: 0 24px 50px rgba(0,0,0,0.45); font-family: var(--f-ui); }
+  .note .ic { width: 56px; height: 56px; border-radius: 14px; background: #25a244; display: grid; place-items: center; flex: none; }
+  .note b { display: block; font: 700 22px var(--f); } .note span { font-size: 17px; color: #5d6b7c; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="note" id="note"><span class="ic"><svg width="34" height="34" viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z" fill="#fff"/></svg></span>
+    <span><b>New enquiry</b><span>Example client: "Can I book you this week?"</span></span></div>
+  <div class="cam" data-from="1.0" data-to="1.04">
+    <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>19:06</span><span>●●● 5G</span></div>
+      <div class="lst">
+        <div class="ttl">Example Business</div>
+        <div class="row"><span class="closed">Closed</span>· Hours not listed</div>
+        <div class="row">No website · No phone number</div>
+        <div class="greyimg">No photos yet</div>
+        <div id="site"><div class="urlbar">example-business.co.zw</div><div id="gs"></div></div>
+      </div></div>
+      <div class="label-example" style="left:28px;top:-20px">Example</div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease, pop } from './lib/kit.js';
+import { goodSite } from './lib/ui.js';
+document.getElementById('gs').innerHTML = goodSite().replace('Example <i>Plumbing</i>', 'Example <i>Business</i>').replace('Plumbers in Harare. Same-day call-outs.', 'Open today. Book in one tap.');
+const OPEN = 2.35;   // the clean site arrives after "it looks closed"
+shot(5, (t) => {
+  document.getElementById('site').style.opacity = ease.inOut(prog(t, OPEN, 0.6));
+  pop(document.getElementById('note'), t, OPEN + 0.9);
+});
+</script>
+</body>
+</html>

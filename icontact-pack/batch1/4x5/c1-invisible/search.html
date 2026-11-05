@@ -2,8 +2,7 @@
 <html>
 <head><meta charset="utf-8"><link rel="stylesheet" href="lib/ic.css">
 <style>
-  #bg { filter: blur(26px) brightness(0.7) saturate(1.2); transform: scale(1.15); }
-  .phone { top: 380px; transform: rotate(-5deg) scale(1.15); transform-origin: 50% 40%; box-shadow: 0 60px 120px rgba(0,0,0,0.7); }
+  .phone { top: 470px; }
   .sr { position: absolute; inset: 56px 0 0; background: #fff; font-family: var(--f-ui); zoom: 1.12; }
   .q { margin: 10px 14px; padding: 12px 16px; border-radius: 24px; border: 1.5px solid #dfe3ea; font: 500 16px var(--f-ui); color: #13202f; }
   .res { padding: 12px 16px; border-bottom: 1px solid #eef1f5; }
@@ -16,7 +15,7 @@
 </style></head>
 <body>
 <div class="stage">
-  <canvas class="full" id="bg"></canvas><div id="glow"></div>
+  <div class="bg-navy"></div>
   <div class="cam" data-from="1.0" data-to="1.06">
     <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>19:04</span><span>●●● 5G</span></div>
       <div class="sr"><div class="scroller" id="sc" style="top:0;zoom:1">
@@ -33,13 +32,11 @@
 </div>
 <script type="module">
 import { shot, W, H, typed, prog, ease, lerp } from './lib/kit.js';
-import { makeStreet, drawStreet } from './lib/street.js';
-const bg = document.getElementById('bg'); let ctx, S;
+
 shot(5, (t) => {
-  drawStreet(ctx, t, S, { light: 1 });
-  typed(document.getElementById('q'), 'best business near me', t, 0.2, 22);
+  typed(document.getElementById('q'), 'best business on example street', t, 0.2, 22);
   document.getElementById('sc').style.transform = `translateY(${-lerp(0, 300, ease.inOut(prog(t, 1.6, 2.6)))}px)`;
-}, () => { bg.width = W(); bg.height = H(); ctx = bg.getContext('2d'); S = makeStreet(W(), H()); });
+});
 </script>
 </body>
 </html>

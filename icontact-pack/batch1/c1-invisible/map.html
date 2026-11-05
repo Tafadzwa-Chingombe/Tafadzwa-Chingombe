@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<style>
+  .phone { top: 470px; }
+  .mp { position: absolute; inset: 56px 0 0; background: #eef1ea; font-family: var(--f-ui); overflow: hidden; }
+  .road { position: absolute; left: -20%; right: -20%; height: 90px; background: #fff; box-shadow: 0 0 0 2px #dfe4dc; }
+  .road.h { top: 52%; transform: rotate(-8deg); } .road.v { width: 70px; left: 62%; right: auto; top: -10%; bottom: -10%; height: auto; transform: rotate(8deg); }
+  .blk { position: absolute; border-radius: 10px; background: #dfe6d9; }
+  .pin { position: absolute; width: 46px; height: 46px; margin: -46px 0 0 -23px; }
+  .pin i { position: absolute; inset: 0; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #d4584a; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+  .pin i::after { content: ""; position: absolute; left: 14px; top: 14px; width: 18px; height: 18px; border-radius: 50%; background: #fff; }
+  .tag { position: absolute; transform: translate(-50%, 8px); font: 600 15px var(--f-ui); color: #13202f; background: #fff; padding: 5px 9px; border-radius: 8px; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+  .ours { position: absolute; width: 150px; height: 104px; margin: -52px 0 0 -75px; border-radius: 14px; border: 4px dashed #8c99a8; background: rgba(255,255,255,0.4); }
+  .star { position: absolute; transform: translate(-50%, -50%); font: 700 18px var(--f-ui); color: #5d6b7c; text-align: center; }
+  .sbar { position: absolute; left: 14px; right: 14px; top: 12px; padding: 12px 16px; border-radius: 24px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); font: 500 17px var(--f-ui); color: #5d6b7c; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1.0" data-to="1.05">
+    <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>19:04</span><span>●●● 5G</span></div>
+      <div class="mp">
+        <div class="road h"></div><div class="road v"></div>
+        <div class="blk" style="left:6%;top:16%;width:40%;height:26%"></div><div class="blk" style="left:70%;top:12%;width:26%;height:30%"></div>
+        <div class="blk" style="left:6%;top:66%;width:44%;height:24%"></div><div class="blk" style="left:72%;top:64%;width:24%;height:28%"></div>
+        <div class="pin" id="p1" style="left:20%;top:38%"><i></i></div><span class="tag" id="t1" style="left:20%;top:38%">Example Co</span>
+        <div class="pin" id="p2" style="left:74%;top:34%"><i></i></div><span class="tag" id="t2" style="left:74%;top:34%">Example Ltd</span>
+        <div class="pin" id="p3" style="left:24%;top:80%"><i></i></div><span class="tag" id="t3" style="left:24%;top:80%">Example Group</span>
+        <div class="pin" id="p4" style="left:72%;top:78%"><i></i></div><span class="tag" id="t4" style="left:72%;top:78%">Example &amp; Sons</span>
+        <div class="ours" id="ours" style="left:44%;top:30%"></div>
+        <div class="star" id="star" style="left:44%;top:30%">★ ★ ★ ★ ★<br>the best one</div>
+        <div class="sbar">Search this street</div>
+      </div></div>
+      <div class="label-example" style="left:28px;top:-20px">Example</div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, pop, rise, prog, ease } from './lib/kit.js';
+shot(5, (t) => {
+  [1, 2, 3, 4].forEach((i) => { pop(document.getElementById('p' + i), t, 0.3 + i * 0.25); rise(document.getElementById('t' + i), t, 0.45 + i * 0.25, 0.4, 14); });
+  const o = document.getElementById('ours'); o.style.opacity = 0.4 + 0.6 * ease.out(prog(t, 1.6, 0.6));
+  const s = document.getElementById('star'); s.style.opacity = ease.out(prog(t, 1.8, 0.6));
+});
+</script>
+</body>
+</html>

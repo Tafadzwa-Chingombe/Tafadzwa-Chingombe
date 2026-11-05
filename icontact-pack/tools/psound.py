@@ -211,7 +211,7 @@ def fx(kind, length=None):
     if kind == 'tick':
         n = int(0.05 * SR); return st(band(noise(n, 91), lo=2000) * env(n, 0.0005, 0.006) * 0.5)
     if kind == 'ding':
-        a = tone(1318.5, 0.7, ((1, 1), (2.01, .2)), d=0.2) * 0.3; b = np.pad(tone(1760, 0.6, ((1, 1), (2.01, .2)), d=0.25), (int(0.09 * SR), 0))[:len(a)] * 0.3
+        a = tone(1318.5, 0.7, ((1, 1), (2.01, .2)), d=0.2) * 0.3; b = tone(1760, 0.6, ((1, 1), (2.01, .2)), d=0.25) * 0.3; b = np.pad(b, (int(0.09 * SR), max(0, len(a) - len(b) - int(0.09 * SR))))[:len(a)]
         return st(a + b)
     if kind == 'stamp':
         n = int(0.9 * SR); t = np.arange(n) / SR

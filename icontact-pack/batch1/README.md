@@ -26,7 +26,8 @@ The S1 Shona slot is ready but is waiting for your Shona recording (see `s1-shon
 - [x] **No invented proof:** no client numbers, ratings, testimonials or results.
 - [x] **Mock websites only:** "Example Plumbing", "Example Bakery", "Example Services Ltd" and other invented names. Every phone screen is labelled **Example**.
 - [x] **No client data:** the portal demo uses invented details only ("client@example.com", "Invoice EX-002", "Example amount").
-- [x] **No identifiable real people or businesses:** C1 is drawn in code. The street, building and people are generic silhouettes, and the sign panel has no lettering.
+- [x] **No identifiable real people or businesses:** none appear in any video.
+- **C1 format change (your call, 5 Nov):** C1 is now a screen-and-voiceover video with the same script and voice lines. It shows a mock street map, a search, a work gallery, then a "Closed" listing that becomes a live site with a new enquiry. The cinematic C2–C4 will be built the same way. The earlier code-drawn cinematic version is parked in `icontact-pack/parked/c1-cinematic/`.
 - [x] **AI use, for platform labels:**
   - **Footage:** none of the shots is AI-generated, so no AI label is needed for imagery.
   - **Voice:** the voiceover is an **AI stand-in voice** (ElevenLabs, "Peter – South African Commercial"). If you post these before swapping in your own recordings, switch on the platform's AI-generated content label. TikTok in particular asks for it for synthetic voices.
@@ -36,8 +37,8 @@ The S1 Shona slot is ready but is waiting for your Shona recording (see `s1-shon
 
 | Asset | Source | Licence |
 |---|---|---|
-| Music beds (S1 and S2 calm score, C1 cinematic score) | Composed and synthesised in code for this project (`icontact-pack/tools/psound.py`) | Original work, owned by you; no third-party licence |
-| Sound effects (ticks, whooshes, street ambience) | Synthesised in code (`psound.py`) | Original work, owned by you; no third-party licence |
+| Music beds (calm score for S1, S2 and C1) | Composed and synthesised in code for this project (`icontact-pack/tools/psound.py`) | Original work, owned by you; no third-party licence |
+| Sound effects (ticks, whooshes, chime) | Synthesised in code (`psound.py`) | Original work, owned by you; no third-party licence |
 | Stand-in voiceover | ElevenLabs text-to-speech, generated on your ElevenLabs account (flow "iContact production pack: Batch 1 voiceover (stand-in)") | Commercial use under your ElevenLabs plan's terms |
 | Fonts (Poppins, Inter) | Google Fonts | SIL Open Font License |
 
@@ -46,7 +47,6 @@ The S1 Shona slot is ready but is waiting for your Shona recording (see `s1-shon
 1. **Your voiceover recordings** (one take per script). The cut re-times itself to your takes, and the captions are rebuilt from your actual words.
 2. **S1 Shona voiceover and approved Shona captions.** See `s1-shona/README.md`.
 3. **Approval of the mock sites and portal screens.** The pack asks for placeholders to be sent for approval when your own screen recordings aren't ready. These are those placeholders. If you'd rather use your real portal demo recording, send it and I'll put it in the phone frame.
-4. **Optional: real Harare street footage for C1.** The code-drawn street can be replaced shot by shot.
 
 ## Posting (from the pack)
 
