@@ -83,10 +83,15 @@ def build(film, vo_src=None, square=None):
 
     def film_html(w, h, crop=0):
         L = f'{length:g}'
-        out = ['<!doctype html>', '<html>', '<head>', '<meta charset="utf-8">', f'<meta name="viewport" content="width={w}, height={h}">',
-               '</head>', '<body>', '<section>', f'  <iframe id="chrome" src="chrome.html#t=0,{L}"{pos(crop)}></iframe>', '</section>', '<section>']
+        out = ['<!doctype html>', '<html>', '<head>', '<meta charset="utf-8">', f'<meta name="viewport" content="width={w}, height={h}">']
+        if crop: out += ['<style>', '  .backdrop { filter: blur(40px) brightness(0.55) saturate(1.1); }', '  .panel { -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }', '</style>']
+        out += ['</head>', '<body>', '<section>', f'  <iframe id="chrome" src="chrome.html#t=0,{L}"></iframe>', '</section>', '<section>']
         for shot, at in zip(shots, starts):
             out.append(f'  <iframe id="{shot["page"]}" src="{shot["page"]}.html"' + (f' at="{at:g}"' if at else '') + pos(crop) + '></iframe>')
+        if crop:   # behind the 4:5 panel: the same shot, blurred, filling the frame
+            out += ['</section>', '<section>']
+            for shot, at in zip(shots, starts):
+                out.append(f'  <iframe id="{shot["page"]}-backdrop" src="{shot["page"]}.html"' + (f' at="{at:g}"' if at else '') + ' size="1080x1920" class="backdrop" style="left: -60px; top: -400px; width: 1200px; height: 2133px"></iframe>')
         out += ['</section>', '<section>']
         for i, at in enumerate(starts, 1):
             out.append(f'  <audio id="vo-{i}" src="assets/vo/line-{i}.mp3" at="{at + LEAD:g}"></audio>')
@@ -125,8 +130,8 @@ def build(film, vo_src=None, square=None):
 
 
 def pos(crop):
-    # the 4:5 cut shows the master's y 200–1550: each page keeps its 1080×1920 layout and is shifted up
-    return f' size="1080x1920" style="left: 0px; top: -{crop}px; width: 1080px; height: 1920px"' if crop else ''
+    # the 4:5 cut: the whole 9:16 page at 86%, its content band (y 330–1300) placed from y 74 so it clears the captions
+    return ' size="1080x1920" class="panel" style="left: 76px; top: -210px; width: 929px; height: 1651px"' if crop else ''
 
 
 def write_srt(path, vo, starts):

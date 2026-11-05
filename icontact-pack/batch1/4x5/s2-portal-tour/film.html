@@ -3,17 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=1080, height=1350">
+<style>
+  .backdrop { filter: blur(40px) brightness(0.55) saturate(1.1); }
+  .panel { -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+</style>
 </head>
 <body>
 <section>
-  <iframe id="chrome" src="chrome.html#t=0,45" size="1080x1920" style="left: 0px; top: -200px; width: 1080px; height: 1920px"></iframe>
+  <iframe id="chrome" src="chrome.html#t=0,45"></iframe>
 </section>
 <section>
-  <iframe id="silence" src="silence.html" size="1080x1920" style="left: 0px; top: -200px; width: 1080px; height: 1920px"></iframe>
-  <iframe id="portal" src="portal.html" at="6" size="1080x1920" style="left: 0px; top: -200px; width: 1080px; height: 1920px"></iframe>
-  <iframe id="features" src="features.html" at="18" size="1080x1920" style="left: 0px; top: -200px; width: 1080px; height: 1920px"></iframe>
-  <iframe id="namecard" src="namecard.html" at="30" size="1080x1920" style="left: 0px; top: -200px; width: 1080px; height: 1920px"></iframe>
-  <iframe id="endcard" src="endcard.html" at="36" size="1080x1920" style="left: 0px; top: -200px; width: 1080px; height: 1920px"></iframe>
+  <iframe id="silence" src="silence.html" size="1080x1920" class="panel" style="left: 76px; top: -210px; width: 929px; height: 1651px"></iframe>
+  <iframe id="portal" src="portal.html" at="6" size="1080x1920" class="panel" style="left: 76px; top: -210px; width: 929px; height: 1651px"></iframe>
+  <iframe id="features" src="features.html" at="18" size="1080x1920" class="panel" style="left: 76px; top: -210px; width: 929px; height: 1651px"></iframe>
+  <iframe id="namecard" src="namecard.html" at="30" size="1080x1920" class="panel" style="left: 76px; top: -210px; width: 929px; height: 1651px"></iframe>
+  <iframe id="endcard" src="endcard.html" at="36" size="1080x1920" class="panel" style="left: 76px; top: -210px; width: 929px; height: 1651px"></iframe>
+</section>
+<section>
+  <iframe id="silence-backdrop" src="silence.html" size="1080x1920" class="backdrop" style="left: -60px; top: -400px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="portal-backdrop" src="portal.html" at="6" size="1080x1920" class="backdrop" style="left: -60px; top: -400px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="features-backdrop" src="features.html" at="18" size="1080x1920" class="backdrop" style="left: -60px; top: -400px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="namecard-backdrop" src="namecard.html" at="30" size="1080x1920" class="backdrop" style="left: -60px; top: -400px; width: 1200px; height: 2133px"></iframe>
+  <iframe id="endcard-backdrop" src="endcard.html" at="36" size="1080x1920" class="backdrop" style="left: -60px; top: -400px; width: 1200px; height: 2133px"></iframe>
 </section>
 <section>
   <audio id="vo-1" src="assets/vo/line-1.mp3" at="0.2"></audio>
