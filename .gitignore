@@ -3,3 +3,7 @@
 
 # Python caches
 __pycache__/
+
+# iContact pack: raw renders (the named, compressed files in delivery/ are the masters to keep)
+icontact-pack/batch*/*/*.mp4
+icontact-pack/batch*/4x5/*/*.mp4
