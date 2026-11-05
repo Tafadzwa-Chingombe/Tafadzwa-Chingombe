@@ -1,0 +1,18 @@
+{
+ "title": "S2: The Portal Tour (45 s)",
+ "keyword": "PORTAL",
+ "score": "calm",
+ "music_volume": 0.2,
+ "marks": {"end": 4},
+ "bug": [0, 4],
+ "look": {"grain": false, "vignette": false},
+ "tail": 0.4, "end_tail": 1.6,
+ "shots": [
+  {"page": "silence", "min": 6, "line": "Paid a deposit and then heard nothing? A website project shouldn't work like that."},
+  {"page": "portal", "min": 12, "line": "Every iContact client gets a portal. You can see where your project is without having to chase anyone."},
+  {"page": "features", "min": 12, "line": "You approve designs, share files, pay invoices and ask for support, all in one place."},
+  {"page": "namecard", "min": 6, "line": "Fixed price. Direct access to the person building your site."},
+  {"page": "endcard", "min": 9, "line": "WhatsApp the word PORTAL, and I'll show you how it works."}
+ ],
+ "sfx": [[1, "whoosh", -0.25, 0.3], [2, "whoosh", -0.25, 0.3], [3, "whoosh", -0.25, 0.3], [4, "whoosh", -0.25, 0.3]]
+}

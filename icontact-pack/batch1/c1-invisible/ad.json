@@ -1,0 +1,18 @@
+{
+ "title": "C1: Invisible (25 s)",
+ "keyword": "VISIBLE",
+ "score": "cinematic",
+ "music_volume": 0.24,
+ "marks": {"lift": 3, "drop": 4, "end": 4},
+ "bug": [0, 4],
+ "look": {"grain": true, "vignette": true},
+ "tail": 0.6, "end_tail": 1.4,
+ "shots": [
+  {"page": "street", "min": 5, "line": "The best business on this street."},
+  {"page": "search", "min": 5, "line": "Nobody can find it."},
+  {"page": "fade", "min": 5, "line": "Not because the work is bad."},
+  {"page": "glow", "min": 5, "line": "Because online, it looks closed."},
+  {"page": "endcard", "min": 5, "line": "Websites that bring in enquiries. Not just compliments. WhatsApp the word VISIBLE."}
+ ],
+ "sfx": [[0, "cicadas", 0, 0.25, "shot"], [2, "whoosh", -0.3, 0.2], [4, "whoosh", -0.3, 0.25]]
+}

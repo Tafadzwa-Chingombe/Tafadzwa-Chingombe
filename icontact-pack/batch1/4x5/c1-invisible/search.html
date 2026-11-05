@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="lib/ic.css">
+<style>
+  #bg { filter: blur(26px) brightness(0.7) saturate(1.2); transform: scale(1.15); }
+  .phone { top: 380px; transform: rotate(-5deg) scale(1.15); transform-origin: 50% 40%; box-shadow: 0 60px 120px rgba(0,0,0,0.7); }
+  .sr { position: absolute; inset: 56px 0 0; background: #fff; font-family: var(--f-ui); zoom: 1.12; }
+  .q { margin: 10px 14px; padding: 12px 16px; border-radius: 24px; border: 1.5px solid #dfe3ea; font: 500 16px var(--f-ui); color: #13202f; }
+  .res { padding: 12px 16px; border-bottom: 1px solid #eef1f5; }
+  .res .t { font: 600 16px var(--f-ui); color: #1a4fb4; } .res .u { font: 400 12px var(--f-ui); color: #3b7a3b; margin: 2px 0; }
+  .res .d { height: 8px; border-radius: 4px; background: #e6eaf0; margin-top: 7px; } .res .d.s { width: 70%; }
+  .map { height: 150px; margin: 8px 14px; border-radius: 12px; background: linear-gradient(135deg,#e7efe4,#f3f1ea); position: relative; overflow: hidden; }
+  .pin { position: absolute; width: 18px; height: 18px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #d4584a; }
+  .nomatch { margin: 14px; padding: 12px; border-radius: 10px; background: #f6f7f9; font: 500 14px var(--f-ui); color: #5d6b7c; text-align: center; }
+  #glow { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 40% at 50% 45%, rgba(160,200,255,0.12), transparent 70%); }
+</style></head>
+<body>
+<div class="stage">
+  <canvas class="full" id="bg"></canvas><div id="glow"></div>
+  <div class="cam" data-from="1.0" data-to="1.06">
+    <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>19:04</span><span>●●● 5G</span></div>
+      <div class="sr"><div class="scroller" id="sc" style="top:0;zoom:1">
+        <div class="q" id="q"></div>
+        <div class="map"><span class="pin" style="left:30%;top:40%"></span><span class="pin" style="left:62%;top:30%"></span><span class="pin" style="left:48%;top:62%"></span></div>
+        <div class="res"><div class="t">Example Services Ltd</div><div class="u">example-services.co.zw</div><div class="d"></div><div class="d s"></div></div>
+        <div class="res"><div class="t">Another Example &amp; Co</div><div class="u">another-example.co.zw</div><div class="d"></div><div class="d s"></div></div>
+        <div class="res"><div class="t">Example Partners</div><div class="u">examplepartners.co.zw</div><div class="d"></div><div class="d s"></div></div>
+        <div class="res"><div class="t">Example Group</div><div class="u">examplegroup.co.zw</div><div class="d"></div><div class="d s"></div></div>
+        <div class="nomatch">No more results</div>
+      </div></div></div>
+      <div class="label-example" style="left:28px;top:-20px">Example</div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, W, H, typed, prog, ease, lerp } from './lib/kit.js';
+import { makeStreet, drawStreet } from './lib/street.js';
+const bg = document.getElementById('bg'); let ctx, S;
+shot(5, (t) => {
+  drawStreet(ctx, t, S, { light: 1 });
+  typed(document.getElementById('q'), 'best business near me', t, 0.2, 22);
+  document.getElementById('sc').style.transform = `translateY(${-lerp(0, 300, ease.inOut(prog(t, 1.6, 2.6)))}px)`;
+}, () => { bg.width = W(); bg.height = H(); ctx = bg.getContext('2d'); S = makeStreet(W(), H()); });
+</script>
+</body>
+</html>

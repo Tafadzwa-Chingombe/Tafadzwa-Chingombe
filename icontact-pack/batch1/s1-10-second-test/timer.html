@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<style>
+  .desk { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 62%, #3b2a1e 0%, #241811 55%, #0e0a07 100%); }
+  .desk::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(176deg, rgba(255,255,255,0.025) 0 3px, transparent 3px 11px); }
+  .lamp { position: absolute; left: 50%; top: -200px; width: 1400px; height: 1300px; margin-left: -700px; background: radial-gradient(ellipse at 50% 30%, rgba(255,214,160,0.22), transparent 60%); }
+  .phone { top: 470px; box-shadow: 0 60px 80px rgba(0,0,0,0.6); }
+  #timer { right: 120px; top: 470px; }
+  .loader { position: absolute; left: 0; right: 0; top: 0; height: 5px; background: #2a7de1; transform-origin: left; }
+  .urlbar { margin: 4px 16px 0; padding: 10px 14px; border-radius: 12px; background: #eef2f7; font: 500 15px var(--f-ui); color: #5d6b7c; position: relative; overflow: hidden; }
+  .blank { position: absolute; left: 0; right: 0; top: 112px; bottom: 0; background: #fff; }
+</style>
+<style id="tcss"></style>
+</head>
+<body>
+<div class="stage">
+  <div class="desk"></div><div class="lamp"></div>
+  <div class="cam" data-from="1.0" data-to="1.05">
+    <div class="top"><div class="title" data-rise="0.15"><span class="ac">10</span> SECONDS</div></div>
+    <div id="ph"></div>
+    <div id="tw"></div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease } from './lib/kit.js';
+import { phone, goodSite, timerHTML, timerCSS, setTimer } from './lib/ui.js';
+import { starts } from './lib/cuts.js';
+document.getElementById('tcss').textContent = timerCSS;
+document.getElementById('ph').innerHTML = phone('<div class="urlbar">example-plumbing.co.zw<div class="loader" id="ld"></div></div>' + goodSite() + '<div class="blank" id="blank"></div>');
+document.getElementById('tw').innerHTML = timerHTML();
+const T0 = 2.9;   // film time the clock starts: as "ten seconds" is said
+shot(4.1, (t) => {
+  setTimer(starts[0] + t - T0);
+  const ld = document.getElementById('ld'); ld.style.transform = `scaleX(${ease.out(prog(t, 0.6, 1.4))})`; ld.style.opacity = 1 - prog(t, 2.0, 0.3);
+  document.getElementById('blank').style.opacity = 1 - ease.out(prog(t, 1.6, 0.5));
+});
+</script>
+</body>
+</html>

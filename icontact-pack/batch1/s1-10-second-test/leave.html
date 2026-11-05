@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<style>
+  .phone { top: 545px; transform: scale(0.9); transform-origin: 50% 0; }
+  .lines { position: absolute; left: 80px; right: 80px; top: 345px; text-align: center; display: grid; gap: 6px; }
+  .lines .title { font-size: 64px; }
+  .lines .bad { color: var(--bad); }
+  #good { position: absolute; inset: 0; opacity: 0; }
+  .x { position: absolute; z-index: 7; width: 120px; height: 120px; border-radius: 50%; background: var(--bad); display: grid; place-items: center; left: 50%; margin-left: -60px; top: 860px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+  .x svg { width: 64px; height: 64px; }
+  .ok { position: absolute; z-index: 7; width: 120px; height: 120px; border-radius: 50%; background: #1f3d1a; border: 5px solid var(--accent); display: grid; place-items: center; left: 50%; margin-left: -60px; top: 860px; }
+  .ok svg { width: 70px; height: 70px; }
+  .urlbar { margin: 4px 16px 0; padding: 10px 14px; border-radius: 12px; background: #eef2f7; font: 500 15px var(--f-ui); color: #5d6b7c; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1.0" data-to="1.03">
+    <div class="lines">
+      <div class="title" id="l1">They leave.</div>
+      <div class="title bad" id="l2">They call someone else.</div>
+    </div>
+    <div id="ph"></div>
+    <div class="x" id="x"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+    <div class="ok" id="ok"></div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease, pop, rise } from './lib/kit.js';
+import { phone, goodSite, badSite, TICK } from './lib/ui.js';
+document.getElementById('ok').innerHTML = TICK;
+document.getElementById('ph').innerHTML = phone('<div class="urlbar">example-plumbing.co.zw</div><div id="bad">' + badSite() + '</div><div id="good">' + goodSite() + '</div>');
+document.querySelector('.scroller').style.position = 'absolute';
+const SAY_LEAVE = 2.6, SAY_ELSE = 4.0, CLEAN = 6.0;   // synced to "they go back to Google" / "someone else"
+shot(9, (t) => {
+  rise(document.getElementById('l1'), t, SAY_LEAVE);
+  rise(document.getElementById('l2'), t, SAY_ELSE);
+  pop(document.getElementById('x'), t, 1.2);
+  const x = document.getElementById('x'); if (t > CLEAN - 0.2) x.style.opacity = Math.max(0, 1 - prog(t, CLEAN - 0.2, 0.3));
+  // the clean version replaces the bad one
+  const g = ease.inOut(prog(t, CLEAN, 0.7));
+  document.getElementById('good').style.opacity = g;
+  document.getElementById('good').style.background = '#fff';
+  pop(document.getElementById('ok'), t, CLEAN + 0.6);
+  const ls = document.querySelector('.lines'); ls.style.opacity = 1 - ease.out(prog(t, CLEAN - 0.1, 0.4));
+});
+</script>
+</body>
+</html>

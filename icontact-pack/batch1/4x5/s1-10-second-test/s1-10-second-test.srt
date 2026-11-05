@@ -1,0 +1,43 @@
+1
+00:00:00,200 --> 00:00:01,801
+Open your website on your phone.
+
+2
+00:00:02,280 --> 00:00:03,674
+You have ten seconds.
+
+3
+00:00:04,300 --> 00:00:05,994
+In ten seconds, a new client
+
+4
+00:00:05,994 --> 00:00:07,890
+should know what you do, where you
+
+5
+00:00:07,890 --> 00:00:09,466
+work and how to reach you.
+
+6
+00:00:14,300 --> 00:00:15,787
+If they can't, they don't
+
+7
+00:00:15,787 --> 00:00:17,879
+complain. They go back to Google
+
+8
+00:00:17,879 --> 00:00:19,133
+and call someone else.
+
+9
+00:00:23,300 --> 00:00:25,441
+Send me the word TEST on WhatsApp,
+
+10
+00:00:25,658 --> 00:00:27,039
+and I'll run this check on your
+
+11
+00:00:27,039 --> 00:00:27,722
+site for free.

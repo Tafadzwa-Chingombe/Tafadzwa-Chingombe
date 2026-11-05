@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<link rel="stylesheet" href="portal.css">
+<style> .phone { top: 545px; transform: scale(0.9); transform-origin: 50% 0; } </style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1.0" data-to="1.03">
+    <div class="top"><div class="title" data-rise="0.4">See your project<br><span class="ac">at every stage</span></div></div>
+    <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>9:41</span><span>●●● 5G</span></div>
+      <div class="pt">
+        <div class="screen-x" id="login" style="opacity:1">
+          <div class="bar">iContact Client Portal <small>Sign in</small></div>
+          <div class="card"><h3>Welcome back</h3><div class="muted">Demo account · invented details</div>
+            <div class="field" id="em"></div><div class="field">••••••••</div><div class="btn" id="signin">Sign in</div></div>
+        </div>
+        <div class="screen-x" id="dash">
+          <div class="bar">Example Bakery website <small>Project</small></div>
+          <div class="card"><h3>Your project</h3><div class="muted">Next update: design review, Friday</div>
+            <div class="steps">
+              <div class="step done"><span class="dot">✓</span>Brief agreed</div>
+              <div class="step done"><span class="dot">✓</span>Design approved</div>
+              <div class="step now"><span class="dot">3</span>Build<span class="sb"><i id="bp" style="width:0%"></i></span></div>
+              <div class="step"><span class="dot">4</span>Launch</div>
+            </div></div>
+          <div class="card"><h3>Latest update</h3><div class="muted">Home and Services pages are built. Gallery next.</div></div>
+        </div>
+      </div></div>
+      <div class="label-example" style="left:28px;top:-20px">Example</div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease, typed } from './lib/kit.js';
+const SWITCH = 2.0;   // login → dashboard, as "portal" is said
+shot(12, (t) => {
+  typed(document.getElementById('em'), 'client@example.com', t, 0.6, 16);
+  document.getElementById('signin').style.background = t > SWITCH - 0.4 ? '#25a244' : '';
+  const s = ease.inOut(prog(t, SWITCH, 0.5));
+  document.getElementById('login').style.opacity = 1 - s;
+  document.getElementById('dash').style.opacity = s;
+  document.getElementById('bp').style.width = (20 + 45 * ease.out(prog(t, SWITCH + 0.8, 3.5))) + '%';
+});
+</script>
+</body>
+</html>

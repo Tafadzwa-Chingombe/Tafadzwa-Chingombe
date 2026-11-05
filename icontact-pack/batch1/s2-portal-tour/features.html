@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/ic.css">
+<link rel="stylesheet" href="portal.css">
+<style>
+  .phone { top: 545px; transform: scale(0.9); transform-origin: 50% 0; }
+  .chips { position: absolute; left: 60px; right: 60px; top: 345px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .chip { font: 700 38px/1 var(--f); padding: 16px 24px; border-radius: 999px; border: 2px solid var(--line); color: var(--muted); }
+  .chip.on { color: var(--ink); background: var(--accent); border-color: var(--accent); }
+  .proof { margin-top: 10px; height: 170px; border-radius: 10px; background: linear-gradient(135deg, #f3d9c1, #fbeee2 55%, #e9c9a8); display: grid; place-items: center; font: 800 22px var(--f); color: #7a4a24; }
+  .file { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eef2f6; font-size: 15px; }
+  .file b { font-weight: 600; } .file span { color: #5d6b7c; font-size: 13px; }
+  .inv { display: flex; justify-content: space-between; font-size: 15px; padding: 6px 0; }
+  .paid { display: inline-block; margin-top: 10px; padding: 6px 10px; border-radius: 8px; background: #e3f6e7; color: #1c7a33; font: 700 14px var(--f-ui); }
+  .bub { margin-top: 10px; padding: 10px 12px; border-radius: 12px; font-size: 15px; line-height: 1.35; max-width: 85%; }
+  .bub.me { background: #e9f1fb; margin-left: auto; } .bub.them { background: #f2f4f7; }
+  .bub small { display: block; margin-top: 4px; font-size: 11px; color: #5d6b7c; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1.0" data-to="1.03">
+    <div class="chips"><span class="chip" id="k0">Approve</span><span class="chip" id="k1">Share</span><span class="chip" id="k2">Pay</span><span class="chip" id="k3">Get support</span></div>
+    <div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>9:41</span><span>●●● 5G</span></div>
+      <div class="pt">
+        <div class="screen-x" id="s0"><div class="bar">Design proofs <small>Example</small></div>
+          <div class="card"><h3>Home page, version 2</h3><div class="muted">Ready for your review</div><div class="proof">Example Bakery</div><div class="btn go" id="appr">Approve design</div></div></div>
+        <div class="screen-x" id="s1"><div class="bar">Shared files <small>Example</small></div>
+          <div class="card"><h3>Files</h3>
+            <div class="file"><b>Menu photos.zip</b><span>You · today</span></div><div class="file"><b>Logo final.svg</b><span>iContact · Mon</span></div>
+            <div class="file"><b>About us text.docx</b><span>You · Mon</span></div><div class="file" id="up"><b>Opening hours.txt</b><span>Uploading…</span></div></div></div>
+        <div class="screen-x" id="s2"><div class="bar">Invoices <small>Example</small></div>
+          <div class="card"><h3>Invoice EX-002</h3><div class="muted">Example Bakery website · stage 2</div>
+            <div class="inv" style="margin-top:10px"><span>Design stage</span><b>Example amount</b></div><div class="btn go" id="pay">Pay invoice</div><span class="paid" id="paid">Paid ✓</span></div></div>
+        <div class="screen-x" id="s3"><div class="bar">Support <small>Example</small></div>
+          <div class="card"><h3>Support inbox</h3>
+            <div class="bub me">Can we change the photo on the home page?<small>You · 10:02</small></div>
+            <div class="bub them" id="reply">Done. The new photo is live now.<small>Tafadzwa · 10:15</small></div></div></div>
+      </div></div>
+      <div class="label-example" style="left:28px;top:-20px">Example</div></div>
+  </div>
+</div>
+<script type="module">
+import { shot, prog, ease, pop, rise } from './lib/kit.js';
+const SAY = [0.45, 1.6, 2.7, 4.4];   // approve, share, pay, support (synced to the voice)
+shot(12, (t) => {
+  let cur = 0; SAY.forEach((s, i) => { if (t >= s) cur = i; });
+  SAY.forEach((s, i) => {
+    document.getElementById('k' + i).classList.toggle('on', i === cur && t >= s);
+    document.getElementById('s' + i).style.opacity = i === cur ? ease.out(prog(t, Math.max(0, s - 0.1), 0.3)) : 0;
+  });
+  if (t > 6.6) {   // after the voice, hold on the support reply, then step back through the screens
+    const loop = Math.floor((t - 6.6) / 1.3) % 4;
+    SAY.forEach((s, i) => { document.getElementById('s' + i).style.opacity = i === loop ? 1 : 0; document.getElementById('k' + i).classList.toggle('on', i === loop); });
+  }
+  document.getElementById('appr').style.background = t > SAY[0] + 0.8 ? '#1c7a33' : '';
+  document.getElementById('appr').textContent = t > SAY[0] + 0.8 ? 'Approved ✓' : 'Approve design';
+  document.querySelector('#up span').textContent = t > SAY[1] + 0.8 ? 'You · now' : 'Uploading…';
+  pop(document.getElementById('paid'), t, SAY[2] + 0.8);
+  rise(document.getElementById('reply'), t, SAY[3] + 0.6);
+});
+</script>
+</body>
+</html>

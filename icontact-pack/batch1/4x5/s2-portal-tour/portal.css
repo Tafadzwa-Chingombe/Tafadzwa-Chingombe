@@ -1,0 +1,16 @@
+/* the demo client portal (invented details only) */
+.pt { position: absolute; inset: 56px 0 0; background: #f5f7fb; font-family: var(--f-ui); color: #13202f; zoom: 1.12; }
+.pt .bar { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: #142a47; color: #fff; font: 700 16px var(--f); }
+.pt .bar small { font: 500 12px var(--f-ui); opacity: .75; }
+.pt .card { margin: 14px 14px 0; background: #fff; border: 1px solid #e3e8ef; border-radius: 14px; padding: 14px; }
+.pt h3 { margin: 0 0 4px; font: 700 18px var(--f); }
+.pt .muted { color: #5d6b7c; font-size: 13px; }
+.pt .field { margin-top: 10px; padding: 12px; border: 1.5px solid #d6dde7; border-radius: 10px; font-size: 15px; color: #13202f; min-height: 44px; }
+.pt .btn { margin-top: 12px; text-align: center; padding: 13px; border-radius: 10px; background: #142a47; color: #fff; font: 700 15px var(--f-ui); }
+.pt .btn.go { background: #25a244; }
+.steps { display: grid; gap: 10px; margin-top: 10px; }
+.step { display: flex; align-items: center; gap: 10px; font: 600 15px var(--f-ui); }
+.step .dot { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; color: #fff; background: #c9d2de; flex: none; }
+.step.done .dot { background: #25a244; } .step.now .dot { background: #2a7de1; }
+.step .sb { flex: 1; height: 8px; border-radius: 4px; background: #e6ebf2; overflow: hidden; } .step .sb i { display: block; height: 100%; background: #2a7de1; }
+.screen-x { position: absolute; inset: 0; opacity: 0; }
