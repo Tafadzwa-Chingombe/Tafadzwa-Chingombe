@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style></style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="icon" data-pop="0.1"><svg viewBox="0 0 64 64"><path d="M14 36v-4a18 18 0 0 1 36 0v4"/><rect x="10" y="34" width="10" height="14" rx="3"/><rect x="44" y="34" width="10" height="14" rx="3"/><path d="M50 48c0 6-6 8-14 8"/></svg></div>
+      <div class="h ind" data-rise="0.2">Customer support</div><div class="s" data-rise="0.4">Routine questions, full records</div></div>
+    <div class="vis"><div class="art" data-w="680" data-h="480"><div class="card" data-rise="0.25" style="position:absolute;left:0px;top:0px;width:680px;height:470px"><div class="ch"><span class="dots"><i></i><i></i><i></i></span><span class="grow">Call log</span><span class="ex">Example</span></div><div class="row" data-rise="0.54"><span class="m"><b>09:12 · Opening hours</b><small>Routine question</small></span><span class="st " data-on="1.49"><span class="a">Live</span><span class="b">Answered</span></span></div><div class="row" data-rise="0.99"><span class="m"><b>09:20 · Order status</b><small>Routine question</small></span><span class="st " data-on="2.17"><span class="a">Live</span><span class="b">Answered</span></span></div><div class="row" data-rise="1.45"><span class="m"><b>09:31 · Billing query</b><small>Needs a person</small></span><span class="st blue" data-on="2.85"><span class="a">Live</span><span class="b">Passed to team</span></span></div><div class="bub ai" data-rise="3.19" style="margin-bottom:18px"><small>Call record</small>Every call logged with a summary for your team.</div></div></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(4);
+</script>
+</body>
+</html>

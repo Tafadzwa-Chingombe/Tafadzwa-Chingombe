@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style></style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="kick" data-rise="0.1">Example call</div>
+      <div class="h" data-rise="0.2">The agent says it's an AI, <span class="ac">then gets it done.</span></div>
+      <div class="s" data-rise="0.4">An invented call, in the agent's voice.</div></div>
+    <div class="vis"><div class="art" data-w="700" data-h="660"><div class="card" data-rise="0.10" style="position:absolute;left:0px;top:0px;width:700px;height:660px"><div class="ch"><span class="dots"><i></i><i></i><i></i></span><span class="grow">Example Motors · AI assistant</span><span class="ex">Example</span></div><div style="display:flex;gap:20px;align-items:center;padding:22px 26px 8px">
+        <div class="orb" style="width:84px;height:84px"><div class="wave" style="height:34px;gap:4px" data-from="0.06" data-to="11.19"><i style="width:5px"></i><i style="width:5px"></i><i style="width:5px"></i><i style="width:5px"></i><i style="width:5px"></i></div></div>
+        <div><div style="font:700 26px var(--f)">Example Customer</div><div style="font:500 18px var(--f-ui);color:var(--paper-muted)">On a call · <span id="clock">00:00</span></div></div></div>
+      <div class="bub ai" data-rise="0.06"><small>AI assistant</small>Hi, this is the AI assistant for Example Motors. I'm calling to confirm your car service tomorrow at ten. Does that still suit you?</div>
+      <div class="bub you" data-rise="7.22"><small>Customer</small>Yes, that works for me.</div>
+      <div class="bub ai" data-rise="8.98"><small>AI assistant</small>Great, you're confirmed. Thank you!</div>
+      <div class="ok" data-rise="11.19"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Service confirmed · call logged</div></div></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(11.5, (t) => { const s = Math.max(0, Math.floor(t - 0.06)); document.getElementById('clock').textContent = '00:' + String(s).padStart(2, '0'); });
+</script>
+</body>
+</html>

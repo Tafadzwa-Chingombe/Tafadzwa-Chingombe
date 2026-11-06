@@ -1,0 +1,283 @@
+1
+00:00:00,060 --> 00:00:01,217
+Enquiries come in.
+
+2
+00:00:01,540 --> 00:00:02,733
+Reminders need sending.
+
+3
+00:00:03,170 --> 00:00:04,710
+Your team is already busy.
+
+4
+00:00:05,253 --> 00:00:07,061
+So some calls just don't happen.
+
+5
+00:00:07,360 --> 00:00:09,100
+iContact Africa Solutions sets up
+
+6
+00:00:09,100 --> 00:00:11,160
+and manages AI voice agents for
+
+7
+00:00:11,160 --> 00:00:11,884
+your business.
+
+8
+00:00:12,272 --> 00:00:13,951
+They make routine calls, qualify
+
+9
+00:00:13,951 --> 00:00:15,815
+leads, send reminders and book
+
+10
+00:00:15,815 --> 00:00:16,529
+appointments.
+
+11
+00:00:16,860 --> 00:00:18,327
+We build the script around your
+
+12
+00:00:18,327 --> 00:00:20,146
+business. The agent says it's an
+
+13
+00:00:20,146 --> 00:00:22,445
+AI, follows your rules, then books
+
+14
+00:00:22,445 --> 00:00:24,184
+a time, passes the call to your
+
+15
+00:00:24,184 --> 00:00:25,532
+team or records the follow-up.
+
+16
+00:00:25,860 --> 00:00:27,848
+Hi, this is the AI assistant for
+
+17
+00:00:27,848 --> 00:00:28,506
+Example Motors.
+
+18
+00:00:28,953 --> 00:00:30,208
+I'm calling to confirm your car
+
+19
+00:00:30,208 --> 00:00:31,335
+service tomorrow at ten.
+
+20
+00:00:31,693 --> 00:00:32,556
+Does that still suit you?
+
+21
+00:00:33,127 --> 00:00:34,423
+Yes, that works for me.
+
+22
+00:00:34,835 --> 00:00:36,185
+Great, you're confirmed.
+
+23
+00:00:36,479 --> 00:00:37,040
+Thank you!
+
+24
+00:00:37,360 --> 00:00:39,431
+For telecoms, follow up sales
+
+25
+00:00:39,431 --> 00:00:41,174
+leads, renewals and upgrades
+
+26
+00:00:41,174 --> 00:00:42,846
+without tying up your whole team.
+
+27
+00:00:43,160 --> 00:00:45,176
+In financial services, qualify
+
+28
+00:00:45,176 --> 00:00:46,774
+enquiries and confirm meetings,
+
+29
+00:00:47,059 --> 00:00:48,422
+while advice and sensitive
+
+30
+00:00:48,422 --> 00:00:49,551
+questions stay with staff.
+
+31
+00:00:49,860 --> 00:00:51,946
+In healthcare, confirm visits and
+
+32
+00:00:51,946 --> 00:00:53,766
+send reminders, while clinical
+
+33
+00:00:53,766 --> 00:00:55,170
+questions stay with your medical
+
+34
+00:00:55,170 --> 00:00:55,450
+team.
+
+35
+00:00:55,760 --> 00:00:57,588
+Technology companies can qualify
+
+36
+00:00:57,588 --> 00:00:59,665
+demo requests quickly, so sales
+
+37
+00:00:59,665 --> 00:01:01,402
+teams focus on serious buyers.
+
+38
+00:01:01,760 --> 00:01:03,342
+Retail and e-commerce teams can
+
+39
+00:01:03,342 --> 00:01:05,385
+follow up orders, reach returning
+
+40
+00:01:05,385 --> 00:01:06,752
+customers and share routine
+
+41
+00:01:06,752 --> 00:01:07,402
+updates.
+
+42
+00:01:07,760 --> 00:01:09,745
+Travel and hospitality businesses
+
+43
+00:01:09,745 --> 00:01:11,278
+can confirm bookings, answer
+
+44
+00:01:11,278 --> 00:01:13,184
+routine questions and follow up on
+
+45
+00:01:13,184 --> 00:01:13,873
+enquiries.
+
+46
+00:01:14,160 --> 00:01:15,803
+For customer support, handle
+
+47
+00:01:15,803 --> 00:01:17,834
+common questions first, then give
+
+48
+00:01:17,834 --> 00:01:19,541
+your team a clear call record.
+
+49
+00:01:19,860 --> 00:01:21,544
+So how does this compare with a
+
+50
+00:01:21,544 --> 00:01:22,245
+human employee?
+
+51
+00:01:22,778 --> 00:01:24,437
+AI is built for repetition,
+
+52
+00:01:24,590 --> 00:01:26,195
+consistency and records.
+
+53
+00:01:26,749 --> 00:01:28,246
+People are better at judgment,
+
+54
+00:01:28,438 --> 00:01:30,074
+empathy and negotiation.
+
+55
+00:01:30,360 --> 00:01:32,686
+Use AI alone for simple reminders
+
+56
+00:01:32,686 --> 00:01:33,599
+and confirmations.
+
+57
+00:01:34,033 --> 00:01:36,064
+Combine AI and people for sales
+
+58
+00:01:36,064 --> 00:01:38,225
+and support. Keep sensitive or
+
+59
+00:01:38,225 --> 00:01:39,847
+high-value conversations with your
+
+60
+00:01:39,847 --> 00:01:40,182
+team.
+
+61
+00:01:40,460 --> 00:01:41,487
+Pricing is simple.
+
+62
+00:01:41,841 --> 00:01:43,619
+Setup starts at $150, and
+
+63
+00:01:43,619 --> 00:01:45,331
+management starts at $150 a month.
+
+64
+00:01:45,923 --> 00:01:47,381
+Sales campaigns add $40 per
+
+65
+00:01:47,381 --> 00:01:48,616
+attended appointment.
+
+66
+00:01:49,015 --> 00:01:50,406
+Support plans are quoted by
+
+67
+00:01:50,406 --> 00:01:50,831
+volume.
+
+68
+00:01:52,060 --> 00:01:53,480
+Start with a small pilot.
+
+69
+00:01:53,861 --> 00:01:56,021
+WhatsApp the word AGENT to
+
+70
+00:01:56,021 --> 00:01:57,648
+iContact Africa Solutions, and
+
+71
+00:01:57,648 --> 00:01:58,225
+let's plan yours.

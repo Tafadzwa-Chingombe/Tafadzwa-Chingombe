@@ -1,0 +1,85 @@
+{
+ "version": "v1",
+ "length": 60.0,
+ "speed": 1.09,
+ "shots": [
+  {
+   "page": "hook",
+   "line": "What if every enquiry got a call, without stretching your team?",
+   "start": 0.0,
+   "length": 4.0
+  },
+  {
+   "page": "intro",
+   "line": "iContact Africa Solutions sets up AI voice agents that call, qualify, remind and book appointments.",
+   "start": 4.0,
+   "length": 6.8
+  },
+  {
+   "page": "ind-telecom",
+   "line": "Telecoms: follow up sales leads and renewals.",
+   "start": 10.8,
+   "length": 3.3
+  },
+  {
+   "page": "ind-finance",
+   "line": "Financial services: confirm appointments and qualify enquiries.",
+   "start": 14.1,
+   "length": 4.4
+  },
+  {
+   "page": "ind-health",
+   "line": "Healthcare: reduce missed visits with reminders.",
+   "start": 18.5,
+   "length": 3.4
+  },
+  {
+   "page": "ind-tech",
+   "line": "Technology: qualify demo requests faster.",
+   "start": 21.9,
+   "length": 3.3
+  },
+  {
+   "page": "ind-retail",
+   "line": "Retail: follow up orders and returning customers.",
+   "start": 25.2,
+   "length": 3.5
+  },
+  {
+   "page": "ind-travel",
+   "line": "Hospitality: confirm bookings and answer routine questions.",
+   "start": 28.7,
+   "length": 4.2
+  },
+  {
+   "page": "ind-support",
+   "line": "Support: handle routine questions and log every call.",
+   "start": 32.9,
+   "length": 4.0
+  },
+  {
+   "page": "split",
+   "line": "AI handles repetitive calls at scale. People bring judgment and empathy.",
+   "start": 36.9,
+   "length": 5.5
+  },
+  {
+   "page": "when",
+   "line": "Use AI alone for simple tasks. Use both for sales and complex support.",
+   "start": 42.4,
+   "length": 5.5
+  },
+  {
+   "page": "pricing",
+   "line": "Setup from $150, monthly management from $150, plus $40 per attended sales appointment.",
+   "start": 47.9,
+   "length": 6.7
+  },
+  {
+   "page": "endcard",
+   "line": "WhatsApp the word AGENT to iContact to plan your pilot.",
+   "start": 54.6,
+   "length": 5.4
+  }
+ ]
+}

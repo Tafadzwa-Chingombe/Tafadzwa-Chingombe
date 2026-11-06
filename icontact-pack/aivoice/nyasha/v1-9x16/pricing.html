@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style>html.S .price .v { font-size: 54px; } html.P .price .v { font-size: 58px; }</style>
+</head>
+<body>
+<div class="stage wide noh">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="kick" data-rise="0.1">Pricing</div></div>
+    <div class="vis"><div class="art only-L" data-w="1500" data-h="500"><div class="price" data-pop="0.30" style="left:0px;top:40px;width:480px;height:420px"><span class="bar"></span><div class="l">Setup</div><div class="v">from $150</div></div><div class="price" data-pop="2.44" style="left:510px;top:40px;width:480px;height:420px"><span class="bar"></span><div class="l">Management</div><div class="v">from $150 <small>a month</small></div></div><div class="price" data-pop="4.38" style="left:1020px;top:40px;width:480px;height:420px"><span class="bar"></span><div class="l">Sales campaigns</div><div class="v">$40 <small>per attended appointment</small></div></div></div>
+      <div class="art only-V" data-w="900" data-h="720"><div class="price" data-pop="0.30" style="left:0px;top:0px;width:900px;height:220px"><span class="bar"></span><div class="l">Setup</div><div class="v">from $150</div></div><div class="price" data-pop="2.44" style="left:0px;top:250px;width:900px;height:220px"><span class="bar"></span><div class="l">Management</div><div class="v">from $150 <small>a month</small></div></div><div class="price" data-pop="4.38" style="left:0px;top:500px;width:900px;height:220px"><span class="bar"></span><div class="l">Sales campaigns</div><div class="v">$40 <small>per attended appointment</small></div></div></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(6.7);
+</script>
+</body>
+</html>

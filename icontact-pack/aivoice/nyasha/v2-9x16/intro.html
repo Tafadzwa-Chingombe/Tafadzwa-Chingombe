@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style></style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="plate" data-pop="0.1"><img src="img/icontact-logo.png" alt="iContact Africa Solutions"></div>
+      <div class="h" data-rise="0.55">iContact AI voice agents</div><div class="s" data-rise="0.8">Set up and managed for your business</div></div>
+    <div class="vis"><div class="art" data-w="720" data-h="520"><div class="card" data-rise="0.45" style="position:absolute;left:0px;top:0px;width:720px;height:520px"><div class="ch"><span class="dots"><i></i><i></i><i></i></span><span class="grow">AI voice agent</span><span class="ex">Example</span></div><div style="display:flex;gap:30px;align-items:center;padding:34px 30px 10px">
+        <div class="orb"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div><div style="font:600 17px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-muted)">On a call</div>
+          <div style="font:700 34px var(--f);margin:6px 0">Example Customer</div>
+          <div style="font:500 20px var(--f-ui);color:var(--paper-muted)">New enquiry · follow-up call</div></div></div>
+      <div class="steps" style="padding:24px 30px"><span class="step" data-on="5.44">Call</span><span class="step" data-on="6.45">Qualify</span><span class="step" data-on="7.46">Remind</span><span class="step" data-on="8.37">Book</span></div>
+      <div class="ok blue" data-rise="8.67"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Appointment booked · Thu 10:00</div></div></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(9.5);
+</script>
+</body>
+</html>
