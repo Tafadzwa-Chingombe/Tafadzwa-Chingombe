@@ -64,3 +64,31 @@ A few short labels were needed to make the screens readable. Please check them:
 - `tools/build_aiv.py`: fits each shot to its voice line and writes the three projects per version: `v1-16x9`, `v1-9x16`, `v1-4x5`, `v2-…`.
 - `kit/lib/aiv.css`, `aiv.js`, `orient.js`: the shared layout and motion.
 - Each project folder opens in OpenFilm Studio for edits.
+
+## Scheduled posts (Metricool, auto-publish)
+
+V2 (120 s), Nyasha voice, on **Sunday 16 November 2026** (Africa/Harare):
+
+| Time | Network | Video | Notes |
+|---|---|---|---|
+| 10:00 | Facebook (post, title "AI Voice Agents for Your Business") | 4:5 | Caption includes `https://wa.me/263718574277?text=AGENT` |
+| 12:00 | Instagram Reel | 9:16 | AI-content label on |
+| 18:00 | TikTok (title "What if every enquiry got a call?") | 9:16 | AI-content label on |
+
+Caption (Facebook; Instagram is the same without the link; TikTok is shorter):
+
+> How can a business follow up every enquiry without stretching the team? An AI voice agent can make the routine calls for you: following up leads, qualifying enquiries, sending reminders and booking appointments.
+>
+> iContact Africa Solutions sets up and manages AI voice agents for businesses in Harare and across Zimbabwe. The agent says it's an AI, follows your script and rules, then books a time, passes the call to your team or records the follow-up.
+>
+> Built for telecoms, financial services, healthcare, technology, retail and e-commerce, travel and hospitality, and customer support.
+>
+> AI handles the repetitive calls. Your people handle the moments that matter.
+>
+> Pricing: setup from $150, management from $150 a month, plus $40 per attended appointment on sales campaigns. Support and reminder plans are quoted by volume.
+>
+> Start with a small pilot. WhatsApp the word AGENT to +263 71 857 4277 and let's plan yours.
+>
+> #AIVoiceAgent #AIForBusiness #BusinessAutomation #LeadGeneration #CustomerService #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+
+TikTok hashtags: #AIVoiceAgent #AIForBusiness #BusinessAutomation #SmallBusiness #HarareBusiness #ZimbabweBusiness #TechTok
