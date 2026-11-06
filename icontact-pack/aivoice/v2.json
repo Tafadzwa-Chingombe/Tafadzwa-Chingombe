@@ -55,43 +55,43 @@
    "page": "ind-retail",
    "line": "Retail and e-commerce teams can follow up orders, reach returning customers and share routine updates.",
    "start": 61.4,
-   "length": 6.0
+   "length": 6.1
   },
   {
    "page": "ind-travel",
    "line": "Travel and hospitality businesses can confirm bookings, answer routine questions and follow up on enquiries.",
-   "start": 67.4,
-   "length": 6.4
+   "start": 67.5,
+   "length": 6.5
   },
   {
    "page": "ind-support",
    "line": "For customer support, handle common questions first, then give your team a clear call record.",
-   "start": 73.8,
+   "start": 74.0,
    "length": 5.7
   },
   {
    "page": "compare",
    "line": "So how does this compare with a human employee? AI is built for repetition, consistency and records. People are better at judgment, empathy and negotiation.",
-   "start": 79.5,
+   "start": 79.7,
    "length": 10.2
   },
   {
    "page": "when",
    "line": "Use AI alone for simple reminders and confirmations. Combine AI and people for sales and support. Keep sensitive or high-value conversations with your team.",
-   "start": 89.7,
+   "start": 89.9,
    "length": 10.2
   },
   {
    "page": "pricing",
    "line": "Pricing is simple. Setup starts at $150, and management starts at $150 a month. Sales campaigns add $40 per attended appointment. Support plans are quoted by volume.",
-   "start": 99.9,
+   "start": 100.1,
    "length": 11.6
   },
   {
    "page": "endcard",
    "line": "Start with a small pilot. WhatsApp the word AGENT to iContact Africa Solutions, and let's plan yours.",
-   "start": 111.5,
-   "length": 8.5
+   "start": 111.7,
+   "length": 8.3
   }
  ]
 }

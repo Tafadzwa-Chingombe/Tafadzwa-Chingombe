@@ -5,7 +5,7 @@ usage: python3 tools/build_aiv.py v1|v2 --vo <dir>
   <dir>/N.mp3 is the voice for shot N. For V2, shot 4 (the Example call) is made from demo-a1.mp3, demo-c.mp3 and
   demo-a2.mp3 (agent, customer, agent): trimmed, given a phone-line sound and joined with short pauses.
 Output: aivoice/<version>-16x9, -9x16, -4x5 (each a project with film.html and an .srt).
-The voice plays at `speed` (OpenFilm keeps the pitch); captions follow it.
+The voice is sped up once to `speed` with Rubber Band (see timed()); film.html plays it at normal speed.
 """
 import importlib.util, json, os, re, shutil, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -20,13 +20,13 @@ PACK = os.path.abspath(os.path.join(HERE, '..'))
 KIT = os.path.join(PACK, 'kit')
 OUT = os.path.join(PACK, 'aivoice')
 SIZES = {'16x9': (1920, 1080), '9x16': (1080, 1920), '4x5': (1080, 1350)}
-LEAD = 0.12
+LEAD = 0.06
 
 
 def V1():
     I = lambda kind, label, task, line: dict(page=f'ind-{kind}', line=line, html=lambda T, k=kind, l=label, s=task: P.industry(k, l, s, T),
                                             sfx=[('whoosh', -0.2, 0.22)])
-    return dict(speed=1.15, tail=0.17, end_tail=1.8, music=0.18, shots=[
+    return dict(speed=1.15, tail=0.12, end_tail=1.7, music=0.18, shots=[
         dict(page='hook', line='What if every enquiry got a call, without stretching your team?',
              html=lambda T: P.hook('Every enquiry needs a <span class="ac">follow-up</span>', T), sfx=[('ring', 0.25, 0.35), ('ring', 1.65, 0.25)]),
         dict(page='intro', line='iContact Africa Solutions sets up AI voice agents that call, qualify, remind and book appointments.',
@@ -59,7 +59,7 @@ def V1():
 def V2():
     I = lambda kind, label, task, line: dict(page=f'ind-{kind}', line=line, html=lambda T, k=kind, l=label, s=task: P.industry(k, l, s, T),
                                             sfx=[('whoosh', -0.2, 0.22)])
-    return dict(speed=1.1, tail=0.25, end_tail=2.3, music=0.17, shots=[
+    return dict(speed=1.1, tail=0.2, end_tail=2.0, music=0.17, shots=[
         dict(page='hook', line="Enquiries come in. Reminders need sending. Your team is already busy. So some calls just don't happen.",
              html=lambda T: P.hook('Leads go cold when follow-up is <span class="ac">slow</span>', T), sfx=[('ring', 0.25, 0.35), ('ring', 1.65, 0.25), ('ring', 3.05, 0.2)]),
         dict(page='intro', line='iContact Africa Solutions sets up and manages AI voice agents for your business. They make routine calls, qualify leads, send reminders and book appointments.',
@@ -113,29 +113,44 @@ def make_demo(src, out):
     return times
 
 
+def timed(src, out, a, b, speed):
+    """the line, trimmed with a little air around the words, sped up once with Rubber Band (speech settings, formants kept,
+    so no warble or stutter) and faded in and out by a few milliseconds so it never starts or stops on a click"""
+    n = b - a; fo = n / speed - 0.04
+    af = (f'atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,'
+          + (f'rubberband=tempo={speed}:transients=mixed:detector=soft:formant=preserved:pitchq=quality:channels=together,' if speed != 1 else '')
+          + f'afade=t=in:d=0.015,afade=t=out:st={fo:.3f}:d=0.04')
+    subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-i', src, '-af', af, '-ar', '44100', '-codec:a', 'libmp3lame', '-b:a', '192k', out], check=True)
+
+
 def build(version, vo_src):
     spec = {'v1': V1, 'v2': V2}[version](); shots, speed = spec['shots'], spec['speed']
     work = os.path.join(OUT, f'.vo-{version}'); os.makedirs(work, exist_ok=True)
-    trims, lens, demo_times = [], [], None
+    trims, lens, Ts, demo_times, demo_off = [], [], [], None, 0.0
     for i, shot in enumerate(shots, 1):
-        mp3 = os.path.join(work, f'line-{i}.mp3')
+        src = os.path.join(work, f'src-{i}.mp3'); mp3 = os.path.join(work, f'line-{i}.mp3')
         if shot.get('demo'):
-            demo_times = make_demo(vo_src, mp3)
+            demo_times = make_demo(vo_src, src)
         else:
-            shutil.copy(os.path.join(vo_src, f'{i}.mp3'), mp3)
+            shutil.copy(os.path.join(vo_src, f'{i}.mp3'), src)
+        sp, dur = speech(src)
+        pa, pb = max(0.0, sp[0][0] - 0.06), min(dur, sp[-1][1] + 0.1)
+        timed(src, mp3, pa, pb, speed)
+        if shot.get('demo'): demo_off = pa
         spans, dur = speech(mp3)
-        a, b = spans[0][0], spans[-1][1]
-        b = min(b, dur - 0.1); trims.append((a, b))
+        b = spans[-1][1]
+        trims.append((0.0, round(dur - 0.09, 2)))
         open(mp3[:-4] + '.vtt', 'w').write(caption(shot['line'], spans).replace('<v Nyasha>', '<v iContact>'))
-        need = LEAD + (b - a) / speed + (spec['end_tail'] if i == len(shots) else spec['tail'])
+        need = LEAD + b + (spec['end_tail'] if i == len(shots) else spec['tail'])
+        need = max(need, LEAD + dur)          # the next line never starts before this file ends
         lens.append(round(max(shot.get('min', 0), need) + 0.049, 1))
+        Ts.append(b)
     starts, t = [], 0.0
     for n in lens: starts.append(round(t, 2)); t += n
     length = round(t, 2)
-    Ts = [(b - a) / speed for a, b in trims]
     if demo_times:
-        k = [s['page'] for s in shots].index('demo'); a0 = trims[k][0]
-        page_t = [LEAD + (x - a0) / speed for x in demo_times]
+        k = [s['page'] for s in shots].index('demo')
+        page_t = [LEAD + (x - demo_off) / speed for x in demo_times]
         shots[k]['html'] = lambda T, pt=page_t: P.demo(pt, T)
 
     # sound effects, at film seconds; named offsets point at the events in a shot
@@ -147,7 +162,7 @@ def build(version, vo_src):
             xs = (0.12, 0.33, 0.56, 0.82) if version == 'v2' else (None, 0.36, 0.66)
             for j, x in enumerate(xs): named[(i, f'card{j}')] = 0.3 if x is None else LEAD + T * x
         if shot['page'] == 'demo':
-            named[(i, 'ring')] = 0.0; named[(i, 'done')] = LEAD + demo_times[-1] / speed
+            named[(i, 'ring')] = 0.0; named[(i, 'done')] = LEAD + (demo_times[-1] - demo_off) / speed
     cues = []
     for i, shot in enumerate(shots):
         for kind, off, vol in shot.get('sfx', []):
@@ -180,7 +195,7 @@ def build(version, vo_src):
             out.append(f'  <iframe id="{shot["page"]}" src="{shot["page"]}.html"' + (f' at="{at:g}"' if at else '') + '></iframe>')
         out += ['</section>', '<section>']
         for i, (at, (a, b)) in enumerate(zip(starts, trims), 1):
-            out.append(f'  <audio id="vo-{i}" src="assets/vo/line-{i}.mp3#t={a:.2f},{b:.2f}" at="{at + LEAD:g}" speed="{speed}"></audio>')
+            out.append(f'  <audio id="vo-{i}" src="assets/vo/line-{i}.mp3#t={a:.2f},{b:.2f}" at="{at + LEAD:g}"></audio>')
         out.append('</section>')
         tracks = []
         for kind, at, vol in sorted(cues, key=lambda c: c[1]):
@@ -196,7 +211,7 @@ def build(version, vo_src):
             out.append('</section>')
         out += ['<section>', f'  <audio id="music" src="assets/music/score.mp3#t=0,{length:g}" volume="{spec["music"]}"></audio>', '</section>', '</body>', '</html>', '']
         open(os.path.join(d, 'film.html'), 'w').write('\n'.join(out))
-        write_srt(os.path.join(d, f'{version}-{size}.srt'), vo, starts, trims, speed)
+        write_srt(os.path.join(d, f'{version}-{size}.srt'), vo, starts, trims, 1.0)
     json.dump({'version': version, 'length': length, 'speed': speed, 'shots': [{'page': s['page'], 'line': s['line'], 'start': st, 'length': n} for s, st, n in zip(shots, starts, lens)]},
               open(os.path.join(OUT, f'{version}.json'), 'w'), indent=1)
     print(f'{version}: {length}s  shots {lens}')
