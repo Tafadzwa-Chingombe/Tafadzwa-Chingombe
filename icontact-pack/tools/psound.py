@@ -213,6 +213,13 @@ def fx(kind, length=None):
     if kind == 'ding':
         a = tone(1318.5, 0.7, ((1, 1), (2.01, .2)), d=0.2) * 0.3; b = tone(1760, 0.6, ((1, 1), (2.01, .2)), d=0.25) * 0.3; b = np.pad(b, (int(0.09 * SR), max(0, len(a) - len(b) - int(0.09 * SR))))[:len(a)]
         return st(a + b)
+    if kind == 'ring':   # a soft, modern phone ring: two short warbled bursts
+        n = int(1.3 * SR); t = np.arange(n) / SR; out = np.zeros(n)
+        for at in (0.0, 0.5):
+            m = int(0.36 * SR); tt = np.arange(m) / SR
+            w = (np.sin(2 * np.pi * 1046 * tt) + 0.6 * np.sin(2 * np.pi * 1318 * tt)) * (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * 20 * tt)))
+            i = int(at * SR); out[i:i + m] += band(w, lo=300, hi=4000) * env(m, 0.01, 0.12) * 0.16
+        return st(out, np.roll(out, 200))
     if kind == 'stamp':
         n = int(0.9 * SR); t = np.arange(n) / SR
         thud = np.sin(2 * np.pi * np.cumsum(60 + 160 * np.exp(-t / 0.03)) / SR) * env(n, 0.001, 0.18)

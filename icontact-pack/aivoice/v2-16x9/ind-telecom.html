@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style></style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="icon" data-pop="0.1"><svg viewBox="0 0 64 64"><path d="M32 22v34M24 56h16M27 34l5-12 5 12M25 42h14"/><path d="M20 16a16 16 0 0 0 0 22M44 16a16 16 0 0 1 0 22M13 10a25 25 0 0 0 0 34M51 10a25 25 0 0 1 0 34"/></svg></div>
+      <div class="h ind" data-rise="0.2">Telecommunications</div><div class="s" data-rise="0.4">Renewals, upgrades and enquiries</div></div>
+    <div class="vis"><div class="art" data-w="680" data-h="480"><div class="card" data-rise="0.25" style="position:absolute;left:0px;top:0px;width:680px;height:400px"><div class="ch"><span class="dots"><i></i><i></i><i></i></span><span class="grow">Renewals and leads</span><span class="ex">Example</span></div><div class="row" data-rise="0.61"><span class="av">A</span><span class="m"><b>Example Customer A</b><small>Contract ends 30 Nov</small></span><span class="st " data-on="2.20"><span class="a">Queued</span><span class="b">Renewal booked</span></span></div><div class="row" data-rise="1.14"><span class="av">B</span><span class="m"><b>Example Customer B</b><small>Upgrade enquiry</small></span><span class="st blue" data-on="3.10"><span class="a">Queued</span><span class="b">Callback set</span></span></div><div class="row" data-rise="1.67"><span class="av">C</span><span class="m"><b>Example Customer C</b><small>New sales lead</small></span><span class="st " data-on="3.99"><span class="a">Queued</span><span class="b">Qualified</span></span></div></div></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(5.7);
+</script>
+</body>
+</html>

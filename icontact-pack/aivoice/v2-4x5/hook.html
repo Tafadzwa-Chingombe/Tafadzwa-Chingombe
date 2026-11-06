@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style></style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="h" data-rise="0.15">Leads go cold when follow-up is <span class="ac">slow</span></div></div>
+    <div class="vis"><div class="art" data-w="800" data-h="620">
+      <div class="card" data-rise="0.25" style="position:absolute;left:200px;top:10px;width:600px;height:600px"><div class="ch"><span class="dots"><i></i><i></i><i></i></span><span class="grow">Enquiries</span><span class="ex">Example</span></div><div class="row" data-rise="0.30"><span class="av">E1</span><span class="m"><b>Example customer 1</b><small>Website enquiry · 1 h ago</small></span><span class="st red">Not called</span></div><div class="row" data-rise="1.20"><span class="av">E2</span><span class="m"><b>Example customer 2</b><small>Website enquiry · 2 h ago</small></span><span class="st red">Not called</span></div><div class="row" data-rise="2.09"><span class="av">E3</span><span class="m"><b>Example customer 3</b><small>Website enquiry · 3 h ago</small></span><span class="st red">Not called</span></div><div class="row" data-rise="2.99"><span class="av">E4</span><span class="m"><b>Example customer 4</b><small>Website enquiry · 4 h ago</small></span><span class="st red">Not called</span></div><div class="row" data-rise="3.89"><span class="av">E5</span><span class="m"><b>Example customer 5</b><small>Website enquiry · 5 h ago</small></span><span class="st red">Not called</span></div></div>
+      <div data-pop="0.2" style="position:absolute;left:0;top:330px;width:210px;height:210px">
+        <div class="orb" style="width:210px;height:210px"><span class="ringwave"></span><span class="ringwave" data-off="0.7"></span><svg viewBox="0 0 24 24" style="width:64px;height:64px;fill:#fff"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
+      </div>
+    </div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(7.3);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/aiv.css">
+<script src="lib/orient.js"></script>
+<style></style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg-navy"></div>
+  <div class="cam" data-from="1" data-to="1.035">
+    <div class="txt"><div class="icon" data-pop="0.1"><svg viewBox="0 0 64 64"><rect x="12" y="22" width="40" height="28" rx="4"/><path d="M24 22v-6h16v6M24 22v28M40 22v28"/></svg></div>
+      <div class="h ind" data-rise="0.2">Travel &amp; hospitality</div><div class="s" data-rise="0.4">Bookings and guest questions</div></div>
+    <div class="vis"><div class="art" data-w="680" data-h="480"><div class="card" data-rise="0.25" style="position:absolute;left:0px;top:0px;width:680px;height:430px"><div class="ch"><span class="dots"><i></i><i></i><i></i></span><span class="grow">Bookings</span><span class="ex">Example</span></div><div class="big" data-rise="0.65"><div class="l">Booking</div><div class="v">Example Lodge · 2 nights</div><div style="font:500 20px var(--f-ui);color:var(--paper-muted);margin-top:6px">12–14 December · Example Guest</div></div><div class="row" data-rise="1.86"><span class="m"><b>Booking</b><small>Confirmation call</small></span><span class="st " data-on="2.76"><span class="a">Calling</span><span class="b">Confirmed</span></span></div><div class="row" data-rise="3.06"><span class="m"><b>Question: check-in time</b><small>Routine question</small></span><span class="st blue" data-on="4.27"><span class="a">Open</span><span class="b">Answered</span></span></div></div></div></div>
+  </div>
+</div>
+<script type="module">
+import { shot } from './lib/aiv.js';
+shot(6.4);
+</script>
+</body>
+</html>

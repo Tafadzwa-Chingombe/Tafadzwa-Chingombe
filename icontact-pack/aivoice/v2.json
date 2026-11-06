@@ -1,0 +1,97 @@
+{
+ "version": "v2",
+ "length": 120.0,
+ "speed": 1.1,
+ "shots": [
+  {
+   "page": "hook",
+   "line": "Enquiries come in. Reminders need sending. Your team is already busy. So some calls just don't happen.",
+   "start": 0.0,
+   "length": 7.3
+  },
+  {
+   "page": "intro",
+   "line": "iContact Africa Solutions sets up and manages AI voice agents for your business. They make routine calls, qualify leads, send reminders and book appointments.",
+   "start": 7.3,
+   "length": 9.5
+  },
+  {
+   "page": "flow",
+   "line": "We build the script around your business. The agent says it's an AI, follows your rules, then books a time, passes the call to your team or records the follow-up.",
+   "start": 16.8,
+   "length": 8.8
+  },
+  {
+   "page": "demo",
+   "line": "Hi, this is the AI assistant for Example Motors. I'm calling to confirm your car service tomorrow at ten. Does that still suit you? Yes, that works for me. Great, you're confirmed. Thank you!",
+   "start": 25.6,
+   "length": 11.3
+  },
+  {
+   "page": "ind-telecom",
+   "line": "For telecoms, follow up sales leads, renewals and upgrades without tying up your whole team.",
+   "start": 36.9,
+   "length": 5.7
+  },
+  {
+   "page": "ind-finance",
+   "line": "In financial services, qualify enquiries and confirm meetings, while advice and sensitive questions stay with staff.",
+   "start": 42.6,
+   "length": 7.0
+  },
+  {
+   "page": "ind-health",
+   "line": "In healthcare, confirm visits and send reminders, while clinical questions stay with your medical team.",
+   "start": 49.6,
+   "length": 5.9
+  },
+  {
+   "page": "ind-tech",
+   "line": "Technology companies can qualify demo requests quickly, so sales teams focus on serious buyers.",
+   "start": 55.5,
+   "length": 5.9
+  },
+  {
+   "page": "ind-retail",
+   "line": "Retail and e-commerce teams can follow up orders, reach returning customers and share routine updates.",
+   "start": 61.4,
+   "length": 6.0
+  },
+  {
+   "page": "ind-travel",
+   "line": "Travel and hospitality businesses can confirm bookings, answer routine questions and follow up on enquiries.",
+   "start": 67.4,
+   "length": 6.4
+  },
+  {
+   "page": "ind-support",
+   "line": "For customer support, handle common questions first, then give your team a clear call record.",
+   "start": 73.8,
+   "length": 5.7
+  },
+  {
+   "page": "compare",
+   "line": "So how does this compare with a human employee? AI is built for repetition, consistency and records. People are better at judgment, empathy and negotiation.",
+   "start": 79.5,
+   "length": 10.2
+  },
+  {
+   "page": "when",
+   "line": "Use AI alone for simple reminders and confirmations. Combine AI and people for sales and support. Keep sensitive or high-value conversations with your team.",
+   "start": 89.7,
+   "length": 10.2
+  },
+  {
+   "page": "pricing",
+   "line": "Pricing is simple. Setup starts at $150, and management starts at $150 a month. Sales campaigns add $40 per attended appointment. Support plans are quoted by volume.",
+   "start": 99.9,
+   "length": 11.6
+  },
+  {
+   "page": "endcard",
+   "line": "Start with a small pilot. WhatsApp the word AGENT to iContact Africa Solutions, and let's plan yours.",
+   "start": 111.5,
+   "length": 8.5
+  }
+ ]
+}
