@@ -1,7 +1,8 @@
 """Build the AI Voice Agent explainer: V1 (60 s) and V2 (120 s), each as three OpenFilm projects drawn from the same
 pages: 16:9 1920×1080 (master), 9:16 1080×1920 and 4:5 1080×1350. Each shot is cut to fit its voice line.
 
-usage: python3 tools/build_aiv.py v1|v2 --vo <dir>
+usage: python3 tools/build_aiv.py v1|v2 --vo <dir> [--tag <name>] [--speed <x>]
+  --tag writes to aivoice/<name>/ (a second voice cut); --speed overrides the version's voice speed.
   <dir>/N.mp3 is the voice for shot N. For V2, shot 4 (the Example call) is made from demo-a1.mp3, demo-c.mp3 and
   demo-a2.mp3 (agent, customer, agent): trimmed, given a phone-line sound and joined with short pauses.
 Output: aivoice/<version>-16x9, -9x16, -4x5 (each a project with film.html and an .srt).
@@ -123,8 +124,10 @@ def timed(src, out, a, b, speed):
     subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-i', src, '-af', af, '-ar', '44100', '-codec:a', 'libmp3lame', '-b:a', '192k', out], check=True)
 
 
-def build(version, vo_src):
-    spec = {'v1': V1, 'v2': V2}[version](); shots, speed = spec['shots'], spec['speed']
+def build(version, vo_src, tag=None, speed_override=None):
+    global OUT
+    if tag: OUT = os.path.join(PACK, 'aivoice', tag)
+    spec = {'v1': V1, 'v2': V2}[version](); shots, speed = spec['shots'], speed_override or spec['speed']
     work = os.path.join(OUT, f'.vo-{version}'); os.makedirs(work, exist_ok=True)
     trims, lens, Ts, demo_times, demo_off = [], [], [], None, 0.0
     for i, shot in enumerate(shots, 1):
@@ -234,4 +237,5 @@ def write_srt(path, vo, starts, trims, speed):
 if __name__ == '__main__':
     a = sys.argv[1:]
     if not a or a[0] not in ('v1', 'v2') or '--vo' not in a: raise SystemExit(__doc__)
-    build(a[0], a[a.index('--vo') + 1])
+    build(a[0], a[a.index('--vo') + 1], a[a.index('--tag') + 1] if '--tag' in a else None,
+          float(a[a.index('--speed') + 1]) if '--speed' in a else None)

@@ -10,4 +10,6 @@ icontact-pack/batch*/4x5/*/*.mp4
 !icontact-pack/batch*/delivery/*.mp4
 icontact-pack/aivoice/*/*.mp4
 icontact-pack/aivoice/.vo-*/
+icontact-pack/aivoice/*/v*/*.mp4
+icontact-pack/aivoice/*/.vo-*/
 !icontact-pack/aivoice/delivery/*.mp4
