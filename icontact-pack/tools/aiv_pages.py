@@ -261,12 +261,12 @@ def pricing(cards, times, h_text):
     return page(body, wide=True, noh=not h_text, css=css)
 
 
-def endcard():
+def endcard(tag='AI handles the repetitive calls. <span>Your people handle the moments that matter.</span>', keyword='AGENT'):
     css = '''.ecw { position: absolute; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 40px; }
   html.L .ecw { left: 160px; right: 160px; top: 70px; height: 810px; gap: 34px; }
   html.P .ecw { left: 80px; right: 80px; top: 290px; height: 1010px; }
   html.S .ecw { left: 70px; right: 70px; top: 40px; height: 860px; gap: 30px; }
-  .ecw .plate img { width: 460px; } html.S .ecw .plate img { width: 400px; }
+  .ecw .plate { align-self: center; } .ecw .plate img { width: 460px; } html.S .ecw .plate img { width: 400px; }
   .ecw .tag { font: 700 64px/1.1 var(--f); text-wrap: balance; max-width: 1300px; } .ecw .tag span { color: var(--accent); }
   html.P .ecw .tag { font-size: 68px; } html.S .ecw .tag { font-size: 54px; }
   .ecw .wa { display: inline-flex; align-items: center; gap: 18px; padding: 22px 32px; border-radius: 22px; background: #25a244; font: 700 40px/1.15 var(--f); color: #fff; box-shadow: 0 18px 40px rgba(0,0,0,0.35); text-align: left; }
@@ -277,8 +277,8 @@ def endcard():
     body = f'''    <div class="glow" id="glow"></div>
     <div class="ecw">
       <div class="plate" data-rise="0.1"><img src="img/icontact-logo.png" alt="iContact Africa Solutions"></div>
-      <div class="tag" data-rise="0.35">AI handles the repetitive calls. <span>Your people handle the moments that matter.</span></div>
-      <div class="wa" data-pop="0.8">{WA}<span>WhatsApp <b>AGENT</b><br>to +263 71 857 4277</span></div>
+      <div class="tag" data-rise="0.35">{tag}</div>
+      <div class="wa" data-pop="0.8">{WA}<span>WhatsApp <b>{keyword}</b><br>to +263 71 857 4277</span></div>
       <div class="foot" data-rise="1.2">iContact Africa Solutions | Harare, Zimbabwe</div>
     </div>'''
     return page(body, css=css, extra=", (t) => { document.getElementById('glow').style.transform = `scale(${1 + 0.06 * (0.5 - 0.5 * Math.cos(2 * Math.PI * t / 4))})`; }")

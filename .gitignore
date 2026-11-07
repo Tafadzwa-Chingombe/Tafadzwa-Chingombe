@@ -13,3 +13,6 @@ icontact-pack/aivoice/.vo-*/
 icontact-pack/aivoice/*/v*/*.mp4
 icontact-pack/aivoice/*/.vo-*/
 !icontact-pack/aivoice/delivery/*.mp4
+icontact-pack/email/v*/
+icontact-pack/email/.vo-*/
+icontact-pack/email/v*.json

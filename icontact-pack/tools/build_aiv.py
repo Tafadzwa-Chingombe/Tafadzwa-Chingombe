@@ -124,10 +124,12 @@ def timed(src, out, a, b, speed):
     subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-i', src, '-af', af, '-ar', '44100', '-codec:a', 'libmp3lame', '-b:a', '192k', out], check=True)
 
 
-def build(version, vo_src, tag=None, speed_override=None):
+def build(version, vo_src, tag=None, speed_override=None, out=None, spec=None):
+    """out: the folder the projects go in (default aivoice/ or aivoice/<tag>); spec: a V1()-style dict for another film"""
     global OUT
-    if tag: OUT = os.path.join(PACK, 'aivoice', tag)
-    spec = {'v1': V1, 'v2': V2}[version](); shots, speed = spec['shots'], speed_override or spec['speed']
+    if out: OUT = out
+    elif tag: OUT = os.path.join(PACK, 'aivoice', tag)
+    spec = spec or {'v1': V1, 'v2': V2}[version](); shots, speed = spec['shots'], speed_override or spec['speed']
     work = os.path.join(OUT, f'.vo-{version}'); os.makedirs(work, exist_ok=True)
     trims, lens, Ts, demo_times, demo_off = [], [], [], None, 0.0
     for i, shot in enumerate(shots, 1):
@@ -164,6 +166,8 @@ def build(version, vo_src, tag=None, speed_override=None):
         if shot['page'] == 'pricing':
             xs = (0.12, 0.33, 0.56, 0.82) if version == 'v2' else (None, 0.36, 0.66)
             for j, x in enumerate(xs): named[(i, f'card{j}')] = 0.3 if x is None else LEAD + T * x
+        for k, frac in shot.get('cues', {}).items():   # named sound cues at a share of the shot's line
+            named[(i, k)] = LEAD + T * frac
         if shot['page'] == 'demo':
             named[(i, 'ring')] = 0.0; named[(i, 'done')] = LEAD + (demo_times[-1] - demo_off) / speed
     cues = []
