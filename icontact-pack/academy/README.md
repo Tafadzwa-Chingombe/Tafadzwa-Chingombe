@@ -55,3 +55,20 @@ Every video has a matching `.srt` caption file, and the captions are also burned
 ## Rebuild
 
 Run `python3 tools/build_academy.py <full|ad60|teaser|story|story60> --vo <folder of numbered mp3s>`. The scenes are in `tools/academy_pages.py`.
+
+## Course trailers (`trailers/delivery/`)
+
+There is one trailer of about 60 s for each published course, in 16:9, 9:16 and 4:5, with `.srt` captions. Each trailer covers the hook, the course and its curriculum, what you learn, a showcase screen and who it's for, then "learn at your own pace, pay once by EcoCash, Paynow or bank transfer, keep access including updates", and ends on the WhatsApp ACADEMY end card. Every claim comes from the course's own page in the Academy catalogue (11 Nov 2026). Prices are left out on purpose, so a price change never dates a video.
+
+| Course | Short name | Status |
+|---|---|---|
+| Website Basics for Business Owners | `web-basics` | ✅ Done (60 s) |
+| HTML & CSS for Beginners | `html-css` | ✅ Done (59 s) |
+| SEO & Google Business Profile | `seo-gbp` | ⏳ 3 voice lines still to make (lines 5, 6 and 8; 1–4 and 7 are done) |
+| Social Media Marketing for Small Business | `social` | ⏳ Waiting for voiceover |
+| Facebook & Instagram Ads from Zimbabwe | `meta-ads` | ⏳ Waiting for voiceover |
+| WhatsApp Business for Sales | `whatsapp` | ⏳ Waiting for voiceover |
+
+The ElevenLabs monthly quota ran out partway through. The layouts for all six trailers are built and checked. To finish one, generate its lines, then run `python3 tools/build_trailers.py --lines` to print the script, and `python3 tools/build_trailers.py <short-name> --vo <folder of 1.mp3…8.mp3>` to build it. Line 7 is the same in every trailer, so its file is reused.
+
+**On the website:** each course page shows its trailer once `courses.trailer_url` is set. Run `supabase/academy_trailers.sql` in the website repo once. The web copies (720p, about 3.4 MB) live in `assets/video/academy/trailer-<short-name>.mp4`, next to `-vertical.mp4` (used on phones) and the `-poster.jpg` stills.

@@ -21,3 +21,9 @@ icontact-pack/academy/*-9x16/
 icontact-pack/academy/*-4x5/
 icontact-pack/academy/*.json
 icontact-pack/academy/.vo-*/
+icontact-pack/academy/trailers/*-16x9/
+icontact-pack/academy/trailers/*-9x16/
+icontact-pack/academy/trailers/*-4x5/
+icontact-pack/academy/trailers/*.json
+icontact-pack/academy/trailers/web/
+icontact-pack/academy/trailers/.vo-*/
