@@ -43,21 +43,21 @@ Checked against Metricool on 11 November 2026. Everything from 5 to 18 November 
 
 | # | Date | Video | Length | Facebook file | Instagram and TikTok file |
 |---|---|---|---|---|---|
-| 1 | Wed 19 Nov | Academy teaser | 0:14 | `icontact-pack/academy/delivery/iContact_Academy_Teaser_15s_4x5_v1.mp4` | `…Teaser_15s_9x16_v1.mp4` |
-| 2 | Thu 20 Nov | A. Do you show up online? | 0:35 | `nyasha-ads/square/a-show-up-online-1x1/a-show-up-online-1x1.mp4` | `nyasha-ads/a-show-up-online/a-show-up-online.mp4` |
-| 3 | Fri 21 Nov | Academy ad | 0:39 | `icontact-pack/academy/delivery/iContact_Academy_Ad_40s_4x5_v1.mp4` | `…Ad_40s_9x16_v1.mp4` |
-| 4 | Sat 22 Nov | E. How much does a website cost? | 0:36 | `nyasha-ads/keyword-campaign/square/e-website-price-1x1/e-website-price-1x1.mp4` | `nyasha-ads/keyword-campaign/e-website-price/e-website-price.mp4` |
-| 5 | Sun 23 Nov | Trailer: Website Basics for Business Owners | 1:00 | `icontact-pack/academy/trailers/delivery/iContact_Academy_Trailer_web-basics_4x5_v1.mp4` | `…web-basics_9x16_v1.mp4` |
-| 6 | Mon 24 Nov | AI voice agents (60 s) | 1:00 | `icontact-pack/aivoice/nyasha/delivery/iContact_AIVoice_V1_60s_4x5_Nyasha_v1.mp4` | `…V1_60s_9x16_Nyasha_v1.mp4` |
-| 7 | Tue 25 Nov | Academy: Tendai's story (short) | 0:45 | `icontact-pack/academy/delivery/iContact_Academy_Story_45s_4x5_v1.mp4` | `…Story_45s_9x16_v1.mp4` |
-| 8 | Wed 26 Nov | B. 3 website mistakes | 0:35 | `nyasha-ads/square/b-three-mistakes-1x1/b-three-mistakes-1x1.mp4` | `nyasha-ads/b-three-mistakes/b-three-mistakes.mp4` |
-| 9 | Thu 27 Nov | Trailer: HTML & CSS for Beginners | 0:59 | `icontact-pack/academy/trailers/delivery/iContact_Academy_Trailer_html-css_4x5_v1.mp4` | `…html-css_9x16_v1.mp4` |
-| 10 | Fri 28 Nov | N. Case study: MC Attorneys | 0:44 | `nyasha-ads/case-studies/square/mc-attorneys-1x1/mc-attorneys-1x1.mp4` | `nyasha-ads/case-studies/mc-attorneys/mc-attorneys.mp4` |
-| 11 | Sat 29 Nov | Academy explainer | 2:08 | `icontact-pack/academy/delivery/iContact_Academy_Explainer_2min_4x5_v1.mp4` | `…Explainer_2min_9x16_v1.mp4` |
-| 12 | Sun 30 Nov | C. Same-day quote | 0:19 | `nyasha-ads/square/c-same-day-quote-1x1/c-same-day-quote-1x1.mp4` | `nyasha-ads/c-same-day-quote/c-same-day-quote.mp4` |
-| 13 | Mon 1 Dec | Academy: Tendai's story (full) | 1:56 | `icontact-pack/academy/delivery/iContact_Academy_Story_2min_4x5_v1.mp4` | `…Story_2min_9x16_v1.mp4` |
-| 14 | Tue 2 Dec | O. Our new website is live | 0:58 | `nyasha-ads/launch/square/icontact-new-website-1x1/icontact-new-website-1x1.mp4` | `nyasha-ads/launch/icontact-new-website/icontact-new-website.mp4` |
-| 15 | Wed 3 Dec | D. Meet Nyasha (optional) | 0:22 | `nyasha-ads/square/d-meet-nyasha-1x1/d-meet-nyasha-1x1.mp4` | `nyasha-ads/d-meet-nyasha/d-meet-nyasha.mp4` |
+| 1 | Thu 19 Nov | Academy teaser | 0:14 | `icontact-pack/academy/delivery/iContact_Academy_Teaser_15s_4x5_v1.mp4` | `…Teaser_15s_9x16_v1.mp4` |
+| 2 | Fri 20 Nov | A. Do you show up online? | 0:35 | `nyasha-ads/square/a-show-up-online-1x1/a-show-up-online-1x1.mp4` | `nyasha-ads/a-show-up-online/a-show-up-online.mp4` |
+| 3 | Sat 21 Nov | Academy ad | 0:39 | `icontact-pack/academy/delivery/iContact_Academy_Ad_40s_4x5_v1.mp4` | `…Ad_40s_9x16_v1.mp4` |
+| 4 | Sun 22 Nov | E. How much does a website cost? | 0:36 | `nyasha-ads/keyword-campaign/square/e-website-price-1x1/e-website-price-1x1.mp4` | `nyasha-ads/keyword-campaign/e-website-price/e-website-price.mp4` |
+| 5 | Mon 23 Nov | Trailer: Website Basics for Business Owners | 1:00 | `icontact-pack/academy/trailers/delivery/iContact_Academy_Trailer_web-basics_4x5_v1.mp4` | `…web-basics_9x16_v1.mp4` |
+| 6 | Tue 24 Nov | AI voice agents (60 s) | 1:00 | `icontact-pack/aivoice/nyasha/delivery/iContact_AIVoice_V1_60s_4x5_Nyasha_v1.mp4` | `…V1_60s_9x16_Nyasha_v1.mp4` |
+| 7 | Wed 25 Nov | Academy: Tendai's story (short) | 0:45 | `icontact-pack/academy/delivery/iContact_Academy_Story_45s_4x5_v1.mp4` | `…Story_45s_9x16_v1.mp4` |
+| 8 | Thu 26 Nov | B. 3 website mistakes | 0:35 | `nyasha-ads/square/b-three-mistakes-1x1/b-three-mistakes-1x1.mp4` | `nyasha-ads/b-three-mistakes/b-three-mistakes.mp4` |
+| 9 | Fri 27 Nov | Trailer: HTML & CSS for Beginners | 0:59 | `icontact-pack/academy/trailers/delivery/iContact_Academy_Trailer_html-css_4x5_v1.mp4` | `…html-css_9x16_v1.mp4` |
+| 10 | Sat 28 Nov | N. Case study: MC Attorneys | 0:44 | `nyasha-ads/case-studies/square/mc-attorneys-1x1/mc-attorneys-1x1.mp4` | `nyasha-ads/case-studies/mc-attorneys/mc-attorneys.mp4` |
+| 11 | Sun 29 Nov | Academy explainer | 2:08 | `icontact-pack/academy/delivery/iContact_Academy_Explainer_2min_4x5_v1.mp4` | `…Explainer_2min_9x16_v1.mp4` |
+| 12 | Mon 30 Nov | C. Same-day quote | 0:19 | `nyasha-ads/square/c-same-day-quote-1x1/c-same-day-quote-1x1.mp4` | `nyasha-ads/c-same-day-quote/c-same-day-quote.mp4` |
+| 13 | Tue 1 Dec | Academy: Tendai's story (full) | 1:56 | `icontact-pack/academy/delivery/iContact_Academy_Story_2min_4x5_v1.mp4` | `…Story_2min_9x16_v1.mp4` |
+| 14 | Wed 2 Dec | O. Our new website is live | 0:58 | `nyasha-ads/launch/square/icontact-new-website-1x1/icontact-new-website-1x1.mp4` | `nyasha-ads/launch/icontact-new-website/icontact-new-website.mp4` |
+| 15 | Thu 3 Dec | D. Meet Nyasha (optional) | 0:22 | `nyasha-ads/square/d-meet-nyasha-1x1/d-meet-nyasha-1x1.mp4` | `nyasha-ads/d-meet-nyasha/d-meet-nyasha.mp4` |
 
 `…` means the same folder as the Facebook file. A 16:9 version of every Academy and AI-voice video is in the same folder too, for YouTube or LinkedIn.
 

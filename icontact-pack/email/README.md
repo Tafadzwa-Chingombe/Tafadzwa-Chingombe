@@ -60,8 +60,8 @@ V1 covers the same ground in short.
 
 | Date | 10:00 Facebook (4:5) | 12:00 Instagram Reel (9:16) | 18:00 TikTok (9:16) |
 |---|---|---|---|
-| Mon 17 Nov 2026 | V1, "Why your business needs a professional email", with the wa.me EMAIL link | V1, AI label on | V1, "Would you pay this invoice?", AI label on |
-| Tue 18 Nov 2026 | V2, "Move from Gmail to a business email, step by step", with the link | V2, AI label on | V2, "Switch from Gmail without losing clients", AI label on |
+| Tue 17 Nov 2026 | V1, "Why your business needs a professional email", with the wa.me EMAIL link | V1, AI label on | V1, "Would you pay this invoice?", AI label on |
+| Wed 18 Nov 2026 | V2, "Move from Gmail to a business email, step by step", with the link | V2, AI label on | V2, "Switch from Gmail without losing clients", AI label on |
 
 The captions open with the question people search for. The V2 captions also list the three Gmail forwarding steps in text, so search engines and AI answer tools can quote them, and people can save the post.
 Hashtags: #ProfessionalEmail #BusinessEmail #GmailTips #EmailSecurity #SmallBusinessTips #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe.
