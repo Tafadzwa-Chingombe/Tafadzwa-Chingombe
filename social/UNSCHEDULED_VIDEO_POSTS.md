@@ -693,3 +693,128 @@ Meet Nyasha 👋 our AI-generated guide to websites, SEO and digital marketing. 
 
 #AI #DigitalMarketing #SmallBusinessTips #Zimbabwe #Harare
 ```
+
+---
+
+## Already scheduled in Metricool: the professional email videos
+
+These two videos were scheduled earlier, so they're not in the list above. Their Facebook, Instagram and TikTok posts go out automatically; you don't need to post them yourself. Here are the exact captions, for reference or for posting on another platform such as LinkedIn or YouTube.
+
+| Date | Video | Facebook file (10:00) | Instagram and TikTok file (12:00 / 18:00) |
+|---|---|---|---|
+| Tue 17 Nov | Email V1 (60 s) | `icontact-pack/email/delivery/iContact_ProEmail_V1_60s_4x5_v1.mp4` | `…V1_60s_9x16_v1.mp4` |
+| Wed 18 Nov | Email V2 (2:55) | `icontact-pack/email/delivery/iContact_ProEmail_V2_3min_4x5_v1.mp4` | `…V2_3min_9x16_v1.mp4` |
+
+### Email V1: "Would you pay this invoice?" (17 Nov)
+
+**Facebook**
+```
+Would you pay an invoice that came from a random Gmail address? Many clients wouldn't.
+
+A professional email address, like info@yourbusiness.co.zw, puts your business name on every message. It builds trust, so clients act on your quotes and invoices. The mailbox belongs to your business, so it stays when staff leave. Sales, accounts and support addresses send every enquiry to the right person. And with the right security records on your domain, your emails are more likely to reach the inbox and harder for scammers to fake.
+
+Still have clients using your old Gmail? In Gmail settings, forward a copy of every email to your new address, then add an auto-reply with your new address so nobody slips through.
+
+iContact Africa Solutions in Harare sets up your .co.zw domain, your mailboxes and the forwarding for you. Professional email starts at $10 per mailbox a month.
+
+WhatsApp the word EMAIL to +263 71 857 4277 and let's set yours up.
+💬 https://wa.me/263718574277?text=EMAIL
+
+#ProfessionalEmail #BusinessEmail #SmallBusinessTips #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+```
+
+**Instagram**
+```
+Would you pay an invoice that came from a random Gmail address? Many clients wouldn't.
+
+A professional email address, like info@yourbusiness.co.zw, puts your business name on every message. It builds trust, so clients act on your quotes and invoices. The mailbox belongs to your business, so it stays when staff leave. Sales, accounts and support addresses send every enquiry to the right person. And with the right security records on your domain, your emails are more likely to reach the inbox and harder for scammers to fake.
+
+Still have clients using your old Gmail? In Gmail settings, forward a copy of every email to your new address, then add an auto-reply with your new address so nobody slips through.
+
+iContact Africa Solutions in Harare sets up your .co.zw domain, your mailboxes and the forwarding for you. Professional email starts at $10 per mailbox a month.
+
+WhatsApp the word EMAIL to +263 71 857 4277 and let's set yours up.
+
+#ProfessionalEmail #BusinessEmail #SmallBusinessTips #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+```
+
+**TikTok**
+```
+Would you pay an invoice that came from a random Gmail address? Many clients wouldn't.
+
+A professional email like info@yourbusiness.co.zw builds trust, stays with your business when staff leave, and helps your emails reach the inbox.
+
+Still have clients on your old Gmail? Forward a copy of every email to your new address in Gmail settings, and add an auto-reply with your new address.
+
+Professional email from $10 per mailbox a month. WhatsApp the word EMAIL to +263 71 857 4277 and let's set yours up.
+
+#ProfessionalEmail #BusinessEmail #SmallBusinessTips #GmailTips #HarareBusiness #ZimbabweBusiness
+```
+
+### Email V2: "Switch from Gmail without losing clients" (18 Nov)
+
+**Facebook**
+```
+How do you switch from Gmail to a professional business email without losing a single client?
+
+Why switch:
+✅ Trust: clients act on quotes and invoices from info@yourbusiness.co.zw
+✅ Brand: every email repeats your name and points to your website
+✅ Control: when someone leaves, the mailbox and client history stay with you
+✅ Structure: sales, accounts and support addresses for the right people
+✅ Security: SPF, DKIM and DMARC records help your emails reach the inbox and make them harder to fake
+
+How to forward your old Gmail to your new address:
+1. On a computer, open Gmail › Settings › See all settings › Forwarding and POP/IMAP.
+2. Click Add a forwarding address, type your new business email, then open the confirmation link Gmail sends and confirm.
+3. Choose Forward a copy of incoming mail to your new address, keep Gmail's copy in the Inbox, and click Save Changes.
+Then switch on Gmail's vacation responder with a short "we've moved" note, and update your address on your website, Google Business Profile, WhatsApp Business, Facebook page, invoices and email signature.
+
+Or let iContact Africa Solutions do it for you: your .co.zw domain, mailboxes, security records, moving old emails and the forwarding. Plans: Mail Basic $10, Mail Business $18 and Mail Pro $25 per mailbox a month.
+
+WhatsApp the word EMAIL to +263 71 857 4277 and let's set yours up.
+💬 https://wa.me/263718574277?text=EMAIL
+
+#ProfessionalEmail #BusinessEmail #GmailTips #EmailSecurity #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+```
+
+**Instagram**
+```
+How do you switch from Gmail to a professional business email without losing a single client?
+
+Why switch:
+✅ Trust: clients act on quotes and invoices from info@yourbusiness.co.zw
+✅ Brand: every email repeats your name and points to your website
+✅ Control: when someone leaves, the mailbox and client history stay with you
+✅ Structure: sales, accounts and support addresses for the right people
+✅ Security: SPF, DKIM and DMARC records help your emails reach the inbox and make them harder to fake
+
+How to forward your old Gmail to your new address:
+1. On a computer, open Gmail › Settings › See all settings › Forwarding and POP/IMAP.
+2. Click Add a forwarding address, type your new business email, then open the confirmation link Gmail sends and confirm.
+3. Choose Forward a copy of incoming mail to your new address, keep Gmail's copy in the Inbox, and click Save Changes.
+Then switch on Gmail's vacation responder with a short "we've moved" note, and update your address everywhere clients find you.
+
+Or let iContact Africa Solutions do it for you. Plans from $10 per mailbox a month.
+
+WhatsApp the word EMAIL to +263 71 857 4277 and let's set yours up.
+
+Save this for when you make the switch 📌
+
+#ProfessionalEmail #BusinessEmail #GmailTips #EmailSecurity #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+```
+
+**TikTok**
+```
+How do you switch from Gmail to a professional business email without losing a single client?
+
+Forward your old Gmail in 3 steps (on a computer):
+1. Settings › See all settings › Forwarding and POP/IMAP
+2. Add a forwarding address, then confirm the link Gmail sends
+3. Forward a copy of incoming mail, keep Gmail's copy in the Inbox, and save
+Then add a "we've moved" auto-reply.
+
+Professional email from $10 per mailbox a month. WhatsApp the word EMAIL to +263 71 857 4277 and let's set yours up.
+
+#ProfessionalEmail #BusinessEmail #GmailTips #SmallBusinessTips #HarareBusiness #ZimbabweBusiness
+```
