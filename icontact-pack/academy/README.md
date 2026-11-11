@@ -15,7 +15,7 @@ Ads for the new self-paced online courses (Digital marketing and Website develop
 Every video has a matching `.srt` caption file, and the captions are also burned in.
 
 **Specification:**
-- H.264, 30 fps, stereo, about −14 LUFS.
+- H.264, 30 fps, stereo, about −13 LUFS.
 - Each size is laid out for its own frame, not cropped.
 - Every film plays at Nyasha's natural pace, with no speed-up.
 - End card: "WhatsApp ACADEMY to +263 71 857 4277".

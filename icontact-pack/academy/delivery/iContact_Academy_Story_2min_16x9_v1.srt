@@ -1,0 +1,239 @@
+1
+00:00:00,060 --> 00:00:01,134
+This is Tendai.
+
+2
+00:00:01,521 --> 00:00:03,393
+She bakes the best cakes in her
+
+3
+00:00:03,393 --> 00:00:05,403
+neighbourhood, and every order
+
+4
+00:00:05,403 --> 00:00:06,486
+happens on WhatsApp.
+
+5
+00:00:06,960 --> 00:00:08,652
+She wants new customers to find
+
+6
+00:00:08,652 --> 00:00:10,968
+her online. But hiring a web
+
+7
+00:00:10,968 --> 00:00:12,881
+designer isn't in the budget yet,
+
+8
+00:00:13,113 --> 00:00:14,948
+and she has no idea where to
+
+9
+00:00:14,948 --> 00:00:15,293
+start.
+
+10
+00:00:15,760 --> 00:00:17,814
+One evening, she finds iContact
+
+11
+00:00:17,814 --> 00:00:20,148
+Academy: self-paced courses in
+
+12
+00:00:20,148 --> 00:00:22,067
+website development and digital
+
+13
+00:00:22,067 --> 00:00:22,735
+marketing.
+
+14
+00:00:23,160 --> 00:00:25,012
+She picks the website development
+
+15
+00:00:25,012 --> 00:00:26,992
+course. The page shows every
+
+16
+00:00:26,992 --> 00:00:29,331
+lesson and the price: one payment
+
+17
+00:00:29,331 --> 00:00:30,474
+for the whole course.
+
+18
+00:00:30,960 --> 00:00:33,157
+She pays with EcoCash, and that
+
+19
+00:00:33,157 --> 00:00:35,181
+same day, her login arrives on
+
+20
+00:00:35,181 --> 00:00:35,636
+WhatsApp.
+
+21
+00:00:36,060 --> 00:00:37,795
+Her first lesson happens on her
+
+22
+00:00:37,795 --> 00:00:39,072
+phone, on the way home.
+
+23
+00:00:39,497 --> 00:00:41,676
+Short videos, clear notes, and her
+
+24
+00:00:41,676 --> 00:00:43,479
+progress saved as she goes.
+
+25
+00:00:43,960 --> 00:00:45,433
+Some nights she does three
+
+26
+00:00:45,433 --> 00:00:47,602
+lessons. Some weeks, none.
+
+27
+00:00:48,144 --> 00:00:49,904
+There are no deadlines, so the
+
+28
+00:00:49,904 --> 00:00:51,431
+course simply waits for her.
+
+29
+00:00:51,860 --> 00:00:53,653
+When something doesn't click, she
+
+30
+00:00:53,653 --> 00:00:56,402
+rewatches it, as many times as she
+
+31
+00:00:56,402 --> 00:00:56,745
+needs.
+
+32
+00:00:57,160 --> 00:00:59,504
+Then comes the project: build a
+
+33
+00:00:59,504 --> 00:01:01,605
+real website for a small business.
+
+34
+00:01:02,028 --> 00:01:03,247
+She chooses her own.
+
+35
+00:01:03,660 --> 00:01:06,188
+Step by step, her bakery's website
+
+36
+00:01:06,188 --> 00:01:08,452
+takes shape: her cakes, her
+
+37
+00:01:08,452 --> 00:01:10,937
+prices, her photos, and a button
+
+38
+00:01:10,937 --> 00:01:12,045
+to order on WhatsApp.
+
+39
+00:01:12,460 --> 00:01:14,430
+And then, it's live.
+
+40
+00:01:14,776 --> 00:01:17,113
+A real website, that she built
+
+41
+00:01:17,113 --> 00:01:17,815
+herself.
+
+42
+00:01:18,260 --> 00:01:20,024
+Next, she takes the digital
+
+43
+00:01:20,024 --> 00:01:20,932
+marketing course.
+
+44
+00:01:21,275 --> 00:01:23,399
+She plans her first campaign, and
+
+45
+00:01:23,399 --> 00:01:24,918
+sets up her Google Business
+
+46
+00:01:24,918 --> 00:01:26,776
+Profile, so people nearby can find
+
+47
+00:01:26,776 --> 00:01:27,116
+her.
+
+48
+00:01:27,560 --> 00:01:29,341
+Her courses stay in her account,
+
+49
+00:01:29,497 --> 00:01:31,692
+with every update, so she can come
+
+50
+00:01:31,692 --> 00:01:32,941
+back whenever she needs.
+
+51
+00:01:33,360 --> 00:01:35,666
+Tendai is invented for this story.
+
+52
+00:01:36,126 --> 00:01:38,143
+But the courses are real, and so
+
+53
+00:01:38,143 --> 00:01:39,499
+is the project you'll build.
+
+54
+00:01:39,960 --> 00:01:41,414
+Self-paced lessons.
+
+55
+00:01:41,745 --> 00:01:43,021
+A realistic project.
+
+56
+00:01:43,402 --> 00:01:45,176
+One payment per course, by
+
+57
+00:01:45,176 --> 00:01:47,457
+EcoCash, Paynow or bank transfer.
+
+58
+00:01:47,960 --> 00:01:51,133
+WhatsApp the word ACADEMY to
+
+59
+00:01:51,133 --> 00:01:52,746
+iContact Africa Solutions, and
+
+60
+00:01:52,746 --> 00:01:53,524
+start your own story.
