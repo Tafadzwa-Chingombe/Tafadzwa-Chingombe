@@ -1,0 +1,343 @@
+1
+00:00:00,060 --> 00:00:01,009
+Quick question.
+
+2
+00:00:01,444 --> 00:00:03,216
+Would you pay an invoice that came
+
+3
+00:00:03,216 --> 00:00:04,813
+from a random Gmail address?
+
+4
+00:00:05,376 --> 00:00:06,949
+Most clients would stop and think
+
+5
+00:00:06,949 --> 00:00:09,210
+twice. And that moment of doubt
+
+6
+00:00:09,210 --> 00:00:10,509
+can cost you the job.
+
+7
+00:00:10,960 --> 00:00:13,862
+A professional email address uses
+
+8
+00:00:13,862 --> 00:00:16,290
+your own business name.
+
+9
+00:00:16,499 --> 00:00:18,320
+Instead of a free address, it's
+
+10
+00:00:18,320 --> 00:00:19,528
+info@yourbusiness.co.zw.
+
+11
+00:00:19,960 --> 00:00:21,698
+Reason one is trust.
+
+12
+00:00:22,168 --> 00:00:23,736
+A business address tells clients
+
+13
+00:00:23,736 --> 00:00:25,503
+you're established, so your
+
+14
+00:00:25,503 --> 00:00:27,394
+quotes, invoices and payment
+
+15
+00:00:27,394 --> 00:00:29,207
+details feel safe to act on.
+
+16
+00:00:29,660 --> 00:00:31,582
+Reason two is your brand.
+
+17
+00:00:32,003 --> 00:00:34,151
+Every email you send repeats your
+
+18
+00:00:34,151 --> 00:00:36,041
+name, and points people back to
+
+19
+00:00:36,041 --> 00:00:36,896
+your website.
+
+20
+00:00:37,260 --> 00:00:39,156
+Reason three is control.
+
+21
+00:00:39,635 --> 00:00:41,045
+The addresses belong to your
+
+22
+00:00:41,045 --> 00:00:43,197
+business. When someone leaves,
+
+23
+00:00:43,197 --> 00:00:44,917
+their mailbox and client history
+
+24
+00:00:44,917 --> 00:00:47,361
+stay with you, not in a personal
+
+25
+00:00:47,361 --> 00:00:48,127
+Gmail account.
+
+26
+00:00:48,560 --> 00:00:50,362
+Reason four is structure.
+
+27
+00:00:50,792 --> 00:00:52,679
+Use sales, accounts and support
+
+28
+00:00:52,679 --> 00:00:55,073
+addresses, so every enquiry
+
+29
+00:00:55,073 --> 00:00:56,686
+reaches the right person and
+
+30
+00:00:56,686 --> 00:00:57,729
+nothing gets lost.
+
+31
+00:00:58,160 --> 00:01:00,061
+Reason five is security.
+
+32
+00:01:00,612 --> 00:01:02,129
+With the right records set up on
+
+33
+00:01:02,129 --> 00:01:04,313
+your domain, your emails are more
+
+34
+00:01:04,313 --> 00:01:06,179
+likely to reach the inbox, and
+
+35
+00:01:06,179 --> 00:01:07,669
+harder for scammers to fake.
+
+36
+00:01:08,060 --> 00:01:10,045
+And it works the way you do, on
+
+37
+00:01:10,045 --> 00:01:12,369
+your phone, in Outlook and in any
+
+38
+00:01:12,369 --> 00:01:12,945
+browser.
+
+39
+00:01:13,360 --> 00:01:14,999
+But what about clients who still
+
+40
+00:01:14,999 --> 00:01:16,507
+have your old Gmail address?
+
+41
+00:01:16,835 --> 00:01:18,360
+You don't have to lose a single
+
+42
+00:01:18,360 --> 00:01:20,230
+one. Here's how to forward it.
+
+43
+00:01:20,660 --> 00:01:24,076
+On a computer, open Gmail and go
+
+44
+00:01:24,076 --> 00:01:25,365
+to Settings, then See all
+
+45
+00:01:25,365 --> 00:01:26,968
+settings. Open the tab called
+
+46
+00:01:27,540 --> 00:01:31,161
+Forwarding and POP/IMAP.
+
+47
+00:01:31,560 --> 00:01:34,326
+Click Add a forwarding address,
+
+48
+00:01:34,326 --> 00:01:36,328
+and type your new business email.
+
+49
+00:01:36,932 --> 00:01:38,834
+Gmail sends a confirmation link to
+
+50
+00:01:38,834 --> 00:01:39,574
+that address.
+
+51
+00:01:39,983 --> 00:01:41,669
+Open it, and confirm.
+
+52
+00:01:42,060 --> 00:01:44,958
+Back in Gmail, choose Forward a
+
+53
+00:01:44,958 --> 00:01:47,036
+copy of incoming mail to your new
+
+54
+00:01:47,036 --> 00:01:49,180
+address, keep Gmail's copy in the
+
+55
+00:01:49,180 --> 00:01:50,423
+inbox, and save.
+
+56
+00:01:51,127 --> 00:01:53,210
+Now every email sent to your Gmail
+
+57
+00:01:53,210 --> 00:01:55,121
+reaches your business inbox too.
+
+58
+00:01:55,560 --> 00:01:57,072
+Then switch on Gmail's vacation
+
+59
+00:01:57,072 --> 00:01:59,256
+responder with a short note: we've
+
+60
+00:01:59,256 --> 00:02:01,193
+moved, please use our new address.
+
+61
+00:02:01,710 --> 00:02:03,468
+Clients update their contacts, and
+
+62
+00:02:03,468 --> 00:02:05,225
+nobody slips through the cracks.
+
+63
+00:02:05,660 --> 00:02:07,484
+Finally, put your new address
+
+64
+00:02:07,648 --> 00:02:09,767
+everywhere: your website, Google
+
+65
+00:02:09,767 --> 00:02:11,246
+Business Profile, WhatsApp
+
+66
+00:02:11,246 --> 00:02:13,055
+Business, your Facebook page,
+
+67
+00:02:13,055 --> 00:02:14,933
+invoices and email signature.
+
+68
+00:02:15,360 --> 00:02:17,005
+Or let us do it for you.
+
+69
+00:02:17,395 --> 00:02:19,565
+iContact Africa Solutions
+
+70
+00:02:19,565 --> 00:02:21,915
+registers your .co.zw domain, sets
+
+71
+00:02:21,915 --> 00:02:23,601
+up your mailboxes and security
+
+72
+00:02:23,601 --> 00:02:25,460
+records, can move your old emails
+
+73
+00:02:25,460 --> 00:02:27,385
+across, and sets up the forwarding
+
+74
+00:02:27,385 --> 00:02:27,873
+with you.
+
+75
+00:02:28,260 --> 00:02:30,319
+Professional email starts at $10
+
+76
+00:02:30,319 --> 00:02:31,653
+per mailbox a month.
+
+77
+00:02:32,218 --> 00:02:34,836
+Mail Business, at $18, adds shared
+
+78
+00:02:34,836 --> 00:02:37,015
+calendars, Gmail migration and
+
+79
+00:02:37,015 --> 00:02:38,017
+daily backups.
+
+80
+00:02:38,553 --> 00:02:41,763
+Mail Pro, at $25, adds archiving
+
+81
+00:02:41,763 --> 00:02:43,202
+and two-factor login.
+
+82
+00:02:43,660 --> 00:02:45,406
+Make every email look like it
+
+83
+00:02:45,406 --> 00:02:47,040
+comes from a real business.
+
+84
+00:02:47,563 --> 00:02:49,735
+WhatsApp the word EMAIL to
+
+85
+00:02:49,735 --> 00:02:51,356
+iContact Africa Solutions, and
+
+86
+00:02:51,356 --> 00:02:52,411
+let's set yours up.
