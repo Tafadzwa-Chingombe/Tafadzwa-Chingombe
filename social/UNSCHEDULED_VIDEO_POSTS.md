@@ -696,14 +696,69 @@ Meet Nyasha 👋 our AI-generated guide to websites, SEO and digital marketing. 
 
 ---
 
-## Already scheduled in Metricool: the professional email videos
+## Already scheduled in Metricool: AI voice agents (2 min) and the professional email videos
 
-These two videos were scheduled earlier, so they're not in the list above. Their Facebook, Instagram and TikTok posts go out automatically; you don't need to post them yourself. Here are the exact captions, for reference or for posting on another platform such as LinkedIn or YouTube.
+These three videos were scheduled earlier, so they're not in the list above. Their Facebook, Instagram and TikTok posts go out automatically; you don't need to post them yourself. Here are the exact captions, for reference or for posting on another platform such as LinkedIn or YouTube.
 
 | Date | Video | Facebook file (10:00) | Instagram and TikTok file (12:00 / 18:00) |
 |---|---|---|---|
+| Sun 16 Nov | AI voice agents, full explainer (2:00) | `icontact-pack/aivoice/nyasha/delivery/iContact_AIVoice_V2_120s_4x5_Nyasha_v1.mp4` | `…V2_120s_9x16_Nyasha_v1.mp4` |
 | Tue 17 Nov | Email V1 (60 s) | `icontact-pack/email/delivery/iContact_ProEmail_V1_60s_4x5_v1.mp4` | `…V1_60s_9x16_v1.mp4` |
 | Wed 18 Nov | Email V2 (2:55) | `icontact-pack/email/delivery/iContact_ProEmail_V2_3min_4x5_v1.mp4` | `…V2_3min_9x16_v1.mp4` |
+
+### AI voice agents, full explainer (16 Nov)
+
+The short 60 s version is not scheduled. It's #6 in the list above.
+
+**Facebook**
+```
+How can a business follow up every enquiry without stretching the team? An AI voice agent can make the routine calls for you: following up leads, qualifying enquiries, sending reminders and booking appointments.
+
+iContact Africa Solutions sets up and manages AI voice agents for businesses in Harare and across Zimbabwe. The agent says it's an AI, follows your script and rules, then books a time, passes the call to your team or records the follow-up.
+
+Built for telecoms, financial services, healthcare, technology, retail and e-commerce, travel and hospitality, and customer support.
+
+AI handles the repetitive calls. Your people handle the moments that matter.
+
+Pricing: setup from $150, management from $150 a month, plus $40 per attended appointment on sales campaigns. Support and reminder plans are quoted by volume.
+
+Start with a small pilot. WhatsApp the word AGENT to +263 71 857 4277 and let's plan yours.
+💬 https://wa.me/263718574277?text=AGENT
+
+#AIVoiceAgent #AIForBusiness #BusinessAutomation #LeadGeneration #CustomerService #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+```
+
+**Instagram**
+```
+How can a business follow up every enquiry without stretching the team? An AI voice agent can make the routine calls for you: following up leads, qualifying enquiries, sending reminders and booking appointments.
+
+iContact Africa Solutions sets up and manages AI voice agents for businesses in Harare and across Zimbabwe. The agent says it's an AI, follows your script and rules, then books a time, passes the call to your team or records the follow-up.
+
+Built for telecoms, financial services, healthcare, technology, retail and e-commerce, travel and hospitality, and customer support.
+
+AI handles the repetitive calls. Your people handle the moments that matter.
+
+Pricing: setup from $150, management from $150 a month, plus $40 per attended appointment on sales campaigns. Support and reminder plans are quoted by volume.
+
+Start with a small pilot. WhatsApp the word AGENT to +263 71 857 4277 and let's plan yours.
+
+#AIVoiceAgent #AIForBusiness #BusinessAutomation #LeadGeneration #CustomerService #HarareBusiness #ZimbabweBusiness #SmallBusinessZimbabwe
+```
+
+**TikTok**
+```
+How can a business follow up every enquiry without stretching the team? An AI voice agent can make the routine calls for you: following up leads, qualifying enquiries, sending reminders and booking appointments.
+
+iContact Africa Solutions sets up and manages AI voice agents for businesses in Harare and across Zimbabwe. The agent says it's an AI, follows your script and rules, then books a time, passes the call to your team or records the follow-up.
+
+AI handles the repetitive calls. Your people handle the moments that matter.
+
+Pricing: setup from $150, management from $150 a month, plus $40 per attended appointment on sales campaigns.
+
+Start with a small pilot. WhatsApp the word AGENT to +263 71 857 4277 and let's plan yours.
+
+#AIVoiceAgent #AIForBusiness #BusinessAutomation #SmallBusiness #HarareBusiness #ZimbabweBusiness #TechTok
+```
 
 ### Email V1: "Would you pay this invoice?" (17 Nov)
 
