@@ -16,3 +16,8 @@ icontact-pack/aivoice/*/.vo-*/
 icontact-pack/email/v*/
 icontact-pack/email/.vo-*/
 icontact-pack/email/v*.json
+icontact-pack/academy/*-16x9/
+icontact-pack/academy/*-9x16/
+icontact-pack/academy/*-4x5/
+icontact-pack/academy/*.json
+icontact-pack/academy/.vo-*/
