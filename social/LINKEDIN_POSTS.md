@@ -1,6 +1,6 @@
 # LinkedIn posts: every iContact video
 
-Ready-to-paste LinkedIn copy for all 20 iContact Africa Solutions videos, for posting yourself on LinkedIn.
+Ready-to-paste LinkedIn copy for all 29 iContact Africa Solutions videos, for posting yourself on LinkedIn.
 
 ## How to use this file
 
@@ -55,6 +55,15 @@ These lines make claims that need to be true on the day you post. Confirm them, 
 | R | Invisible | 27 s | `icontact-pack/batch1/delivery/iContact_C1_Invisible_4x5_v1.mp4` |
 | S | AI voice agents (short) | 60 s | `icontact-pack/aivoice/nyasha/delivery/iContact_AIVoice_V1_60s_16x9_Nyasha_v1.mp4` |
 | T | AI voice agents (full explainer) | 120 s | `icontact-pack/aivoice/nyasha/delivery/iContact_AIVoice_V2_120s_16x9_Nyasha_v1.mp4` |
+| U | Professional email: why switch (short) | 60 s | `icontact-pack/email/delivery/iContact_ProEmail_V1_60s_16x9_v1.mp4` |
+| V | Professional email: move from Gmail, step by step | 2:55 | `icontact-pack/email/delivery/iContact_ProEmail_V2_3min_16x9_v1.mp4` |
+| W | iContact Academy explainer | 2:08 | `icontact-pack/academy/delivery/iContact_Academy_Explainer_2min_16x9_v1.mp4` |
+| X | iContact Academy ad | 39 s | `icontact-pack/academy/delivery/iContact_Academy_Ad_40s_4x5_v1.mp4` |
+| Y | iContact Academy teaser | 14 s | `icontact-pack/academy/delivery/iContact_Academy_Teaser_15s_4x5_v1.mp4` |
+| Z | Academy: Tendai's story (full) | 1:56 | `icontact-pack/academy/delivery/iContact_Academy_Story_2min_16x9_v1.mp4` |
+| AA | Academy: Tendai's story (short) | 45 s | `icontact-pack/academy/delivery/iContact_Academy_Story_45s_4x5_v1.mp4` |
+| AB | Course trailer: Website Basics for Business Owners | 60 s | `icontact-pack/academy/trailers/delivery/iContact_Academy_Trailer_web-basics_16x9_v1.mp4` |
+| AC | Course trailer: HTML & CSS for Beginners | 59 s | `icontact-pack/academy/trailers/delivery/iContact_Academy_Trailer_html-css_16x9_v1.mp4` |
 
 Each Batch 1 and AI Voice video has a matching `.srt` caption file beside it. On LinkedIn, upload it under *Add captions* when you post the video.
 
@@ -381,6 +390,163 @@ This is the same video as the scheduled Facebook, Instagram and TikTok posts on 
 
 ---
 
+## U. Professional email: why switch (short, 60 s)
+
+> Would you pay an invoice that came from a random Gmail address? Many clients wouldn't, and that moment of doubt can cost you the job.
+>
+> **Why does a business need a professional email address?** An address like info@yourbusiness.co.zw:
+> • builds trust, so clients act on your quotes and invoices
+> • stays with the business when staff leave
+> • lets you use sales, accounts and support addresses, so every enquiry reaches the right person
+> • with the right security records on your domain, is more likely to reach the inbox and harder for scammers to fake
+>
+> Still have clients on your old Gmail? Forward a copy of every email to your new address in Gmail settings, and add an auto-reply with the new address.
+>
+> iContact Africa Solutions sets up your .co.zw domain, mailboxes and forwarding. Professional email starts at $10 per mailbox a month.
+>
+> WhatsApp the word EMAIL to set yours up.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=EMAIL
+>
+> #ProfessionalEmail #BusinessEmail #EmailSecurity #SmallBusiness #Zimbabwe
+
+## V. Professional email: move from Gmail, step by step (2:55)
+
+> How do you switch from Gmail to a professional business email without losing a single client?
+>
+> **Why switch:** trust, your brand on every message, control when staff leave, separate sales, accounts and support addresses, and security (SPF, DKIM and DMARC records help your emails reach the inbox and make them harder to fake).
+>
+> **Forward your old Gmail in three steps (on a computer):**
+> 1. Gmail › Settings › See all settings › Forwarding and POP/IMAP.
+> 2. Add a forwarding address, type your new business email, then open the confirmation link Gmail sends and confirm.
+> 3. Choose "Forward a copy of incoming mail", keep Gmail's copy in the Inbox, and save.
+>
+> Then switch on Gmail's vacation responder with a short "we've moved" note, and update your address on your website, Google Business Profile, WhatsApp Business, invoices and email signature.
+>
+> Or let us do it: iContact Africa Solutions registers your .co.zw domain, sets up mailboxes and security records, moves old emails and sets up the forwarding. Mail Basic $10, Mail Business $18 and Mail Pro $25 per mailbox a month.
+>
+> Save this post for when you make the switch.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=EMAIL
+>
+> #ProfessionalEmail #BusinessEmail #GmailTips #EmailSecurity #Zimbabwe
+
+## W. iContact Academy explainer (2:08)
+
+> What if your team could learn the skills a web agency uses to bring in customers, at their own pace?
+>
+> We've launched **iContact Academy**: self-paced online courses in digital marketing and website development, built from the same client work we do every day on websites, search, social media and ads.
+>
+> **How it works:**
+> • Two tracks. Digital marketing: get a business found and chosen online. Website development: build sites that bring in enquiries.
+> • Self-paced, on any device. Pause, rewatch and pick up where you left off.
+> • A realistic project in each track: publish a working small-business website, or plan a real campaign and set up a Google Business Profile.
+> • One payment per course. No subscription, no deadline, and you keep access, including updates.
+> • Pay by EcoCash, Paynow or bank transfer.
+>
+> A practical way to upskill yourself, your marketing team or your staff without fixed class times.
+>
+> WhatsApp the word ACADEMY for the course list.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #OnlineLearning #DigitalMarketing #WebDevelopment #Upskilling #Zimbabwe
+
+## X. iContact Academy ad (39 s)
+
+> Learning digital skills shouldn't mean fixed class times or a subscription you forget to cancel.
+>
+> iContact Academy's self-paced courses in digital marketing and website development come with short lessons that work on your phone, a realistic project in every track, and one payment per course. You keep access, including updates.
+>
+> Pay by EcoCash, Paynow or bank transfer, and get your login, usually the same day.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #OnlineLearning #DigitalSkills #DigitalMarketing #WebDevelopment #Zimbabwe
+
+## Y. iContact Academy teaser (14 s)
+
+Short enough to post as a quick announcement, or to pin to your company page.
+
+> New: iContact Academy. Learn digital marketing or website development at your own pace, with real projects and one payment per course (EcoCash, Paynow or bank transfer).
+>
+> WhatsApp the word ACADEMY for the course list.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #OnlineLearning #DigitalSkills #Upskilling #Zimbabwe
+
+## Z. Academy: Tendai's story (full, 1:56)
+
+> Can a small-business owner really learn to build a website in their spare time, on their phone?
+>
+> This short film follows Tendai, a home baker who takes every order on WhatsApp. **Tendai is invented for the story; the course and the project are real.**
+>
+> She picks the website development course, pays with EcoCash and gets her login the same day. Some nights she does three lessons, some weeks none. There are no deadlines, so the course waits. When something doesn't click, she rewatches it.
+>
+> Then comes the project: a real website for a small business, with her products, her prices and an order button for WhatsApp. Next, she takes digital marketing: a campaign plan and a Google Business Profile.
+>
+> That's the idea behind iContact Academy: practical, self-paced courses that end in something you can actually use.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #OnlineLearning #Entrepreneurship #WebDevelopment #SmallBusiness #Zimbabwe
+
+## AA. Academy: Tendai's story (short, 45 s)
+
+> From WhatsApp orders to her own website, at her own pace.
+>
+> Tendai (an invented example) runs a small bakery. She chose iContact Academy's website development course, paid once with EcoCash and learned on her phone: pause, rewatch, pick up where she left off. Then she built and published a real website for her business.
+>
+> The courses and the project are real. One payment per course, by EcoCash, Paynow or bank transfer.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #OnlineLearning #SmallBusiness #WebDevelopment #Zimbabwe
+
+## AB. Course trailer: Website Basics for Business Owners (60 s)
+
+> Business owners: do you know what your website should cost and include before you pay anyone?
+>
+> **Website Basics for Business Owners** is a 10-lesson beginner course from iContact Academy. You'll learn:
+> • what a business website needs before you hire anyone
+> • how to choose a domain (.co.zw or .com)
+> • how hosting, email and SSL work, in plain language
+> • how to write page content that turns visitors into enquiries
+> • a launch checklist, and how to keep your site fresh and secure
+>
+> It's built for owners and managers who want a website, or want to understand the one they have. Self-paced, one payment, and you keep access including updates.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #SmallBusiness #WebsiteStrategy #OnlineLearning #DigitalTransformation #Zimbabwe
+
+## AC. Course trailer: HTML & CSS for Beginners (59 s)
+
+> Every website is built with two languages. Learning them is one of the most practical first steps into tech.
+>
+> **HTML & CSS for Beginners** from iContact Academy (12 lessons):
+> • clean HTML for headings, text, images and links
+> • CSS colours, fonts and spacing
+> • layouts with Flexbox and Grid
+> • pages that work on phones
+> • a real one-page business site, published free on GitHub Pages
+>
+> Each lesson ends with a small task, so you practise as you go. For complete beginners: you only need a laptop and internet.
+>
+> 📞 Call or WhatsApp +263 71 857 4277 · +263 77 419 2027
+> 💬 wa.me/263718574277?text=ACADEMY
+>
+> #LearnToCode #WebDevelopment #HTML #CSS #Zimbabwe
+
 ## A suggested LinkedIn order
 
 If you're starting from nothing on LinkedIn, this order builds from "who we are" to "what we sell". At two posts a week, it runs for about ten weeks.
@@ -393,6 +559,9 @@ If you're starting from nothing on LinkedIn, this order builds from "who we are"
 6. **Q:** the Portal Tour
 7. **K:** POTRAZ-ready (timely for organisations)
 8. **R:** Invisible
-9. **F, G, H, J, L, I, B, A, C, M** in any order, with **S** (the short AI version) a few weeks after **T** as a reminder
+9. **W:** iContact Academy explainer (launches the courses)
+10. **V:** professional email, step by step (practical and saveable)
+11. **Z:** Tendai's story, then **AB** and **AC** (one course trailer a week)
+12. **F, G, H, J, L, I, B, A, C, M, U, X, Y, AA** in any order, with **S** (the short AI version) a few weeks after **T** as a reminder
 
 Tip: many LinkedIn users also put the WhatsApp link in the first comment, because posts with outside links can get less reach. Try both ways and compare the views in LinkedIn's post analytics.
